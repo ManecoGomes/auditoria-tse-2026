@@ -1,14 +1,17 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "gerado_em_utc": "2026-10-26T13:26:46.788892+00:00",
+ "versao": 2,
+ "site": "https://auditoria-tse-2026.com.br",
+ "gerado_em_utc": "2026-10-26T13:40:34.726136+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
  "fonte_dados": "Tribunal Superior Eleitoral - dadosabertos.tse.jus.br",
- "n_arquivos": 46,
+ "nota": "Cada versao do manifesto e carimbada separadamente. A v1 continua provando o estado anterior.",
+ "n_arquivos": 52,
  "arquivos": [
   {
    "arquivo": "README.md",
-   "bytes": 2642,
-   "sha512": "15aa7e2889c342b31112bde58c527276f2f484e06c5e72ade85cd69f70d9ab6847140bbc31a662a4314951dafe72a78bde5e395afbff65596c19a7414e022caa"
+   "bytes": 2681,
+   "sha512": "ba779d2dd4320349aa3ab3d9f0dfc7984c374b790b99529dbfc572c8a88565230c9180bd7fe87b6e2a312a4679072bec1f5b8b14d2f2509f9ca92efd75ca8f58"
   },
   {
    "arquivo": "dados/bu/AC.json",
@@ -216,24 +219,54 @@
    "sha512": "1a5f46f24319adbf89c2e43ac67d4cff11865a574b5dee6246d51403019f2da5cf2d89509c79805a3b15b7720b497b246785e4686af30123d1097d92c0fd3090"
   },
   {
+   "arquivo": "site/.gitignore",
+   "bytes": 8,
+   "sha512": "4a131d0160f67db8be8a9225c6706c259c0f6a72687e502f2c7fc2c125d498c10a9f544f0d4145e812ec936303cf034d9943bc3ce998cef68ef96b2d38f3c75a"
+  },
+  {
+   "arquivo": "site/.vercel/README.txt",
+   "bytes": 520,
+   "sha512": "0cf0907451dea80862cd6ccfdff693f658879272fb5a9559e3119723549996df56de917e3454dfc64e92f69510619ed3475e086be0300581e3372c3dbe3ac10f"
+  },
+  {
+   "arquivo": "site/.vercel/project.json",
+   "bytes": 109,
+   "sha512": "310c44a42aa76e45b667b7c4d033fba9dd28dbc9e4aba223daf6f0eb79f48368b3fb1ca2f24818b131df4fe0f59274d7307c152a3d04eac80173ac7e76aec5e7"
+  },
+  {
    "arquivo": "site/dados.html",
-   "bytes": 19508,
-   "sha512": "5513fb2bf82a1827b13bacc693cf8b179eed1da1b600bad6d14dd4003ac920344174c44cbc6e903cf3dda186387a37282346d92c9873c9bbcf4d3e6cc1ff5267"
+   "bytes": 19707,
+   "sha512": "bda586815d51fd7df21df1499693202c4b1f96301c31efe168b91f91d8607a4ac7d427a65843b3556b0b44329a61fdf222f00d710efdbd05f6e6f919c7fc30ca"
   },
   {
    "arquivo": "site/index.html",
-   "bytes": 8021,
-   "sha512": "fbedd5e44fe972465496bf697a04ced063913b1bbf7a3dda3cf36b4cc375e31ac2bb5477d43703fc9eeafcad79e69815c57dda90c80bf23418dbccf5ef8fb4af"
+   "bytes": 8200,
+   "sha512": "c1a2a821cb8165858ab838d356c4147b86a44b4a8e1b5c9877a76be3544c600c8661ccc93e86c95628f4a45514e9040119c8c341227bb23fb8de62242c2e89c5"
   },
   {
    "arquivo": "site/relatorio.html",
-   "bytes": 27695,
-   "sha512": "0cb15012ed627b528460de11c0b3a95883d4220dcca2f92a67dd71553551a783c013c197a98280bd97bea1eebf3d9107bf37a41ff6dbde7aa6a864aff0d7ea02"
+   "bytes": 27902,
+   "sha512": "ce43d72324f828248af9813bb5b5bf2126d5f1d8e2dbaa187e804751c5732511de8dc9cc6359042f74047414cca3002c29483c89eb2a2e31e4978e9372cae0e7"
+  },
+  {
+   "arquivo": "site/robots.txt",
+   "bytes": 78,
+   "sha512": "3d0a96eeaa0e69bea33a1703d2e11be93fb2b72dea8488a81556f949f45bbcce3968a3d9216e5b083d957f248bcecede515899d767533baf6778cf7ade77a896"
+  },
+  {
+   "arquivo": "site/sitemap.xml",
+   "bytes": 500,
+   "sha512": "39e6f7fd80eb68a9c6185e0b140b7ed8e22051d48469768c3b8e311daef53aaac411ea920ca21cc1a445fe86419540b3110abd46f48f56aee33d3fc80bdcc9f7"
+  },
+  {
+   "arquivo": "site/vercel.json",
+   "bytes": 984,
+   "sha512": "a54da23aa9ec46d91f6f4d91e945f8ae58b376155120634e5f9c9ba0f1410ad23b3c56aa028df2dc80e7126b9204bb1c03d9cd8b0b1aa35886cd4aa99e194195"
   },
   {
    "arquivo": "site/verificar.html",
-   "bytes": 8457,
-   "sha512": "bcaf98bf3cb2cd284aa7ff44e66ed2911ef82f4a4e1b4b928356da05da8282650e0eb95e4d3d446b7297ee091fd99f0b78dbf471fa95cd7997233829c6bb9c0a"
+   "bytes": 8664,
+   "sha512": "f6b773887d0cc62fa3a4823d3eca7051ebac1d696e2c91ef2039791c059b2ea12ea679cb2db673c5021fc0ae910e30dc969d93f3384963cb753f4bdde51edbbb"
   }
  ]
 }

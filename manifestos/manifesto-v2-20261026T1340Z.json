@@ -1,0 +1,272 @@
+{
+ "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
+ "versao": 2,
+ "site": "https://auditoria-tse-2026.com.br",
+ "gerado_em_utc": "2026-10-26T13:40:34.726136+00:00",
+ "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
+ "fonte_dados": "Tribunal Superior Eleitoral - dadosabertos.tse.jus.br",
+ "nota": "Cada versao do manifesto e carimbada separadamente. A v1 continua provando o estado anterior.",
+ "n_arquivos": 52,
+ "arquivos": [
+  {
+   "arquivo": "README.md",
+   "bytes": 2681,
+   "sha512": "ba779d2dd4320349aa3ab3d9f0dfc7984c374b790b99529dbfc572c8a88565230c9180bd7fe87b6e2a312a4679072bec1f5b8b14d2f2509f9ca92efd75ca8f58"
+  },
+  {
+   "arquivo": "dados/bu/AC.json",
+   "bytes": 2425,
+   "sha512": "3357d154ebb53e0f9df3853b9af8a5eace3ecdf6cfc693c277d719c280ef6e8095ba0ee3bf033f2e79b7a4797a4a6da114dd6dba8cefeb79f925590c6d8aec0d"
+  },
+  {
+   "arquivo": "dados/bu/AL.json",
+   "bytes": 45387,
+   "sha512": "19699ff15c6f7b5f10ca40e014e39cbb200ffd935c9c0c5655770def42a3a2774ba167087bbda8ff18484c6b6f6b5aee862800a49d07314628d63012dfea34c6"
+  },
+  {
+   "arquivo": "dados/bu/AM.json",
+   "bytes": 42232,
+   "sha512": "c116d3cb48ba2b0b9881b4e9f4587a8229941a9e6ca58356fbd69e5f7b75a575a1b8083a1025e79031b8671aed78c1304e34f79b9b86f266cf1b462e64d73932"
+  },
+  {
+   "arquivo": "dados/bu/AP.json",
+   "bytes": 5251,
+   "sha512": "da9c5f14b1e5a94c3a9e97ae927f3088e2e252e51eb11e20fbe38b9b8445da2383fa10499f0768168279f8ff85c2d05e60e0c16287d641dcfda861f8aa6dc5d1"
+  },
+  {
+   "arquivo": "dados/bu/BA.json",
+   "bytes": 53975,
+   "sha512": "3be0dd97163ffab8644576d85f8d6679089b7d3f9a5659e23fe89bfb7033a27c3d4b312b171640304d600d22d84481d3a7f3ee2cd650afcf61cce29b96fc00ec"
+  },
+  {
+   "arquivo": "dados/bu/CE.json",
+   "bytes": 46628,
+   "sha512": "ba7eafb9fecbcc9ef0063cd06bff3818dd81927d7c1bda7e5bda78d31e603189720bcc4c8eebb13de47e3db35aad198ca5761eacd4a61aec2cf9c4c0da437e7c"
+  },
+  {
+   "arquivo": "dados/bu/DF.json",
+   "bytes": 1279,
+   "sha512": "cb4826ea9f310894710918ab86e06e2c7f973c5200c3664cfd7c4b24288e56044344fbcf6c8ed93833aa60e88cd25ac116411d70a185323c83acac5b3d6575c5"
+  },
+  {
+   "arquivo": "dados/bu/ES.json",
+   "bytes": 3130,
+   "sha512": "62445c569e1a612f829fcbebbf29ad2dcc61e0083011e31f842f7b7a02f689c2db42294af282121ad7aac875bae7235a45bd0dbb6189f9b65cdc4aaa30809e2c"
+  },
+  {
+   "arquivo": "dados/bu/GO.json",
+   "bytes": 7285,
+   "sha512": "30104f765f77dba7513734cf450477df8433ac3687de51f555c920f53f3d3215975ce537372e35f65c63c4b9f0ff4a5f6d1842b14f29108e5a0653ce87561d3e"
+  },
+  {
+   "arquivo": "dados/bu/MA.json",
+   "bytes": 48842,
+   "sha512": "c02d50af91bbe1afca70ae9ca04c19c481a51796cd2cf1e0971a8286790162ac55273a83f0c59e89e66ff671bb771cdbe3aeff4dbbbe67bd35530205ff417f2e"
+  },
+  {
+   "arquivo": "dados/bu/MG.json",
+   "bytes": 39728,
+   "sha512": "d4a75f4f9cfd2dc6da552b1c0b9809eadc5eafdf2d174373722200cf903f95c5823565432104af2bb7426c1c3c5a2be15551da8fc4f1bf39b4afd2ed831a53ce"
+  },
+  {
+   "arquivo": "dados/bu/MS.json",
+   "bytes": 3744,
+   "sha512": "78e504c9705d6119f207c55c265f18f36e932c23a87b7a15afac2678883b9d70104d0a9ef1f8fc8068063a98d209d6f6a77a4d86556d8d7c0d978fe1a6d4d64e"
+  },
+  {
+   "arquivo": "dados/bu/MT.json",
+   "bytes": 15086,
+   "sha512": "feef974f093c42d2b6d776f8c09dd5183f9ea56076aed15c258f5ea16617303a969391eddca95c866cfca0555b6d4670e50b87f8785357112c04bbb9c994a646"
+  },
+  {
+   "arquivo": "dados/bu/PA.json",
+   "bytes": 48353,
+   "sha512": "83db8667008b3180977a4614182a1d5a030ffbc30590f20894b0292289a4e4da322a089bd07cb8cb94f0317280ad3cd55dff888baeed21f00ed83a91fd46b3a7"
+  },
+  {
+   "arquivo": "dados/bu/PB.json",
+   "bytes": 14894,
+   "sha512": "3b4eb7dcaf13f858fcdbfb6a550749975b057fc9378d9cb60cf41ade5819ff140865d57be178fb6d2bcc9d1b2bf7217398a952d7ee8aef318cb3533ff255c79d"
+  },
+  {
+   "arquivo": "dados/bu/PE.json",
+   "bytes": 47614,
+   "sha512": "7b064baf105e734710c26a44c8602ed5867850307bdb6ef831fc132a48ee31836621d9eb151d951718867ffa7f46bbb49b8a084699adb7a94791f5188e4de700"
+  },
+  {
+   "arquivo": "dados/bu/PI.json",
+   "bytes": 25150,
+   "sha512": "5548583f9e051830625b0eb76f36af17cc9a62c34843db2eb4861b3a87887d464dbb9b03090852dc09886a7e3e8422ea12ba748304d1af61fb89f193f1f6250a"
+  },
+  {
+   "arquivo": "dados/bu/PR.json",
+   "bytes": 13726,
+   "sha512": "51f6b67ab9be4e8cf36e292d19819957ac0ace8bb147c30a93c77f57963919705a100f2a2fbd934461fb567c2f0b2c6d92093a320bb1ffe19637dacd773f4a57"
+  },
+  {
+   "arquivo": "dados/bu/RJ.json",
+   "bytes": 41801,
+   "sha512": "3d88670badd3d0af984965ec398d0da8ca8e9015df320c0a385184ab1dc04e99434eec44fad20284609ebf408e85eb4300338f95b7b369d99ee02069b3e3b5da"
+  },
+  {
+   "arquivo": "dados/bu/RN.json",
+   "bytes": 33847,
+   "sha512": "c93aae545edd54665cb903cad42082f33adcdbb92c3bde84690e6e1f6ee71eaede49c00e1338d2dca866d43ccf907274a072071f218ea2ed12961e99326beb23"
+  },
+  {
+   "arquivo": "dados/bu/RO.json",
+   "bytes": 1368,
+   "sha512": "1f233f61c28009129b83b58043cae38a57cfd5613874d4583f9a4dd3fcb4b0520094395578c3e0ea5af64cf9c630ce7e5e2d5e458f5209543eebd5ce5f97df18"
+  },
+  {
+   "arquivo": "dados/bu/RR.json",
+   "bytes": 2054,
+   "sha512": "edee38cf73a1967b7a243d56a791c85e583c0b67b660116c50afe4369354b70aab907651e52758b5ce6bd0f636299af870fde22b205e73c398cf3b3785ad1314"
+  },
+  {
+   "arquivo": "dados/bu/RS.json",
+   "bytes": 4330,
+   "sha512": "98a359033bb64471caa822cfd47da6f38f265ee8ac0560b6636a084c8e8ffa38180c3276b7a6db49648edd89adb07cc8ad6e39b058dc1893b3cf916f2e38c882"
+  },
+  {
+   "arquivo": "dados/bu/SC.json",
+   "bytes": 3687,
+   "sha512": "0508fd27596625728a8768f145412128b90c62686ec7aa4190d0f08b4865eabb72980e891a2e2fb6c6bd65670c5ff0b8f69f489baa08fe23b35067249476be80"
+  },
+  {
+   "arquivo": "dados/bu/SE.json",
+   "bytes": 8918,
+   "sha512": "45ddb1c969008d72435f6c25ba5f8bfb97267ac96e6aedb1b8f083f3ab7493518af44323c2da9f1e3b5981b739556325fcd23590404d76b18562d257d1f0f866"
+  },
+  {
+   "arquivo": "dados/bu/SP.json",
+   "bytes": 14401,
+   "sha512": "6c139b24e3d83ceecb2887ac01226ebc64c5cb1db8e5e7f55f0a5e9c3adc900f358b057ea98dd3980059e554061a364226d90295e23b7e916c6a9b45975660ef"
+  },
+  {
+   "arquivo": "dados/bu/TO.json",
+   "bytes": 2134,
+   "sha512": "0ee6dd991506b47a1b077261bd6553024032067cb6798aa90adb361bd63bd9595b3eeba4c0b332fae996a42861994ca6b635b70748796d44cff9247780a4d4df"
+  },
+  {
+   "arquivo": "dados/bu/ZZ.json",
+   "bytes": 1065,
+   "sha512": "e85af7bd7ad2d88a720760c375411b93b9c1f33f1407a8d2811d7c9f43c173c3ac3f4eb7080b76af75ad97d838601a3d8ffa43193155a25fded526d1479a0c87"
+  },
+  {
+   "arquivo": "dados/logs/AC.json",
+   "bytes": 36793,
+   "sha512": "14856365ef62b3f968dcadbaf7662b50cc01f9909b5b3d2be8a34833f0bbc0a40647916849b54e2babf08c2178bcd55f28673a70c49748a61d9b5a47d73eeecf"
+  },
+  {
+   "arquivo": "dados/logs/AL.json",
+   "bytes": 80440,
+   "sha512": "acdaa16e5281c80b09cacba139fb9f3ff873b26c18946325c0c98b95109db2851eb40f50d440d77aa2662fc22459c3bc4c3f9988a4a542b081b5778addd30f9e"
+  },
+  {
+   "arquivo": "dados/logs/AM.json",
+   "bytes": 72851,
+   "sha512": "48f36f8d274c21a43dc6c4ed3a96fc653e451c92b339283f7d31a3625a09319be0d836ddba2915165d36db690846194e3f955ab93bf2f99eee60e0c91ce22066"
+  },
+  {
+   "arquivo": "dados/logs/AP.json",
+   "bytes": 34055,
+   "sha512": "20a9ce890f9d7cf1cba490493b7b3979e0666c8bc3db647b5a5884064bfb33f735acaff6395143d061f0d8e95a3d8ac99efc57f45344cf9f86e8d7194e8235d5"
+  },
+  {
+   "arquivo": "dados/logs/BA.json",
+   "bytes": 82263,
+   "sha512": "7179316b5cc21505418dbb13dfceefe79fb57a0ef484edd244a345caec232c6b0b0f28845346067f6af6de47b01b1bd51a9757a131687fefb07df5cea9660d31"
+  },
+  {
+   "arquivo": "dados/logs/CE.json",
+   "bytes": 80901,
+   "sha512": "cf46f686324fea462b8246f964830a0f991075c8a220d7b19189fc4ac0add09d52641c5da3473823cf1155d276637a95e73879bbef7e9d8cf92a62c1a8c1c289"
+  },
+  {
+   "arquivo": "dados/logs/DF.json",
+   "bytes": 44364,
+   "sha512": "6bdf5f09d0f93ebe2a0351058aa530fa47d73a8974c4f3a08877679656dac6f01f70d8638cdf4ace5d654449c331fb268095a0107c021a883f63e7d2958de9e5"
+  },
+  {
+   "arquivo": "dados/logs/ES.json",
+   "bytes": 46115,
+   "sha512": "7b2f90d78ada384cdda15b6dd734aa0885410061384fa581fb4e3ec6348803a2836a88a9a2f64b803ed959aedaff00878557330af809cf7166ebac3333a79650"
+  },
+  {
+   "arquivo": "relatorio/Auditoria_TSE_1T_2026.pdf",
+   "bytes": 384521,
+   "sha512": "54219f027d5a652bb0fac4c2ca3044ed6f5f3c3ab973b5e92c513c4081c11a6deee790a64bb357f37589bd16834ec463aab8086445c22a63a876a2bbf7d5812c"
+  },
+  {
+   "arquivo": "relatorio/RELATORIO.md",
+   "bytes": 14844,
+   "sha512": "a7c1a6696ad8745f7097e9f20a6554de021ead9aef25759217e17f117242ee4ca3dc49b50720e129394631b1030392c92991314584a8c8d61ad3aa86a08e32eb"
+  },
+  {
+   "arquivo": "relatorio/tabela_uf.md",
+   "bytes": 2966,
+   "sha512": "e78f62041b2758114c553a4db7206d3758a917ec0a0c6cfee3c0f9087cb872bc8921a983bd9f7cd662b4efaca9721f2f444082fcec1ef93db3cf40d903196051"
+  },
+  {
+   "arquivo": "scripts/audita_bu.py",
+   "bytes": 5221,
+   "sha512": "595e61809569d68a8b563d23e1866488f11c60f0f35f0ee94ad39765fd25c454aa0a6bcdfad22d1404bf2e17a3799f18147ff09cbbcb87c881c26f1f4ae2ad52"
+  },
+  {
+   "arquivo": "scripts/audita_logs.py",
+   "bytes": 4870,
+   "sha512": "1a5f46f24319adbf89c2e43ac67d4cff11865a574b5dee6246d51403019f2da5cf2d89509c79805a3b15b7720b497b246785e4686af30123d1097d92c0fd3090"
+  },
+  {
+   "arquivo": "site/.gitignore",
+   "bytes": 8,
+   "sha512": "4a131d0160f67db8be8a9225c6706c259c0f6a72687e502f2c7fc2c125d498c10a9f544f0d4145e812ec936303cf034d9943bc3ce998cef68ef96b2d38f3c75a"
+  },
+  {
+   "arquivo": "site/.vercel/README.txt",
+   "bytes": 520,
+   "sha512": "0cf0907451dea80862cd6ccfdff693f658879272fb5a9559e3119723549996df56de917e3454dfc64e92f69510619ed3475e086be0300581e3372c3dbe3ac10f"
+  },
+  {
+   "arquivo": "site/.vercel/project.json",
+   "bytes": 109,
+   "sha512": "310c44a42aa76e45b667b7c4d033fba9dd28dbc9e4aba223daf6f0eb79f48368b3fb1ca2f24818b131df4fe0f59274d7307c152a3d04eac80173ac7e76aec5e7"
+  },
+  {
+   "arquivo": "site/dados.html",
+   "bytes": 19707,
+   "sha512": "bda586815d51fd7df21df1499693202c4b1f96301c31efe168b91f91d8607a4ac7d427a65843b3556b0b44329a61fdf222f00d710efdbd05f6e6f919c7fc30ca"
+  },
+  {
+   "arquivo": "site/index.html",
+   "bytes": 8200,
+   "sha512": "c1a2a821cb8165858ab838d356c4147b86a44b4a8e1b5c9877a76be3544c600c8661ccc93e86c95628f4a45514e9040119c8c341227bb23fb8de62242c2e89c5"
+  },
+  {
+   "arquivo": "site/relatorio.html",
+   "bytes": 27902,
+   "sha512": "ce43d72324f828248af9813bb5b5bf2126d5f1d8e2dbaa187e804751c5732511de8dc9cc6359042f74047414cca3002c29483c89eb2a2e31e4978e9372cae0e7"
+  },
+  {
+   "arquivo": "site/robots.txt",
+   "bytes": 78,
+   "sha512": "3d0a96eeaa0e69bea33a1703d2e11be93fb2b72dea8488a81556f949f45bbcce3968a3d9216e5b083d957f248bcecede515899d767533baf6778cf7ade77a896"
+  },
+  {
+   "arquivo": "site/sitemap.xml",
+   "bytes": 500,
+   "sha512": "39e6f7fd80eb68a9c6185e0b140b7ed8e22051d48469768c3b8e311daef53aaac411ea920ca21cc1a445fe86419540b3110abd46f48f56aee33d3fc80bdcc9f7"
+  },
+  {
+   "arquivo": "site/vercel.json",
+   "bytes": 984,
+   "sha512": "a54da23aa9ec46d91f6f4d91e945f8ae58b376155120634e5f9c9ba0f1410ad23b3c56aa028df2dc80e7126b9204bb1c03d9cd8b0b1aa35886cd4aa99e194195"
+  },
+  {
+   "arquivo": "site/verificar.html",
+   "bytes": 8664,
+   "sha512": "f6b773887d0cc62fa3a4823d3eca7051ebac1d696e2c91ef2039791c059b2ea12ea679cb2db673c5021fc0ae910e30dc969d93f3384963cb753f4bdde51edbbb"
+  }
+ ]
+}

@@ -1,5 +1,7 @@
 # Auditoria de horários — Eleições Gerais 2026
 
+**https://auditoria-tse-2026.com.br**
+
 Verificação independente dos registros de horário nos dados públicos do Tribunal Superior
 Eleitoral, com o fim de identificar eventual votação fora do horário legal.
 
