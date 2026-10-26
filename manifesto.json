@@ -1,12 +1,11 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "versao": 2,
+ "versao": 3,
+ "marco": "PRE-REGISTRO do plano de analise do 2o turno, publicado antes da divulgacao dos dados pelo TSE",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-26T13:40:34.726136+00:00",
+ "gerado_em_utc": "2026-10-26T17:21:40.295195+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
- "fonte_dados": "Tribunal Superior Eleitoral - dadosabertos.tse.jus.br",
- "nota": "Cada versao do manifesto e carimbada separadamente. A v1 continua provando o estado anterior.",
- "n_arquivos": 52,
+ "n_arquivos": 66,
  "arquivos": [
   {
    "arquivo": "README.md",
@@ -194,9 +193,34 @@
    "sha512": "7b2f90d78ada384cdda15b6dd734aa0885410061384fa581fb4e3ec6348803a2836a88a9a2f64b803ed959aedaff00878557330af809cf7166ebac3333a79650"
   },
   {
+   "arquivo": "manifesto.json",
+   "bytes": 11205,
+   "sha512": "6dcdb802ac4ac4e6aee5b007531ac3f7552866e69834ea0f0b29b2267f2a475c79711064e79501d2bc1111598484a667a66915d2ae3cc0227c771c33c8229797"
+  },
+  {
+   "arquivo": "manifesto.json.ots",
+   "bytes": 1912,
+   "sha512": "9a4bac36e2c6f2d39f9c4936ab3ecf4b213c88e6abe84879e263dc6af2fe099473259cdd8c3ff4a2e7b9845c1c706d587d67ab642d5f5f0a8c019500e147d6c1"
+  },
+  {
+   "arquivo": "manifesto.json.ots.bak",
+   "bytes": 980,
+   "sha512": "5a5bef4e67b1c13b078fb7fb152915fcea30789819711314463133e50a752222d1dd3c7c453dce89d2735a00e132be5203245a0f0908782013ebcb00daea5fde"
+  },
+  {
    "arquivo": "relatorio/Auditoria_TSE_1T_2026.pdf",
    "bytes": 384521,
    "sha512": "54219f027d5a652bb0fac4c2ca3044ed6f5f3c3ab973b5e92c513c4081c11a6deee790a64bb357f37589bd16834ec463aab8086445c22a63a876a2bbf7d5812c"
+  },
+  {
+   "arquivo": "relatorio/O-QUE-FOI-FEITO.md",
+   "bytes": 9612,
+   "sha512": "e9377567f99c4cd4b92c945b01d58e18f3a0880901f8b38110519e1671a05de701271138f47098316bc7857eb139acdbcc1aadd297cec6bd13113bd381667c33"
+  },
+  {
+   "arquivo": "relatorio/PLANO-2T.md",
+   "bytes": 9937,
+   "sha512": "57d702c907e3490c7591eba7bbf84f5a5b21be0ff38ace52bd45e5920ebe0c09e81ea0cdef942ca7cc9a6654d5997ce2d959c288d1bec13b5193f31c61511725"
   },
   {
    "arquivo": "relatorio/RELATORIO.md",
@@ -234,19 +258,64 @@
    "sha512": "310c44a42aa76e45b667b7c4d033fba9dd28dbc9e4aba223daf6f0eb79f48368b3fb1ca2f24818b131df4fe0f59274d7307c152a3d04eac80173ac7e76aec5e7"
   },
   {
+   "arquivo": "site/carrossel/slide1.png",
+   "bytes": 47755,
+   "sha512": "78b4374276f0308d221df3b97e75a12d59d404da4573bf6c4202ad0f096791ed89c1a70b838475ed3f1a6721664c86d200ca6ad42174a860839eb700278ee837"
+  },
+  {
+   "arquivo": "site/carrossel/slide2.png",
+   "bytes": 67503,
+   "sha512": "2908390807396a81d54785e197e633ff26a1b0f368ac8ba0cc2e8772eda73d318ac83255d813cbb2d63c8270950cdbff04fbe2358671bfbb471bb6caeea12873"
+  },
+  {
+   "arquivo": "site/carrossel/slide3.png",
+   "bytes": 67130,
+   "sha512": "2891994d6fc7efe8d0167401e820296acf9636a9eda3f5e90cf5844742d477068c05c625f4ffc65dc75ef03a36fb84cd68b8e5c664a318cbc50183cc6bdbc3b0"
+  },
+  {
+   "arquivo": "site/carrossel/slide4.png",
+   "bytes": 71633,
+   "sha512": "b2a04baff3959711b4be64db89c92167f7dae0c28cefcda24f628d9526ec46919c5e1d2fc9e99ced0b110009c7d399e4b424eb2b42de06ddf47dfe77222e6831"
+  },
+  {
+   "arquivo": "site/carrossel/slide5.png",
+   "bytes": 55885,
+   "sha512": "063a91be5343806b027b640c42e5f2efd5025de5239c08a39deb3b0d5cbf09c9218c660ba1447ee86f28c639d856986c2604e2f2e8f0a691516b9a9b924d2c6b"
+  },
+  {
+   "arquivo": "site/carrossel/slide6.png",
+   "bytes": 60896,
+   "sha512": "5035428debc5aacbc321121b8ba1540fc0088929b6be4856fd4d6410b6465d436f57b2a6b99879075c8dd696c1c79f0353252d5ca0e03fc81a0290f26c2655f6"
+  },
+  {
+   "arquivo": "site/carrossel/slide7.png",
+   "bytes": 64105,
+   "sha512": "a3ff21902b3ee73d7481924ca75b936f14bbae1287d079012acb2198239f0ee8123db9d4b44aa0cbaec5cfb10cc338ea16144267cb0bdc7a84c58bee347cab60"
+  },
+  {
+   "arquivo": "site/carrossel/slide8.png",
+   "bytes": 63856,
+   "sha512": "13a75d966fd679e1cd754d83ffb6ed7284cc3220e94f3c414aa1af0a6b5423996e0bfd0e5b7b153518f5f304c54812f8b6f91f97d74faf13b77cef76854ca0c1"
+  },
+  {
    "arquivo": "site/dados.html",
-   "bytes": 19707,
-   "sha512": "bda586815d51fd7df21df1499693202c4b1f96301c31efe168b91f91d8607a4ac7d427a65843b3556b0b44329a61fdf222f00d710efdbd05f6e6f919c7fc30ca"
+   "bytes": 19752,
+   "sha512": "1c8c6a570f63a47b5088fea5a90a17a74389467e0ca4e8235fbdc9db873b4ae677fd3af9b6982c0dc3bb63cfe0f0164fcb013e9cb1af8eb7d4f0fee693449c4f"
   },
   {
    "arquivo": "site/index.html",
-   "bytes": 8200,
-   "sha512": "c1a2a821cb8165858ab838d356c4147b86a44b4a8e1b5c9877a76be3544c600c8661ccc93e86c95628f4a45514e9040119c8c341227bb23fb8de62242c2e89c5"
+   "bytes": 8619,
+   "sha512": "a76675dbcb743b2d6caea81307fd67dd8bf59e91b6d5237bdc90f1ae2ffb146e7e520fbdc63099cd06c781a4d9c653feadc7448da38105a91e7ccc68c271b9ed"
+  },
+  {
+   "arquivo": "site/plano-2t.html",
+   "bytes": 16248,
+   "sha512": "a2bece176a786be11512ab45f15979486540cc881b35cad54ba339ff9b9b3d8171981dbb40375effa3798936c64222cbd4d96b309e33b95259803d2d0f16e445"
   },
   {
    "arquivo": "site/relatorio.html",
-   "bytes": 27902,
-   "sha512": "ce43d72324f828248af9813bb5b5bf2126d5f1d8e2dbaa187e804751c5732511de8dc9cc6359042f74047414cca3002c29483c89eb2a2e31e4978e9372cae0e7"
+   "bytes": 27947,
+   "sha512": "f4126531723e06f63464bdb44b92d7ada4d21464f1e561f6a175012eaae77be07a2bd0845c90f3c5b7801e9337a2cf3e4f90cca9c2ed793d7f7d082c2f65be2d"
   },
   {
    "arquivo": "site/robots.txt",
@@ -265,8 +334,8 @@
   },
   {
    "arquivo": "site/verificar.html",
-   "bytes": 8664,
-   "sha512": "f6b773887d0cc62fa3a4823d3eca7051ebac1d696e2c91ef2039791c059b2ea12ea679cb2db673c5021fc0ae910e30dc969d93f3384963cb753f4bdde51edbbb"
+   "bytes": 8709,
+   "sha512": "705cb49bed5f8920000875d3160260f6b1ee9cbdc8fef7252423bbdf7e3cbf424fb181d6334a9326f8b5e476e6f343dfa0e65c99b9b7ae9a66dd5d51b3813223"
   }
  ]
 }

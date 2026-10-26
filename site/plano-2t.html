@@ -1,0 +1,263 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plano de análise do 2º turno — Auditoria TSE 2026</title>
+<meta name="description" content="Documento técnico integral, com metodologia, resultados e limitações.">
+<link rel="canonical" href="https://auditoria-tse-2026.com.br/relatorio.html">
+<meta property="og:url" content="https://auditoria-tse-2026.com.br/relatorio.html">
+<meta property="og:type" content="website">
+<meta name="robots" content="index,follow"><style>
+:root{--bg:#fbfaf8;--fg:#1a1a1a;--mut:#5c5955;--line:#ddd8d0;--accent:#8a2f2f;
+--card:#fff;--code:#f4f2ee;--ok:#1f6b3a;--warn:#8a5a00}
+@media(prefers-color-scheme:dark){:root{--bg:#15140f;--fg:#e8e4dc;--mut:#9a958c;
+--line:#332f28;--accent:#d98b8b;--card:#1c1a15;--code:#201e18;--ok:#6fbf8a;--warn:#d9a93f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 Charter,"Iowan Old Style",Georgia,serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 96px}
+header.top{border-bottom:1px solid var(--line);margin-bottom:40px;padding:28px 0 20px}
+header.top .kicker{font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.14em;
+text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-size:30px;line-height:1.2;margin:0 0 10px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:16px;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin:22px 0 0}
+nav a{font:500 13px/1 ui-sans-serif,system-ui;color:var(--mut);text-decoration:none;
+padding:8px 12px;border-radius:6px}
+nav a:hover{background:var(--code);color:var(--fg)}
+nav a.on{background:var(--accent);color:#fff}
+h2{font-size:21px;margin:40px 0 14px;font-weight:600;letter-spacing:-.01em;
+padding-bottom:7px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:28px 0 10px;font-weight:600}
+p{margin:0 0 15px}
+a{color:var(--accent)}
+table{border-collapse:collapse;width:100%;margin:18px 0;font:14px/1.45 ui-sans-serif,system-ui}
+th,td{border-bottom:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+td:first-child{font-weight:500}
+tbody tr:last-child td{border-bottom:none}
+.scroll{overflow-x:auto;margin:18px -4px;padding:0 4px}
+code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+code{background:var(--code);padding:2px 5px;border-radius:4px;font-size:.87em;
+overflow-wrap:anywhere}
+pre{background:var(--code);padding:16px 18px;border-radius:8px;overflow-x:auto;
+font-size:13px;line-height:1.55;border:1px solid var(--line)}
+pre code{background:none;padding:0}
+blockquote{margin:18px 0;padding:14px 18px;border-left:3px solid var(--accent);
+background:var(--card);border-radius:0 7px 7px 0}
+blockquote p:last-child{margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:15px 16px}
+.stat .n{font:600 25px/1.15 ui-sans-serif,system-ui;letter-spacing:-.02em;margin-bottom:5px}
+.stat .l{font:13px/1.35 ui-sans-serif,system-ui;color:var(--mut)}
+.zero .n{color:var(--ok)}
+.flag{display:inline-block;font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.05em;
+text-transform:uppercase;padding:4px 8px;border-radius:4px;background:var(--code);color:var(--mut)}
+.flag.ok{color:var(--ok)}
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+color:var(--mut);font:13px/1.6 ui-sans-serif,system-ui}
+ul,ol{margin:0 0 15px;padding-left:22px}li{margin:5px 0}
+hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+@media(max-width:600px){h1{font-size:25px}.wrap{padding:0 17px 64px}}
+</style></head><body><div class="wrap">
+<header class="top"><div class="kicker">Pré-registro · Eleições Gerais 2026</div><h1>Plano de análise do 2º turno</h1><p class="sub">Publicado antes de os dados existirem. Tudo que está aqui será executado e reportado, com o resultado que der.</p><nav><a href="index.html">Resumo</a><a href="plano-2t.html" class="on">Plano do 2º turno</a><a href="relatorio.html">1º turno</a><a href="verificar.html">Como verificar</a><a href="dados.html">Dados e hashes</a></nav></header><div class="scroll"><h1 id="plano-de-análise-do-2º-turno--publicado-antes-dos-dados">Plano
+de análise do 2º turno — publicado antes dos dados</h1>
+<p><em>Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ
+245.463</em> <em>Publicado em 26 de outubro de 2026</em></p>
+<hr />
+<h2 id="por-que-este-documento-existe">Por que este documento
+existe</h2>
+<p>Os arquivos do 2º turno das Eleições Gerais de 2026 ainda não foram
+publicados pelo Tribunal Superior Eleitoral. Este documento descreve,
+<strong>antes de esses dados existirem para mim</strong>, exatamente o
+que será medido, como, e o que cada medida pode ou não demonstrar.</p>
+<p>A razão é simples. A crítica mais destrutiva que se pode fazer a uma
+análise de dados é que o analista escolheu o critério depois de ver o
+resultado. Quem procura o suficiente encontra algum número estranho em
+qualquer conjunto de 100 milhões de registros — e, tendo escolhido o
+teste depois, pode apresentá-lo como descoberta.</p>
+<p>Publicar o plano antes elimina essa possibilidade. Tudo que está aqui
+será executado e reportado, <strong>inclusive os testes que não acusarem
+nada</strong>. Nenhum teste será acrescentado depois sem que fique
+identificado como posterior.</p>
+<p>Este documento tem sua data ancorada na blockchain do Bitcoin, junto
+com o restante do acervo.</p>
+<hr />
+<h2 id="contexto">Contexto</h2>
+<p>Em 25 de outubro de 2026, às 17h01, o Ministro Cristiano Zanin
+determinou a prorrogação da votação do 2º turno até as 19h em todo o
+país, quando as urnas já encerravam. O TSE paralisou a divulgação da
+totalização.</p>
+<p>O 1º turno já foi auditado integralmente — 499.206 seções,
+125.275.835 votantes, 28 unidades da Federação, integridade conferida
+por SHA-512. Aquele turno serve de <strong>grupo de controle</strong>:
+nele a regra era a ordinária, o prazo era 17h, e não houve contestação
+relevante.</p>
+<hr />
+<h2 id="os-três-arquivos-e-o-que-cada-um-permite">Os três arquivos, e o
+que cada um permite</h2>
+<p>Antes dos testes, é preciso entender a arquitetura dos dados — ela
+determina o que é possível.</p>
+<p><strong>Boletim de Urna.</strong> Totais por candidato em cada seção,
+mais quatro horários: abertura, encerramento, emissão e recebimento. Dá
+o resultado, não a sequência.</p>
+<p><strong>Log da urna.</strong> Cada evento com data e hora, voto a
+voto. Registra <code>Voto confirmado para [Presidente]</code> — o
+<strong>cargo</strong>, nunca o candidato. Dá a sequência, não o
+resultado.</p>
+<p><strong>Registro Digital do Voto (RDV).</strong> Os votos
+propriamente ditos, <strong>ordenados</strong>, com apenas dois carimbos
+de tempo no arquivo inteiro (geração da mídia e encerramento). Dá o
+conteúdo, com a ordem temporal deliberadamente destruída.</p>
+<p>Essa separação é o mecanismo que garante o sigilo do voto. Se hora e
+candidato pudessem ser cruzados, bastaria saber quando alguém votou para
+descobrir em quem.</p>
+<p><strong>Consequência direta, e ela precisa estar dita desde o
+início:</strong> não é possível, com nenhum dado que o TSE publique —
+nem com acesso integral à urna — determinar em quem votaram os eleitores
+de um intervalo de tempo específico. Totalizar "os votos após as 17h por
+candidato" é impossível por construção. Qualquer análise que afirme isso
+está errada ou mentindo.</p>
+<hr />
+<h2 id="o-que-será-medido">O que será medido</h2>
+<h3 id="bloco-a--integridade-e-procedência">Bloco A — Integridade e
+procedência</h3>
+<p><strong>A1.</strong> Conferência do SHA-512 de cada arquivo contra o
+resumo publicado pelo TSE. Arquivo que não conferir não é auditado: é
+reportado como divergente. <em>Observação já registrada: o TSE publica
+hash apenas para os boletins. Para os logs não há hash oficial — nesses,
+a referência é o hash que calculamos no download e carimbamos em
+blockchain.</em></p>
+<p><strong>A2.</strong> Triangulação entre os três arquivos. Boletim,
+RDV e log são artefatos independentes gerados pela mesma urna. O número
+de votos para Presidente deve coincidir nos três. Divergência indica
+problema no equipamento, no arquivo ou no processo.</p>
+<p><strong>A3.</strong> Soma dos boletins de seção contra o total
+oficial divulgado pela totalização.</p>
+<h3 id="bloco-b--horários-contra-a-régua-do-1º-turno">Bloco B —
+Horários, contra a régua do 1º turno</h3>
+<p><strong>B1.</strong> Distribuição do horário de encerramento das
+seções, em faixas a partir do prazo legal (19h no 2º turno, 17h no 1º),
+confrontada com a distribuição do 1º turno. Reporta-se a razão entre os
+turnos.</p>
+<p><strong>B2.</strong> Horário de abertura. Aberturas tardias.</p>
+<p><strong>B3.</strong> Curva de recebimento dos boletins pela
+totalização.</p>
+<p><strong>B4.</strong> Horário do último voto de cada seção — que é
+diferente do horário de encerramento, este um ato administrativo do
+mesário.</p>
+<h3 id="bloco-c--comportamento-das-urnas-do-log">Bloco C — Comportamento
+das urnas, do log</h3>
+<p><strong>C1.</strong> Voto registrado <strong>após o lacre do
+boletim</strong>. A urna sela o próprio log ao encerrar: a última linha
+é o registro da geração do log. Voto posterior a esse marco indica
+reabertura.</p>
+<p><strong>C2.</strong> Voto registrado <strong>após as 19h</strong> —
+fora do prazo mesmo sob a regra prorrogada. <em>Voto entre 17h e 19h é
+lícito: era o prazo vigente. Volume nessa faixa não é
+irregularidade.</em></p>
+<p><strong>C3.</strong> Curva de votação minuto a minuto, nacional e por
+unidade da Federação. O que se examina é o <strong>formato</strong>:
+fluxo contínuo e declinante é compatível com fila real; degraus, saltos
+e rajadas concentradas não são. No 1º turno a cauda decaiu suavemente
+(em Roraima: 290 votos às 16h59, 135 às 17h05, 59 às 17h15, 8 às
+18h00).</p>
+<p><strong>C4.</strong> Intervalo entre votos consecutivos na mesma
+seção. Sequências implausivelmente rápidas — abaixo do tempo físico
+necessário para um eleitor se identificar, entrar na cabine e votar em
+todos os cargos — são sinal de registro não-humano.</p>
+<p><strong>C5.</strong> Ciclos de ligar e desligar da urna, e eventos de
+energia, no período da prorrogação.</p>
+<p><strong>C6.</strong> Habilitações comparadas a votos computados. O
+número de votos deve ser menor ou igual ao de habilitações, nunca
+maior.</p>
+<p><strong>C7.</strong> Eventos de habilitação manual e falha
+biométrica, comparados às taxas do 1º turno.</p>
+<h3 id="bloco-d--impossibilidades-lógicas">Bloco D — Impossibilidades
+lógicas</h3>
+<p>Situações que não podem ocorrer em operação regular. No 1º turno
+todas deram zero em 125 milhões de votos.</p>
+<p><strong>D1.</strong> Comparecimento maior que o número de eleitores
+aptos na seção. <strong>D2.</strong> Encerramento registrado antes da
+abertura. <strong>D3.</strong> Boletim emitido antes do encerramento da
+votação. <strong>D4.</strong> Seção com mais de um registro de urna.</p>
+<h3 id="bloco-e--comparação-entre-turnos-seção-a-seção">Bloco E —
+Comparação entre turnos, seção a seção</h3>
+<p>Aqui cada seção é controle de si mesma, o que remove boa parte das
+diferenças estruturais entre regiões.</p>
+<p><strong>E1.</strong> Comparecimento da seção no 2º turno contra o 1º.
+<strong>E2.</strong> Horário de encerramento da seção no 2º turno contra
+o 1º. <strong>E3.</strong> Volume de votação após as 17h, por seção.</p>
+<p><strong>E4 — o teste que responde à pergunta mais difícil, dentro do
+que é possível.</strong> Não se pode saber em quem votaram os eleitores
+de depois das 17h. Mas pode-se medir se as seções com muita votação
+tardia deslocaram-se, entre o 1º e o 2º turno, de modo diferente das
+seções que encerraram no horário.</p>
+<p>Concretamente: para cada seção calcula-se a variação do percentual de
+cada candidato entre os turnos, e verifica-se se essa variação tem
+relação com o volume de votos registrados após as 17h.</p>
+<p><strong>Limitação que acompanha obrigatoriamente qualquer resultado
+deste teste:</strong> trata-se de inferência ecológica. Correlação no
+nível da seção <strong>não demonstra</strong> comportamento individual —
+é a falácia ecológica, e ela derruba conclusões apressadas com
+frequência. Seções com fila longa tendem a ser urbanas e populosas, e
+isso por si só já se associa a padrões de voto. Usar a seção como
+controle de si mesma reduz muito esse viés, mas não o elimina.</p>
+<p>O que este teste pode legitimamente afirmar: <em>"seções com votação
+tardia deslocaram-se X pontos a mais ou a menos que as demais,
+comparadas a si mesmas no 1º turno"</em>. O que ele <strong>não</strong>
+pode afirmar: em quem votou quem quer que seja.</p>
+<h3 id="bloco-f--geografia-e-agrupamento">Bloco F — Geografia e
+agrupamento</h3>
+<p><strong>F1.</strong> Distribuição geográfica da votação tardia, por
+município e zona eleitoral. <strong>F2.</strong> Verificação de
+concentração anômala — se o fenômeno se espalha conforme a densidade
+populacional e o porte das seções, ou se aparece agrupado de forma que a
+operação não explique. <strong>F3.</strong> Seções que encerraram às 17h
+mesmo com a prorrogação em vigor, e sua distribuição.</p>
+<h3 id="bloco-g--dispersão-operacional">Bloco G — Dispersão
+operacional</h3>
+<p><strong>G1.</strong> A ordem de prorrogação não chegou a 499 mil
+seções ao mesmo tempo. A dispersão dos horários de encerramento é
+esperada e é, ela própria, um dado. Mede-se a heterogeneidade e
+verifica-se se o padrão é compatível com a difusão de uma ordem
+administrativa.</p>
+<hr />
+<h2 id="como-os-resultados-serão-reportados">Como os resultados serão
+reportados</h2>
+<p>Todo teste acima será executado e publicado, <strong>com o resultado
+que der</strong>. Inclusive — e especialmente — os que não acusarem
+nada.</p>
+<p>Para cada teste será reportado: o número obtido, o número
+correspondente do 1º turno quando houver, e a interpretação possível,
+separando o que o dado demonstra do que apenas sugere.</p>
+<p>Achado que exija explicação não será apresentado como prova de
+fraude. Será apresentado como o que é: um número que destoa do padrão e
+que precisa ser explicado — podendo a explicação ser operacional,
+técnica ou irregular.</p>
+<p>Os programas que executam cada teste são publicados junto. Qualquer
+pessoa pode refazer.</p>
+<hr />
+<h2 id="o-que-não-será-feito">O que não será feito</h2>
+<p>Não serão acrescentados testes depois de ver os dados sem que fiquem
+expressamente identificados como posteriores a este plano e, portanto,
+de menor força probatória.</p>
+<p>Não será afirmado nada sobre a escolha de eleitores individuais,
+porque os dados não permitem.</p>
+<p>Não será afirmado que houve fraude a partir de número que admita
+explicação operacional ordinária.</p>
+<hr />
+<h2 id="compromisso">Compromisso</h2>
+<p>Se os testes não encontrarem nada, isso será publicado com a mesma
+ênfase com que seria publicado o contrário. Foi assim no 1º turno, cujo
+resultado — nenhum indício de votação fora do horário legal — está
+publicado desde 26 de outubro.</p>
+<p>Uma auditoria que só divulga o que confirma a hipótese de quem a
+encomendou não é auditoria.</p>
+<hr />
+<p><strong>Acompanhe:</strong> auditoria-tse-2026.com.br
+<strong>Reproduza:</strong>
+github.com/ManecoGomes/auditoria-tse-2026</p>
+</div><footer><p><strong>Auditoria de horários — Eleições Gerais 2026.</strong>
+Dados públicos do Tribunal Superior Eleitoral. Método e scripts abertos; qualquer pessoa pode reproduzir.</p>
+<p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ 245.463.
+Última atualização: 26/10/2026 10:26 (America/Sao_Paulo).</p>
+</footer></div></body></html>
