@@ -1,16 +1,26 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "versao": 3,
- "marco": "PRE-REGISTRO do plano de analise do 2o turno, publicado antes da divulgacao dos dados pelo TSE",
+ "versao": 4,
+ "marco": "Demonstracao dos testes do plano executada sobre logs do 1o turno (DF e ES, 16.813 secoes)",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-26T17:21:40.295195+00:00",
+ "gerado_em_utc": "2026-10-26T18:16:10.183259+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
- "n_arquivos": 66,
+ "n_arquivos": 76,
  "arquivos": [
   {
    "arquivo": "README.md",
    "bytes": 2681,
    "sha512": "ba779d2dd4320349aa3ab3d9f0dfc7984c374b790b99529dbfc572c8a88565230c9180bd7fe87b6e2a312a4679072bec1f5b8b14d2f2509f9ca92efd75ca8f58"
+  },
+  {
+   "arquivo": "dados/analises/demonstracao_1t.json",
+   "bytes": 19366,
+   "sha512": "2157c57e483390cd0dcb8cec0a2e7f4b4172535b5fe3a5b378ba47c2f56a4aa9438d4529e7979500f3f31376c2f3856c1585fc2b8f51f6e39f1354e50cbad785"
+  },
+  {
+   "arquivo": "dados/analises/demonstracao_secoes.csv",
+   "bytes": 883085,
+   "sha512": "9d4d790a97c32ef6f7abb088d45187f7dbf1e93b62c9987203e9627e10c14ed0e035c14446f251edf04bcbec1bbca8ae0a89dafcc0d1b066724ee1ad61844530"
   },
   {
    "arquivo": "dados/bu/AC.json",
@@ -194,13 +204,13 @@
   },
   {
    "arquivo": "manifesto.json",
-   "bytes": 11205,
-   "sha512": "6dcdb802ac4ac4e6aee5b007531ac3f7552866e69834ea0f0b29b2267f2a475c79711064e79501d2bc1111598484a667a66915d2ae3cc0227c771c33c8229797"
+   "bytes": 14110,
+   "sha512": "9d9e4493fc12e04e89c159ef9e5ca9efaf461edbc402a2d781a7d091dbacb08866fed31b41bef4d4b90855462993f0d5550ba990291035664743bc1172149d2c"
   },
   {
    "arquivo": "manifesto.json.ots",
-   "bytes": 1912,
-   "sha512": "9a4bac36e2c6f2d39f9c4936ab3ecf4b213c88e6abe84879e263dc6af2fe099473259cdd8c3ff4a2e7b9845c1c706d587d67ab642d5f5f0a8c019500e147d6c1"
+   "bytes": 805,
+   "sha512": "e41636f045d65fcf507c5278cd6e70643c2cc9b902b733a8021141bda6b6a3db76645191485e0cde57a6e9e2f323542039da635265b54a2866da72a3ededa796"
   },
   {
    "arquivo": "manifesto.json.ots.bak",
@@ -241,6 +251,41 @@
    "arquivo": "scripts/audita_logs.py",
    "bytes": 4870,
    "sha512": "1a5f46f24319adbf89c2e43ac67d4cff11865a574b5dee6246d51403019f2da5cf2d89509c79805a3b15b7720b497b246785e4686af30123d1097d92c0fd3090"
+  },
+  {
+   "arquivo": "scripts/pipeline/analises.py",
+   "bytes": 5298,
+   "sha512": "c26de444d34c55212d38a12d9ffd9e0699bfd492ace56ff2ed660c400a6b043f5311440427e604d82d01d18709b63caafd1fcae391b734811f0e7209e5d8b142"
+  },
+  {
+   "arquivo": "scripts/pipeline/audita.py",
+   "bytes": 9029,
+   "sha512": "823fb22379e0bfc9146450c62910bca99ac006b6383fa0f188c4f04321a6e05d80c1e88c62486810cf74b688bd8969a2bf002ed7012b3cec7f56e337337679d4"
+  },
+  {
+   "arquivo": "scripts/pipeline/coleta.py",
+   "bytes": 2739,
+   "sha512": "42fad2b6fffc15a0bce31ba98134d047d1176836a9f4f531bda42f21e2d5b0a0e18056c839245df8b82ec5ca51b1196c01eb8da441010b8b77662f00d817fd5f"
+  },
+  {
+   "arquivo": "scripts/pipeline/compara.py",
+   "bytes": 6348,
+   "sha512": "24a83e1b460a8bcbc0b4538f6c54a137da668b90e182de24c9bb56de7ebb9d8804fe406b98eb82caa0c5d4ff0cb8ae0aa978ddc9eec94dfad185c2661c464cbe"
+  },
+  {
+   "arquivo": "scripts/pipeline/demonstra.py",
+   "bytes": 5785,
+   "sha512": "8648d7680db1bfd3db48b9ffc894256eb393a423d9fbed08c2760696d6da9465d7be0b4d7b1e5220aa73b03b9f1b8188e6d0156fe12835c0b2f12b222865c33b"
+  },
+  {
+   "arquivo": "scripts/pipeline/extrai_votos.py",
+   "bytes": 1918,
+   "sha512": "c8fdf199303a421dd04c3373c6a44f11e429c404e5de1bd58c18f07e2010db5703c201a4f19ca9a59e9aab01250708c7f1bca4a304d4c40a3a72ff916d18bbd9"
+  },
+  {
+   "arquivo": "scripts/pipeline/gera_demo_html.py",
+   "bytes": 9399,
+   "sha512": "5c0f0d753178c23876f13bdc9e7b543e8ff19af07e811f6d94386025f34c2a5529196af1fcd4b822a74060d5c3ba0400240465ed91484ef719ff3919596efb2e"
   },
   {
    "arquivo": "site/.gitignore",
@@ -299,23 +344,28 @@
   },
   {
    "arquivo": "site/dados.html",
-   "bytes": 19752,
-   "sha512": "1c8c6a570f63a47b5088fea5a90a17a74389467e0ca4e8235fbdc9db873b4ae677fd3af9b6982c0dc3bb63cfe0f0164fcb013e9cb1af8eb7d4f0fee693449c4f"
+   "bytes": 19798,
+   "sha512": "d9bcc806543ced3bd9063987127058ce2ebfdba7c09e53bfb2a0db0f983a75cb125521a81df07247ac7a4a999675fa8bfa599713f0b98a826fddbc0803ec3311"
+  },
+  {
+   "arquivo": "site/demonstracao.html",
+   "bytes": 39145,
+   "sha512": "15bbb87da1e64e7d09152506c6cc30a8ef3ba01b348c52a159076e731629c89861a27988265ad4c4440fb62e4a402d74345a34972a2d583fa1d16790ab529025"
   },
   {
    "arquivo": "site/index.html",
-   "bytes": 8619,
-   "sha512": "a76675dbcb743b2d6caea81307fd67dd8bf59e91b6d5237bdc90f1ae2ffb146e7e520fbdc63099cd06c781a4d9c653feadc7448da38105a91e7ccc68c271b9ed"
+   "bytes": 8665,
+   "sha512": "b1a9712a13e481a1b155951e2ab6e0cf0cc1399c61b4437eddf99d8acf00977afcfefad94ad87b0b5198a79ff4ff1d928d15f612de3022117178bf39085f89bf"
   },
   {
    "arquivo": "site/plano-2t.html",
-   "bytes": 16248,
-   "sha512": "a2bece176a786be11512ab45f15979486540cc881b35cad54ba339ff9b9b3d8171981dbb40375effa3798936c64222cbd4d96b309e33b95259803d2d0f16e445"
+   "bytes": 16294,
+   "sha512": "71dd43580f656c59c1a51301a113c821f8c00be5085ddf88f38d1b081f64e5d6fcaed6fd5f7696e433f94844edf5d35e5c3f6ae98b614d0b4230ba1e39ca5037"
   },
   {
    "arquivo": "site/relatorio.html",
-   "bytes": 27947,
-   "sha512": "f4126531723e06f63464bdb44b92d7ada4d21464f1e561f6a175012eaae77be07a2bd0845c90f3c5b7801e9337a2cf3e4f90cca9c2ed793d7f7d082c2f65be2d"
+   "bytes": 27993,
+   "sha512": "0dd053fd68509423215d79b9a54984434d0c76ab98cf9e3ed910012d0949d946c721d3000f3542fe7d0de0cbddc950850964056051de66e25abe55fd13324f11"
   },
   {
    "arquivo": "site/robots.txt",
@@ -334,8 +384,8 @@
   },
   {
    "arquivo": "site/verificar.html",
-   "bytes": 8709,
-   "sha512": "705cb49bed5f8920000875d3160260f6b1ee9cbdc8fef7252423bbdf7e3cbf424fb181d6334a9326f8b5e476e6f343dfa0e65c99b9b7ae9a66dd5d51b3813223"
+   "bytes": 8755,
+   "sha512": "87a68df1f8881f8ffb73922db319226303eb529f41799f2f13846aac9ac2b0d4ae5c59f94572c6545beb66ef61f1da25e91600c32007c68dad7642352ade05f7"
   }
  ]
 }
