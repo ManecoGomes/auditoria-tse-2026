@@ -1,0 +1,116 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditoria de horários das Eleições 2026 — Auditoria TSE 2026</title>
+<meta name="description" content="Verificação independente dos registros de horário em 499.206 boletins de urna do 1º turno.">
+<meta name="robots" content="index,follow"><style>
+:root{--bg:#fbfaf8;--fg:#1a1a1a;--mut:#5c5955;--line:#ddd8d0;--accent:#8a2f2f;
+--card:#fff;--code:#f4f2ee;--ok:#1f6b3a;--warn:#8a5a00}
+@media(prefers-color-scheme:dark){:root{--bg:#15140f;--fg:#e8e4dc;--mut:#9a958c;
+--line:#332f28;--accent:#d98b8b;--card:#1c1a15;--code:#201e18;--ok:#6fbf8a;--warn:#d9a93f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 Charter,"Iowan Old Style",Georgia,serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 96px}
+header.top{border-bottom:1px solid var(--line);margin-bottom:40px;padding:28px 0 20px}
+header.top .kicker{font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.14em;
+text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-size:30px;line-height:1.2;margin:0 0 10px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:16px;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin:22px 0 0}
+nav a{font:500 13px/1 ui-sans-serif,system-ui;color:var(--mut);text-decoration:none;
+padding:8px 12px;border-radius:6px}
+nav a:hover{background:var(--code);color:var(--fg)}
+nav a.on{background:var(--accent);color:#fff}
+h2{font-size:21px;margin:40px 0 14px;font-weight:600;letter-spacing:-.01em;
+padding-bottom:7px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:28px 0 10px;font-weight:600}
+p{margin:0 0 15px}
+a{color:var(--accent)}
+table{border-collapse:collapse;width:100%;margin:18px 0;font:14px/1.45 ui-sans-serif,system-ui}
+th,td{border-bottom:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+td:first-child{font-weight:500}
+tbody tr:last-child td{border-bottom:none}
+.scroll{overflow-x:auto;margin:18px -4px;padding:0 4px}
+code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+code{background:var(--code);padding:2px 5px;border-radius:4px;font-size:.87em;
+overflow-wrap:anywhere}
+pre{background:var(--code);padding:16px 18px;border-radius:8px;overflow-x:auto;
+font-size:13px;line-height:1.55;border:1px solid var(--line)}
+pre code{background:none;padding:0}
+blockquote{margin:18px 0;padding:14px 18px;border-left:3px solid var(--accent);
+background:var(--card);border-radius:0 7px 7px 0}
+blockquote p:last-child{margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:15px 16px}
+.stat .n{font:600 25px/1.15 ui-sans-serif,system-ui;letter-spacing:-.02em;margin-bottom:5px}
+.stat .l{font:13px/1.35 ui-sans-serif,system-ui;color:var(--mut)}
+.zero .n{color:var(--ok)}
+.flag{display:inline-block;font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.05em;
+text-transform:uppercase;padding:4px 8px;border-radius:4px;background:var(--code);color:var(--mut)}
+.flag.ok{color:var(--ok)}
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+color:var(--mut);font:13px/1.6 ui-sans-serif,system-ui}
+ul,ol{margin:0 0 15px;padding-left:22px}li{margin:5px 0}
+hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+@media(max-width:600px){h1{font-size:25px}.wrap{padding:0 17px 64px}}
+</style></head><body><div class="wrap">
+<header class="top"><div class="kicker">Auditoria independente · Eleições Gerais 2026</div>
+<h1>Auditoria de horários das Eleições 2026</h1><p class="sub">Verificação independente dos registros de horário em 499.206 boletins de urna do 1º turno.</p>
+<nav><a href="index.html" class='on'>Resumo</a><a href="relatorio.html">Relatório</a><a href="verificar.html">Como verificar</a><a href="dados.html">Dados e hashes</a></nav></header>
+<div class="grid">
+<div class="stat"><div class="n">499.206</div><div class="l">seções auditadas (1º turno)</div></div>
+<div class="stat"><div class="n">125,3 mi</div><div class="l">votantes</div></div>
+<div class="stat"><div class="n">28/28</div><div class="l">arquivos com SHA-512 conferido</div></div>
+<div class="stat zero"><div class="n">0</div><div class="l">indícios de voto fora de hora</div></div>
+</div>
+
+<h2>O que foi feito</h2>
+<p>Foram auditados <strong>todos os boletins de urna do 1º turno</strong> das Eleições Gerais de 2026,
+verificando os registros de horário de abertura, encerramento, emissão e recebimento de cada seção
+eleitoral do país. A integridade de cada arquivo foi conferida por SHA-512 contra o resumo
+criptográfico publicado pelo próprio TSE.</p>
+
+<h2>Resultado</h2>
+<table><thead><tr><th>Verificação</th><th style="text-align:right">Ocorrências</th></tr></thead><tbody>
+<tr><td>Comparecimento maior que eleitores aptos</td><td style="text-align:right"><span class="flag ok">0</span></td></tr>
+<tr><td>Encerramento anterior à abertura</td><td style="text-align:right"><span class="flag ok">0</span></td></tr>
+<tr><td>Boletim emitido antes do encerramento</td><td style="text-align:right"><span class="flag ok">0</span></td></tr>
+<tr><td>Seção com mais de um registro de urna</td><td style="text-align:right"><span class="flag ok">0</span></td></tr>
+<tr><td>Abertura após 8h30</td><td style="text-align:right">960</td></tr>
+<tr><td>Encerramento após 19h</td><td style="text-align:right">8.324</td></tr>
+</tbody></table>
+
+<p><strong>Nenhum indício de votação fora do horário legal foi encontrado no 1º turno.</strong>
+As quatro verificações capazes de caracterizar voto fabricado ou registro fora de sequência
+retornaram zero ocorrências em 125,3 milhões de votos.</p>
+
+<blockquote><p>Este trabalho não afirma a inexistência de irregularidades na eleição. Afirma, por
+método reproduzível sobre dados de integridade confirmada, que <strong>as irregularidades de horário
+procuradas não foram encontradas nos dados examinados</strong>.</p></blockquote>
+
+<h2>Por que 8.324 seções encerraram depois das 19h</h2>
+<p>No 1º turno o prazo legal era 17h. Ainda assim, 8.324 seções (1,67%, 2,46 milhões de eleitores)
+encerraram administrativamente após as 19h. Isso é cauda operacional ordinária: o eleitor presente
+às 17h tem direito de votar (art. 153 do Código Eleitoral), e após o último voto vêm os
+procedimentos de fechamento e a impressão das vias do boletim.</p>
+<p>Esse número é a <strong>linha de base</strong>. Qualquer afirmação futura sobre encerramentos
+tardios só adquire sentido quando confrontada com este patamar.</p>
+
+<h2>A confusão entre apurar e votar</h2>
+<p>100% dos votos entram na contagem depois das 17h — porque antes das 17h a apuração não começou.
+O que dispara às 17h é a <em>transmissão</em> dos boletins, não a <em>votação</em>. O crescimento
+abrupto do placar no início da noite é consequência do desenho do sistema e não constitui, por si,
+indício de irregularidade.</p>
+
+<h2>Situação do 2º turno</h2>
+<p>O 2º turno foi realizado em 25/10/2026, com a votação prorrogada até as 19h por decisão do
+Ministro Cristiano Zanin. Os arquivos correspondentes <strong>ainda não foram publicados pelo
+TSE</strong>. Monitoramento automatizado verifica o catálogo de hora em hora; publicados os dados,
+as mesmas verificações serão aplicadas e confrontadas com esta linha de base.</p>
+
+<footer><p><strong>Auditoria de horários — Eleições Gerais 2026.</strong>
+Dados públicos do Tribunal Superior Eleitoral. Método e scripts abertos; qualquer pessoa pode reproduzir.</p>
+<p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ 245.463.
+Última atualização: 26/10/2026 10:26 (America/Sao_Paulo).</p>
+</footer></div></body></html>

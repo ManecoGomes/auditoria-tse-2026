@@ -1,0 +1,131 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Como verificar — Auditoria TSE 2026</title>
+<meta name="description" content="Passo a passo para reproduzir integralmente a auditoria a partir da fonte original.">
+<meta name="robots" content="index,follow"><style>
+:root{--bg:#fbfaf8;--fg:#1a1a1a;--mut:#5c5955;--line:#ddd8d0;--accent:#8a2f2f;
+--card:#fff;--code:#f4f2ee;--ok:#1f6b3a;--warn:#8a5a00}
+@media(prefers-color-scheme:dark){:root{--bg:#15140f;--fg:#e8e4dc;--mut:#9a958c;
+--line:#332f28;--accent:#d98b8b;--card:#1c1a15;--code:#201e18;--ok:#6fbf8a;--warn:#d9a93f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 Charter,"Iowan Old Style",Georgia,serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 96px}
+header.top{border-bottom:1px solid var(--line);margin-bottom:40px;padding:28px 0 20px}
+header.top .kicker{font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.14em;
+text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-size:30px;line-height:1.2;margin:0 0 10px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:16px;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin:22px 0 0}
+nav a{font:500 13px/1 ui-sans-serif,system-ui;color:var(--mut);text-decoration:none;
+padding:8px 12px;border-radius:6px}
+nav a:hover{background:var(--code);color:var(--fg)}
+nav a.on{background:var(--accent);color:#fff}
+h2{font-size:21px;margin:40px 0 14px;font-weight:600;letter-spacing:-.01em;
+padding-bottom:7px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:28px 0 10px;font-weight:600}
+p{margin:0 0 15px}
+a{color:var(--accent)}
+table{border-collapse:collapse;width:100%;margin:18px 0;font:14px/1.45 ui-sans-serif,system-ui}
+th,td{border-bottom:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+td:first-child{font-weight:500}
+tbody tr:last-child td{border-bottom:none}
+.scroll{overflow-x:auto;margin:18px -4px;padding:0 4px}
+code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+code{background:var(--code);padding:2px 5px;border-radius:4px;font-size:.87em;
+overflow-wrap:anywhere}
+pre{background:var(--code);padding:16px 18px;border-radius:8px;overflow-x:auto;
+font-size:13px;line-height:1.55;border:1px solid var(--line)}
+pre code{background:none;padding:0}
+blockquote{margin:18px 0;padding:14px 18px;border-left:3px solid var(--accent);
+background:var(--card);border-radius:0 7px 7px 0}
+blockquote p:last-child{margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:15px 16px}
+.stat .n{font:600 25px/1.15 ui-sans-serif,system-ui;letter-spacing:-.02em;margin-bottom:5px}
+.stat .l{font:13px/1.35 ui-sans-serif,system-ui;color:var(--mut)}
+.zero .n{color:var(--ok)}
+.flag{display:inline-block;font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.05em;
+text-transform:uppercase;padding:4px 8px;border-radius:4px;background:var(--code);color:var(--mut)}
+.flag.ok{color:var(--ok)}
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+color:var(--mut);font:13px/1.6 ui-sans-serif,system-ui}
+ul,ol{margin:0 0 15px;padding-left:22px}li{margin:5px 0}
+hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+@media(max-width:600px){h1{font-size:25px}.wrap{padding:0 17px 64px}}
+</style></head><body><div class="wrap">
+<header class="top"><div class="kicker">Auditoria independente · Eleições Gerais 2026</div>
+<h1>Como verificar</h1><p class="sub">Passo a passo para reproduzir integralmente a auditoria a partir da fonte original.</p>
+<nav><a href="index.html">Resumo</a><a href="relatorio.html">Relatório</a><a href="verificar.html" class='on'>Como verificar</a><a href="dados.html">Dados e hashes</a></nav></header>
+<p>Nada aqui pede confiança. Todo número deste site pode ser reproduzido por qualquer pessoa, a
+partir da fonte original, com ferramentas livres. Abaixo está como.</p>
+
+<h2>1. Conferir que os dados são os do TSE</h2>
+<p>O TSE publica, ao lado de cada boletim de urna, o resumo criptográfico SHA-512 do arquivo.
+Baixe o arquivo e o hash, e compare:</p>
+<pre><code>UF=RR
+BASE=https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/buweb
+curl -LO $BASE/bweb_1t_${UF}_051020261403.zip
+curl -L  $BASE/bweb_1t_${UF}_051020261403.zip.sha512
+
+shasum -a 512 bweb_1t_${UF}_051020261403.zip
+# o resultado deve ser idêntico ao conteúdo do arquivo .sha512</code></pre>
+<p>Se coincidir, o arquivo em suas mãos é bit a bit o mesmo distribuído pelo Tribunal — e o mesmo
+que foi auditado aqui.</p>
+
+<h2>2. Rodar as verificações</h2>
+<p>Os dois programas usados estão publicados, sem dependências além da biblioteca padrão do Python.</p>
+<pre><code>python3 audita_bu.py      # boletins de urna: verificações V1 a V6
+python3 audita_logs.py    # logs de urna:     verificações V7 a V9</code></pre>
+<p>Rodando sobre os mesmos arquivos, os números têm de bater com os publicados aqui. Se não
+baterem, o erro é nosso e queremos saber.</p>
+
+<h2>3. Ler um log de urna com as próprias mãos</h2>
+<p>O log registra cada evento da urna com data e hora. O arquivo <code>.jez</code> é um contêiner
+ZIP que encerra um texto simples:</p>
+<pre><code>unzip -j bu_imgbu_logjez_rdv_vscmr_2026_1t_RR.zip "*-log.jez" -d logs/
+cd logs &amp;&amp; unzip -o &lt;arquivo&gt;-log.jez        # produz logd.dat
+iconv -f latin1 -t utf8 logd.dat | grep "Voto confirmado"</code></pre>
+<p>Cada linha traz o instante do voto. O log não identifica o eleitor — ver as limitações no
+relatório.</p>
+
+<h2>4. Conferir que esta pesquisa não foi alterada depois</h2>
+<p>O conjunto de arquivos desta auditoria tem seu SHA-512 consolidado num manifesto, e esse
+manifesto foi carimbado com <a href="https://opentimestamps.org">OpenTimestamps</a>, que ancora o
+resumo na blockchain do Bitcoin. Qualquer pessoa pode comprovar, de forma independente e permanente,
+que o conteúdo existia naquela data — sem precisar confiar em nós, no provedor de hospedagem ou em
+qualquer empresa.</p>
+<pre><code>pip install opentimestamps-client
+ots verify manifesto.json.ots -f manifesto.json</code></pre>
+
+<h2>5. Conferir que a fonte não mudou</h2>
+<p>As páginas do catálogo do TSE foram registradas no Internet Archive em 26/10/2026 — um terceiro
+independente, fora do controle de qualquer das partes. Se o conteúdo publicado pelo Tribunal mudar,
+a comparação com o snapshot evidencia a diferença:</p>
+<ul>
+<li><a href="https://web.archive.org/web/20261026130950/https://dadosabertos.tse.jus.br/dataset/resultados-2026-boletim-de-urna">Catálogo — Boletim de Urna (snapshot 26/10/2026)</a></li>
+<li><a href="https://web.archive.org/web/20261026131000/https://dadosabertos.tse.jus.br/dataset/resultados-2026-arquivos-transmitidos-para-totalizacao">Catálogo — Arquivos de urna (snapshot 26/10/2026)</a></li>
+</ul>
+
+<h2>Como esta pesquisa está protegida</h2>
+<p>O site é estático: não há servidor de aplicação, banco de dados nem painel administrativo — não
+existe o que invadir. Mas a proteção real não está na hospedagem, e sim no desenho:</p>
+<ul>
+<li>o <strong>código-fonte e os dados</strong> ficam num repositório público, cujo histórico é uma
+cadeia criptográfica encadeada;</li>
+<li>o <strong>manifesto de hashes</strong> está carimbado em blockchain, com data verificável por qualquer um;</li>
+<li>os <strong>arquivos originais</strong> estão replicados em terceiros independentes;</li>
+<li>o <strong>site é descartável</strong> — é apenas uma vitrine. Derrubá-lo ou alterá-lo não
+destrói nem falsifica nada, porque a prova não mora nele.</li>
+</ul>
+
+<h2>Erros</h2>
+<p>Se você reproduzir e encontrar divergência, ela deve ser apontada. Uma auditoria que não aceita
+ser auditada não serve para nada.</p>
+
+<footer><p><strong>Auditoria de horários — Eleições Gerais 2026.</strong>
+Dados públicos do Tribunal Superior Eleitoral. Método e scripts abertos; qualquer pessoa pode reproduzir.</p>
+<p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ 245.463.
+Última atualização: 26/10/2026 10:26 (America/Sao_Paulo).</p>
+</footer></div></body></html>

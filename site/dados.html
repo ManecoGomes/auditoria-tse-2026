@@ -1,0 +1,502 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dados e hashes — Auditoria TSE 2026</title>
+<meta name="description" content="Resultado por UF e manifesto criptográfico dos arquivos auditados.">
+<meta name="robots" content="index,follow"><style>
+:root{--bg:#fbfaf8;--fg:#1a1a1a;--mut:#5c5955;--line:#ddd8d0;--accent:#8a2f2f;
+--card:#fff;--code:#f4f2ee;--ok:#1f6b3a;--warn:#8a5a00}
+@media(prefers-color-scheme:dark){:root{--bg:#15140f;--fg:#e8e4dc;--mut:#9a958c;
+--line:#332f28;--accent:#d98b8b;--card:#1c1a15;--code:#201e18;--ok:#6fbf8a;--warn:#d9a93f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 Charter,"Iowan Old Style",Georgia,serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 96px}
+header.top{border-bottom:1px solid var(--line);margin-bottom:40px;padding:28px 0 20px}
+header.top .kicker{font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.14em;
+text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-size:30px;line-height:1.2;margin:0 0 10px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:16px;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin:22px 0 0}
+nav a{font:500 13px/1 ui-sans-serif,system-ui;color:var(--mut);text-decoration:none;
+padding:8px 12px;border-radius:6px}
+nav a:hover{background:var(--code);color:var(--fg)}
+nav a.on{background:var(--accent);color:#fff}
+h2{font-size:21px;margin:40px 0 14px;font-weight:600;letter-spacing:-.01em;
+padding-bottom:7px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:28px 0 10px;font-weight:600}
+p{margin:0 0 15px}
+a{color:var(--accent)}
+table{border-collapse:collapse;width:100%;margin:18px 0;font:14px/1.45 ui-sans-serif,system-ui}
+th,td{border-bottom:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+td:first-child{font-weight:500}
+tbody tr:last-child td{border-bottom:none}
+.scroll{overflow-x:auto;margin:18px -4px;padding:0 4px}
+code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+code{background:var(--code);padding:2px 5px;border-radius:4px;font-size:.87em;
+overflow-wrap:anywhere}
+pre{background:var(--code);padding:16px 18px;border-radius:8px;overflow-x:auto;
+font-size:13px;line-height:1.55;border:1px solid var(--line)}
+pre code{background:none;padding:0}
+blockquote{margin:18px 0;padding:14px 18px;border-left:3px solid var(--accent);
+background:var(--card);border-radius:0 7px 7px 0}
+blockquote p:last-child{margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:15px 16px}
+.stat .n{font:600 25px/1.15 ui-sans-serif,system-ui;letter-spacing:-.02em;margin-bottom:5px}
+.stat .l{font:13px/1.35 ui-sans-serif,system-ui;color:var(--mut)}
+.zero .n{color:var(--ok)}
+.flag{display:inline-block;font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.05em;
+text-transform:uppercase;padding:4px 8px;border-radius:4px;background:var(--code);color:var(--mut)}
+.flag.ok{color:var(--ok)}
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+color:var(--mut);font:13px/1.6 ui-sans-serif,system-ui}
+ul,ol{margin:0 0 15px;padding-left:22px}li{margin:5px 0}
+hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+@media(max-width:600px){h1{font-size:25px}.wrap{padding:0 17px 64px}}
+</style></head><body><div class="wrap">
+<header class="top"><div class="kicker">Auditoria independente · Eleições Gerais 2026</div>
+<h1>Dados e hashes</h1><p class="sub">Resultado por UF e manifesto criptográfico dos arquivos auditados.</p>
+<nav><a href="index.html">Resumo</a><a href="relatorio.html">Relatório</a><a href="verificar.html">Como verificar</a><a href="dados.html" class='on'>Dados e hashes</a></nav></header>
+<h2>Resultado por unidade da Federação</h2>
+<p>Para cada UF: seções auditadas, comparecimento, eleitores aptos, resultado da conferência SHA-512
+contra o hash publicado pelo TSE, início do hash calculado, e a contagem de cada verificação.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>UF</th>
+<th style="text-align: right;">Seções</th>
+<th style="text-align: right;">Comparecimento</th>
+<th style="text-align: right;">Aptos</th>
+<th style="text-align: center;">SHA512</th>
+<th>Hash (início)</th>
+<th style="text-align: right;">Encerr.&gt;19h</th>
+<th style="text-align: right;">comp&gt;aptos</th>
+<th style="text-align: right;">enc&lt;abert</th>
+<th style="text-align: right;">BU&lt;enc</th>
+<th style="text-align: right;">abert&gt;8h30</th>
+<th style="text-align: right;">multi-urna</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AC</td>
+<td style="text-align: right;">2.270</td>
+<td style="text-align: right;">488.330</td>
+<td style="text-align: right;">613.742</td>
+<td style="text-align: center;">OK</td>
+<td><code>c095164588a0ad4f…</code></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>AL</td>
+<td style="text-align: right;">7.101</td>
+<td style="text-align: right;">1.938.428</td>
+<td style="text-align: right;">2.442.126</td>
+<td style="text-align: center;">OK</td>
+<td><code>dc4340c5d6ff227b…</code></td>
+<td style="text-align: right;">629</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>AM</td>
+<td style="text-align: right;">8.157</td>
+<td style="text-align: right;">2.234.549</td>
+<td style="text-align: right;">2.798.611</td>
+<td style="text-align: center;">OK</td>
+<td><code>143619aaf27787f2…</code></td>
+<td style="text-align: right;">375</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>AP</td>
+<td style="text-align: right;">1.914</td>
+<td style="text-align: right;">476.562</td>
+<td style="text-align: right;">576.988</td>
+<td style="text-align: center;">OK</td>
+<td><code>bd40faf189a3ba04…</code></td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>BA</td>
+<td style="text-align: right;">35.476</td>
+<td style="text-align: right;">9.053.601</td>
+<td style="text-align: right;">11.312.752</td>
+<td style="text-align: center;">OK</td>
+<td><code>8fc0b0c6e926af2c…</code></td>
+<td style="text-align: right;">2.298</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>CE</td>
+<td style="text-align: right;">23.765</td>
+<td style="text-align: right;">5.910.471</td>
+<td style="text-align: right;">6.996.545</td>
+<td style="text-align: center;">OK</td>
+<td><code>0ac4f8dbcd6eb06e…</code></td>
+<td style="text-align: right;">815</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>DF</td>
+<td style="text-align: right;">6.969</td>
+<td style="text-align: right;">1.831.396</td>
+<td style="text-align: right;">2.258.320</td>
+<td style="text-align: center;">OK</td>
+<td><code>10916bdfc73018da…</code></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>ES</td>
+<td style="text-align: right;">9.844</td>
+<td style="text-align: right;">2.352.282</td>
+<td style="text-align: right;">2.991.650</td>
+<td style="text-align: center;">OK</td>
+<td><code>fb3dc71fccd1528f…</code></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>GO</td>
+<td style="text-align: right;">15.686</td>
+<td style="text-align: right;">3.971.587</td>
+<td style="text-align: right;">5.080.590</td>
+<td style="text-align: center;">OK</td>
+<td><code>995aa51719659a4f…</code></td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>MA</td>
+<td style="text-align: right;">18.093</td>
+<td style="text-align: right;">4.160.343</td>
+<td style="text-align: right;">5.183.115</td>
+<td style="text-align: center;">OK</td>
+<td><code>28eda5cc72f2d7f2…</code></td>
+<td style="text-align: right;">732</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>MG</td>
+<td style="text-align: right;">52.062</td>
+<td style="text-align: right;">12.637.274</td>
+<td style="text-align: right;">16.372.372</td>
+<td style="text-align: center;">OK</td>
+<td><code>c0d4a82adb1fa1c8…</code></td>
+<td style="text-align: right;">279</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">83</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>MS</td>
+<td style="text-align: right;">7.106</td>
+<td style="text-align: right;">1.541.220</td>
+<td style="text-align: right;">2.024.430</td>
+<td style="text-align: center;">OK</td>
+<td><code>e62c150f16fff1a4…</code></td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>MT</td>
+<td style="text-align: right;">8.287</td>
+<td style="text-align: right;">2.052.133</td>
+<td style="text-align: right;">2.637.801</td>
+<td style="text-align: center;">OK</td>
+<td><code>0b97fc665251f8a8…</code></td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>PA</td>
+<td style="text-align: right;">20.827</td>
+<td style="text-align: right;">5.066.504</td>
+<td style="text-align: right;">6.262.397</td>
+<td style="text-align: center;">OK</td>
+<td><code>7ec84395ef9ce10f…</code></td>
+<td style="text-align: right;">781</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>PB</td>
+<td style="text-align: right;">10.712</td>
+<td style="text-align: right;">2.683.988</td>
+<td style="text-align: right;">3.248.531</td>
+<td style="text-align: center;">OK</td>
+<td><code>22784224b1e752b1…</code></td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>PE</td>
+<td style="text-align: right;">21.418</td>
+<td style="text-align: right;">5.911.062</td>
+<td style="text-align: right;">7.223.450</td>
+<td style="text-align: center;">OK</td>
+<td><code>8d01dd88ba42adf6…</code></td>
+<td style="text-align: right;">1.222</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>PI</td>
+<td style="text-align: right;">10.225</td>
+<td style="text-align: right;">2.240.883</td>
+<td style="text-align: right;">2.704.758</td>
+<td style="text-align: center;">OK</td>
+<td><code>c77cafd731174321…</code></td>
+<td style="text-align: right;">187</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>PR</td>
+<td style="text-align: right;">27.142</td>
+<td style="text-align: right;">6.841.457</td>
+<td style="text-align: right;">8.613.657</td>
+<td style="text-align: center;">OK</td>
+<td><code>762372bbafff5967…</code></td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">117</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>RJ</td>
+<td style="text-align: right;">37.675</td>
+<td style="text-align: right;">9.859.802</td>
+<td style="text-align: right;">12.857.648</td>
+<td style="text-align: center;">OK</td>
+<td><code>15fec8c7104496cb…</code></td>
+<td style="text-align: right;">294</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>RN</td>
+<td style="text-align: right;">8.115</td>
+<td style="text-align: right;">2.171.013</td>
+<td style="text-align: right;">2.659.825</td>
+<td style="text-align: center;">OK</td>
+<td><code>8c306c4501a9c5f9…</code></td>
+<td style="text-align: right;">309</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>RO</td>
+<td style="text-align: right;">4.698</td>
+<td style="text-align: right;">991.080</td>
+<td style="text-align: right;">1.265.893</td>
+<td style="text-align: center;">OK</td>
+<td><code>883b0c3cdf8047d9…</code></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>RR</td>
+<td style="text-align: right;">1.519</td>
+<td style="text-align: right;">332.772</td>
+<td style="text-align: right;">401.521</td>
+<td style="text-align: center;">OK</td>
+<td><code>4cde1919c20ba094…</code></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>RS</td>
+<td style="text-align: right;">27.547</td>
+<td style="text-align: right;">6.702.903</td>
+<td style="text-align: right;">8.522.545</td>
+<td style="text-align: center;">OK</td>
+<td><code>b6dd056af20ce876…</code></td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>SC</td>
+<td style="text-align: right;">17.326</td>
+<td style="text-align: right;">4.648.159</td>
+<td style="text-align: right;">5.734.651</td>
+<td style="text-align: center;">OK</td>
+<td><code>618c1cacf80bc296…</code></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>SE</td>
+<td style="text-align: right;">5.923</td>
+<td style="text-align: right;">1.439.082</td>
+<td style="text-align: right;">1.740.135</td>
+<td style="text-align: center;">OK</td>
+<td><code>dd1afedc6867ca78…</code></td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>SP</td>
+<td style="text-align: right;">103.656</td>
+<td style="text-align: right;">26.431.992</td>
+<td style="text-align: right;">34.122.892</td>
+<td style="text-align: center;">OK</td>
+<td><code>00c8b12de9077c82…</code></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>TO</td>
+<td style="text-align: right;">4.384</td>
+<td style="text-align: right;">965.196</td>
+<td style="text-align: right;">1.182.023</td>
+<td style="text-align: center;">OK</td>
+<td><code>b936b450693c0074…</code></td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>ZZ</td>
+<td style="text-align: right;">1.309</td>
+<td style="text-align: right;">341.766</td>
+<td style="text-align: right;">916.039</td>
+<td style="text-align: center;">OK</td>
+<td><code>001ae12d79a7d5f9…</code></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td><strong>BRASIL</strong></td>
+<td style="text-align: right;"><strong>499.206</strong></td>
+<td style="text-align: right;"><strong>125.275.835</strong></td>
+<td style="text-align: right;"><strong>158.745.007</strong></td>
+<td style="text-align: center;"><strong>28/28 OK</strong></td>
+<td>—</td>
+<td style="text-align: right;"><strong>8.324</strong></td>
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;"><strong>960</strong></td>
+<td style="text-align: right;"><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Arquivos preservados</h2>
+<p>Os arquivos originais do TSE foram baixados, conferidos e preservados, de modo que seu conteúdo
+nesta data possa ser demonstrado mesmo que a fonte venha a mudar. O manifesto completo, com o
+SHA-512 integral de cada arquivo, está em <code>manifesto.json</code>.</p>
+<p>Snapshots independentes do catálogo do TSE foram registrados no Internet Archive em 26/10/2026,
+produzindo evidência de terceiro sobre o conteúdo publicado naquela data.</p>
+
+<footer><p><strong>Auditoria de horários — Eleições Gerais 2026.</strong>
+Dados públicos do Tribunal Superior Eleitoral. Método e scripts abertos; qualquer pessoa pode reproduzir.</p>
+<p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ 245.463.
+Última atualização: 26/10/2026 10:26 (America/Sao_Paulo).</p>
+</footer></div></body></html>
