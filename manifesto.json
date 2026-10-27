@@ -1,9 +1,9 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "versao": 17,
+ "versao": 18,
  "escopo": "1o turno, por UF e por municipio",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-27T16:25:46.402825+00:00",
+ "gerado_em_utc": "2026-10-27T16:52:41.676293+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
  "n_arquivos": 1447,
  "arquivos": [
@@ -15,17 +15,17 @@
   {
    "arquivo": "dados/acervo-1t-custodia.json",
    "bytes": 4997,
-   "sha512": "cee27309609e5df8a89dfb56862992771cebacb3731bfbf7be5b48b1927e703d29e4c12ef7e3b4191c88f5b7d4503c566ebe8bb93ac421acf7a66a7a3992d740"
+   "sha512": "33d1d795d81e7f1f4beab579e41864de8136c2c234df4dc729e2a677f05bb0dc0c8248513e3d8edc435a844b3467122c637283d1f7b34a1f2425c160056d2396"
   },
   {
    "arquivo": "dados/analises/analises.json",
    "bytes": 11303,
-   "sha512": "92e9e717e42283e15ff14be2e87a009af284755e608c6cd83251865f03e976d3287bc57f78dc610065e284efc4f5a97fb08e6360df7522cfa7220d5bcea9bbab"
+   "sha512": "d60d4f55d89df370857fa75df3db4310ae6db8883d6ba69f42030d90173709826cd877a5f1c6671a9ef398d39d05dd391e2d6affb60d90a87a3a2ab24f8d7a5f"
   },
   {
    "arquivo": "dados/analises/demonstracao_1t.json",
    "bytes": 1350157,
-   "sha512": "0051a3a1f9b6249cac04b7128c00ead8f2095dbfbfc2dc4ca052f24b14972cefdd6e52a3324faa3dec833e184d3c3e1ad2170abc6c6103cb952fa94d0fb65731"
+   "sha512": "1a8d458351370f74887f83350d81761fa678805fa38dd5467ea8c514758afe519fe8927a4692e17f8cf9c3984566a9b1a6d95ba869bb734855391aca8da1f45b"
   },
   {
    "arquivo": "dados/analises/demonstracao_secoes.csv",
@@ -220,12 +220,12 @@
   {
    "arquivo": "manifesto.json",
    "bytes": 312096,
-   "sha512": "7224ec1e3b11bece262b79fada02b38b3e1eae99c1750fb6e51efb68ac8a9c6376a54db9d7ff300612bfab257afd9a3d7a0b3eeb2c61a3c3b1fdb10a2504561c"
+   "sha512": "06ccd90247a23920eb9d1c65545ae9be2b2721f70de4e361e2e2a4c5bdf1bfce2c925fdc13639da2af2028cf1b1ea8fbf6b1a4a7a07f93abc42e29f154d90d45"
   },
   {
    "arquivo": "manifesto.json.ots",
-   "bytes": 634,
-   "sha512": "cd76b6c1f95b28807b68ab4ceb9181437533276c2823048d09e50b5cd834460cb913b16d352e9bebbb99ef455c0ca7c20a29f3a763f1153d75486cda94ccb10b"
+   "bytes": 805,
+   "sha512": "d2f5cd87e098e9dfbe14ee8fff8e66a99d5b93f6bc517bd9f82f592323b18ebc43c5635f22c038d0c9db571c969c44c1b9b251a371c517e9b5f4e34b5e49f385"
   },
   {
    "arquivo": "manifesto.json.ots.bak",
@@ -289,8 +289,8 @@
   },
   {
    "arquivo": "scripts/pipeline/baixa_resiliente.sh",
-   "bytes": 3205,
-   "sha512": "99182ae63ac3231759f898638cf3ee7b30d2c2e87cdb72aa439c5a7b53cc17b8e409f17a6bec59ffcab97017fc271bbf408d28407121c86acc1793f1300d7fec"
+   "bytes": 3478,
+   "sha512": "d5990aec7af259bc821c02e5259ca66196aeefe6932c583ca0c8e6cc2ef08958040c60a4922c573ab2ed98e54f69508459d25b6a1292b0efef0fc485fa368b8a"
   },
   {
    "arquivo": "scripts/pipeline/coleta.py",

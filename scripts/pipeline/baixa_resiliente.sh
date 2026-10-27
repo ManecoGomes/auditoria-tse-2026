@@ -27,8 +27,11 @@ for uf in "$@"; do
       # --limit-rate: o SSD externo e USB; a 25 MB/s de escrita as leituras de diretorio
       # param (demonstra.py ficou 7 min preso em opendir em 2026-10-27 12:25). 15 MB/s
       # deixa folga para o publicador ler o acervo enquanto o download corre.
-      curl -sL -C - --retry 10 --retry-delay 5 --retry-all-errors \
-           --speed-time 120 --speed-limit 10240 --limit-rate "${LIMITE:-15M}" -o "$z" "$u"
+      # Sem --retry interno: ao "retry", o curl TRUNCA o arquivo ao tamanho de quando a
+      # chamada comecou e perde o que baixou (observado 2026-10-27: tamanho caindo entre
+      # tentativas, 1,7 GB/h efetivos com teto de 15 MB/s). O while acima ja repete, e cada
+      # chamada nova retoma do tamanho real do arquivo (-C -).
+      curl -sL -C - --speed-time 120 --speed-limit 10240 --limit-rate "${LIMITE:-15M}" -o "$z" "$u"
       novo=$(stat -f %z "$z" 2>/dev/null || echo 0)
       log "$uf: passe $passe tentativa $t -> $novo/$esperado ($((novo*100/esperado))%)"
       [ "$novo" -ge "$esperado" ] && break
