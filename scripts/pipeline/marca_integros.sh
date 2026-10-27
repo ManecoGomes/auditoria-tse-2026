@@ -17,7 +17,7 @@ for z in "$ACERVO"/bu_imgbu_logjez_rdv_vscmr_2026_1t_*.zip; do
   if nice -n 10 "$PY" -c "import zipfile,sys; sys.exit(0 if zipfile.ZipFile('$z').testzip() is None else 1)" 2>/dev/null; then
     echo "$tam" > "$z.ok"; log "$uf: testzip OK — sidecar gravado ($tam bytes)"
   else
-    rm -f "$z.ok"; log "$uf: testzip FALHOU — segue sem sidecar, sera reb aixado"
+    rm -f "$z.ok"; log "$uf: testzip FALHOU — segue sem sidecar, sera rebaixado"
   fi
 done
 log "=== fim marca_integros ${*:-todos} ==="

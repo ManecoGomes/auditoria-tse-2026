@@ -3,7 +3,7 @@
  "versao": 3,
  "escopo": "1o turno, por UF e por municipio",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-27T08:04:47.059597+00:00",
+ "gerado_em_utc": "2026-10-27T08:09:06.054458+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
  "n_arquivos": 973,
  "arquivos": [
@@ -15,12 +15,12 @@
   {
    "arquivo": "dados/analises/analises.json",
    "bytes": 11044,
-   "sha512": "8d8cae563da70301df19b4f0c566d2dcd25fa25b7398cfd888cd2c31d010b2860c36a1998823149ce51fdcba5637d8a6c8ea7bbf399932b86dfccb66e35b4b12"
+   "sha512": "d49a6a5a51081bd37a4f54516355ce75194fd2fd2c966cf8f6f936b6cca3dc3bdba474d56371b27399eb0802970d28a7ef991534e6cd14f7bd55ac816c3ebb8e"
   },
   {
    "arquivo": "dados/analises/demonstracao_1t.json",
    "bytes": 528859,
-   "sha512": "45b07fb507436b099235b28e3574ac83d33ec61d9ec8e0b8de9b9c3889ec5437b62b6c69015ed6b7d852f7e40fc3a002c8dd296e7469266f20f4573b7f02309d"
+   "sha512": "a4962cf14bbf6ae6982ddde347e7fa3abe29bdb7acab2eef1aed6a0f1d11709e1d6f629c474f3d7ebfc21843e77c441bbd39afd4c12dce421f79daeb6607450f"
   },
   {
    "arquivo": "dados/analises/demonstracao_secoes.csv",
@@ -209,13 +209,13 @@
   },
   {
    "arquivo": "manifesto.json",
-   "bytes": 16296,
-   "sha512": "2bebe08f6f0bbe6984b25303ab6d9f3468815b3bab0f4a4eb7bca048a037b8ea2911aa46e591c09983a869b8bc825d318c7ba095831d98ea79914b257f96b8b4"
+   "bytes": 209873,
+   "sha512": "1eb18c9b1f03ab3bcb2c7f5194c6032b3d9d14a01cc72ac7e18c6d56667fb5baaca1a9aafcef7810ff69b44ec6d5ceeb3298767557f35b931d4ae5d68d89e68a"
   },
   {
    "arquivo": "manifesto.json.ots",
-   "bytes": 980,
-   "sha512": "308bd1c23194d6adb9a3452605d929ac9e3bccbabbfebdf6d9cc0819c6c9fa2bc65bfbca343f59acebe8b6bf874aa231e1e2b42523100a5229693cbe2ff1f246"
+   "bytes": 945,
+   "sha512": "03c88c206886df982ee2243b60ecf1d7742ce0599d789d151f77235c2482f6a0b7c68472be2c474ae47ed5681af54ed4366aaedbde24708532fb861011e5f5d1"
   },
   {
    "arquivo": "manifesto.json.ots.bak",
@@ -264,8 +264,8 @@
   },
   {
    "arquivo": "scripts/diagnostico.sh",
-   "bytes": 3913,
-   "sha512": "2ea5e0dee879917af9d557fc9eaa86e89ab1239d3888a1a005d27be9c3ee150d9e37c0ea6c88094679dc885749fb6fd8ea945839296537483fbc00a3a125d4d8"
+   "bytes": 3950,
+   "sha512": "cca37c6838b7cadb625c87797937dfe254404890c89b7d21a22b1880cd8c9a3ee23f536f30836ccc89658988d0ea0516d48397cf62e4f9f9266e8ebd1ba789a9"
   },
   {
    "arquivo": "scripts/pipeline/analises.py",
@@ -314,8 +314,8 @@
   },
   {
    "arquivo": "scripts/pipeline/marca_integros.sh",
-   "bytes": 1277,
-   "sha512": "d895164ef765d3f0ac28d40b872797cf25ef9dc50e19d6db7f0ba8cd3463d5532ad03e6c4cfe43dfa594fd2c7ba8a2f2d6182f1e49bd65025ecd89833972f61e"
+   "bytes": 1276,
+   "sha512": "d4ea2f68d9a9d352637dc36e6e37c3f4a475d7592ae9bfa2a5dd852435a0c59f79168e0ccead1e298121b902d1c7bca65aee010acfd31b501dfcf932732e7104"
   },
   {
    "arquivo": "site/.gitignore",

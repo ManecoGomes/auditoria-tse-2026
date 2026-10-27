@@ -13,8 +13,8 @@ tail -1 "$P/vigia/vigia.log" 2>/dev/null || echo "sem vigia.log"
 [ -f "$P/vigia/DISPONIVEL_2T.txt" ] && echo "FLAG DISPONIVEL_2T PRESENTE — o 2o turno saiu" || echo "flag 2T ausente: TSE ainda nao publicou"
 
 echo; echo "-- 2. tarefas agendadas --"
-for j in com.maneco.vigia-tse-2t com.maneco.pipeline-tse-2t; do
-  st=$(launchctl print "gui/$(id -u)/$j" 2>/dev/null | awk '/last exit code/{print $NF}')
+for j in com.maneco.vigia-tse-2t com.maneco.pipeline-tse-2t com.maneco.destrava-tse; do
+  st=$(launchctl print "gui/$(id -u)/$j" 2>/dev/null | sed -n 's/.*last exit code = //p' | tr -d '()')
   carregado=$(launchctl list 2>/dev/null | grep -c "$j")
   echo "$j: carregado=$carregado ultimo_exit=${st:-?}"
 done
