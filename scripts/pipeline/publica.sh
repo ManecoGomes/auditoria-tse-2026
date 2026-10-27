@@ -20,7 +20,11 @@ cp "$PL/analises.json" "$PL/resumo_2t.json" "$R/dados/analises/" 2>/dev/null || 
 cp "$PL/resultados/E4_ecologica.csv" "$R/dados/analises/" 2>/dev/null || true
 cp "$PL"/{extrai_votos.py,analises.py} "$R/scripts/pipeline/" 2>/dev/null || true
 cp -r "$PL/resultados/2t" "$R/dados/" 2>/dev/null || true
-cp "$PL"/{coleta.py,audita.py,compara.py} "$R/scripts/pipeline/" 2>/dev/null || true
+cp "$PL"/{coleta.py,audita.py,compara.py,demonstra.py,gera_demo_html.py} "$R/scripts/pipeline/" 2>/dev/null || true
+cp "$PL/demonstracao_2t.json" "$PL/demonstracao_secoes_2t.csv" "$PL/secoes_rapidas_janela_final_2t.csv" "$R/dados/analises/" 2>/dev/null || true
+
+# --- site: paginas nacional/estado/municipio com o 2T ao lado do 1T (C4b, E5) ---
+"$PY" -u "$PL/gera_demo_html.py" || echo "gera_demo_html falhou (segue com o relatorio)"
 
 # --- site: pagina do 2o turno ---
 pandoc -f gfm -t html "$P/relatorio/RELATORIO-2T.md" -o /tmp/rel2t.html

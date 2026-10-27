@@ -47,6 +47,16 @@ def horas_secao(t):
                  "apos_lacre": i(r.get("apos_lacre"))}
             e["de17_a_19h"] = i(r["de17_a_19h"]) if r.get("de17_a_19h") not in (None, "") else e["apos17h"]
             e["apos_19h"]   = i(r.get("apos_19h"))
+            # C4b (emenda de 2026-10-27): bloco B (17h em diante) por secao, com votos discrepantes
+            def fl(v):
+                try: return float(v)
+                except (TypeError, ValueError): return None
+            e["votos_final"]   = i(r.get("votos_17h_em_diante"))
+            e["disc_final"]    = i(r.get("discrepantes_final"))
+            e["disc_antes"]    = i(r.get("discrepantes_antes"))
+            e["media_final"]   = fl(r.get("media_s_final"))
+            e["mediana_final"] = fl(r.get("mediana_s_final"))
+            e["abaixo20_final"]= i(r.get("abaixo_20s_final"))
             d[k] = e
     return d
 
@@ -115,6 +125,48 @@ if v1 and v2:
         "variacao_mediana_pct": round(statistics.median([100*(a-b)/b for a, b in comp]), 3) if comp else None}
     print(f"E1: {len(comuns)} seções comuns aos dois turnos", flush=True)
 
+# ---------- E6 (emenda 2026-10-27): depois das 17h, secao a secao, 1T contra 2T ----------
+# A secao e controle de si mesma: compara-se o ritmo depois das 17h do 2T com o do 1T na
+# MESMA secao. O que exige explicacao: votos discrepantes (abaixo de 25% da mediana da propria
+# secao ate as 17h) e intervalos <20 s no 2T onde nao havia no 1T; mediana <20 s com 10+ votos.
+if h1 and h2:
+    comuns = [k for k in set(h1) & set(h2) if h2[k].get("votos_final", 0) >= 10]
+    novo20 = [k for k in comuns if h2[k]["abaixo20_final"] > 0 and h1[k]["abaixo20_final"] == 0]
+    disc2 = sum(h2[k]["disc_final"] for k in comuns); disc1 = sum(h1[k]["disc_final"] for k in comuns)
+    novodisc = [k for k in comuns if h2[k]["disc_final"] > 0 and h1[k]["disc_final"] == 0]
+    rap2 = [k for k in comuns if h2[k]["mediana_final"] is not None and h2[k]["mediana_final"] < 20]
+    rap1 = [k for k in comuns if h1[k]["mediana_final"] is not None and h1[k]["mediana_final"] < 20]
+    dm = [h2[k]["media_final"] - h1[k]["media_final"] for k in comuns
+          if h1[k]["media_final"] is not None and h2[k]["media_final"] is not None]
+    def ex(k):
+        return {"secao": "-".join(map(str, k)), "uf": h2[k]["uf"], "municipio_nome": h2[k].get("municipio_nome", ""),
+                "votos_final_1t": h1[k].get("votos_final"), "votos_final_2t": h2[k].get("votos_final"),
+                "media_final_1t": h1[k]["media_final"], "media_final_2t": h2[k]["media_final"],
+                "mediana_final_2t": h2[k]["mediana_final"],
+                "discrepantes_final_1t": h1[k]["disc_final"], "discrepantes_final_2t": h2[k]["disc_final"],
+                "abaixo20_final_1t": h1[k]["abaixo20_final"], "abaixo20_final_2t": h2[k]["abaixo20_final"]}
+    porm = collections.Counter((h2[k]["uf"], k[0], h2[k].get("municipio_nome", "")) for k in rap2)
+    OUT["blocos"]["E6_janela_final_secoes"] = {
+        "inicio_janela": "17:00", "secoes_comuns_com_10_votos_na_janela_2t": len(comuns),
+        "votos_discrepantes_apos_17h_2t": disc2, "votos_discrepantes_apos_17h_1t_mesmas_secoes": disc1,
+        "secoes_2t_com_discrepantes_sem_ter_no_1t": len(novodisc),
+        "secoes_2t_com_intervalo_abaixo_20s_sem_ter_no_1t": len(novo20),
+        "secoes_2t_mediana_final_abaixo_20s": len(rap2),
+        "secoes_1t_mediana_final_abaixo_20s": len(rap1),
+        "variacao_media_final_2t_menos_1t_s": {
+            "mediana": round(statistics.median(dm), 2) if dm else None,
+            "p10": round(sorted(dm)[int(0.10*len(dm))], 2) if dm else None,
+            "p90": round(sorted(dm)[int(0.90*len(dm))], 2) if dm else None},
+        "municipios_com_secoes_rapidas_2t": [{"uf": u, "municipio": c, "nome": n, "secoes": q}
+                                             for (u, c, n), q in porm.most_common(50)],
+        "exemplos_rapidas_2t": [ex(k) for k in sorted(rap2, key=lambda k: h2[k]["mediana_final"])[:100]],
+        "exemplos_discrepantes_2t": [ex(k) for k in sorted(novodisc, key=lambda k: -h2[k]["disc_final"])[:100]],
+        "exemplos_novo_abaixo20": [ex(k) for k in sorted(novo20, key=lambda k: -h2[k]["abaixo20_final"])[:100]]}
+    print(f"E6: {len(comuns)} seções comuns com 10+ votos após 17h no 2T; discrepantes 2T={disc2} 1T={disc1}; "
+          f"{len(rap2)} com mediana <20 s no 2T ({len(rap1)} no 1T); {len(novo20)} com <20 s só no 2T", flush=True)
+else:
+    OUT["blocos"]["E6_janela_final_secoes"] = {"estado": "aguardando o 2º turno", "inicio_janela": "17:00"}
+
 # ---------- E5: municipio por municipio, 1T contra 2T ----------
 if m1 and m2:
     linhas = []
@@ -133,13 +185,20 @@ if m1 and m2:
             "abaixo20s_2t": b2["C4_intervalos"]["abaixo_de_20s"],
             "mediana_s_1t": b1["C4_intervalos"]["mediana_s"],
             "mediana_s_2t": b2["C4_intervalos"]["mediana_s"],
+            "atend_final_1t": ((b1.get("C4b_reta_final") or {}).get("janelas", {}).get("final") or {}).get("media_ate_120s"),
+            "atend_final_2t": ((b2.get("C4b_reta_final") or {}).get("janelas", {}).get("final") or {}).get("media_ate_120s"),
+            "abaixo20_final_1t": ((b1.get("C4b_reta_final") or {}).get("janelas", {}).get("final") or {}).get("abaixo_de_20s"),
+            "abaixo20_final_2t": ((b2.get("C4b_reta_final") or {}).get("janelas", {}).get("final") or {}).get("abaixo_de_20s"),
+            "secoes_final_rapida_1t": (b1.get("C4b_reta_final") or {}).get("secoes_final_rapida"),
+            "secoes_final_rapida_2t": (b2.get("C4b_reta_final") or {}).get("secoes_final_rapida"),
             "a2_divergentes_1t": b1["A2_triangulacao"]["divergentes"],
             "a2_divergentes_2t": b2["A2_triangulacao"]["divergentes"]})
     with open(f"{P}/pipeline/E5_municipios_1t_2t.csv", "w", newline="") as f:
         if linhas:
             w = csv.DictWriter(f, fieldnames=list(linhas[0])); w.writeheader(); w.writerows(linhas)
     piora = [l for l in linhas if l["apos_lacre_2t"] > l["apos_lacre_1t"]
-             or l["abaixo20s_2t"] > l["abaixo20s_1t"]]
+             or l["abaixo20s_2t"] > l["abaixo20s_1t"]
+             or (l["secoes_final_rapida_2t"] or 0) > (l["secoes_final_rapida_1t"] or 0)]
     OUT["blocos"]["E5_municipios"] = {
         "municipios_comuns": len(linhas),
         "com_indicador_pior_no_2t": len(piora),

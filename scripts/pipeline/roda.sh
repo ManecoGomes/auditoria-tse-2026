@@ -36,6 +36,12 @@ log "[2/6] auditando boletins (prazo legal 19h)"
 log "[2/6] auditando logs de urna"
 "$PY" -u "$PL/audita.py" 2 logs 19 >> "$LOG" 2>&1 || true
 
+# ---------- 2a. bateria do plano por UF e municipio, sobre os logs do 2T ----------
+# (demonstra.py 2 -> demo2t/*.json, demonstracao_2t.json, demonstracao_secoes_2t.csv;
+#  e o que alimenta o bloco E5 de analises.py e as paginas de municipio do site)
+log "[2/6] bateria por UF/município sobre os logs do 2T (C4b: 2h30 finais)"
+"$PY" -u "$PL/demonstra.py" 2 >> "$LOG" 2>&1 || log "demonstra.py 2 falhou (segue)"
+
 # ---------- 2b. extracao de votos por secao ----------
 log "[2/6] extraindo votos por seção (base do teste E4)"
 "$PY" -u "$PL/extrai_votos.py" 2 >> "$LOG" 2>&1 || true

@@ -18,6 +18,18 @@ for _f in sorted(_glob.glob(f"{DEMO}/*_municipios.json")):
     if _j.get("uf") in PORUF:
         PORMUN[_j["uf"]] = _j.get("municipios", {})
 
+# 2o turno: entra sozinho quando demonstra.py 2 tiver gerado o arquivo
+D2 = None; PORUF2 = {}; PORMUN2 = {}
+if os.path.exists(f"{P}/pipeline/demonstracao_2t.json"):
+    try:
+        D2 = json.load(open(f"{P}/pipeline/demonstracao_2t.json")); PORUF2 = D2.get("por_uf", {})
+        for _f in sorted(_glob.glob("/Volumes/SSD1TB/acervo-tse/auditoria/demo2t/*_municipios.json")):
+            try: _j = json.load(open(_f))
+            except Exception: continue
+            if _j.get("uf") in PORUF2: PORMUN2[_j["uf"]] = _j.get("municipios", {})
+    except Exception as e:
+        print(f"2T ilegivel ({e}) — seguindo so com o 1T"); D2 = None
+
 def slug_mun(cod): return str(cod)
 
 N = lambda x: f"{x:,}".replace(",", ".")
@@ -67,6 +79,199 @@ def svg_intervalos(d):
             f'<text x="{60+20*bw:.0f}" y="18" font-size="11" fill="#c0462f">'
             f'◀ faixa implausível (&lt;20 s): {rot}</text></svg>')
 
+def svg_reta(d):
+    # distribuicao normalizada (em % dos intervalos): ate as 17h x 17h em diante
+    c = (d.get("C4b_reta_final") or {}).get("distribuicao")
+    if not c or not c.get("antes") or not c.get("final"): return ""
+    A = {int(k): v for k, v in c["antes"].items() if int(k) <= 300}
+    B = {int(k): v for k, v in c["final"].items() if int(k) <= 300}
+    ta, tb = sum(c["antes"].values()) or 1, sum(c["final"].values()) or 1
+    pa = {k: 100*v/ta for k, v in A.items()}; pb = {k: 100*v/tb for k, v in B.items()}
+    mx = max(list(pa.values()) + list(pb.values()) + [0.01])
+    W, H = 900, 220
+    x = lambda sg: 60 + sg*(W-80)/300
+    y = lambda v: H-30-(v/mx)*(H-56)
+    pathA = " ".join(f"{'M' if i==0 else 'L'}{x(k):.1f},{y(pa.get(k,0)):.1f}" for i, k in enumerate(range(0, 301)))
+    pathB = " ".join(f"{'M' if i==0 else 'L'}{x(k):.1f},{y(pb.get(k,0)):.1f}" for i, k in enumerate(range(0, 301)))
+    return (f'<svg viewBox="0 0 {W} {H}" style="width:100%;height:auto" role="img" '
+            f'aria-label="Intervalo entre votos: até as 17h e a partir das 17h">'
+            f'<line x1="60" y1="{H-30}" x2="{W-20}" y2="{H-30}" stroke="#38342b"/>'
+            f'<line x1="{x(20):.1f}" y1="20" x2="{x(20):.1f}" y2="{H-30}" stroke="#c0462f" stroke-dasharray="4 3"/>'
+            f'<path d="{pathA}" fill="none" stroke="#4fa96f" stroke-width="2"/>'
+            f'<path d="{pathB}" fill="none" stroke="#e8a33d" stroke-width="2"/>'
+            f'<text x="60" y="{H-10}" font-size="11" fill="#8a857c">0 s</text>'
+            f'<text x="{W-20}" y="{H-10}" font-size="11" fill="#8a857c" text-anchor="end">300 s</text>'
+            f'<text x="{x(20)+5:.0f}" y="32" font-size="11" fill="#c0462f">20 s</text>'
+            f'<text x="{W-20}" y="22" font-size="12" fill="#4fa96f" text-anchor="end">— até as 17h</text>'
+            f'<text x="{W-20}" y="40" font-size="12" fill="#e8a33d" text-anchor="end">— 17h em diante</text>'
+            f'<text x="8" y="22" font-size="11" fill="#8a857c">% dos intervalos</text></svg>')
+
+ROT_JAN = {"antes": "<strong>A — dia normal, até as 17h</strong>", "a1630": "&nbsp;&nbsp;↳ última meia hora, 16h30 a 16h59",
+           "final": "<strong>B — 17h em diante (no 2º turno, as 2 horas a mais)</strong>",
+           "f17": "&nbsp;&nbsp;↳ 17h00 a 17h59", "f18": "&nbsp;&nbsp;↳ 18h00 a 18h59",
+           "f19": "&nbsp;&nbsp;↳ 19h00 a 19h29", "f1930": "&nbsp;&nbsp;↳ 19h30 em diante"}
+ORD_JAN = ("antes", "a1630", "final", "f17", "f18", "f19", "f1930")
+
+def tabela_rapidas(csvp, pre="", lim=60):
+    """Secoes apontadas uma a uma: intervalo <20 s ou mediana <20 s na janela final."""
+    import csv as _csv
+    if not os.path.exists(csvp): return "<p><em>Lista de seções ainda não gerada.</em></p>"
+    rows = list(_csv.DictReader(open(csvp)))
+    if not rows:
+        return ('<p class="ok"><strong>Nenhuma seção apontada.</strong> Em nenhuma seção auditada houve, depois das 17h, '
+                'voto discrepante do ritmo da própria seção, intervalo abaixo de 20 segundos ou mediana abaixo de 20 segundos.</p>')
+    rows.sort(key=lambda r: (-int(r.get("discrepantes_final") or 0), -int(r.get("abaixo_20s_final") or 0), float(r.get("mediana_s_final") or 9999)))
+    tot_disc = sum(int(r.get("discrepantes_final") or 0) for r in rows)
+    tr = ""
+    for r in rows[:lim]:
+        href = f'{pre}estados/{r["uf"]}/{r["municipio"]}.html'
+        tr += (f'<tr><td>{r["uf"]}</td><td><a href="{href}">{r["municipio_nome"] or r["municipio"]}</a></td>'
+               f'<td>{r["zona"]}/{r["secao"]}</td><td class="mono">{r["urna_serie"]}</td>'
+               f'<td style="text-align:right">{r["votos"]}</td><td style="text-align:right">{r["votos_17h_em_diante"]}</td>'
+               f'<td style="text-align:right">{_f(float(r["media_s_antes"])) if r["media_s_antes"] else "—"}</td>'
+               f'<td style="text-align:right">{_f(float(r["media_s_final"])) if r["media_s_final"] else "—"}</td>'
+               f'<td style="text-align:right">{_f(float(r["limiar_discrepante_s"])) if r.get("limiar_discrepante_s") else "—"}</td>'
+               f'<td style="text-align:right">{r.get("discrepantes_antes","")}</td>'
+               f'<td style="text-align:right"><strong>{r.get("discrepantes_final","")}</strong></td>'
+               f'<td style="text-align:right">{r["abaixo_20s_final"]}</td><td>{r["motivo"]}</td></tr>')
+    return (f'<p><strong>{N(len(rows))} seções apontadas</strong>, somando <strong>{N(tot_disc)} votos discrepantes depois das 17h</strong>'
+            + (f' (as {lim} mais graves abaixo; todas no CSV)' if len(rows) > lim else '') +
+            '. Cada linha é uma urna identificada pelo número de série; o limiar é o de cada seção (25% da mediana dela até as 17h).</p>'
+            '<div class="scroll"><table><thead><tr><th>UF</th><th>Município</th><th>Zona/Seção</th><th>Urna</th>'
+            '<th style="text-align:right">Votos</th><th style="text-align:right">Votos<br>após 17h</th>'
+            '<th style="text-align:right">Tempo/voto<br>até 17h</th><th style="text-align:right">Tempo/voto<br>após 17h</th>'
+            '<th style="text-align:right">Limiar<br>da seção</th><th style="text-align:right">Discrep.<br>até 17h</th>'
+            '<th style="text-align:right">Discrep.<br>após 17h</th><th style="text-align:right">&lt;20 s<br>após 17h</th><th>Motivo</th></tr></thead>'
+            f'<tbody>{tr}</tbody></table></div>')
+
+def svg_serie(d, titulo="tempo médio entre votos, de 10 em 10 minutos, de 16h30 em diante"):
+    se = (d.get("C4b_reta_final") or {}).get("serie_10min")
+    if not se: return ""
+    pts = [(b, e) for b, e in sorted(se.items()) if b <= "19:50" and e.get("media_s") is not None]
+    if len(pts) < 2: return ""
+    mx = max(e["media_s"] for _, e in pts) or 1
+    W, H = 900, 230
+    bw = (W-80)/len(pts)
+    x = lambda i: 60 + i*bw
+    y = lambda v: H-40-(v/mx)*(H-70)
+    rects = "".join(f'<rect x="{x(i)+1:.1f}" y="{y(e["media_s"]):.1f}" width="{max(bw-2,1):.1f}" '
+                    f'height="{(e["media_s"]/mx)*(H-70):.1f}" fill="{"#c0462f" if e.get("abaixo_de_20s") else "#e8a33d"}"/>'
+                    f'<text x="{x(i)+bw/2:.1f}" y="{y(e["media_s"])-4:.1f}" font-size="10" fill="#8a857c" '
+                    f'text-anchor="middle">{e["media_s"]:.0f}</text>' for i, (_, e) in enumerate(pts))
+    eixo = "".join(f'<text x="{x(i)+bw/2:.1f}" y="{H-24}" font-size="10" fill="#8a857c" text-anchor="middle">{b}</text>'
+                   f'<text x="{x(i)+bw/2:.1f}" y="{H-10}" font-size="9" fill="#8a857c" text-anchor="middle">{N(e["votos"])}</text>'
+                   for i, (b, e) in enumerate(pts) if i % 2 == 0)
+    marcas = ""
+    for i, (b, _) in enumerate(pts):
+        if b in ("17:00", "19:00"):
+            marcas += (f'<line x1="{x(i):.1f}" y1="18" x2="{x(i):.1f}" y2="{H-40}" stroke="#c0462f" stroke-dasharray="4 3"/>'
+                       f'<text x="{x(i)+4:.0f}" y="16" font-size="11" fill="#c0462f">{b[:2]}h</text>')
+    return (f'<svg viewBox="0 0 {W} {H}" style="width:100%;height:auto" role="img" aria-label="{titulo}">'
+            f'<line x1="60" y1="{H-40}" x2="{W-20}" y2="{H-40}" stroke="#38342b"/>{marcas}{rects}{eixo}'
+            f'<text x="8" y="16" font-size="11" fill="#8a857c">segundos entre votos (média) · abaixo: votos no bloco</text></svg>')
+def _f(v, suf="s"):
+    return "—" if v is None else (f"{v:.0f}{suf}" if isinstance(v, (int, float)) else str(v))
+
+def tabela_janelas(d):
+    c = d.get("C4b_reta_final")
+    if not c: return ""
+    j = c.get("janelas") or {}
+    rows = ""
+    for k in ORD_JAN:
+        r = j.get(k)
+        if not r: continue
+        pct = f'{r["pct_abaixo_20s"]:.2f}%' if r.get("pct_abaixo_20s") is not None else "—"
+        pdc = f'{r["pct_discrepantes"]:.3f}%' if r.get("pct_discrepantes") is not None else "—"
+        rows += (f'<tr><td>{ROT_JAN[k]}</td><td style="text-align:right">{N(r["votos"])}</td>'
+                 f'<td style="text-align:right">{_f(r.get("media_s"))}</td>'
+                 f'<td style="text-align:right">{_f(r.get("mediana_s"))}</td>'
+                 f'<td style="text-align:right">{_f(r.get("media_ate_120s"))}</td>'
+                 f'<td style="text-align:right"><strong>{N(r.get("discrepantes", 0))}</strong></td>'
+                 f'<td style="text-align:right">{pdc}</td>'
+                 f'<td style="text-align:right">{N(r["abaixo_de_20s"])}</td>'
+                 f'<td style="text-align:right">{pct}</td></tr>')
+    return ('<div class="scroll"><table><thead><tr><th>Janela</th><th style="text-align:right">Votos</th>'
+            '<th style="text-align:right">Tempo médio<br>por voto</th>'
+            '<th style="text-align:right">Mediana</th><th style="text-align:right">Atendimento<br>(média dos ≤120 s)</th>'
+            '<th style="text-align:right">Votos<br>discrepantes</th><th style="text-align:right">% discre-<br>pantes</th>'
+            '<th style="text-align:right">&lt;20 s</th><th style="text-align:right">% &lt;20 s</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></div>')
+
+def frase_c4b(c, rotulo_turno=""):
+    j = c.get("janelas") or {}
+    a, r = j.get("antes") or {}, j.get("final") or {}
+    if not (a.get("media_s") and r.get("media_s")): return ""
+    return (f'{rotulo_turno}Tempo médio por voto de <strong>{_f(a["media_s"])}</strong> até as 17h contra '
+            f'<strong>{_f(r["media_s"])}</strong> depois das 17h — razão de <strong>{c.get("aceleracao")}</strong>. '
+            f'Descontando o tempo ocioso (só intervalos de até 120 s), o atendimento leva '
+            f'<strong>{_f(a.get("media_ate_120s"))}</strong> antes e <strong>{_f(r.get("media_ate_120s"))}</strong> depois. '
+            f'<strong>Votos discrepantes depois das 17h: {N(r.get("discrepantes",0))}</strong> '
+            f'de {N(r.get("votos",0))} ({r["pct_discrepantes"] if r.get("pct_discrepantes") is not None else "—"}%); '
+            f'antes das 17h, {N(a.get("discrepantes",0))} de {N(a.get("votos",0))} ({a["pct_discrepantes"] if a.get("pct_discrepantes") is not None else "—"}%). '
+            f'Seções com pelo menos 10 votos depois das 17h: <strong>{N(c.get("secoes_final_com_10_votos",0))}</strong>; '
+            f'dessas, com mediana abaixo de 20 segundos: <strong>{N(c.get("secoes_final_rapida",0))}</strong>.')
+
+def comparacao_turnos(c1, c2):
+    """Tabela lado a lado 1T x 2T, janela a janela, do que importa: atendimento e faixa <20 s."""
+    j1, j2 = c1.get("janelas") or {}, c2.get("janelas") or {}
+    rows = ""
+    for k in ORD_JAN:
+        a, b = j1.get(k) or {}, j2.get(k) or {}
+        if not a and not b: continue
+        rows += (f'<tr><td>{ROT_JAN[k]}</td>'
+                 f'<td style="text-align:right">{N(a.get("votos",0))}</td><td style="text-align:right">{N(b.get("votos",0))}</td>'
+                 f'<td style="text-align:right">{_f(a.get("media_s"))}</td><td style="text-align:right"><strong>{_f(b.get("media_s"))}</strong></td>'
+                 f'<td style="text-align:right">{_f(a.get("media_ate_120s"))}</td><td style="text-align:right"><strong>{_f(b.get("media_ate_120s"))}</strong></td>'
+                 f'<td style="text-align:right">{N(a.get("discrepantes",0))}</td><td style="text-align:right"><strong>{N(b.get("discrepantes",0))}</strong></td>'
+                 f'<td style="text-align:right">{N(a.get("abaixo_de_20s",0))}</td><td style="text-align:right"><strong>{N(b.get("abaixo_de_20s",0))}</strong></td></tr>')
+    rows += (f'<tr><td><em>Seções com mediana &lt;20 s depois das 17h</em></td><td></td><td></td><td></td><td></td><td></td><td></td>'
+             f'<td style="text-align:right">{N(c1.get("secoes_final_rapida",0))}</td>'
+             f'<td style="text-align:right"><strong>{N(c2.get("secoes_final_rapida",0))}</strong></td><td></td><td></td></tr>')
+    return ('<div class="scroll"><table><thead><tr><th>Janela</th><th style="text-align:right">Votos 1T</th>'
+            '<th style="text-align:right">Votos 2T</th><th style="text-align:right">Tempo médio<br>1T</th><th style="text-align:right">Tempo médio<br>2T</th>'
+            '<th style="text-align:right">Atendimento 1T<br>(≤120 s)</th>'
+            '<th style="text-align:right">Atendimento 2T<br>(≤120 s)</th><th style="text-align:right">Discre-<br>pantes 1T</th>'
+            '<th style="text-align:right">Discre-<br>pantes 2T</th><th style="text-align:right">&lt;20 s 1T</th>'
+            f'<th style="text-align:right">&lt;20 s 2T</th></tr></thead><tbody>{rows}</tbody></table></div>')
+
+def secao_c4b(d, pre="", d2=None):
+    c = d.get("C4b_reta_final")
+    if not c: return ""
+    bloco2 = ""
+    c2 = (d2 or {}).get("C4b_reta_final")
+    if c2:
+        bloco2 = f'''
+<h3>2º turno — o mesmo escopo contra si mesmo</h3>
+<p>Os mesmos cortes, agora sobre os logs do 2º turno, em que a votação foi prorrogada até as 19h.
+No 1º turno o bloco B é só a fila remanescente; no 2º, são duas horas a mais de urna liberada.
+O que se compara, linha a linha, é o <strong>tempo médio por voto</strong>, o <strong>atendimento</strong>
+(média dos intervalos de até 120 s) e, sobretudo, <strong>quantos votos discrepantes</strong> houve.</p>
+{comparacao_turnos(c, c2)}
+<p>{frase_c4b(c2, "No 2º turno: ")}</p>
+{svg_serie(d2, "2º turno: tempo médio entre votos, de 10 em 10 minutos, de 16h30 em diante")}
+{svg_reta(d2)}
+'''
+    return f'''
+<h2>C4b — Tempo por voto: o dia normal até as 17h contra as horas depois das 17h</h2>
+<p>Teste acrescentado em 27 de outubro de 2026 — <a href="{pre}reta-final.html">veja a hipótese, o vídeo
+que a motivou e o que o teste pode e não pode demonstrar</a>. A pergunta é direta: depois das 17h, alguém
+votou numa velocidade discrepante da média do próprio dia, e quantos votos foram esses? O mesmo intervalo
+entre votos do teste C4, separado em dois blocos com a mesma régua nos dois turnos: <strong>A</strong>, o dia
+normal até as 17h (prazo legal do 1º turno), e <strong>B</strong>, de 17h em diante — que no 2º turno são as
+duas horas a mais da prorrogação, até as 19h, e o que passou das 19h. <strong>Voto discrepante</strong> é o
+registrado com intervalo abaixo de 25% da mediana da própria seção no bloco A.</p>
+{tabela_janelas(d)}
+<p>{frase_c4b(c)}</p>
+{svg_serie(d)}
+{svg_reta(d)}
+<p>Intervalos encurtam no fim do dia por uma razão legítima — a fila é contínua e não há tempo ocioso
+entre eleitores. O que <strong>não</strong> encurta é o tempo físico de identificar o eleitor, entrar na
+cabine e votar: por isso o que se conta são os <strong>votos discrepantes</strong> (abaixo de um quarto do
+ritmo normal daquela mesma urna) e a faixa abaixo de 20 s. No 1º turno o eleitor votou em mais cargos;
+este número é o teto da comparação com o 2º turno.</p>
+{bloco2}
+'''
+
 # ---------------------------------------------------------------- textos
 def cauda_17h(d):
     """Substitui os numeros antes fixos: le a propria curva."""
@@ -77,7 +282,7 @@ def cauda_17h(d):
             f'{N(tri[1][1])} às 17h05, {N(tri[2][1])} às 17h10. '
             f'É a assinatura de uma fila se esvaziando.')
 
-def bloco(d, escopo):
+def bloco(d, escopo, pre="", d2=None):
     a2, a4, c4 = d["A2_triangulacao"], d["A4_identidade_da_urna"], d["C4_intervalos"]
     b4 = "".join(f"<tr><td>{k}</td><td style='text-align:right'>{N(v)}</td></tr>"
                  for k, v in sorted(d["B4_ultimo_voto_por_hora"].items()))
@@ -111,6 +316,7 @@ def bloco(d, escopo):
     else:
         dirpct = ""
     return f'''
+{('<blockquote><p><strong>2º turno já incluído:</strong> ' + N(d2["secoes"]) + ' seções e ' + N(d2["votos_presidente"]) + ' votos do 2º turno neste escopo. A seção C4b traz a comparação.</p></blockquote>') if d2 else ''}
 <div class="grid">
 <div class="stat"><div class="n">{N(d["secoes"])}</div><div class="l">seções auditadas</div></div>
 <div class="stat"><div class="n">{N(d["votos_presidente"])}</div><div class="l">votos analisados</div></div>
@@ -149,7 +355,7 @@ Sequências rápidas demais indicam registro não-humano.</p>
 {svg_intervalos(d)}
 <p>Amostra de <strong>{N(c4["amostra"])} intervalos</strong>. Mediana: <strong>{med}</strong>.
 Intervalos abaixo de 20 segundos: <strong>{N(c4["abaixo_de_20s"])}</strong> ({c4["pct_abaixo_20s"]}%).</p>
-
+{secao_c4b(d, pre, d2)}
 <h2>C1 e C2 — Lacre e prazo</h2>
 <p>A urna sela o próprio log ao encerrar: a última linha do arquivo é o registro da geração do log.
 Voto posterior a esse marco indicaria reabertura.</p>
@@ -174,7 +380,11 @@ COLS = ('<thead><tr><th>Município</th><th style="text-align:right">Seções</th
         '<th style="text-align:right">Voto após<br>lacre</th>'
         '<th style="text-align:right">Urna de<br>contingência</th>'
         '<th style="text-align:right">Urna divergente<br>sem explicação</th>'
-        '<th style="text-align:right">Triangulação<br>divergente</th></tr></thead>')
+        '<th style="text-align:right">Triangulação<br>divergente</th>'
+        '<th style="text-align:right">Tempo/voto<br>até 17h</th>'
+        '<th style="text-align:right">Tempo/voto<br>após 17h</th>'
+        '<th style="text-align:right">Discrepantes<br>após 17h</th>'
+        '<th style="text-align:right">&lt;20 s<br>após 17h</th></tr></thead>')
 
 def linha_mun(uf, m, href=None):
     """Uma linha de municipio, nas mesmas colunas do indice de estados."""
@@ -188,7 +398,15 @@ def linha_mun(uf, m, href=None):
             f'<td style="text-align:right">{N(m["apos_lacre"])}</td>'
             f'<td style="text-align:right">{N(m["contingencia"])}</td>'
             f'<td style="text-align:right">{N(m["urna_sem_explicacao"])}</td>'
-            f'<td style="text-align:right">{N(m["a2_divergentes"])}</td></tr>')
+            f'<td style="text-align:right">{N(m["a2_divergentes"])}</td>'
+            f'<td style="text-align:right">{_f(m.get("media_antes"))}</td>'
+            f'<td style="text-align:right">{_f(m.get("media_final"))}</td>'
+            f'<td style="text-align:right"><strong>{N(m["disc_final"]) if m.get("disc_final") is not None else "—"}</strong></td>'
+            f'<td style="text-align:right">{N(m["abaixo20_final"]) if m.get("abaixo20_final") is not None else "—"}</td></tr>')
+
+def _jan_uf(d, k, campo):
+    try: return d["C4b_reta_final"]["janelas"][k][campo]
+    except Exception: return None
 
 def tabela_municipios(uf, d):
     res = d.get("municipios_resumo") or []
@@ -208,7 +426,11 @@ def tabela_municipios(uf, d):
            f'<td style="text-align:right"><strong>{N(d["C1_secoes_com_voto_apos_lacre"])}</strong></td>'
            f'<td style="text-align:right"><strong>{N(d["A4_identidade_da_urna"].get("contingencia_sem_voto",0))}</strong></td>'
            f'<td style="text-align:right"><strong>{N(d["A4_identidade_da_urna"].get("sem_explicacao",0))}</strong></td>'
-           f'<td style="text-align:right"><strong>{N(d["A2_triangulacao"]["divergentes"])}</strong></td></tr>')
+           f'<td style="text-align:right"><strong>{N(d["A2_triangulacao"]["divergentes"])}</strong></td>'
+           f'<td style="text-align:right"><strong>{_f(_jan_uf(d,"antes","media_s"))}</strong></td>'
+           f'<td style="text-align:right"><strong>{_f(_jan_uf(d,"final","media_s"))}</strong></td>'
+           f'<td style="text-align:right"><strong>{N(_jan_uf(d,"final","discrepantes")) if _jan_uf(d,"final","discrepantes") is not None else "—"}</strong></td>'
+           f'<td style="text-align:right"><strong>{N(_jan_uf(d,"final","abaixo_de_20s")) if _jan_uf(d,"final","abaixo_de_20s") is not None else "—"}</strong></td></tr>')
     return (f'<h2>Município por município</h2>'
             f'<p>Os mesmos testes, aplicados isoladamente a cada um dos <strong>{N(len(res))} municípios</strong> '
             f'de {d["nome"]} com log auditado. Clique no município para ver a curva de votação e a '
@@ -226,6 +448,7 @@ CABECA, RODAPE = BASE[:_i], BASE[_j:]
 def nav(ativo, pre=""):
     its = [("index.html","Resumo"),("plano-2t.html","Plano do 2º turno"),
            ("demonstracao.html","Demonstração"),("estados/index.html","Estados"),
+           ("reta-final.html","Reta final"),
            ("relatorio.html","1º turno"),("verificar.html","Como verificar"),
            ("dados.html","Dados e hashes")]
     out = []
@@ -254,7 +477,7 @@ corpo_nac = (f'''
 e íntegros — <strong>{len(PORUF)} unidades da Federação</strong>, <strong>{N(D["secoes"])} seções</strong>
 e <strong>{N(D["votos_presidente"])} votos</strong>. No 2º turno, rodarão sobre todas as seções do país.</p>
 <p><a href="estados/index.html"><strong>Ver os resultados estado por estado →</strong></a></p></blockquote>
-''' + bloco(D, "nacional") + f'''
+''' + bloco(D, "nacional", d2=D2) + f'''
 <h2>Estado por estado</h2>
 <p>Os mesmos testes, aplicados isoladamente a cada unidade da Federação, estão em
 <a href="estados/index.html">páginas próprias</a> — uma por estado, com a curva e a distribuição
@@ -281,6 +504,170 @@ open(f"{SITE}/demonstracao.html", "w").write(pagina(
   "Os testes, executados de verdade",
   "O plano do 2º turno aplicado aos logs do 1º turno já obtidos — para mostrar, não prometer.",
   corpo_nac, "demonstracao.html", "demonstracao.html"))
+
+# ---------------------------------------------------------------- 1b. reta final (emenda datada 2026-10-27)
+def _rank_uf(POR=None):
+    POR = PORUF if POR is None else POR
+    linhas = ""
+    ufs = []
+    for uf in sorted(POR):
+        d = POR[uf]; c = d.get("C4b_reta_final") or {}
+        j = c.get("janelas") or {}; a, r = j.get("antes") or {}, j.get("final") or {}
+        ufs.append((c.get("aceleracao") or 0, uf, d, a, r, c))
+    for ac, uf, d, a, r, c in sorted(ufs, reverse=True):
+        linhas += (f'<tr><td><a href="estados/{uf}.html">{uf} — {d["nome"]}</a></td>'
+                   f'<td style="text-align:right">{N(r.get("votos",0))}</td>'
+                   f'<td style="text-align:right">{_f(a.get("media_s"))}</td>'
+                   f'<td style="text-align:right">{_f(r.get("media_s"))}</td>'
+                   f'<td style="text-align:right">{_f(a.get("media_ate_120s"))}</td>'
+                   f'<td style="text-align:right">{_f(r.get("media_ate_120s"))}</td>'
+                   f'<td style="text-align:right">{c.get("aceleracao") if c.get("aceleracao") is not None else "—"}</td>'
+                   f'<td style="text-align:right"><strong>{N(r.get("discrepantes",0))}</strong></td>'
+                   f'<td style="text-align:right">{N(r.get("abaixo_de_20s",0))}</td>'
+                   f'<td style="text-align:right">{N(c.get("secoes_final_com_10_votos",0))}</td>'
+                   f'<td style="text-align:right">{N(c.get("secoes_final_rapida",0))}</td></tr>')
+    return linhas
+
+TRANSCRICAO = ("O Congresso estava certo ao exigir pelo menos o documento de identidade com foto, porque "
+ "evita, diminui as fraudes, porque o caminho seguinte era a Justiça Eleitoral tirar daquele livro de "
+ "eleitores o número do título, porque é o número do título ali que permite que o mesário vote pelo "
+ "eleitor que não foi, ou pelo eleitor que morreu. O que é que acontece hoje? Dá 5 horas da tarde, o "
+ "mesário verifica lá, em consórcio com os fiscais, verifica os eleitores que não compareceram — porque "
+ "não foram, porque morreram, porque viajaram —, com o número do título ele libera a urna eletrônica e "
+ "vota quantas vezes ele quiser. Então esse é um tema da maior gravidade, e nós estamos certos na "
+ "elaboração da lei.")
+
+_c4b = D.get("C4b_reta_final") or {}
+_jn = _c4b.get("janelas") or {}
+CAB_RANK = ('<div class="scroll"><table><thead><tr><th>Estado</th><th style="text-align:right">Votos<br>após 17h</th>'
+            '<th style="text-align:right">Tempo/voto<br>até 17h</th><th style="text-align:right">Tempo/voto<br>após 17h</th>'
+            '<th style="text-align:right">Atendimento<br>até 17h (≤120 s)</th><th style="text-align:right">Atendimento<br>após 17h (≤120 s)</th>'
+            '<th style="text-align:right">Aceleração</th><th style="text-align:right">Discrepantes<br>após 17h</th><th style="text-align:right">&lt;20 s<br>após 17h</th>'
+            '<th style="text-align:right">Seções com<br>≥10 votos após 17h</th><th style="text-align:right">…com mediana<br>&lt;20 s</th></tr></thead>')
+if D2 and D2.get("C4b_reta_final"):
+    _c2 = D2["C4b_reta_final"]
+    _an = {}
+    try: _an = (json.load(open(f"{P}/pipeline/analises.json")).get("blocos") or {}).get("E6_janela_final_secoes") or {}
+    except Exception: pass
+    _e6 = ""
+    if _an and "secoes_comuns_com_10_votos_na_janela_2t" in _an:
+        _e6 = (f'<h3>Seção contra ela mesma (bloco E6)</h3>'
+               f'<p>Seções presentes nos dois turnos com 10 ou mais votos depois das 17h no 2º turno: '
+               f'<strong>{N(_an["secoes_comuns_com_10_votos_na_janela_2t"])}</strong>. Com mediana abaixo de 20 s na janela '
+               f'final do 2º turno: <strong>{N(_an["secoes_2t_mediana_final_abaixo_20s"])}</strong> '
+               f'(no 1º turno, as mesmas seções: {N(_an["secoes_1t_mediana_final_abaixo_20s"])}). '
+               f'Com intervalo abaixo de 20 s no 2º turno <strong>sem ter tido nenhum no 1º</strong>: '
+               f'<strong>{N(_an["secoes_2t_com_intervalo_abaixo_20s_sem_ter_no_1t"])}</strong>. '
+               f'Variação do tempo médio na janela final (2º menos 1º turno), mediana: '
+               f'<strong>{_f(_an["variacao_media_final_2t_menos_1t_s"]["mediana"])}</strong> '
+               f'(p10 {_f(_an["variacao_media_final_2t_menos_1t_s"]["p10"])}, p90 {_f(_an["variacao_media_final_2t_menos_1t_s"]["p90"])}).</p>')
+    bloco_2t_reta = (f'<p>Logs do 2º turno já auditados: <strong>{len(PORUF2)} unidades da Federação</strong>, '
+                     f'{N(D2["secoes"])} seções e {N(D2["votos_presidente"])} votos. A régua é o 1º turno, '
+                     f'na mesma janela e, sempre que possível, na mesma seção.</p>'
+                     + comparacao_turnos(_c4b, _c2)
+                     + f'<p>{frase_c4b(_c2, "No 2º turno: ")}</p>'
+                     + svg_serie(D2, "2º turno: tempo médio entre votos, de 10 em 10 minutos, a partir das 16h30")
+                     + svg_reta(D2)
+                     + '<h3>Seções apontadas no 2º turno</h3>'
+                     + tabela_rapidas(f"{P}/pipeline/secoes_rapidas_janela_final_2t.csv")
+                     + _e6
+                     + '<h3>Estado por estado — 2º turno</h3>' + CAB_RANK + f'<tbody>{_rank_uf(PORUF2)}</tbody></table></div>')
+else:
+    bloco_2t_reta = ('<p>O mesmo código roda, seção a seção, assim que o TSE publicar os logs. Cada município terá, '
+                     'ao lado da sua linha de base do 1º turno, as horas depois das 17h do 2º turno — até as 19h e além — '
+                     'e a lista das seções apontadas. É nessa granularidade, a mesma seção contra ela mesma, '
+                     'que a hipótese do vídeo será confirmada ou afastada.</p>')
+corpo_reta = f'''
+<blockquote><p><strong>Emenda datada ao plano.</strong> Este teste (C4b) foi acrescentado em
+<strong>27 de outubro de 2026</strong> — um dia depois do <a href="plano-2t.html">plano pré-registrado</a>
+e <strong>antes</strong> de o TSE publicar qualquer arquivo do 2º turno. Pela regra do próprio plano, fica
+identificado como posterior e, por isso, de menor força probatória que os testes originais. O código que o
+executa está publicado e carimbado junto com o restante do acervo, antes de existirem os dados sobre os
+quais rodará.</p></blockquote>
+
+<h2>A hipótese, dita por quem conhece o mecanismo</h2>
+<video controls preload="metadata" playsinline style="max-width:360px;width:100%;display:block;margin:0 auto 1rem;border-radius:8px;background:#000"
+  src="midia/flavio-dino-mesario-vota-pelo-eleitor.mp4">Seu navegador não reproduz este vídeo.
+  <a href="midia/flavio-dino-mesario-vota-pelo-eleitor.mp4">Baixe o arquivo.</a></video>
+<p><em>Flávio Dino, em discurso sobre a exigência de documento de identidade com foto para votar.
+Trecho republicado por Maneco Gomes no Instagram em 27 de outubro de 2026
+(<a href="https://www.instagram.com/p/De-yeVuh26d/" rel="noopener">instagram.com/p/De-yeVuh26d</a>).
+Transcrição integral do áudio:</em></p>
+<blockquote><p>"{TRANSCRICAO}"</p></blockquote>
+<p>O mecanismo descrito é concreto e deixa rastro. Se, encerrada a fila real, o mesário usa o número do
+título de eleitores ausentes para liberar a urna e votar por eles, o log daquela seção registra uma
+sequência de votos <strong>sem eleitor</strong>: ninguém a identificar, ninguém a caminhar até a cabine,
+ninguém a decidir. O intervalo entre um voto e o seguinte cai ao tempo de digitar e confirmar.</p>
+<p>No 1º turno a votação encerrou às 17h: o dia inteiro até as 17h é a <strong>régua do tempo normal</strong>,
+e o que vem depois é só a fila remanescente. No 2º turno, com a prorrogação determinada às 17h01 pelo
+Ministro Zanin, depois das 17h há <strong>duas horas a mais de urna liberada</strong>, até as 19h e além —
+e é nelas que, pela hipótese do vídeo, o mesário teria votado pelos ausentes. Voto fraudulento de mesário é
+voto rápido demais, e voto rápido demais fica no log: o que se conta é <strong>quantos votos, depois das
+17h, saíram numa velocidade discrepante da média do próprio dia</strong>.</p>
+
+<h2>O que o teste mede</h2>
+<p>É o intervalo entre votos consecutivos do teste C4, dividido em dois blocos com a mesma régua nos dois
+turnos: <strong>A, o dia normal</strong>, da abertura até as 17h, e <strong>B, de 17h em diante</strong>
+(com subfaixas 17h–17h59, 18h–18h59, 19h–19h29 e 19h30 em diante; a última meia hora de A, 16h30–16h59,
+aparece à parte para mostrar a rampa). Para cada bloco, em cada seção, município, estado e no país:
+votos, tempo médio por voto, mediana, média só dos intervalos de até 120 segundos (o tempo de atendimento,
+sem o tempo ocioso), <strong>quantos votos foram discrepantes</strong> — intervalo abaixo de 25% da mediana
+da própria seção no bloco A — e quantos ficaram abaixo de 20 segundos, o limite físico para um eleitor real.</p>
+<p>A assinatura de fraude seria: depois das 17h, votos discrepantes em quantidade <strong>que não existe
+antes das 17h</strong>, em seções identificáveis, formando sequências — não casos isolados. A assinatura
+de normalidade é a oposta: o tempo por voto depois das 17h igual ou maior que o do dia, e os votos
+discrepantes zero ou residuais nos dois blocos.</p>
+
+<h2>O que o teste não pode dizer</h2>
+<p><strong>Em quem foi o voto.</strong> O log registra o cargo, nunca o candidato. Mesmo que a reta final
+mostrasse votos a ritmo de máquina, não haveria como saber a quem beneficiaram.</p>
+<p><strong>Que um intervalo curto é fraude.</strong> Eleitor que já sabe o número e mesário que
+libera a urna no instante em que o anterior sai podem produzir intervalos de poucas dezenas de segundos
+num cargo só. Por isso o limiar é 20 segundos — abaixo dele não cabe identificação, deslocamento e voto —
+e por isso o que se procura são <em>sequências</em> em seções identificáveis, não ocorrências isoladas.</p>
+<p><strong>Que o 1º turno é uma régua perfeita.</strong> No 1º turno o eleitor votou em cinco ou seis
+cargos; no 2º, em um ou dois. O tempo por voto do 1º turno é, portanto, um <em>teto</em>. Por isso o
+limiar de voto discrepante é relativo à própria seção no próprio turno, e a comparação decisiva é
+<strong>a mesma seção contra ela mesma</strong>: as horas depois das 17h do 2º turno contra o dia normal
+do 2º turno, com o 1º turno mostrando quanto disso é fila legítima.</p>
+
+<h2>Resultado no 1º turno — o grupo de controle</h2>
+<p>Sobre <strong>{len(PORUF)} unidades da Federação</strong>, {N(D["secoes"])} seções e
+{N(D["votos_presidente"])} votos já auditados. {aviso_falta}</p>
+{tabela_janelas(D)}
+<p>{frase_c4b(_c4b)}</p>
+{svg_serie(D)}
+{svg_reta(D)}
+<h3>Seções apontadas no 1º turno</h3>
+{tabela_rapidas(f"{P}/pipeline/secoes_rapidas_janela_final.csv")}
+<p>Critério: depois das 17h, qualquer voto discrepante (intervalo abaixo de 25% da mediana da própria seção
+até as 17h), qualquer intervalo abaixo de 20 segundos, ou mediana abaixo de 20 segundos com 10 ou mais votos.
+A lista completa está em <code>dados/analises/secoes_rapidas_janela_final.csv</code>; cada seção está também em
+<code>demonstracao_secoes.csv</code> (colunas <code>votos_17h_em_diante</code>, <code>media_s_final</code>,
+<code>mediana_s_final</code>, <code>limiar_discrepante_s</code>, <code>discrepantes_antes</code>,
+<code>discrepantes_final</code> e <code>abaixo_20s_final</code>).</p>
+
+<h2>Estado por estado</h2>
+<p>Ordenado pela razão entre o tempo por voto até as 17h e depois das 17h ("aceleração"). Razão alta
+só significa fila densa no fim do dia; o que exige explicação são as colunas de votos discrepantes e de
+seções com mediana abaixo de 20 segundos. Clique no estado para ver o teste por município.</p>
+{CAB_RANK}
+<tbody>{_rank_uf()}</tbody></table></div>
+
+<h2>No 2º turno</h2>
+{bloco_2t_reta}
+<p>Dados brutos: <code>dados/analises/demonstracao_1t.json</code> e <code>demonstracao_2t.json</code>
+(chave <code>C4b_reta_final</code>, nacional e em <code>por_uf</code>), <code>demonstracao_secoes.csv</code>,
+<code>demonstracao_secoes_2t.csv</code>, <code>secoes_rapidas_janela_final.csv</code> e
+<code>secoes_rapidas_janela_final_2t.csv</code>; a comparação seção a seção está em
+<code>analises.json</code>, bloco <code>E6_janela_final_secoes</code>.</p>
+'''
+open(f"{SITE}/reta-final.html", "w").write(pagina(
+  "A reta final: o mesário pode votar pelo eleitor que não foi? — Auditoria TSE 2026",
+  "Emenda datada · 27 de outubro de 2026",
+  "A reta final: o mesário pode votar pelo eleitor que não foi?",
+  "O tempo por voto até as 17h e nas duas horas a mais, medido voto a voto — em cada seção, município e estado.",
+  corpo_reta, "reta-final.html", "reta-final.html"))
 
 # ---------------------------------------------------------------- 2. indice de estados
 linhas = ""
@@ -341,7 +728,7 @@ for uf in sorted(PORUF):
              f'aplicados <strong>somente a {d["nome"]}</strong>, sobre os logs do 1º turno. '
              f'Para o total do país, veja a <a href="../demonstracao.html">demonstração nacional</a>; '
              f'para a comparação entre estados, o <a href="index.html">índice</a>.</p></blockquote>'
-             + bloco(d, d["nome"])
+             + bloco(d, d["nome"], pre="../", d2=PORUF2.get(uf))
              + tabela_municipios(uf, d)
              + f'<h2>Outros estados</h2><p>{outros or "—"}</p>')
     open(f"{SITE}/estados/{uf}.html", "w").write(pagina(
@@ -373,7 +760,7 @@ for uf in sorted(PORMUN):
                  f'para o país, a <a href="../../demonstracao.html">demonstração nacional</a>.</p>'
                  f'<p>Esta página é a linha de base desta cidade. Quando o TSE publicar o 2º turno, '
                  f'os mesmos números sairão aqui ao lado, para comparação direta.</p></blockquote>'
-                 + bloco(b, b["nome"])
+                 + bloco(b, b["nome"], pre="../../", d2=(PORMUN2.get(uf) or {}).get(cod))
                  + f'<h2>Vizinhos no estado</h2><p>{" · ".join(viz) or "—"}</p>'
                  + f'<p><a href="../{uf}.html">◀ Todos os municípios de {duf["nome"]}</a></p>')
         open(f"{SITE}/estados/{uf}/{slug_mun(cod)}.html", "w").write(pagina(
@@ -393,7 +780,7 @@ for f in ["index.html", "plano-2t.html", "relatorio.html", "verificar.html", "da
 
 # ---------------------------------------------------------------- 5. sitemap
 hoje = datetime.date.today().isoformat()
-urls = (["index.html","plano-2t.html","demonstracao.html","estados/index.html",
+urls = (["index.html","plano-2t.html","demonstracao.html","estados/index.html","reta-final.html",
          "relatorio.html","verificar.html","dados.html"]
         + [f"estados/{u}.html" for u in sorted(PORUF)]
         + [f"estados/{u}/{slug_mun(c)}.html" for u in sorted(PORMUN) for c in sorted(PORMUN[u])])

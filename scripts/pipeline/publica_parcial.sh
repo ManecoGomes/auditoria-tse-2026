@@ -55,6 +55,7 @@ rc=$?
 
 # 4. dados derivados para o repo
 mkdir -p "$R/dados/analises" "$R/scripts/pipeline"
+cp "$PL/secoes_rapidas_janela_final.csv" "$R/dados/analises/" 2>/dev/null || true
 cp "$PL/demonstracao_1t.json" "$PL/demonstracao_secoes.csv" "$PL/analises.json" \
    "$R/dados/analises/" 2>/dev/null
 cp "$PL/E5_municipios_1t_2t.csv" "$R/dados/analises/" 2>/dev/null || true
