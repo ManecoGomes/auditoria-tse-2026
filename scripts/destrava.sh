@@ -37,6 +37,9 @@ for uf in $TODAS; do
   [ -f "$z" ] || continue
   [ -f "$z.ok" ] && [ "$(cat "$z.ok" 2>/dev/null)" = "$(stat -f %z "$z" 2>/dev/null)" ] && continue
   pgrep -qf "arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_$uf.zip" && continue
+  # ja reprovado neste exato tamanho: nao gastar CPU refazendo o CRC a cada hora.
+  # O marcador cai sozinho quando o arquivo muda de tamanho (download novo).
+  [ -f "$z.bad" ] && [ "$(cat "$z.bad" 2>/dev/null)" = "$(stat -f %z "$z" 2>/dev/null)" ] && continue
   SEMOK="$SEMOK $uf"
 done
 if [ -n "$SEMOK" ]; then
@@ -109,7 +112,7 @@ if ! pgrep -qf "publica_parcial.sh|$PL/demonstra.py"; then
 fi
 
 # 8. vigia/pipeline caiu do launchd -> recarrega
-for j in com.maneco.vigia-tse-2t com.maneco.pipeline-tse-2t; do
+for j in com.maneco.vigia-tse-2t com.maneco.pipeline-tse-2t com.maneco.destrava-tse; do
   if ! launchctl list 2>/dev/null | grep -q "$j"; then
     launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/$j.plist" 2>/dev/null \
       && agiu "$j recarregado no launchd"
