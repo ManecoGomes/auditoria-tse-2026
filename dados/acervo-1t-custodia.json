@@ -1,9 +1,9 @@
 {
  "titulo": "Acervo bruto do TSE - logs de urna 1o turno - manifesto de custodia",
  "nota": "Os ZIPs ficam em disco local (NVMe). O TSE nao publica hash destes arquivos; o sha512 aqui foi calculado no instante em que zipfile.testzip() passou.",
- "gerado_em_utc": "2026-10-27T17:49:51.307794+00:00",
- "ufs_integras": 14,
- "ufs_no_disco": 15,
+ "gerado_em_utc": "2026-10-27T23:50:29.326080+00:00",
+ "ufs_integras": 28,
+ "ufs_no_disco": 28,
  "arquivos": [
   {
    "uf": "AC",
@@ -11,6 +11,7 @@
    "bytes": 393536972,
    "integridade": "ok",
    "bytes_esperados": null,
+   "sidecars_ilegiveis": null,
    "sha512": "ff71b7d514f2133ef5e644d4fe74d63802e37847211185da5501b9a70ad9fe696294a5e86ec765c3badf2e5d17059a6da595262fc2c9779533fbe0c555ad2d03",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_AC.zip"
   },
@@ -20,6 +21,7 @@
    "bytes": 1404372980,
    "integridade": "ok",
    "bytes_esperados": null,
+   "sidecars_ilegiveis": null,
    "sha512": "fb20af2909c9e22be76b536ba4f46c6203564f0c0a85b33c7e1b0a8f8520c48875f4d76ba51d2f7a99bbef17ba18d86e8bdc7dc63b65b4ed05ea6871831762f7",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_AL.zip"
   },
@@ -29,6 +31,7 @@
    "bytes": 1595550575,
    "integridade": "ok",
    "bytes_esperados": null,
+   "sidecars_ilegiveis": null,
    "sha512": "12f37ece0653a3d6055036610b92d40a1fbbdf90c7e7036f2604c8eb84054be1fff7a6f78781c7558f6c0338021e41834e1c7b71221ab0cbfb805559f123ccd2",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_AM.zip"
   },
@@ -38,6 +41,7 @@
    "bytes": 351213339,
    "integridade": "ok",
    "bytes_esperados": null,
+   "sidecars_ilegiveis": null,
    "sha512": "c408a45dd4aa3a03d49a9cda3d5d03d91fe11c720d8eb475125720ed168e2c0a0cb09fd238dfd37dcac47dbf0521415a165abda2a88bbac6bd0a65c8cf977890",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_AP.zip"
   },
@@ -47,6 +51,7 @@
    "bytes": 6967798815,
    "integridade": "ok",
    "bytes_esperados": null,
+   "sidecars_ilegiveis": null,
    "sha512": "0fa513b7c1fe1b19d35b7cb411cc41ac151dacbbb3dfa7dde2812a5c790aed9b1cc02c66ba915d856cf3946aa5452eb60632dd6f0de57c4270f011145419d23b",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_BA.zip"
   },
@@ -56,6 +61,7 @@
    "bytes": 4506414880,
    "integridade": "ok",
    "bytes_esperados": null,
+   "sidecars_ilegiveis": null,
    "sha512": "470dd35dde188cf6787c7821087778c376bee212165014805cbb4cd4bf3a4a45e3255f9401d11e69ecfc76147091072955dc7e88f125467a4da7a4027e661036",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_CE.zip"
   },
@@ -65,6 +71,7 @@
    "bytes": 1347108781,
    "integridade": "ok",
    "bytes_esperados": null,
+   "sidecars_ilegiveis": null,
    "sha512": "446d57f10d9bcb199a9ec901c4fe60881dc63d9dee60b9cc33bfd9fcb1aa32f5faa2c9c6da9dd216a42e2d81930550c9f9a3e37f50091b3becafedfc0637d24a",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_DF.zip"
   },
@@ -74,6 +81,7 @@
    "bytes": 1799395069,
    "integridade": "ok",
    "bytes_esperados": null,
+   "sidecars_ilegiveis": null,
    "sha512": "9b774d13e224f57f2f060324faf33408c13a7a4a5866ec21bee66373916789380b71196fb6f46f6f63c7ec5c6442425a4b7f0854c805dd142ab3df3bc8e8cfb6",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_ES.zip"
   },
@@ -83,6 +91,7 @@
    "bytes": 3001376540,
    "integridade": "ok",
    "bytes_esperados": 3001376540,
+   "sidecars_ilegiveis": null,
    "sha512": "13353b5216ba60cf2a7b6b2e301e46cd0698664807c0d8465ea86ea92aad9145a243c30cddc1b39e606228bd6bb03112ba1713f0c4d244889de42b5cf65b981c",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_GO.zip"
   },
@@ -92,6 +101,7 @@
    "bytes": 3266352554,
    "integridade": "ok",
    "bytes_esperados": 3266352554,
+   "sidecars_ilegiveis": null,
    "sha512": "2de7bb966b57611b5176991bda290b17bc301300d9e4c390182c204ef37932640168fc3b27bca5bf39088d5638997383269429a5a53bb3cac8d38cfda6bd8869",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MA.zip"
   },
@@ -101,6 +111,7 @@
    "bytes": 9638569036,
    "integridade": "ok",
    "bytes_esperados": 9638569036,
+   "sidecars_ilegiveis": null,
    "sha512": "c6988bc90e24724a92dddff98e6ed650730f3cd7c4034c8e3144fa1119658faad3fae148f83dfbceacba8cb32463adad02f6139dec7ae83bf5746202c29308cf",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MG.zip"
   },
@@ -110,6 +121,7 @@
    "bytes": 1238255431,
    "integridade": "ok",
    "bytes_esperados": 1238255431,
+   "sidecars_ilegiveis": null,
    "sha512": "590af354007628a402472b1037964516d05fd09a7849aea8ecbce6c82fdbaee49511838da2becda2c5c644dc787403dfe4cf52c9d2fb0bed3c5a8c665171b66b",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MS.zip"
   },
@@ -119,6 +131,7 @@
    "bytes": 1537057359,
    "integridade": "ok",
    "bytes_esperados": 1537057359,
+   "sidecars_ilegiveis": null,
    "sha512": "64d3950170abe3ee5df7bc56a442271f85795da20d55c2288f1aea9baf7ec788f7b09997c22cdb4ca83b7ebc38b7bd64579f44238b40332624208bc2c4c3dd2c",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MT.zip"
   },
@@ -128,17 +141,149 @@
    "bytes": 3851198257,
    "integridade": "ok",
    "bytes_esperados": 3851198257,
+   "sidecars_ilegiveis": null,
    "sha512": "ee06f778da7dfab0410d7bb204b571ad7c68037056ff23a00a2a9e1252e6ecccba78f74e8101539a9a01c308350bd0b14e0f38406008025ff8b145eab80cda04",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_PA.zip"
   },
   {
    "uf": "PB",
    "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_PB.zip",
-   "bytes": 1848610816,
-   "integridade": "truncado",
+   "bytes": 2017890630,
+   "integridade": "ok",
    "bytes_esperados": 2017890630,
-   "sha512": null,
+   "sidecars_ilegiveis": null,
+   "sha512": "0b81415bbfc648356d55bcc4d3839fe6629264f2288858d7f661ae4d543b2252153a483f0d02d62f49436b0877cb45625e1da6b887fac846edc65a40eb77d974",
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_PB.zip"
+  },
+  {
+   "uf": "PE",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_PE.zip",
+   "bytes": 4297820068,
+   "integridade": "ok",
+   "bytes_esperados": 4297820068,
+   "sidecars_ilegiveis": null,
+   "sha512": "d1129e0d4fb52e598c5751a1d84a669371b69b53856b5ae1a52e04697d0d47b3d810fd16c05b8d4d571cff8cb7eea2e5182ec3853497bce349de2d1e8ae3034d",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_PE.zip"
+  },
+  {
+   "uf": "PI",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_PI.zip",
+   "bytes": 1820165179,
+   "integridade": "ok",
+   "bytes_esperados": 1820165179,
+   "sidecars_ilegiveis": null,
+   "sha512": "45f337473772f801d71ff79c88cecab178d6a10c6af589bd4cce059742ead2f18b61e8819e8648d30d2de992f5d6d996d1586aac8b2d4690a35f656e22768ffb",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_PI.zip"
+  },
+  {
+   "uf": "PR",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_PR.zip",
+   "bytes": 5175339811,
+   "integridade": "ok",
+   "bytes_esperados": 5175339811,
+   "sidecars_ilegiveis": null,
+   "sha512": "fcf54e7823d9865e68a837c7c50c6a014931cdaabb76053ac43db0c902b19d064c7b84c92a07a54a58cf9924d24fcc60758b3d687f09e9f82563c16770f33688",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_PR.zip"
+  },
+  {
+   "uf": "RJ",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_RJ.zip",
+   "bytes": 7515732123,
+   "integridade": "ok",
+   "bytes_esperados": 7515732123,
+   "sidecars_ilegiveis": null,
+   "sha512": "9eb5c270173e593fd95c087ccb921e8ec1d0a72a18da3f4522ab4754bff79684a389063adcf1e8871ccec21169e24e838bfa097ce2544e3bddd07b68bcbfea76",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_RJ.zip"
+  },
+  {
+   "uf": "RN",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_RN.zip",
+   "bytes": 1589430071,
+   "integridade": "ok",
+   "bytes_esperados": 1589430071,
+   "sidecars_ilegiveis": null,
+   "sha512": "e8fc53681c150abe48f1d772316beda99f59e89ea1902e6b408cae43c60f5a07db97c78356e131793bbc8463c32e91614a9bf3e71dbb6a316c2e4d63c315137c",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_RN.zip"
+  },
+  {
+   "uf": "RO",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_RO.zip",
+   "bytes": 812596377,
+   "integridade": "ok",
+   "bytes_esperados": 812596377,
+   "sidecars_ilegiveis": null,
+   "sha512": "26bdf1f2978a317bc65793b02ed2d69aa3c285643f756ee7dc485fe7f729b7a0f0c5dda2a9fc724614fb5b2c43699dff6f4a31626565629e077be7c42b7322be",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_RO.zip"
+  },
+  {
+   "uf": "RR",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_RR.zip",
+   "bytes": 260658618,
+   "integridade": "ok",
+   "bytes_esperados": 260658618,
+   "sidecars_ilegiveis": null,
+   "sha512": "7ba355899eab6d4f030962fb995bc381839c863c3857b5cfde00f82aa656f5b28b5654f40a61cfc92b01696cd589be6ee1257faac224f24968142b2a05ec295c",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_RR.zip"
+  },
+  {
+   "uf": "RS",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_RS.zip",
+   "bytes": 5183300321,
+   "integridade": "ok",
+   "bytes_esperados": 5183300321,
+   "sidecars_ilegiveis": null,
+   "sha512": "9d1c32d1643cf540e89e1e4bcc427814a299a99004738296126aaf257202cd81a6a879318c400a25c3be052ab59778cff94f832e89a98a4e246306c15ddcb199",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_RS.zip"
+  },
+  {
+   "uf": "SC",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_SC.zip",
+   "bytes": 3356270600,
+   "integridade": "ok",
+   "bytes_esperados": 3356270600,
+   "sidecars_ilegiveis": null,
+   "sha512": "6fcccfa825391bbf3a8537e5ba973cab4584fe19aec768cf10848ef496bf3c97fa59962ea67c623991ead24a84685629d907c0ca7403fe421b5e40d163af649d",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_SC.zip"
+  },
+  {
+   "uf": "SE",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_SE.zip",
+   "bytes": 1102702588,
+   "integridade": "ok",
+   "bytes_esperados": 1102702588,
+   "sidecars_ilegiveis": null,
+   "sha512": "8bd8ce7efc9c83e6e4f08cdef6632d1824fc2e8f100402f2ac2fc3699113dff5a2b9955acc9ab35468a2a202537663682c38047cbfe3d387ea99ed8a806a4398",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_SE.zip"
+  },
+  {
+   "uf": "SP",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_SP.zip",
+   "bytes": 20134436001,
+   "integridade": "ok",
+   "bytes_esperados": 20134436001,
+   "sidecars_ilegiveis": null,
+   "sha512": "da0cda07d4c6f6a521176e14842f45954ce7350a20b85303f050bfe5eb2ce2c03300e2e91086775ac56ce26aa31484ccc327e3cc3afcdfec4bee081514ced6f7",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_SP.zip"
+  },
+  {
+   "uf": "TO",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_TO.zip",
+   "bytes": 765142259,
+   "integridade": "ok",
+   "bytes_esperados": 765142259,
+   "sidecars_ilegiveis": null,
+   "sha512": "dc82dc4b0ae21139363cdac10ac268d0323ef9a0c4a9d70e56d06dfc86d39e3cbc20d3a42163caea8e1f1a7e94c864a58f6f9a440e6a572ca1c11f34f5acc18b",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_TO.zip"
+  },
+  {
+   "uf": "ZZ",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_ZZ.zip",
+   "bytes": 136668327,
+   "integridade": "ok",
+   "bytes_esperados": 136668327,
+   "sidecars_ilegiveis": null,
+   "sha512": "b24560a059b4d92fc08669b818729b125859a5588b27f58b226e148f2ded44e132c62dcbcf68c810ebb3e6615d00d0dd560a57d39f03a2d790374795928589d5",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_ZZ.zip"
   }
  ]
 }

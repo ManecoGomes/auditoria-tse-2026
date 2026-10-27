@@ -38,6 +38,17 @@ EST=$( { ls -l "$DEMO"/*.json 2>/dev/null
          ls -l "$P"/{diagnostico.sh,destrava.sh} 2>/dev/null
          ls -l /Volumes/SSD1TB/acervo-tse/2026-1t/originais/*.{ok,bad,sha512.local} 2>/dev/null; } \
        | awk '{print $5,$9}' | shasum | cut -d' ' -f1 )
+# O CONTEUDO dos sidecars numericos tambem entra na assinatura. Tamanho+nome nao
+# bastam: um sidecar reparado pode ter exatamente o mesmo tamanho do lixo que ele
+# substituiu — o .esperado do PE em 2026-10-27 tinha 11 bytes antes (" bweb_1t_AM")
+# e 11 bytes depois ("4297820068"), e o conserto nao dispararia republicacao.
+ESTS=$( for s in /Volumes/SSD1TB/acervo-tse/2026-1t/originais/*.ok \
+                 /Volumes/SSD1TB/acervo-tse/2026-1t/originais/*.bad \
+                 /Volumes/SSD1TB/acervo-tse/2026-1t/originais/*.truncado \
+                 /Volumes/SSD1TB/acervo-tse/2026-1t/originais/*.esperado; do
+          [ -f "$s" ] && echo "$(basename "$s") $(tr -d '[:space:]' < "$s")"
+        done 2>/dev/null | shasum | cut -d' ' -f1 )
+EST="$EST-$ESTS"
 [ -f "$MARCA" ] && [ "$(cat "$MARCA")" = "$EST" ] && exit 0
 
 # 1. processa o que falta. exit 2/3 = acervo inacessivel ou nenhuma UF integra:
@@ -76,15 +87,28 @@ cp "$PL/E5_municipios_1t_2t.csv" "$R/dados/analises/" 2>/dev/null || true
 "$PY" - <<'PYA'
 import glob,json,os,re,datetime
 AC="/Volumes/SSD1TB/acervo-tse/2026-1t/originais"
+
+def num(p):
+    """Sidecar numerico lido com tolerancia: devolve (valor, lixo).
+    Um sidecar ilegivel NAO pode derrubar a prova de custodia. Em 2026-10-27 o
+    .esperado do PE foi gravado com 11 bytes de lixo (" bweb_1t_AM") no volume
+    externo; o int() cru matava este bloco inteiro e, como nao havia checagem de
+    status, o publicador seguia e carimbava manifesto novo com o
+    acervo-1t-custodia.json congelado (15 UFs enquanto o disco tinha 28)."""
+    if not os.path.exists(p): return None,None
+    try: t=open(p).read().strip()
+    except OSError as e: return None,f"erro de leitura: {e}"
+    return (int(t),None) if re.fullmatch(r"\d+",t) else (None,t[:40])
 R=os.path.expanduser("~/Claude/Projetos/eleição/repo")
 itens=[]
 for z in sorted(glob.glob(f"{AC}/bu_imgbu_logjez_rdv_vscmr_2026_1t_*.zip")):
     uf=re.search(r"_1t_([A-Z]{2})\.zip",z).group(1)
     tam=os.path.getsize(z)
-    ok=os.path.exists(z+".ok") and open(z+".ok").read().strip()==str(tam)
-    bad=os.path.exists(z+".bad") and open(z+".bad").read().strip()==str(tam)
-    esp=int(open(z+".esperado").read().strip()) if os.path.exists(z+".esperado") else None
+    vok,sujo_ok=num(z+".ok"); vbad,sujo_bad=num(z+".bad"); esp,sujo_esp=num(z+".esperado")
+    ok=(vok==tam); bad=(vbad==tam)
     trunc=(esp is not None and tam<esp)
+    sujos={k:v for k,v in (("ok",sujo_ok),("bad",sujo_bad),("esperado",sujo_esp)) if v}
+    if sujos: print(f"AVISO {uf}: sidecar ilegivel {sujos} — tratado como ausente")
     # sidecar pode ser hash puro (novo) ou "hash  caminho" (formato antigo do shasum)
     sha=None
     if os.path.exists(z+".sha512.local"):
@@ -93,6 +117,7 @@ for z in sorted(glob.glob(f"{AC}/bu_imgbu_logjez_rdv_vscmr_2026_1t_*.zip")):
     itens.append({"uf":uf,"arquivo":os.path.basename(z),"bytes":tam,
                   "integridade":"ok" if ok else ("truncado" if trunc else ("crc_falhou" if bad else "em_download_ou_nao_verificado")),
                   "bytes_esperados":esp,
+                  "sidecars_ilegiveis":sujos or None,
                   "sha512":sha if ok else None,
                   "fonte":"https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/"+os.path.basename(z)})
 man={"titulo":"Acervo bruto do TSE - logs de urna 1o turno - manifesto de custodia",
@@ -105,6 +130,15 @@ os.makedirs(f"{R}/dados",exist_ok=True)
 json.dump(man,open(f"{R}/dados/acervo-1t-custodia.json","w"),indent=1,ensure_ascii=False)
 print(f"acervo-1t-custodia.json: {man['ufs_integras']} íntegras de {len(itens)} no disco")
 PYA
+CUST=$?
+# Publicar manifesto carimbado afirmando metodo auditavel com a prova de custodia
+# velha e pior do que nao publicar: aborta. Antes deste if o heredoc podia morrer
+# em silencio (nao ha set -e) e a publicacao seguia — foi o que aconteceu das
+# 14h50 as 20h08 de 2026-10-27, cinco deploys com custodia congelada.
+if [ "$CUST" -ne 0 ]; then
+  echo "$(date '+%F %T') CUSTODIA FALHOU (exit $CUST) — publicacao abortada, acervo-1t-custodia.json nao foi regenerado" >> "$PL/parcial.log"
+  exit 5
+fi
 
 # 5. codigo que de fato rodou — o que sustenta a auditabilidade
 cp "$PL"/{coleta.py,audita.py,compara.py,extrai_votos.py,analises.py,demonstra.py,gera_demo_html.py} \
