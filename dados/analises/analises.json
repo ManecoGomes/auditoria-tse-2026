@@ -1,12 +1,12 @@
 {
- "gerado_utc": "2026-10-27T12:45:28.734781+00:00",
+ "gerado_utc": "2026-10-27T13:37:17.957006+00:00",
  "blocos": {
   "A2_triangulacao_1t": {
-   "secoes_comparadas": 113578,
-   "divergentes": 10222,
-   "pct": 9.0,
-   "log_menor_que_bu": 10189,
-   "log_maior_que_bu": 33,
+   "secoes_comparadas": 129264,
+   "divergentes": 11479,
+   "pct": 8.8803,
+   "log_menor_que_bu": 11439,
+   "log_maior_que_bu": 40,
    "exemplos": [
     {
      "secao": "1015-2-102",
@@ -311,8 +311,8 @@
    ]
   },
   "F1_geografia_1t": {
-   "municipios": 1099,
-   "mediana_pct_tardio": 6.219,
+   "municipios": 1345,
+   "mediana_pct_tardio": 5.584,
    "top20_mais_tardio": [
     {
      "uf": "AL",
@@ -353,6 +353,14 @@
      "secoes": 21,
      "votos": 5635,
      "pct_tardio": 20.302
+    },
+    {
+     "uf": "GO",
+     "municipio": 92096,
+     "nome": "Aloândia",
+     "secoes": 6,
+     "votos": 1731,
+     "pct_tardio": 19.931
     },
     {
      "uf": "AL",
@@ -465,17 +473,73 @@
      "secoes": 61,
      "votos": 16228,
      "pct_tardio": 16.49
-    },
-    {
-     "uf": "BA",
-     "municipio": 39918,
-     "nome": "Tanque Novo",
-     "secoes": 45,
-     "votos": 12233,
-     "pct_tardio": 16.472
     }
    ],
    "top20_menos_tardio": [
+    {
+     "uf": "GO",
+     "municipio": 93335,
+     "nome": "Cumari",
+     "secoes": 12,
+     "votos": 2000,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "GO",
+     "municipio": 95176,
+     "nome": "Panamá",
+     "secoes": 14,
+     "votos": 2367,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "GO",
+     "municipio": 96172,
+     "nome": "Taquaral De Goiás",
+     "secoes": 17,
+     "votos": 3522,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "GO",
+     "municipio": 92614,
+     "nome": "Baliza",
+     "secoes": 15,
+     "votos": 2496,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "GO",
+     "municipio": 93513,
+     "nome": "Estrela Do Norte",
+     "secoes": 12,
+     "votos": 2484,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "GO",
+     "municipio": 93530,
+     "nome": "Fazenda Nova",
+     "secoes": 22,
+     "votos": 4450,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "GO",
+     "municipio": 93602,
+     "nome": "Lagoa Santa",
+     "secoes": 6,
+     "votos": 1286,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "GO",
+     "municipio": 93319,
+     "nome": "Cromínia",
+     "secoes": 15,
+     "votos": 3288,
+     "pct_tardio": 0.0
+    },
     {
      "uf": "ES",
      "municipio": 56278,
@@ -483,6 +547,46 @@
      "secoes": 138,
      "votos": 23854,
      "pct_tardio": 0.013
+    },
+    {
+     "uf": "GO",
+     "municipio": 95311,
+     "nome": "Petrolina De Goiás",
+     "secoes": 29,
+     "votos": 6125,
+     "pct_tardio": 0.016
+    },
+    {
+     "uf": "GO",
+     "municipio": 96075,
+     "nome": "Serranópolis",
+     "secoes": 21,
+     "votos": 4886,
+     "pct_tardio": 0.02
+    },
+    {
+     "uf": "GO",
+     "municipio": 93670,
+     "nome": "Goianápolis",
+     "secoes": 42,
+     "votos": 8627,
+     "pct_tardio": 0.023
+    },
+    {
+     "uf": "GO",
+     "municipio": 93696,
+     "nome": "Goiandira",
+     "secoes": 14,
+     "votos": 3749,
+     "pct_tardio": 0.027
+    },
+    {
+     "uf": "GO",
+     "municipio": 95397,
+     "nome": "Piracanjuba",
+     "secoes": 63,
+     "votos": 14300,
+     "pct_tardio": 0.028
     },
     {
      "uf": "ES",
@@ -493,163 +597,59 @@
      "pct_tardio": 0.03
     },
     {
-     "uf": "ES",
-     "municipio": 56510,
-     "nome": "",
-     "secoes": 42,
-     "votos": 9176,
-     "pct_tardio": 0.054
+     "uf": "GO",
+     "municipio": 94234,
+     "nome": "Itauçu",
+     "secoes": 31,
+     "votos": 6331,
+     "pct_tardio": 0.032
     },
     {
-     "uf": "MA",
-     "municipio": 8443,
-     "nome": "São Roberto",
-     "secoes": 19,
-     "votos": 3565,
-     "pct_tardio": 0.056
+     "uf": "GO",
+     "municipio": 92770,
+     "nome": "Buriti Alegre",
+     "secoes": 29,
+     "votos": 6207,
+     "pct_tardio": 0.032
     },
     {
-     "uf": "ES",
-     "municipio": 56219,
-     "nome": "",
-     "secoes": 33,
-     "votos": 6730,
-     "pct_tardio": 0.059
+     "uf": "GO",
+     "municipio": 94110,
+     "nome": "Itajá",
+     "secoes": 16,
+     "votos": 2868,
+     "pct_tardio": 0.035
     },
     {
-     "uf": "ES",
-     "municipio": 56731,
-     "nome": "",
-     "secoes": 58,
-     "votos": 11227,
-     "pct_tardio": 0.071
+     "uf": "GO",
+     "municipio": 94358,
+     "nome": "Jaupaci",
+     "secoes": 13,
+     "votos": 2399,
+     "pct_tardio": 0.042
     },
     {
-     "uf": "ES",
-     "municipio": 56030,
-     "nome": "",
-     "secoes": 93,
-     "votos": 17934,
-     "pct_tardio": 0.106
-    },
-    {
-     "uf": "ES",
-     "municipio": 56839,
-     "nome": "",
-     "secoes": 69,
-     "votos": 14059,
-     "pct_tardio": 0.114
-    },
-    {
-     "uf": "ES",
-     "municipio": 56391,
-     "nome": "",
-     "secoes": 25,
-     "votos": 4952,
-     "pct_tardio": 0.121
-    },
-    {
-     "uf": "ES",
-     "municipio": 56618,
-     "nome": "",
-     "secoes": 35,
-     "votos": 7874,
-     "pct_tardio": 0.127
-    },
-    {
-     "uf": "ES",
-     "municipio": 56570,
-     "nome": "",
-     "secoes": 32,
-     "votos": 7361,
-     "pct_tardio": 0.136
-    },
-    {
-     "uf": "ES",
-     "municipio": 56022,
-     "nome": "",
-     "secoes": 46,
-     "votos": 8538,
-     "pct_tardio": 0.141
-    },
-    {
-     "uf": "ES",
-     "municipio": 56057,
-     "nome": "",
-     "secoes": 49,
-     "votos": 10049,
-     "pct_tardio": 0.179
-    },
-    {
-     "uf": "ES",
-     "municipio": 56090,
-     "nome": "",
-     "secoes": 25,
-     "votos": 4903,
-     "pct_tardio": 0.184
-    },
-    {
-     "uf": "ES",
-     "municipio": 56758,
-     "nome": "",
-     "secoes": 38,
-     "votos": 8912,
-     "pct_tardio": 0.202
-    },
-    {
-     "uf": "ES",
-     "municipio": 56154,
-     "nome": "",
-     "secoes": 90,
-     "votos": 19240,
-     "pct_tardio": 0.203
-    },
-    {
-     "uf": "ES",
-     "municipio": 56910,
-     "nome": "",
-     "secoes": 64,
-     "votos": 15387,
-     "pct_tardio": 0.279
-    },
-    {
-     "uf": "ES",
-     "municipio": 56952,
-     "nome": "",
-     "secoes": 37,
-     "votos": 7645,
-     "pct_tardio": 0.34
-    },
-    {
-     "uf": "AC",
-     "municipio": 1040,
-     "nome": "Marechal Thaumaturgo",
-     "secoes": 47,
-     "votos": 9347,
-     "pct_tardio": 0.374
-    },
-    {
-     "uf": "ES",
-     "municipio": 56294,
-     "nome": "",
-     "secoes": 319,
-     "votos": 71018,
-     "pct_tardio": 0.397
+     "uf": "GO",
+     "municipio": 92819,
+     "nome": "Cachoeira Alta",
+     "secoes": 27,
+     "votos": 5727,
+     "pct_tardio": 0.052
     }
    ]
   },
   "E5_municipios": {
    "estado": "aguardando o 2º turno",
-   "municipios_1t_prontos": 1099,
+   "municipios_1t_prontos": 1345,
    "nota": "A linha de base por município do 1º turno está pronta. Os blocos E comparam os mesmos municípios entre turnos e saem sozinhos quando o TSE publicar os arquivos do 2º turno."
   }
  },
  "cobertura": {
   "secoes_boletim_1t": 499206,
   "secoes_boletim_2t": 0,
-  "secoes_log_1t": 113578,
+  "secoes_log_1t": 129264,
   "secoes_log_2t": 0,
-  "municipios_1t": 1099,
+  "municipios_1t": 1345,
   "municipios_2t": 0
  }
 }

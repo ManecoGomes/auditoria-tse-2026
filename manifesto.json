@@ -1,11 +1,11 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "versao": 12,
+ "versao": 13,
  "escopo": "1o turno, por UF e por municipio",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-27T12:45:36.264882+00:00",
+ "gerado_em_utc": "2026-10-27T13:37:24.789222+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
- "n_arquivos": 1197,
+ "n_arquivos": 1444,
  "arquivos": [
   {
    "arquivo": "README.md",
@@ -14,23 +14,23 @@
   },
   {
    "arquivo": "dados/acervo-1t-custodia.json",
-   "bytes": 4875,
-   "sha512": "e3c3b3b1c42272558b29fc42a5d1b7589a65d60bd006e0edf34b2926d1e155af54f7709088eaf9ba947337b098d2dbbc2297d9cc0c01edc65336958ea59c3a39"
+   "bytes": 4997,
+   "sha512": "c6b3a50040ed16ba0ed4cfac704207ac64083c8b2e4a0a4894e71eab4a92cd067f5f6086bc87ca1ea29abb97b684c3aa7aec6f2afbf58f5f146b6ad76c2665e1"
   },
   {
    "arquivo": "dados/analises/analises.json",
-   "bytes": 11060,
-   "sha512": "28a92c2b9472a909153f100fa331d514ff9bda58e6c94b158a7c8caa1205b2cca870fb6e45e26bd36458efea05b14585b2478b6c6f78e4b85e132d00f40bf1cf"
+   "bytes": 11201,
+   "sha512": "f02c7f3cbb2fb58f82f092380d1c2d62f3d3704d8fbf95204af4bba6933154d8aa6983d02576936c286706f1012c85eec5e9089160096a9efcf037c2f1075db4"
   },
   {
    "arquivo": "dados/analises/demonstracao_1t.json",
-   "bytes": 625846,
-   "sha512": "023741e0472f6bb2827613e1f3e5396fd656ae4443089a23239008e3739e868bce23cd3053e0a738e17a226e2dd539d87e32ff1d43ef1ef490d7e1d2986a9d2a"
+   "bytes": 728926,
+   "sha512": "ac73db42485870ccebe7969cf8b82fe663b10f5d47a2a8ee3a9e842430448cfb082ba3cb6cc0e0d95ddfb45b31fb1da5834a3c44e9880c827c0246a09b038947"
   },
   {
    "arquivo": "dados/analises/demonstracao_secoes.csv",
-   "bytes": 7682925,
-   "sha512": "37c60314d78aa801ee1b8ffa77ced4bcb2ff6e5db998cc5a09680d997587b2ca8c3c2259910e3116f938a9bf609d84b3e6f05183983efca9bb413a73f2d4b545"
+   "bytes": 8756607,
+   "sha512": "16bd28929bd956b952c20af0883eb13ed963a9e36262af66a0a6a477a3f7e39836a0a6ab0f723c5643c2fd6d1b6722812cebb7409f0bb20a4973e60d61f03d7e"
   },
   {
    "arquivo": "dados/bu/AC.json",
@@ -215,12 +215,12 @@
   {
    "arquivo": "manifesto.json",
    "bytes": 258057,
-   "sha512": "5f4d045186d4a611327444608321104da7d4570dc6696fdba6b99536f579d4ac932c0f172f8cb194cc5e9e0498ced1ccf50a2c7ddd795562d53defa01a3cf6ee"
+   "sha512": "6d0ba9b0429b6db2e9445a1f948d293863cff260a2985a4b4190f078a417eb29d2742f5021d6abbb82449a2fee01e0ce5814fbe1cfb98744a115b1e3c17b4ae4"
   },
   {
    "arquivo": "manifesto.json.ots",
    "bytes": 840,
-   "sha512": "6da615f93cdef7a90372e36c47234a263b9dd10844e456e3799df50e17316040d9638d62e77d5706df2c61b33429963dd196ac1b74d1c46ef68c84a266de436b"
+   "sha512": "c72b81495393897ace264b7d0aab9470fb67509fc8dd77aa16759d9ce085d5460283562ba838ab6f2ffc468b9931f402eb0495000bf0c34c3ddad7dc2d229f6d"
   },
   {
    "arquivo": "manifesto.json.ots.bak",
@@ -409,13 +409,13 @@
   },
   {
    "arquivo": "site/demonstracao.html",
-   "bytes": 40596,
-   "sha512": "e67a283452b26e1e85f3121feacba05e242238833b39bbb1c7afde147d9633fc9a0d94c310e975d7eed961fb812510b56fc07778b06be99281004741c87f6272"
+   "bytes": 40649,
+   "sha512": "e79d3e5256c7bd219a9a72e34a3bb252a90ebc8260b389240bcada776c6b12ad6bc9ef0765176817068415127400af9b808368c89b98532e1ecee69b5bbf0897"
   },
   {
    "arquivo": "site/estados/AC.html",
-   "bytes": 46590,
-   "sha512": "3ec594d128380366aecbad531f1fb020b5af084891647a0ca239ff3bb63c553768eb948a274c37f98d1d5cd4b8a909e0bdf9301bed316cce407b7654c66e488f"
+   "bytes": 46618,
+   "sha512": "1999f7d22a3e9acc1f88cc86ce9c8800e471e9bd542e80cb97621ca4c68cb39b96d3cb96fc34952d5bf43762b4e27bfc982cf46f9809f4a83c85e22a64a4a97c"
   },
   {
    "arquivo": "site/estados/AC/1007.html",
@@ -529,8 +529,8 @@
   },
   {
    "arquivo": "site/estados/AL.html",
-   "bytes": 75674,
-   "sha512": "a81cc3fce135fedb58bc87a2f3c9d2fe3a23b0ef5f9f1c14830c4eeeef82def6f01f9f4fa2760a66a9a17c198b5e3ea725dbef7612d424bd67e4f5d6e1069dcc"
+   "bytes": 75702,
+   "sha512": "2e1c62112383525acd9341e7e9c7ca3ec020999ab3e710a094d5562e51c51f27e27585176a69bc6d8567679bfa54612391cc51569f6c66fb939967e447729ca9"
   },
   {
    "arquivo": "site/estados/AL/27006.html",
@@ -1044,8 +1044,8 @@
   },
   {
    "arquivo": "site/estados/AM.html",
-   "bytes": 61089,
-   "sha512": "0791e9ad80e445eae5cad2938de59fef1065ca84f1478300ffb94e265f54644f36fc9fc006fcb3f9573dc2dba48afeef743ebe93648cd085eb65e2420335204b"
+   "bytes": 61117,
+   "sha512": "00df839bfb4d9276b061302198d204bc7e8ecc9423356fcbfd97d4ca73dc21b2f63ac2c78365d5c5e4b3113551812052c3e0d4c6c24735402baa4d5c54d46c82"
   },
   {
    "arquivo": "site/estados/AM/2003.html",
@@ -1359,8 +1359,8 @@
   },
   {
    "arquivo": "site/estados/AP.html",
-   "bytes": 44436,
-   "sha512": "4dfdcb1de3d5ed70baee8b59cbf184a09e99141062355daf4f9c56c49eb75ef2ce2c055292d6293e99204ce62f7aaec042c43166210a9e4b7647878ac9fc174a"
+   "bytes": 44464,
+   "sha512": "acb1c13b49c805ddffdaed2dc2b3b1cf41d6c117fd7885c8ad28bbbf9d6468ee5c1978dc2685d2ca7728a73e7f5ff4f00daa2e2dc507316f01601dde68f66088"
   },
   {
    "arquivo": "site/estados/AP/6009.html",
@@ -1444,8 +1444,8 @@
   },
   {
    "arquivo": "site/estados/BA.html",
-   "bytes": 184626,
-   "sha512": "5b4c201ad6ade9173bd651664831a34a8ca121b86ef794f8ce8d50b8d4d6bd8eedb1a627e2d36dd86c2152369d26adaca5a44e7e816b55b43a34bb2036237471"
+   "bytes": 184654,
+   "sha512": "6aac660eb8cd3bcaa077200bbc591e2a546357d1fdda860227d02de1b7f45b99d29aa05d8bcc51d11acfabc582648771e1218e7d3e97762c1c8ea3bdb8f93a64"
   },
   {
    "arquivo": "site/estados/BA/30007.html",
@@ -3534,8 +3534,8 @@
   },
   {
    "arquivo": "site/estados/CE.html",
-   "bytes": 103407,
-   "sha512": "a8a6cfc939d741882b8556a00b2ae135ba5fcd1c9e49972ed869ef0dd175aac3a29d04d372f79fa7d4327ba444e02cafeb1826bd63ccb8667e71fa85650577d4"
+   "bytes": 103435,
+   "sha512": "198162e63723081cfaf2e1248a31069085838db79b3880ae15d5ae44c2a65d4b9bde8262a97ba2edb3e00e696e6595c2d6310eece09304d9cb2e30066adc241b"
   },
   {
    "arquivo": "site/estados/CE/13005.html",
@@ -4459,8 +4459,8 @@
   },
   {
    "arquivo": "site/estados/DF.html",
-   "bytes": 39578,
-   "sha512": "f10b818c5e6690592b54dc0641a37b735ae928383b5c7d03b09385348bd0e109954b0d338beb2388279ea463ca969f6600ab3bcbc9c40eb86dfe8c3c0c01578e"
+   "bytes": 39606,
+   "sha512": "c702e089688fe4096e2c28aac5c6fd196593f31e6952a93412966c96e483bc469bb481a1b69ed31d99406a664d638d6eb5982d404b8a52427daa722f5dbb651f"
   },
   {
    "arquivo": "site/estados/DF/97012.html",
@@ -4469,8 +4469,8 @@
   },
   {
    "arquivo": "site/estados/ES.html",
-   "bytes": 67249,
-   "sha512": "c77abacbd3b3db3ab129884c2f511a131f5b225edbd68349224b38f409eec9de89d81b0392a8dd1e225822d0b5f1ec96ecb6d9454c7a2f113d746a30b3a07ed0"
+   "bytes": 67277,
+   "sha512": "46d64ace74f60fe80f5673e898e1a595c62c9b02f0bcd88a4ec76d247bc5b73830d10c5bb9eb40040366318fdf9295578133cd9ab2bb9dc48df4399455099caa"
   },
   {
    "arquivo": "site/estados/ES/56006.html",
@@ -4863,9 +4863,1244 @@
    "sha512": "a82a74f04a1d76043d7b1f851670b45a6e0383b8f7a4d716e73df7496fac91eac85dfb1fbb3c79372b8ee20f31e5b87cace4b5b02e339fc3e8ee704e9313379d"
   },
   {
+   "arquivo": "site/estados/GO.html",
+   "bytes": 125140,
+   "sha512": "bbe042a66b9313f24334a84042326d3a1b40597f6ac84c4962119e5d70a786aac53b804d545da35bf44ac4db24bf50c4f371d1d210811f902cf17c88deb72171"
+  },
+  {
+   "arquivo": "site/estados/GO/92010.html",
+   "bytes": 34912,
+   "sha512": "ed4346ceeaa4a607068a91d8cc2a71a91252c7abfe79463768e3ca477ca5e561ef63ffa60b14c6ab4a5c6fcea03bc73b3b6b7571c734fddc8e84b10b60e093fd"
+  },
+  {
+   "arquivo": "site/estados/GO/92029.html",
+   "bytes": 35502,
+   "sha512": "8f64793b7560d6845f079de6bb154dcb5be148f6412a82deb4ec73b1c886a81fb162a4c5f27f4727b0f65f8184572f3a1dada5db009f90c0f000bdfc3aa25441"
+  },
+  {
+   "arquivo": "site/estados/GO/92037.html",
+   "bytes": 32587,
+   "sha512": "ff2f45d933612801613aa811627cfe21008335b9492e1f02f7eeb60fe8d20b2c548bec3db441972e947f3ba991a4875e61d47797d41391d6f4ac35f1f6050383"
+  },
+  {
+   "arquivo": "site/estados/GO/92053.html",
+   "bytes": 35514,
+   "sha512": "678d014500f44551e1d4311aedcfdc3e2a336a8274b104d5d634ce595ac09c915969a4a3b6e2d1e5bad8889854a8cc01ac5e7bc3dcaf53cdb8d461d4397b95c3"
+  },
+  {
+   "arquivo": "site/estados/GO/92061.html",
+   "bytes": 34598,
+   "sha512": "dcb6c8980c11dbaca6d192dd29846132945eaf8a186bb0fac504564f1c7be1448073cc066bdd0939cebf11ac14d3be33409d64fa23ff30e6c25552603cd2b243"
+  },
+  {
+   "arquivo": "site/estados/GO/92096.html",
+   "bytes": 33953,
+   "sha512": "10001ee49229d1607aff89a73a38fdba7d480845c60c826c639717090e96e18a7d5d9d97c9b75bb1e58adf60ccd23fbebb8c850223f3e54957db830cdee267ac"
+  },
+  {
+   "arquivo": "site/estados/GO/92100.html",
+   "bytes": 34350,
+   "sha512": "bcf90f147dea1dcf587131c347ec65504a3147b31cbfacf1518eb0f05d6900b86da96a31bc2f77b46724efca0b0295df725bbec6f100ab38e62b40f9a7571ab6"
+  },
+  {
+   "arquivo": "site/estados/GO/92118.html",
+   "bytes": 35113,
+   "sha512": "3bd71cad2e0f8f3cd810150f6166554165e3b7f30d0adaf91b7c1bcaa80b49e4d352473af38a1bef9db049016da5078ff3913c2ecc17ca87f9c045c0b3f9d288"
+  },
+  {
+   "arquivo": "site/estados/GO/92126.html",
+   "bytes": 33931,
+   "sha512": "1fbaccd22ac1ff80ffcd7e55fb6cfe041064db43afbfdf8ad59472e87dfc69cce494564002380891e0056912f9857a0abff8e29315c436716216ce48a5361e49"
+  },
+  {
+   "arquivo": "site/estados/GO/92150.html",
+   "bytes": 34940,
+   "sha512": "4d115703e34bfc26de4dca552f178c56908145eaa3cbb5f049cb55d39f8bb299c570d9e31b90e132b7617a674f8269a0f3d3e5031b608712720a1f7e4048ffdb"
+  },
+  {
+   "arquivo": "site/estados/GO/92169.html",
+   "bytes": 33473,
+   "sha512": "2a980f47379c3416c1183e148599e6ee5e654c1dd29ec6c083cf830ad7dbed8b4e98b37e65e7d8374e2094fbda97c5dd0015f7a9a3b1e1edd4be21c5fc6c0212"
+  },
+  {
+   "arquivo": "site/estados/GO/92177.html",
+   "bytes": 34419,
+   "sha512": "5ef1b8035ec26a0d16391e6ddef349301bb6f1b21371ac8e61f63d817c94c7ab30a0b95225560caf877b7a783d51a71f508ff469681ffbb6f1f5fff0869ff45b"
+  },
+  {
+   "arquivo": "site/estados/GO/92207.html",
+   "bytes": 33443,
+   "sha512": "058e641e1c9c09b4c802453217911ce10b1d79b0e42473a39310d757f563299431d44fc2dd92fe9c817f36124feed8fd011d5fb6d9bcdf40dd2e166e914be2bc"
+  },
+  {
+   "arquivo": "site/estados/GO/92215.html",
+   "bytes": 36255,
+   "sha512": "6f74d12868679d7035146fcb54ff650c0a16467fb98f27e0177984c602ace4b4d2300f4a47072662a964bc2c1c1ce67b38c895d902a57afb8b16b69fd2ed717b"
+  },
+  {
+   "arquivo": "site/estados/GO/92223.html",
+   "bytes": 34300,
+   "sha512": "adea730a14f3e39eb4a6be571fa1d105a53b9b68b38a2f58dfb29e7d431349d80b911114bda264c207635b233d1d01693653e569b04d6d1e5ac2008e04f3b881"
+  },
+  {
+   "arquivo": "site/estados/GO/92231.html",
+   "bytes": 29417,
+   "sha512": "8928af30ac04638ee527b865bd04421370cf66c0889a22cc792222af8ef9439277e5b46d2332fd9de04207121c78fa42dd48108204cfcaef0aea73145cb55895"
+  },
+  {
+   "arquivo": "site/estados/GO/92258.html",
+   "bytes": 35417,
+   "sha512": "7a42b2efa15ca1dbe4908d84cd3bb6e0c2539a49e868044046de4edda9f311d55e4ebefc4521a0e54fb97849ff21bae553fe0a373414c66f802b97e9619b9501"
+  },
+  {
+   "arquivo": "site/estados/GO/92266.html",
+   "bytes": 33944,
+   "sha512": "b5355e073c25f14fe6e6751b3334f1f39f6e861a9e767d681272decf2698999ff6c0faac7337685631b4eb7d4842e8c7f4a6e9c2946642df902e38a6b5591455"
+  },
+  {
+   "arquivo": "site/estados/GO/92274.html",
+   "bytes": 37215,
+   "sha512": "e691803cc35bf5eafa5c2d539c04cc315beb2145931bfc76bb59559cfbc45944caade3b6c206fdd5f10d4eab25fce460d95238fa76d61548c2af6b6a36f113f6"
+  },
+  {
+   "arquivo": "site/estados/GO/92282.html",
+   "bytes": 34388,
+   "sha512": "8345c0b8141d690f862db8c501c0ac793d93688853afd437c990e1adc4d67d744f56b0a016c3662b136d1ab989dcc5655906805ac722724c058c29f6a935dcae"
+  },
+  {
+   "arquivo": "site/estados/GO/92290.html",
+   "bytes": 32621,
+   "sha512": "2850e4ecb09bfa6a35ff29c874bac69c9a9e26f4c67a52eafa4f838108811ec47c4803728272ae270de0687caeeb462067ce244e0700b8735a33f67880ea9275"
+  },
+  {
+   "arquivo": "site/estados/GO/92312.html",
+   "bytes": 33655,
+   "sha512": "ab247d4cf6f77632b59b0e109e9b4c99751a0b5fd154286df514d92de94062217f421c308135bd484e0d83a752398c58e2a1c281a24eda14945fcb1ec2e23d41"
+  },
+  {
+   "arquivo": "site/estados/GO/92320.html",
+   "bytes": 34290,
+   "sha512": "f5ff0c4ab2c2b900fd538f1032c92032c50a27f3a064632bae4b48f8f8f2d7ed2f60a74803063d048227cfe7b8b70fbe20c02311ac4e3222f7cbffa08f80c99a"
+  },
+  {
+   "arquivo": "site/estados/GO/92339.html",
+   "bytes": 35020,
+   "sha512": "ea2b2ecf2c33cf2b99cd017c1a948aa2f963df318d5bd61bd78058369e4398b84daa9f806c8c77ffe38a50ab63ed1d759de2bab576b9ed031e70e7e52661537a"
+  },
+  {
+   "arquivo": "site/estados/GO/92347.html",
+   "bytes": 34339,
+   "sha512": "73886b8896298c8e1f34e9c09badd78588bd71dae3fbcd41a8ee2f6863e411781b2edca35e30fb8938646602710edf677a7d046a24633d60483c89d07b7bf0ff"
+  },
+  {
+   "arquivo": "site/estados/GO/92355.html",
+   "bytes": 34641,
+   "sha512": "c023f34679bf16afd2e3cdee47cf2071e49eb64e1fc55033b3c8ceff7a73036673239e38285fd95b2ac1aecc7dfc6f3da32aaa9a40fd2f283e3b77d5c539e380"
+  },
+  {
+   "arquivo": "site/estados/GO/92363.html",
+   "bytes": 35033,
+   "sha512": "df4255922b714e49ff0e85729ad589af6b4956437868f2581eb03f3ae1b0431976349bb9d3fad197ee69e5937c0759aca5ae8a442001f939f963188c118a45fd"
+  },
+  {
+   "arquivo": "site/estados/GO/92444.html",
+   "bytes": 33943,
+   "sha512": "d193dbb6b4eebd5f46a3e58682c76339b20a7b764b7928678072fc999c37ddefe6f47bbe6030b22824dad6682594f5e72dbbcb8492ca367e726bb9e77456213f"
+  },
+  {
+   "arquivo": "site/estados/GO/92460.html",
+   "bytes": 33715,
+   "sha512": "5fd141bc5edf90d08d92a557ee2dfff38c33eb76ab8a0261e905f7075ec45d5772014ead38df0e0bf04e4efd03a9a4d9266360b6d184272bf553a9b843b8e798"
+  },
+  {
+   "arquivo": "site/estados/GO/92495.html",
+   "bytes": 34091,
+   "sha512": "63645dac51e8c7fea0cea156f1751e69de45d27497b109b143159d20d3191199747d7551c902daf1239e0a51de9314f9577541820d80f3f9d1e6a8ae83c450ab"
+  },
+  {
+   "arquivo": "site/estados/GO/92517.html",
+   "bytes": 34837,
+   "sha512": "5279f5487dce6f815190cb78144c0fec1f6411bef2abc0a4aa8ae774f9c629830684f26e1d917427fc9e9bc39655c52e04f1d3167d8275419fabdb949111eaac"
+  },
+  {
+   "arquivo": "site/estados/GO/92550.html",
+   "bytes": 32755,
+   "sha512": "3c63cd2a211088c424e4da189fe65b256853deb2adb3a49831e436f60f377031b65eb7c91b986e912042eec44076f69a1842a29bef839b2cf5aa07182613a227"
+  },
+  {
+   "arquivo": "site/estados/GO/92568.html",
+   "bytes": 33716,
+   "sha512": "960886903666fbf4eab9fc0a985fd4f56c945db57b326ed391f8a75fdb09018d769eb968f5e776c9ff01db3a858196c8fa45f5174cecc12d0ce4c3d0cbb5d4a0"
+  },
+  {
+   "arquivo": "site/estados/GO/92614.html",
+   "bytes": 32451,
+   "sha512": "986a2ea3185e2d9b45e4b96928921604168a60aab4550134e40e44a9f6c996921a2bcaec6886185f4a38936c47eebfc29fa997d42e67e9a1dc0183931dc807d4"
+  },
+  {
+   "arquivo": "site/estados/GO/92622.html",
+   "bytes": 31807,
+   "sha512": "03a8d567f113610a8b09a1ea49c16187c525672641ab55d72e739680d4245807a4c0bb25016d08a225fdc99ac41084beb63229468532d57c3ce1d19b1c004df4"
+  },
+  {
+   "arquivo": "site/estados/GO/92630.html",
+   "bytes": 35702,
+   "sha512": "f89978688d8f9decdcea6b18dd354924a23c24713f0733ce92f6cd8f2c4ab2460fe5bf539a8799d5cf59c6fcda05be59f3b04166c962acca82400458de9f8d2e"
+  },
+  {
+   "arquivo": "site/estados/GO/92649.html",
+   "bytes": 35290,
+   "sha512": "8cdae372d2c8e07ed132a96b2775a2633df82079028ba0384ee9f0419a085a405f875c75d468273230768db02731dec03389c558f6d241146d25e0e3100a7eba"
+  },
+  {
+   "arquivo": "site/estados/GO/92657.html",
+   "bytes": 35523,
+   "sha512": "0781ba82bfec49065af1a0bb53aef64bca09c03073e047ef6c315b79fb913d866f9dc40866d9df2334e1b7178d547bb200113990603bf5ea07ff9b5c6bebc9a0"
+  },
+  {
+   "arquivo": "site/estados/GO/92665.html",
+   "bytes": 33757,
+   "sha512": "014891724d4c7a8452fafbd1dc178ed6ace783f1281fe5c97c2e3d514de6fc9683809b7aa107eb66a41722e9c1340188519cd00db033d9beb870905471b7aa6a"
+  },
+  {
+   "arquivo": "site/estados/GO/92673.html",
+   "bytes": 34662,
+   "sha512": "213f5157f4718bf414b58289c05cc5812307a9f8222b372632cdafe5bc21a54aa8811d78fc3b9a011f4e30db725c8000d0154f8e382301fe4d7651531f5c667e"
+  },
+  {
+   "arquivo": "site/estados/GO/92690.html",
+   "bytes": 35301,
+   "sha512": "255cde3c0f95de97f02fed25979fb2c47024444da5df71b67f268d02c0c872bf0789efbf810030804e7f311ae79ab947b71edff44f958358114861bc7b1c3c2c"
+  },
+  {
+   "arquivo": "site/estados/GO/92703.html",
+   "bytes": 35744,
+   "sha512": "3040795be09cd680fa6e61a9dcce0bccfde7e07e78f65f9aa92a413c39953c8f4600e4708dec5d72a55bcf9d0c368acc1bff4950c805636f4e82c3fba00b002d"
+  },
+  {
+   "arquivo": "site/estados/GO/92711.html",
+   "bytes": 33235,
+   "sha512": "224cc8a2757a000e19df44d9042590bf9bc6ecca2f40c561227a8e1cc041627cd4537a31ee18b40031eb4aff7abc89468e6e80d39f65f23e8078ad01dbbe2c27"
+  },
+  {
+   "arquivo": "site/estados/GO/92720.html",
+   "bytes": 33804,
+   "sha512": "7960867180462c1692241ce18e316203bd4a6dc8842b96614921c3841763a2690a730a743556ed04cb0c80111144fd077fa26fbe6bd741e1f95c371312977d83"
+  },
+  {
+   "arquivo": "site/estados/GO/92754.html",
+   "bytes": 34654,
+   "sha512": "c116d91330eb5dee39c6229c91fe951484d6226a7a73e25e58651d2240c22d277a348445099fcc19317807dda83adf9aefdb59d67d23d79bf7e8321988eae41f"
+  },
+  {
+   "arquivo": "site/estados/GO/92762.html",
+   "bytes": 33948,
+   "sha512": "4d6f380659f6978a7e69712a13148fc7709d8eb6052b0944aa35b932396cca3444024158d94c32004c9a7a542a222756edc6132a9e088f0724b4772dac39bae9"
+  },
+  {
+   "arquivo": "site/estados/GO/92770.html",
+   "bytes": 33756,
+   "sha512": "30baec9b9454003719ba3f4ca02373bc58a1a08e584e069642dda5cbd95c5a0de571d210fa9e1205d238d41423d2d7a68efd8b4bafd39f4ab0e7f791d319f249"
+  },
+  {
+   "arquivo": "site/estados/GO/92789.html",
+   "bytes": 34660,
+   "sha512": "95ea57e771980ebb57083d171d047f9da4e1a62db5d8dbbc79f1d32c8eced1d4179aadccee19411e8c8facf7fbfd39eab1042a9fd8e0df1d3acf7eb85660028f"
+  },
+  {
+   "arquivo": "site/estados/GO/92797.html",
+   "bytes": 34351,
+   "sha512": "3393a1a45a48d9e6820ffe2b5cab4926c802e1c1087086d32f5662cc6589a30f860c982548c1845b1dc1a27e6b506ab9d140cccd05e7b40fe064554c12c900cc"
+  },
+  {
+   "arquivo": "site/estados/GO/92800.html",
+   "bytes": 33605,
+   "sha512": "b15a2ed863e7f666d4443bcc0c9b89fc869d390a42907e6dcfdb58aaf3d326658b2cdd402b4a53e178debaa195ee1415116bdb9216a2dfcd33f32fd2b94defae"
+  },
+  {
+   "arquivo": "site/estados/GO/92819.html",
+   "bytes": 34323,
+   "sha512": "f064e674e6a9c502ff441c9a06009e96b6012925621b2f4557af3eaafa39afb1a2b327fa6bbc32fe14cfcf135a86d71bc74d2b065cc2700b393311c35449a8cf"
+  },
+  {
+   "arquivo": "site/estados/GO/92827.html",
+   "bytes": 34287,
+   "sha512": "53b948722cabc4c340312511f9d2a4b24c53d0682beed250743de0cba010a7603d9c1adc7940de148edcd5e63f7b9c03ca1fb6bd59942965a0ae8e264d7e6fd7"
+  },
+  {
+   "arquivo": "site/estados/GO/92835.html",
+   "bytes": 32012,
+   "sha512": "980a76171c915666863fe9896b5d3d0eb4805384a589eedd436d34750c57d6159c5d6e74f8ec29886b66149dc03875dd0953b205352faebe5148e73cda867bf1"
+  },
+  {
+   "arquivo": "site/estados/GO/92851.html",
+   "bytes": 34628,
+   "sha512": "36acfaeea26634cb79339e7e8dcb6cf183aa20d6323a5354a6e97c4f33aa607f700bc10bbfec1f435ab227e5b0de54f039e9a9e6b22e70a5a511ec8c9246940f"
+  },
+  {
+   "arquivo": "site/estados/GO/92860.html",
+   "bytes": 33407,
+   "sha512": "430ce36fe27a2b5f9e0ba0cb6d0d9605dbd06ad32b54a0a8ad2a48b744c1dce9cb77099b3446062cf9e75c98164f050d4ac03f0f9804902a45abb3424337e2aa"
+  },
+  {
+   "arquivo": "site/estados/GO/92878.html",
+   "bytes": 35228,
+   "sha512": "889dcf7ec9e01766b29a07076047800a6fcdbc9199c6ab12b61b69cd2267ea58b0e899f644a1f25bc8e61c1b81b8d75c362f64543ad8eac46884567d92a89a6d"
+  },
+  {
+   "arquivo": "site/estados/GO/92886.html",
+   "bytes": 35656,
+   "sha512": "69f1f6e321221af4f9408cd30a19deb7d43d8f88a16f284c998c1fe7e21e7f3de9fad95256e41478e0082c0114819720413c228593a980eaedf0d36185eeb988"
+  },
+  {
+   "arquivo": "site/estados/GO/92894.html",
+   "bytes": 35655,
+   "sha512": "702f6bd5a0a4f91c910d5192891949ca3ee26c90a7e0bd9640074c0a32be336500d88fae1ff11a7e6d8cc30b17c720002cbf63f43bc762974f7f7890d6a7ef5e"
+  },
+  {
+   "arquivo": "site/estados/GO/92908.html",
+   "bytes": 34284,
+   "sha512": "e0533b14bbc0e1f3e6311bf4df090f6fc9343f10dc402a515b197a232402681b131a1fc5439aee080ef4b9025a313522e3166c9914f30da5d0fbff76e9fa523b"
+  },
+  {
+   "arquivo": "site/estados/GO/92916.html",
+   "bytes": 33846,
+   "sha512": "668cdb85f7694f0acfdd92932aad044875e052cf8cac7adb5b316ddabf8edac54fd4ff389fdf2b2fd786fffe193635121a0ba3a18dcb8e17d2ff25a7b168c631"
+  },
+  {
+   "arquivo": "site/estados/GO/92924.html",
+   "bytes": 34403,
+   "sha512": "444b3d4af8bec246e66102266fd8983228b0186e835df85ba8454c942af512e550724331f10b61ad07a979456a5f5c4b9e6b8a39894129ffd858310c9b178999"
+  },
+  {
+   "arquivo": "site/estados/GO/92932.html",
+   "bytes": 35510,
+   "sha512": "86419c27b2dd86b2402c627881461d7c6fd7f02c39122a076c1f9105cb180afc3ed624eba9c55ba19b7b2f864464f33ae00ed6f913785c70bf77303f3c1589f4"
+  },
+  {
+   "arquivo": "site/estados/GO/92940.html",
+   "bytes": 35187,
+   "sha512": "3c5b9c3985163d8a1085cd16f95396815d3c97c9ba143f99b8018f6db61dab5aaa359724fb2b2a3c723b2591fc98bca2320d0263e2ed7c60b0c471a4bffb9c1c"
+  },
+  {
+   "arquivo": "site/estados/GO/92959.html",
+   "bytes": 33914,
+   "sha512": "1168efac2bfa3e5dc3105985d2040c8382207a144efe01cb804fb872410da843f8f242f405634ee6261d39e20e428289ba0eb4850a1b6bebfbdc923db4259ab0"
+  },
+  {
+   "arquivo": "site/estados/GO/92967.html",
+   "bytes": 33847,
+   "sha512": "15680eba3925414f9cf657046a81b74777462f7ad5ef7e90d9ccba3d73f571cc90a4bce9bc61c256d23678b855537c9c58c72b9c8022f19dcc89347423a1a0a8"
+  },
+  {
+   "arquivo": "site/estados/GO/92975.html",
+   "bytes": 35894,
+   "sha512": "212b9e68950e2774627a2cb54f2a514f3fc5519012c4eea0d8ef7c3c3dc5a5517e8040a7cd1e5f4b01bc910ccdf913e518d6f6b18f9302a533c1704e730f9fda"
+  },
+  {
+   "arquivo": "site/estados/GO/92983.html",
+   "bytes": 33917,
+   "sha512": "ea376343287933fe101871ca11350385fc01122b21b6422bae7fec9bf5a109897905c3d70366d10cffbede23ee8f980f9177247f99a22c61fb90eeac632ea13a"
+  },
+  {
+   "arquivo": "site/estados/GO/92991.html",
+   "bytes": 35797,
+   "sha512": "81220055e64c66e459309409e8d9e11b7aacd644e73c35c2ea69e76e7c585b004f04535b738c7af4f463b7330dea87740be2c41fdb3de21e4818c9ed15203a60"
+  },
+  {
+   "arquivo": "site/estados/GO/93009.html",
+   "bytes": 33544,
+   "sha512": "cb2d0fccaabf25da497cd0a57526e257ccc426d487b9a4a2bef71e88651f655bfa7fe83582e0c114a7dc65c76e6c3d60bbd6236347512ab5343d264b4cf81c2d"
+  },
+  {
+   "arquivo": "site/estados/GO/93017.html",
+   "bytes": 35101,
+   "sha512": "57b860cb449f985494af5b83a04ed7bdf9f61211f2c4255e0987680a162c67c7223e34a83f8b9bfe43692780b838daa808c1c48cf7fc38b536af0d4f2d7c513f"
+  },
+  {
+   "arquivo": "site/estados/GO/93025.html",
+   "bytes": 35725,
+   "sha512": "0ae67af19f0b5d393788f8d8af81fa68cd9f0eff625b0759c9706a32932705345aba7c7a1d6876a1bed4efd5e28011e1a8a06e6b495f2ac0ca7b719be5a2d10d"
+  },
+  {
+   "arquivo": "site/estados/GO/93033.html",
+   "bytes": 34049,
+   "sha512": "465e597c53bc1fcc357ac54a4f31b79768936a04fc31e4028dea1d12289c485e2aa8cdbc39ed428ed76a21e1fc31547df048f247afa84aec09ddb97867759544"
+  },
+  {
+   "arquivo": "site/estados/GO/93041.html",
+   "bytes": 33417,
+   "sha512": "7849701f6093fdabf554cc5c48b68f9023142cbf2578a327dececdc662de687eb3771f7c39b3ab2c76015b710f2dd31eb0f315052beb725fc47a236a4df0c76c"
+  },
+  {
+   "arquivo": "site/estados/GO/93050.html",
+   "bytes": 35223,
+   "sha512": "6c681949864487ca9d88782f31a7cb3905f6f5c930295dea09e05aa50c3701c336a79c7bf76798ae6ae009dfc63eb765430b986aab1113146b2fdef658b4d953"
+  },
+  {
+   "arquivo": "site/estados/GO/93068.html",
+   "bytes": 32799,
+   "sha512": "c245398a35abd0262134d6a8f14d61a9a89a4fb281869f88af28a580250280b7a620db3b4c0d7a2db3794f4172b62f05f549e99d9ec1d5e2ecc3c696dc0ddc45"
+  },
+  {
+   "arquivo": "site/estados/GO/93076.html",
+   "bytes": 35321,
+   "sha512": "0bdb3889b1d8f16542c81052e4986338a155ba0cce9b6c883735b685a6c9ae4acdd23acb3656c2def980bf261b28af52ae8de4cc5fb7a7bc2db0dab6bd33fef1"
+  },
+  {
+   "arquivo": "site/estados/GO/93084.html",
+   "bytes": 32506,
+   "sha512": "0feb2eff073ba4dbc5f4d295c6a65af3bc124cf907e77c388c3059db02d4e36e9bfb9ddad2ae0c6d333875e03717fb75460b0c24cbf8286c6adfd7c21462dc96"
+  },
+  {
+   "arquivo": "site/estados/GO/93092.html",
+   "bytes": 35502,
+   "sha512": "b9b9cd6cc432eb8a1882d950ce3a06517ce50004c2d2e7aba83c775fc661f74522ffa2762c842b015ed0ef9b3e2bf147bd62df5a11fa08d4cff9a575bacb9eab"
+  },
+  {
+   "arquivo": "site/estados/GO/93106.html",
+   "bytes": 34019,
+   "sha512": "fe2a225eb87b5bb4bd4c47abc4701ca66fb0fd149950e9a4120b6c421571f4738aea05270dc00aea2a549ea014502b432476572acce93c0b4c969034a31c8dd8"
+  },
+  {
+   "arquivo": "site/estados/GO/93122.html",
+   "bytes": 33393,
+   "sha512": "4bd09646490b94036da4a34e317a89facf5f95a967dfb529fa7f772b3fadb09b2725ed9d1726284622d2a439d3965d902836a865ef3b3c08fe44fa5e73d16dc0"
+  },
+  {
+   "arquivo": "site/estados/GO/93149.html",
+   "bytes": 33705,
+   "sha512": "65a4a72e3e3ee8b528117eeb47fe41fdab44b00f3b110988ce2a4d49a78ae944e5d523d78b0d95df60ab312a9fb20044aa2b4d34da1593b8bdcb4be7b8a45675"
+  },
+  {
+   "arquivo": "site/estados/GO/93157.html",
+   "bytes": 33829,
+   "sha512": "c51ec3bfdfeb3a554003320bd7eebc4fb7cf9f9b03df5dc75c41d38f1fd17da80e63a092b14945b457ce4e1d7d0bfb3d813dd2735c07a4c83c69cce67cbf9378"
+  },
+  {
+   "arquivo": "site/estados/GO/93165.html",
+   "bytes": 34752,
+   "sha512": "0056be0e47d18f97d85f574e3d146279eaa646b4dd8bf7cba57ae72bff6cdfb3294f329f3969076bb6cc4107196f12bf3557a66e561a057b25161c25ffcd6666"
+  },
+  {
+   "arquivo": "site/estados/GO/93173.html",
+   "bytes": 34668,
+   "sha512": "316d3d485fb9f7ef4828d17123310e711746d77da1cc815ba6ffe873ef4c461e290be4615d43395870749f0a6cefe01df1e5e0867acd0a9dbe16a61c46a8ae6c"
+  },
+  {
+   "arquivo": "site/estados/GO/93181.html",
+   "bytes": 34775,
+   "sha512": "4985f437ce52f331f504e06c5fb230993c136b16cea6740cc49a48bbd68ed3f4b08539454211eadaf691bbf0e5abe9587c42457de0d7071402b159598e776366"
+  },
+  {
+   "arquivo": "site/estados/GO/93190.html",
+   "bytes": 35141,
+   "sha512": "c614d67c69c676ca0871f88d738df39854efa404b5696f8003b4f0dc6cd833d547004d8c7d3cb4ae1040d92126c40aeda884c3cd52a6fd495d2b115627d55aaa"
+  },
+  {
+   "arquivo": "site/estados/GO/93203.html",
+   "bytes": 33613,
+   "sha512": "9f09ac85f75f20f41f8bbdb3532d6b1c86a9f3107901a7d047a5a84839293174dd138df56d425b4fd9deb70122a79a6ae1f46b9774eba320c1c5118a15538d39"
+  },
+  {
+   "arquivo": "site/estados/GO/93220.html",
+   "bytes": 35508,
+   "sha512": "8205930217cfdc55d483a52a8f145b295e56e507c7fd5225e47c42a62e78e3b8f43c6f4377fdae87ab25e857dcb96f4a50f676979bb8896690a3f6e2c63161a3"
+  },
+  {
+   "arquivo": "site/estados/GO/93246.html",
+   "bytes": 34962,
+   "sha512": "297cd0a4342649112380681373fca480b261d9fc4abb6cfe2a495f4893dfb441d3e2b6d12ae76ae7405092bf189ae9962db640da8ba5b56adc72227b3a3610bd"
+  },
+  {
+   "arquivo": "site/estados/GO/93254.html",
+   "bytes": 35947,
+   "sha512": "f938072455c7e41a08a119129143c880e91264377cac54f611643abd1c894b5aa125a995c6057e06bd7b206cb4b4eaf6a9e4916a836ba7864caf782b19149851"
+  },
+  {
+   "arquivo": "site/estados/GO/93262.html",
+   "bytes": 34342,
+   "sha512": "5912986667059737522c2dcfab986e44ce9e28ed4118e38a3768e2c64beaf88b76b5140f3d59d29ac5f6f7ecf9c9aee1748e18165b64e2ac7a58ac89874aca2d"
+  },
+  {
+   "arquivo": "site/estados/GO/93270.html",
+   "bytes": 34424,
+   "sha512": "501687edc45098f2ab518da952dfa0e5bc665f09e84c4d8644684fbf7af83dd6d20966871f44b6721ad6c108e207ee01b60c964b599a90b4590732ed65057c34"
+  },
+  {
+   "arquivo": "site/estados/GO/93289.html",
+   "bytes": 34660,
+   "sha512": "dcd1ae1059ed1d354a25f52098f63bc46025f561ba1bd73dba6af78d72778996980afc42771e600f280c2a6a048e6225b5893337bcce68502795d62664cd0445"
+  },
+  {
+   "arquivo": "site/estados/GO/93297.html",
+   "bytes": 35813,
+   "sha512": "1d6b036b1df0bef7b75a77a4926574654b2bd89bf64f796bdab8aab577405c18eedc147f90d3c24ce60363cdfdd6378f5a4e98b6e46ac28d410943f8bfc70996"
+  },
+  {
+   "arquivo": "site/estados/GO/93300.html",
+   "bytes": 35479,
+   "sha512": "4335ce7d3b2aa25c214036ffad07f1ea6ff4b969c0fcb777fe95fea67a594ce4fbd607a8fee6d5b71a250b8d8317a9bb0d4cc7df1ecde86f73e3cae960974ec9"
+  },
+  {
+   "arquivo": "site/estados/GO/93319.html",
+   "bytes": 33311,
+   "sha512": "dc09c02b1b71190adc1628ede1a2b66af599aad968ee717ba788d94f343583934a0941f9a55d8cbcab67e7ba442bd9eec0b4af3edacfdbd2eb0b49b6eb38eb61"
+  },
+  {
+   "arquivo": "site/estados/GO/93327.html",
+   "bytes": 35540,
+   "sha512": "5534b14795c497e82d1abd2e32594e9e91a87c9a9b79c0cfab279a7b8a1f3964490b4e575b24b392f62588002cc9f8ff24308445f8b7fb63ff3bfefafe55460d"
+  },
+  {
+   "arquivo": "site/estados/GO/93335.html",
+   "bytes": 32798,
+   "sha512": "4b4480bf1bbe170b39fa90a475593ec975a2443a80987701281204a65fb59718f65deac5dad2235f04b3a06d6fbd53ac9ae7dccbfa496fc0e873bc0d58e7c0cb"
+  },
+  {
+   "arquivo": "site/estados/GO/93343.html",
+   "bytes": 36852,
+   "sha512": "7524e6335aad7ebda9e7894034c2755eef770c129fa1f33663baaac7f1eb17b4537f9c3e6755757fd1e7481a159bd5bc1a90bc2b3b019b3a8027e5750929d5ed"
+  },
+  {
+   "arquivo": "site/estados/GO/93351.html",
+   "bytes": 34926,
+   "sha512": "3658d4de1b7eb73dbb9cd71bf6301f844071a9782e6bfd3d3f79207469758e00757ae3bfe74986a0d5a78ce8169013057d5eda124327d3cc3dd642cd3dc5dab5"
+  },
+  {
+   "arquivo": "site/estados/GO/93360.html",
+   "bytes": 34671,
+   "sha512": "8c2f4fa3a2214c85ef2de8d608c3f450ae5c7d587b3a6eda58fae00b887ae00fcf2c6bb8232e4393a877b10e50f5748b8856b32bd2f0afa0bf0c7f07015e663b"
+  },
+  {
+   "arquivo": "site/estados/GO/93378.html",
+   "bytes": 34022,
+   "sha512": "2e5dc504bdff61f74575c628f0c804a97d621ae94b1c53e977efaa1402768d9c4f6916b6e487eb98d492dd176c1c060dd36616e8b94f6e06fb43e226b9a4e112"
+  },
+  {
+   "arquivo": "site/estados/GO/93386.html",
+   "bytes": 33158,
+   "sha512": "809382845ab69276270118bc4495f13d05465f4af718e41ea437dffa9ff8931e459515f51fa318c39fef2dc839f033088c4abbf72c14a37c1be936d6077336ca"
+  },
+  {
+   "arquivo": "site/estados/GO/93394.html",
+   "bytes": 33286,
+   "sha512": "98d700e92dda505c6b3d79ad51f3641c2066c6c7c5e53ffa9d2659cf2538cdba7c35b0eb837ad8c434b3de19c1db7f7e3b9bb173a64ea2cca4727cb6aae64716"
+  },
+  {
+   "arquivo": "site/estados/GO/93408.html",
+   "bytes": 34176,
+   "sha512": "0fd9d848cd55235fc34e4c59706594de2e438b2399e7fd780f90ccd45d2a0b7609946f1043a6f4e448c90e0af4dce5a528e65d0b4d43dc80271a796a2da9e663"
+  },
+  {
+   "arquivo": "site/estados/GO/93424.html",
+   "bytes": 33481,
+   "sha512": "b922e9c98a21d76bc2fa8249a704be25f50f52fcbf790c5324c74601812d46a0a0c4fbf34b1a233318233d14371ff3a205c9f3518b9dc3d9e8e740c4e6f01d25"
+  },
+  {
+   "arquivo": "site/estados/GO/93432.html",
+   "bytes": 34636,
+   "sha512": "64720a50040766b74de08f1f03c3e7b1a86f25e07c0e640c90f236450f187d082dadbd7ffe762f92d7dc45e29ae17da13c3a3197cd2309a96582f7e749d12b35"
+  },
+  {
+   "arquivo": "site/estados/GO/93440.html",
+   "bytes": 33374,
+   "sha512": "6161504100bc50015b721a10415865c4af27da3b9554c6c2492e7594b6d8ba4cb4f82c9024c3b33c595b319a36ac00a1aefe9e370e86bcc12082ff429097b982"
+  },
+  {
+   "arquivo": "site/estados/GO/93483.html",
+   "bytes": 33087,
+   "sha512": "39050069255205d9b66fe590ff5b6d36d5415a2f636f08727196c82caac711669990ff8618a5e7f5e64a705c787f8bb6e1bdddcb54ae0a392f68049908ce0f39"
+  },
+  {
+   "arquivo": "site/estados/GO/93491.html",
+   "bytes": 34785,
+   "sha512": "0c1b7a9ac9fac43b5b9c6f65a77207872c89831ffcb25eb1c132e4021b207c719d20e09c729844c0ead813df5cd5059fd374d4a78f4d5cbb36413a810db37f5c"
+  },
+  {
+   "arquivo": "site/estados/GO/93505.html",
+   "bytes": 35455,
+   "sha512": "66bd251ce8b66e83ea9de3cb6b25eb93822470b805f0ef8c41578938d3a6d637358278f504d3ab3e02f921766a2829b857d04701ca0045a21d21f85e8d86a0e7"
+  },
+  {
+   "arquivo": "site/estados/GO/93513.html",
+   "bytes": 33066,
+   "sha512": "cca2a3e647e888083787a2260f5610d8e5b5fe8af32a83d1f0475bbb26c909914b0fdc227e0b98e1ff82700605ce1c10d63ebc925eef277233d23fe824668190"
+  },
+  {
+   "arquivo": "site/estados/GO/93530.html",
+   "bytes": 33567,
+   "sha512": "754865624b5943c680e67207c76d4d4bba5b5a4c30ceeaee373b213c26eea465fe0d1d7665eab22de2c4554382644669db44e71f64575696aea3259b717173f9"
+  },
+  {
+   "arquivo": "site/estados/GO/93548.html",
+   "bytes": 33807,
+   "sha512": "b9efad7a54646770506427e6b90412bc069ad8826afbb7cee2bbf0b65dd544a1d43fb13dadba32b6a77735abf5280c64166aa5a641d08d886dc4733c1b2489af"
+  },
+  {
+   "arquivo": "site/estados/GO/93564.html",
+   "bytes": 34040,
+   "sha512": "57648f6a01e5f47b7b15bf3013ebd5e659544e955355aaca53da7097439aea25ba4fa4b523d04ca4a92e4a73d921189a7611ee0d6cf66004f9dad5d6020fc9e1"
+  },
+  {
+   "arquivo": "site/estados/GO/93572.html",
+   "bytes": 34441,
+   "sha512": "13373cc8a8f1a15e02225c8bf5a42375bde0ce8f363b66c3e7136fb197f66dfb525e512d854bda8f48957b66ce7da37cec571edf94bab24a1778b33ce7e85043"
+  },
+  {
+   "arquivo": "site/estados/GO/93580.html",
+   "bytes": 34081,
+   "sha512": "eab74087c8037ed47f2635ca037a76d4011a0c89675dc3d7663916bfe3b09b92d74a2acddca6a32f10136f6b37710b6e7e5cef58bd24c45301581d7d72937694"
+  },
+  {
+   "arquivo": "site/estados/GO/93599.html",
+   "bytes": 35863,
+   "sha512": "d3b7f413803e03985c286da7100dfb236c58167b1c4b457347af9d0891cb50b42dc4e6fe6ca559e77502b4842d1efce7431dea29e2de2a2ad486825935268aef"
+  },
+  {
+   "arquivo": "site/estados/GO/93602.html",
+   "bytes": 31329,
+   "sha512": "2da808c0cc167f98c078194995569b181351270140180f3605867780b93860159a599813f62110331d58200dd930cfc1a014831ea9c0685814b437bd34a1b7e6"
+  },
+  {
+   "arquivo": "site/estados/GO/93610.html",
+   "bytes": 36321,
+   "sha512": "a957ca6c79aac38f25edd5aac7e6245466476152a360223b4d5c6c39c214f19bb4fb0257b03e3827a391e6d040af2a36ccfeb9bd6574badfe0ad45b2723b0741"
+  },
+  {
+   "arquivo": "site/estados/GO/93637.html",
+   "bytes": 34086,
+   "sha512": "9d1164f12c8927340d01d485e7a9243c0876b5b3f47347b6f692b6e59b86cb1391f8c421fd21ec825dfffddc3eee0826c9d166a11c859e72bf4de8d783b86b48"
+  },
+  {
+   "arquivo": "site/estados/GO/93670.html",
+   "bytes": 33998,
+   "sha512": "f264aca86cd20f015b3d4f49d9e9fe02e36b2e116fac6313017b1e559562e9b8f7c50866eb2689c7083784475cd430b1ec7c30498affaad12f3af9f50525b60a"
+  },
+  {
+   "arquivo": "site/estados/GO/93696.html",
+   "bytes": 33657,
+   "sha512": "1fc9b163d72a132632825c6cfb73a58c759081b4582cbcbaef92e7005bd7c4f08f0df726578b2b8519951169da9fcb9d1bf4a279b43467818e388c86720ac56e"
+  },
+  {
+   "arquivo": "site/estados/GO/93718.html",
+   "bytes": 36172,
+   "sha512": "cb840868d35b0db93f49423cdbbd842b4b565473a6412322ecd233afe0c0d0510a50e755278df472e6dc774d9502085131f77c48cc0b43ca96b9787653f0b46f"
+  },
+  {
+   "arquivo": "site/estados/GO/93734.html",
+   "bytes": 37255,
+   "sha512": "a328d259007e35c1360503b1cace7c6127d3f7bbc48a060191f934e0cbb112b1c59b09694b8862795afc5b134f76f7678e4e4c7771a76f74c7fac52ae191c0fe"
+  },
+  {
+   "arquivo": "site/estados/GO/93750.html",
+   "bytes": 35407,
+   "sha512": "75de743abc26a93a9c4aa95821e5b5281de6636ca11ee60b135ffd877d7480000dee4ce86b0751fc1305d08251e7dd210118f67ce4183f16c2740937b25a6f57"
+  },
+  {
+   "arquivo": "site/estados/GO/93777.html",
+   "bytes": 34835,
+   "sha512": "0e90931e078f97004ace876c9a2ca423cef44f9b12f2a5a0410820ed14d5eda81605800567b534034597eb1e6ecbc98c4808c2cc05f8ed04d36cb621feb7cbce"
+  },
+  {
+   "arquivo": "site/estados/GO/93793.html",
+   "bytes": 34368,
+   "sha512": "300858900a5456e41747c3ce064f34a09b1bce4a077dd0e0747e06d5d5c1e4045480a9c6b711b73e3874924c273886241e51323ab8cfa189b7ba20f69f04d8ae"
+  },
+  {
+   "arquivo": "site/estados/GO/93815.html",
+   "bytes": 34311,
+   "sha512": "e5ae0af429181fdb71964ef14c016592279eb0dcbd7f6355f30c9db37affdb852c7fd07436472fce318c57c71c4302eb235a1fa00c13c0661e3b1f660430c534"
+  },
+  {
+   "arquivo": "site/estados/GO/93831.html",
+   "bytes": 35171,
+   "sha512": "58b8de796196c666ea599c61e74a5f7518783d221b54fbd7e94f9136efb559fa9a8b7b39abadca766ab49edc68f5bfff3432d62525a4a5719cf58b095a30a5b7"
+  },
+  {
+   "arquivo": "site/estados/GO/93874.html",
+   "bytes": 33082,
+   "sha512": "5135e413dde481a72aa38270e93c010084e60b4e17734935f689ee4c3196a34ea699c8b257266bacf56a0b997e94e442ba341356bad6bca56841c8f17ecde178"
+  },
+  {
+   "arquivo": "site/estados/GO/93890.html",
+   "bytes": 35957,
+   "sha512": "6888b4f34b38e6ffcbfa7b4d0ea64154ddb0af6a0b05831f6278d05126676fa619124620a15848ec032c780dfc70b7a4743cbadf7cbfe4953b7d011413cdd04d"
+  },
+  {
+   "arquivo": "site/estados/GO/93912.html",
+   "bytes": 34573,
+   "sha512": "3a6fa6c90a438ed27a2ca1fbeec3bcc645608298164ebf23bef407d87ba6bdc4e2438c75a195957fcfa7d98e1ee8df78686dc65797a3fdee81f9f3fa8746156f"
+  },
+  {
+   "arquivo": "site/estados/GO/93939.html",
+   "bytes": 35999,
+   "sha512": "0ff51ee8bb66ed6e59320d95cc1e262f542f3fc508ad65165c3073fbc7f493f1dfdd9a37877ccd8ed2cd638f8af69bc9fadae488feb5c3c487b0503e8b7d6c81"
+  },
+  {
+   "arquivo": "site/estados/GO/93955.html",
+   "bytes": 35437,
+   "sha512": "83ee2c7df0a8c8f9d930db260cc63c92915880b8e47f27b68cd5879e534029f64e040ee2e6eadb2caccf77c87edb57d8534c25273f01a6e7287386741979f114"
+  },
+  {
+   "arquivo": "site/estados/GO/93971.html",
+   "bytes": 34871,
+   "sha512": "6f371e69b45832e719703318cfa63a33fe4af403e3f96cb3912af0643f68da07374f5fc06469ab3ff367ecff884ab0b875457267747ee20c1e048b7cde3346c2"
+  },
+  {
+   "arquivo": "site/estados/GO/93998.html",
+   "bytes": 35997,
+   "sha512": "f94b55ce495f8e0a9820d749dcf0ae5fc4c8822a550ee3236fdd5575a31e858e9b64dadb138a036b5ab4ebd182b55ddca3387df226f1e0990a17f4924805a8ef"
+  },
+  {
+   "arquivo": "site/estados/GO/94013.html",
+   "bytes": 33534,
+   "sha512": "5a1b7bafb0e04c15e568c1be6266816ef721e2a191af158298f7d41ef2a6011c485e2636becb171d9bc8614b7de845ca725ff7df27a0518d1a932314779fef8e"
+  },
+  {
+   "arquivo": "site/estados/GO/94030.html",
+   "bytes": 35929,
+   "sha512": "8e27ba5acdc938ef4245d212edc5338d7f98b51a3be7beb0ffb2b08e9dd495a801ce7feb08832ddd1063d3bbb3bfdfc6ac857180c86f82451058747db3be2029"
+  },
+  {
+   "arquivo": "site/estados/GO/94072.html",
+   "bytes": 34254,
+   "sha512": "7f183135bd621b3255da410b19581226b6b81565e005ed7515ffa565fe98bb17cf492ff86d9c064d54c7c395c366d6d2af191a6864b3891284d6cb44b572e546"
+  },
+  {
+   "arquivo": "site/estados/GO/94110.html",
+   "bytes": 33601,
+   "sha512": "3e2b40926b523a7dd1b3838aa09c73242e7595031e8b95b739658e75e8a9a393e915469de2a41cf52d1fe813dfe95d176fe3b3b090ac86b9ecfd93b55fe444c9"
+  },
+  {
+   "arquivo": "site/estados/GO/94137.html",
+   "bytes": 35097,
+   "sha512": "6758d4714a9ea6e0dcbcb5e75014ba185a74b8bf91ae0114f06d5a5cbce3ab476976d5fd59b170484fb7311da9816a1ed25c88dc7e6976ad055d5fb68a4932e6"
+  },
+  {
+   "arquivo": "site/estados/GO/94153.html",
+   "bytes": 35354,
+   "sha512": "3d9416ceaa8c8f99ede4fbaaafb25af15206e73b4d6336d45027c4fd1b1bb757e463554bd29e3f7d246088be471d49760b9ac9a50be5bbacb25758acfea53151"
+  },
+  {
+   "arquivo": "site/estados/GO/94196.html",
+   "bytes": 34534,
+   "sha512": "45d40c81c4d06cd817cc0a50e3c8683fb03faf3a6459d2aa1c78a7680b5b9d8064bdc01600b7e54807c90663f7c0a2cee25036fc20b764827d416c88e1950b1e"
+  },
+  {
+   "arquivo": "site/estados/GO/94218.html",
+   "bytes": 34467,
+   "sha512": "1f81525f4c5eb98bab38ac6d4db74de024050f94b2b4dd12a9940ac6d96f98adb62d1ee5bf4ac3ebadd1ed9ed61772ba6bb529aed7648a5cabad556a78eace6a"
+  },
+  {
+   "arquivo": "site/estados/GO/94234.html",
+   "bytes": 34248,
+   "sha512": "3a0a8f9603ef5b22e98047f2955900156f3a06be94c6f1492dce24a8549c8e2a2c8d0dda8f120697c151d9890283b7a5faf3ff2d4f3d4b90ba9bd7149139ddbd"
+  },
+  {
+   "arquivo": "site/estados/GO/94250.html",
+   "bytes": 35136,
+   "sha512": "2269034fa941ba50412dd7874c2f7c477cb920625d9fe8097c4ea8331bee23382aeed01ca6e865c82de2e9c211c3e9e926e47fa6554a25a82eae65c037b1ce17"
+  },
+  {
+   "arquivo": "site/estados/GO/94277.html",
+   "bytes": 32392,
+   "sha512": "309bd9eb61bee2bf584c7d74ee2239ec786acd5bc230c50cd63e0602edd5d857d881a7fb45a020ea2658e41ba279bdfdcc0675567f00e763f5a20d439539e1fe"
+  },
+  {
+   "arquivo": "site/estados/GO/94293.html",
+   "bytes": 34322,
+   "sha512": "f8062953a22734387ff92e737f684db9573168134440142316405c9bc32d7292c9a247f4d5031b67fe975f8068ca32eadc239d27fc55e988ed0b42e0dd1c0bbc"
+  },
+  {
+   "arquivo": "site/estados/GO/94315.html",
+   "bytes": 35646,
+   "sha512": "a43cfbcbd78dcb5c5fb8b0d83642d60799dd9b83862364bfef337872c90582cde2649750fb0ca7453d496f69e5fe71f90a22b51778a16032506fa0f9736e2db6"
+  },
+  {
+   "arquivo": "site/estados/GO/94331.html",
+   "bytes": 34567,
+   "sha512": "2cef5c0b6ba4d3e76eb218d384b30bbdde21857221904f7d2faee56f3560f1af3abca2b7786233ac8c972cc11e4e17cf3cf5bc4725ea6ecae883ea294e68760c"
+  },
+  {
+   "arquivo": "site/estados/GO/94358.html",
+   "bytes": 33461,
+   "sha512": "386379a3904afb2949a0336253a61dec05ced8a2d01ab9290f52896296317b5ca587cc0e20e8f01c53bfd45d4a1cd36bafdf3fa7c5aee994172889b063490c27"
+  },
+  {
+   "arquivo": "site/estados/GO/94374.html",
+   "bytes": 34519,
+   "sha512": "b8479200c03661c2c648f1d394df4c00b013468bbfa63e3d66b43789b9cc3189705893804b44fc578a3c6734db46f57d5cc269ba7a265b515ec8ce78d60bd769"
+  },
+  {
+   "arquivo": "site/estados/GO/94390.html",
+   "bytes": 35492,
+   "sha512": "2c58c51aba792ceb06798f3de3f14f7513d6478d40b0ef26c3d61fd44c7dd3a37bf2ba5b28eb0ba66a8d086f572d15c3fff9bbcca32038a46ed5b9850de095a0"
+  },
+  {
+   "arquivo": "site/estados/GO/94439.html",
+   "bytes": 34958,
+   "sha512": "16bb51e0523a2943cc1711c6c5a46496dd6d16b4e8d7327c65373a8a216c18e5c0410ebd77233de9dfecca9e23aa0bda679e8babda64ef840669a285bbe195ce"
+  },
+  {
+   "arquivo": "site/estados/GO/94455.html",
+   "bytes": 36570,
+   "sha512": "91320b1f03b29fcd7f54b9c33753472e74d17a1360fa2e68919cf63d8e91154ed78ede51a1404fcd174e44b901c1e90fb574a943b8f475764137b068e1ff85ee"
+  },
+  {
+   "arquivo": "site/estados/GO/94471.html",
+   "bytes": 33408,
+   "sha512": "28324eeaa75e4e058ba104a94c0a28dadb72224acb5d807bc139bb00e4aabc2db1b2181e8b7ddd40842387b4d9344690ce620ef629f2c65df289b1e77588f330"
+  },
+  {
+   "arquivo": "site/estados/GO/94498.html",
+   "bytes": 35774,
+   "sha512": "09e3cb299c2ad775dbf401e0c4f7df088a508343701fa965fad28690d5c00fc703585294a64dcfd4d4a289e0b659deb730ce539429a3d5d1b518d7d99ac31d4d"
+  },
+  {
+   "arquivo": "site/estados/GO/94510.html",
+   "bytes": 35433,
+   "sha512": "0597cd7afe6004be6a80c0593e48cbb46d12d0548b5b394a18080cd4c28d56d1a0801b5bc4d1885ec764a556e2275977a229d7e4028733089e151494f26e0998"
+  },
+  {
+   "arquivo": "site/estados/GO/94536.html",
+   "bytes": 32684,
+   "sha512": "2e5ecfa61915a4a3aa7b39b8fd4a2df87065cdfdcbb674a2529efc09ae68edb52b5c8bd1014b3815cc9234e2279e93b17ca977a086ecf195a9f54273cd0ce303"
+  },
+  {
+   "arquivo": "site/estados/GO/94552.html",
+   "bytes": 34182,
+   "sha512": "d42d5ef4fe7fe7f8ebbc6f77fe11512f6920181c919ee0f9abf3a3404cf10a980f51a77d7d876500bec1422ac23ad0e2763bebe32152f82c22135ef49068bcdc"
+  },
+  {
+   "arquivo": "site/estados/GO/94579.html",
+   "bytes": 35239,
+   "sha512": "9260bde00c3546944b4ad86ba05834cad160bf55ffed03d62a7092cda22050b2e50ed69d61437b878b40b3e9249458e71e98882392db5c61e04e1cf095e5b947"
+  },
+  {
+   "arquivo": "site/estados/GO/94595.html",
+   "bytes": 35847,
+   "sha512": "388496ac206ecb079d0b30670d34ae505269b0ebfac52ce50492f0cd187b7f9252332571e80713c25c5a2095e77107a82be8a7b2d6285684159259dd387734a1"
+  },
+  {
+   "arquivo": "site/estados/GO/94650.html",
+   "bytes": 32547,
+   "sha512": "28a0a2833f8bad49d25613eb1d46aa07e6286ccb1c8163974981bbc9bc5760a7e57b4b7175fa6f89100950694c32b0b7b4f387c0268e8abb12fd3dc0ea50fa83"
+  },
+  {
+   "arquivo": "site/estados/GO/94676.html",
+   "bytes": 34612,
+   "sha512": "ee419b27491ea390cc6adbb1c4cb43a6be620fcb63d10218c9ab23dc729d0959c3393e2dbd491f6ee2eedd25a22bd21596fa1c93398d0cb9a6060ae1639a5183"
+  },
+  {
+   "arquivo": "site/estados/GO/94714.html",
+   "bytes": 35328,
+   "sha512": "9b8a6dcf9c86038f45b2bf1d8f0527593553284e960b7c912d1274d447f653893a3e51a4e0163f902a1321bf92ef02bd20eeb9897c707527d4b582a51c8a16e1"
+  },
+  {
+   "arquivo": "site/estados/GO/94730.html",
+   "bytes": 34631,
+   "sha512": "6b7fb2142606d1d4a6bebc97b4f3c940e59a5d1bca29ae546577b09b4514445fc56c3f43e3ac4b1a08edc82bbc925a5746aba70546a141e9fb50517099e5e1e4"
+  },
+  {
+   "arquivo": "site/estados/GO/94757.html",
+   "bytes": 35079,
+   "sha512": "1f976c6dfb5892c9b521d7031187ac0c2ffde7467d486d488fcf4f55901b69a31cbe33cebf6cedac1819bd3433770605afb0ec8bfd9cb99e69634a7d5d9e5181"
+  },
+  {
+   "arquivo": "site/estados/GO/94773.html",
+   "bytes": 34657,
+   "sha512": "c1f597b8c2a3deb27bd161edec83afd48f7b064f71445987f47c5c3c08332f7037163d64869c84b737cf9b6a8d47e543f87c8107cbe7d61c20c5c3633ba76cd4"
+  },
+  {
+   "arquivo": "site/estados/GO/94790.html",
+   "bytes": 33374,
+   "sha512": "e2013d6b67afad2ed3b72fff51e4e444d22dd8f87a6f7374b2a22f5109c08b1130a8be0fab9c3dcec34156ecb07a9f401c8a3e7cb5b8c6fd8d3722e47546c164"
+  },
+  {
+   "arquivo": "site/estados/GO/94854.html",
+   "bytes": 34831,
+   "sha512": "84548e23ff3c4b7d9504eeeff7577db9fc53fa3ba960a73bce0262355fa86b79b0e534e6cfdaa49623fd5162b89a1fbcf289eff2e84267214d3ad3d672f6ae3a"
+  },
+  {
+   "arquivo": "site/estados/GO/94870.html",
+   "bytes": 34993,
+   "sha512": "0916f1f421a6557b9462170316f1e17491199bab774a317c89dcb0ffd840f57f82e4ff67e8f8e8756a78b01049b1f6ccfee3bd6d0becd759f083b7afe2e7b2c6"
+  },
+  {
+   "arquivo": "site/estados/GO/94897.html",
+   "bytes": 35370,
+   "sha512": "0bbdf881dcab4a4ddbe605687abe9e7ff135f02021e754399b58b7e05433db8adc4d8528af2e344c4951ca9349865f70cf9e7b69d887805c89549e21c74ec394"
+  },
+  {
+   "arquivo": "site/estados/GO/94919.html",
+   "bytes": 32690,
+   "sha512": "d255a4bd4c02c7bb7118205af2caf2fe2f2e4b3aa1c25bc2849e7eac9fb03747114a0b0722a3d3457e09a262699a23d3b7de5a86150f598c79c035196da74264"
+  },
+  {
+   "arquivo": "site/estados/GO/94935.html",
+   "bytes": 32945,
+   "sha512": "8e6793ee0f457f8be41fe67477529120cfc7851a28ffcc9313c6d7334f607109ed427c404f2e5dfb109c32dd619097cf38d4c666767b5e518b05bfd8ad8ce60d"
+  },
+  {
+   "arquivo": "site/estados/GO/94951.html",
+   "bytes": 34175,
+   "sha512": "8664565d4df52e1ad543916adf2fb7f945914608a45ecab434c3105aa28b2688d6c6d3974bb063df9ecd99805886b53bbec7f9817d85054aafc4ca7d96856e54"
+  },
+  {
+   "arquivo": "site/estados/GO/94978.html",
+   "bytes": 35372,
+   "sha512": "62a96636bb5e67bd576fa069aebda46356936eddfc000a40b3920629bf9569238b85c5d477002544cb8de663db78c05db8a13908946d5c693a29df1df9f65a08"
+  },
+  {
+   "arquivo": "site/estados/GO/95010.html",
+   "bytes": 33599,
+   "sha512": "165ca525381e8408269dc9d050bd86e2bb5a3a16aa90a7b2fe7f66eee333daff5d8c94fe7ba1ea247eab05930c393f8ed82bc9dfb47ca67c7fa09da3b4adb920"
+  },
+  {
+   "arquivo": "site/estados/GO/95036.html",
+   "bytes": 34776,
+   "sha512": "fbebb65949225ae094b291b869d59c87cec7b37e089967db34b79b052124d420e65fa32fa47b6d3b3f3c369b14faceb65300e22ca672b566a37a3dea93d7a984"
+  },
+  {
+   "arquivo": "site/estados/GO/95052.html",
+   "bytes": 33511,
+   "sha512": "b029b68edbea766b40f79501cb12ef7a8757064defc4aacf53c377e3570e46b93ced43e272dfa6c9b9eaf61122738745b9394c362d756e25d5b02ab1c09df636"
+  },
+  {
+   "arquivo": "site/estados/GO/95079.html",
+   "bytes": 34492,
+   "sha512": "24e0537d8c6744e2c49d403894539c915023ff848be7579e6c1ffdd013b1cb079c2be5dd1bb0606279a69654e2c80b702e36f66ee65738e190dbec02b36329be"
+  },
+  {
+   "arquivo": "site/estados/GO/95095.html",
+   "bytes": 35670,
+   "sha512": "a1b4762040ffaf19e3a3bf17d026972d4f363f47d296c3714d2518292192530b9304ac8c2d332bd3fae8c61f201a2a380dd506dd5809a525720a761875d3be97"
+  },
+  {
+   "arquivo": "site/estados/GO/95117.html",
+   "bytes": 35530,
+   "sha512": "e9fcf9a227592385b4675729ed8ccf7603b910dc6ae531139cdac119922ac715d01bfbbb1cbf36d1e74fa4c3995007153a9ce90488cf353823bb12c7f9019412"
+  },
+  {
+   "arquivo": "site/estados/GO/95133.html",
+   "bytes": 31994,
+   "sha512": "8bcb90305a9a3d043d33c94f535288dd136c581f4443edb91ee70a01d67dae9bf83f239bb191438f8f1f478d31a32bfcbebbf2d62d0a9a5f9334c5cc43ad71d8"
+  },
+  {
+   "arquivo": "site/estados/GO/95150.html",
+   "bytes": 33698,
+   "sha512": "67566658303f093b75e878f640bc84d1a6f9914069ecc05a0360a36e7a9e5a8fae17a6778c2620d8fdf7f039817e74e21e21a30d369ed6ef0d3e7af80e1f834f"
+  },
+  {
+   "arquivo": "site/estados/GO/95176.html",
+   "bytes": 33114,
+   "sha512": "8c003534a156c36d4ae0ce64b34b67d0fc3b72cf6281091b3ba3627484608e5b9f175ebb90d750261eb680abf920daee18debf800a4da36d187199f171659bc8"
+  },
+  {
+   "arquivo": "site/estados/GO/95230.html",
+   "bytes": 35092,
+   "sha512": "f33b3f25e6240f64fafc891cab6550495000cd6bf6ef72a2d7d692ccd2384f06c957ba6726cd989dc800d53afc31725e2d3f81ada730ff2ee3a2171313db32b3"
+  },
+  {
+   "arquivo": "site/estados/GO/95311.html",
+   "bytes": 34046,
+   "sha512": "7445559d1e056d3f2f1cda7c6681c79df64ee2305d7238a05a262af7161578288f47b93cea34c5dffb34da2a2cc43de388329daeacc1b64e6892800e4c27010a"
+  },
+  {
+   "arquivo": "site/estados/GO/95354.html",
+   "bytes": 33225,
+   "sha512": "90baba2175f5add5b87fc293f801f92fc8a626c1b4d64083478ff271ddd96f06f8a258aace63c6565c18decfdb2be7cf0f5153310d929873d73a93bb68fdfb68"
+  },
+  {
+   "arquivo": "site/estados/GO/95397.html",
+   "bytes": 34311,
+   "sha512": "d56e3849fb516b25058cd103b7587bba5b9830e3a681c1250d3ba26d5c49681f76578f0dd01ce314d34a6dd37779e8f10c8745d6c64f0594d33c1d0c747c08e9"
+  },
+  {
+   "arquivo": "site/estados/GO/95419.html",
+   "bytes": 35037,
+   "sha512": "d5e59ff04bed494c1b291999749cfe5bdab3b8fbd81ae497c1c5dbde263884b0b99bc1f2949dbf6a7d8bcd1318cc0ae6e3a190f0e02c201594161850158c9108"
+  },
+  {
+   "arquivo": "site/estados/GO/95435.html",
+   "bytes": 35509,
+   "sha512": "0e6ca33bfdffd6fb6d0c37faad0d320e915cb0cca5dff45f6a8267dc9e06ebf7325c82444423c3cb177da17e1db8abbd7e7f2973bc5d594d08fdca6b05309dad"
+  },
+  {
+   "arquivo": "site/estados/GO/95451.html",
+   "bytes": 34727,
+   "sha512": "0f0cbb196efdb0f961f0779b13e225ac7b03efb2b0f6e0c3e2f1b38782c984b22eb05fcba4e5bfed57da828ef407d93c126ebe123bbe1bfcde0c896f2c4506a4"
+  },
+  {
+   "arquivo": "site/estados/GO/95494.html",
+   "bytes": 34319,
+   "sha512": "b14d3cffedd4fc799fd655811086787c9bee94ab4f1289cfe52221e569a33074c53c55807832581f8cb23ad468429ce1e163bed7c974127937f459545e6f7d4c"
+  },
+  {
+   "arquivo": "site/estados/GO/95559.html",
+   "bytes": 34674,
+   "sha512": "8a7234be897a0b6fa291eea6f22302f7691918c4b10c403a8b61650d62846bb23481fd55a2e5089c58ec15a92a2bea1767ed576167a24eda51a8c717865e7ace"
+  },
+  {
+   "arquivo": "site/estados/GO/95575.html",
+   "bytes": 33746,
+   "sha512": "89748e778a3b9e08192ba6f9a4f94f1be532115f45254d2b0d56857ce513b61feca7c438129d0eab95a310fabe7d7bd96c27814af248ecf6d59fcab7beca0c4c"
+  },
+  {
+   "arquivo": "site/estados/GO/95613.html",
+   "bytes": 35485,
+   "sha512": "fa8af2b7cab5283abf259ae144b4aa14d0a0892602c40b8c644ff85b1311d85b93758c508ebf4cdc446a0a45310ad267d4cef2ed3358eb7b0f6025d834898c52"
+  },
+  {
+   "arquivo": "site/estados/GO/95630.html",
+   "bytes": 35065,
+   "sha512": "93876249fac3a9fea848988663912b796628ac4e8bb12ef2214e4db4e346a7da274bdcc7ad1bfc809446a741c93bb3bc62bed0cbf2206c31b33968902ad94fa3"
+  },
+  {
+   "arquivo": "site/estados/GO/95656.html",
+   "bytes": 34361,
+   "sha512": "0db998d8bd5d42e486688f8c796902e5e24500ca3f178041131e424793f36b8cb7d1b1271f365d52df91e076e07f2d85a3c347befe5401666a3d78af27ae6e38"
+  },
+  {
+   "arquivo": "site/estados/GO/95672.html",
+   "bytes": 33660,
+   "sha512": "f79dda59c0ccc1d702153ab7078597f12f6fb2116035d5860d3bcb806e40dabcdaed7c2321fd51fe0edec3e9ab3c2b2709d4c993f6ca76223d6a23ff58d8ddb6"
+  },
+  {
+   "arquivo": "site/estados/GO/95710.html",
+   "bytes": 36911,
+   "sha512": "a973f8b5e9a7614439c50c8497582a4ae3d7dde0adfe03eb0d9741f68237e36795362b9b07f0ab5f068f1635b117d83232f39db024df6fb88b222ea7b5f5092b"
+  },
+  {
+   "arquivo": "site/estados/GO/95737.html",
+   "bytes": 35205,
+   "sha512": "ddd76feb11b4a0555fa3ff24e44dffa7fa145e18f4a42a1b4d20322156e4a0e771a0862c0c22f42496cc6dedf62418ea5ac3a78cf14ff763c486bc678ae1bb47"
+  },
+  {
+   "arquivo": "site/estados/GO/95753.html",
+   "bytes": 34357,
+   "sha512": "576b4db9182287ecae5b60b111227cd4ea65585e18f33a3b93892124ee83a61f12e66c5af794becaf8cdd150e24ef7e99f5623f4eb133abb01241747ea4629ad"
+  },
+  {
+   "arquivo": "site/estados/GO/95770.html",
+   "bytes": 34174,
+   "sha512": "e55765d4bac987c929c2946991db710b30f332bc9f41b2e2554835b433bf53f0aac94d537185d96ea8a27ab61985e844913551699beed000f9092d178691ac9f"
+  },
+  {
+   "arquivo": "site/estados/GO/95796.html",
+   "bytes": 33145,
+   "sha512": "2c91eb2c4ca67adee055e19e80f7042f4f880c27f460d3715016b270834437e82247e3bf4334783154963c86717144761e8fb3ffe751248f799ff4cb723e3862"
+  },
+  {
+   "arquivo": "site/estados/GO/95818.html",
+   "bytes": 35714,
+   "sha512": "4f8d6a6f33a8705146340fa8511d56b7a9d26fdaf8b95302299cc9dbf6226087f61b13692ce21d04682aea92112fca67c10536bf33b9777de73abf7ece5d184b"
+  },
+  {
+   "arquivo": "site/estados/GO/95834.html",
+   "bytes": 33844,
+   "sha512": "6f255618b4bef7fd4fed7a208a5da94886de8cb17ce6bf855a89c560f4d5e635c702822e854382a6de078040fc18f1456e593f80b0e0dd95a84c76cbab0459db"
+  },
+  {
+   "arquivo": "site/estados/GO/95850.html",
+   "bytes": 33193,
+   "sha512": "d6ea123fcedf1aa84dbab7506849aa6c200d6455e2e626891b08d8654279fb047d198151d48e138fa037f7c1e3f345056852aaad94bfacc1098b640e493d3558"
+  },
+  {
+   "arquivo": "site/estados/GO/95877.html",
+   "bytes": 33267,
+   "sha512": "4d06e5eae576f345874aadab41f6c64b21670b22815795dd36cbabbe99b9db3714b61b62a627064203e20960cbdc273f4349df4f503c4c7721134671d6ec6597"
+  },
+  {
+   "arquivo": "site/estados/GO/95893.html",
+   "bytes": 36071,
+   "sha512": "aa18b3f4ebc074dd0599db703d5ee9ee66f69b4439af102d130c1cce03b376d6fadcf93f32bafe8c1ecff0dce42d6a98f12a6a68a462bad0f46304aaea874ce0"
+  },
+  {
+   "arquivo": "site/estados/GO/95915.html",
+   "bytes": 34481,
+   "sha512": "ef7fcb6300e90e99cd84678407463591a3bcb59ce620a58b73f85e4a69dbb65a83219010d714a47ee76227ae7ab60ffd5820204e1d774df735dc08c2968bb4b7"
+  },
+  {
+   "arquivo": "site/estados/GO/95931.html",
+   "bytes": 33986,
+   "sha512": "6840ecea97d10071bb5b2033b718fbd41ec6ab82986bb9f8a02af23064eeff8b2d753d6a3d6e46eb0c39fb35e08685040ab6a82ff98faaef85939afa6e20ca9e"
+  },
+  {
+   "arquivo": "site/estados/GO/95958.html",
+   "bytes": 36212,
+   "sha512": "0f5e952a0c8e2d661ce59d1c7ae596e10dda79f7d928bdd6f1ed61613570757259e9e71c0d707b95fa099afd1d3f4789efed217b69650c6b0f2805d590cd329a"
+  },
+  {
+   "arquivo": "site/estados/GO/95974.html",
+   "bytes": 35359,
+   "sha512": "ff09d23b8a49e8f4ea55db9bdf7ee7efb540f56690b04d618cec3cd3f11e0a469a3d6f682612260a53d42b84b9da0d69d34ce96d21819fae2148aa16e0ee6c7b"
+  },
+  {
+   "arquivo": "site/estados/GO/95990.html",
+   "bytes": 35779,
+   "sha512": "b2716d9ab883e7ef48744ff44c6d7e70211fcf0ce223064525b9e988b5838e1463055a7ed47102c82e1b9bf947c906803b315ed45bcd199c4ed3e21966d15574"
+  },
+  {
+   "arquivo": "site/estados/GO/96016.html",
+   "bytes": 35345,
+   "sha512": "4522f6af32c5a9e2c4066c90828ee4e9a1ac41cfac6e1fdcb1f923ee5fde4dcb09f140b7d87554f89b5ae71b2cc278708a3bb9fd3fbe102bd63caa0bd6e3f132"
+  },
+  {
+   "arquivo": "site/estados/GO/96059.html",
+   "bytes": 34206,
+   "sha512": "0dde0b2f4445363c2c52ed92f0929113a38c7f124920d5885e8b9580deec5f30d520457a1d338d129c14714bf6d5faad3d854e47715850eb71ec04c637203470"
+  },
+  {
+   "arquivo": "site/estados/GO/96075.html",
+   "bytes": 33946,
+   "sha512": "c773fbe53f06ae07d9db559da6a7790c40ad5e191a680b984e986c5f5337079a3f12e47e270372668207a9f6e1ffc0a5dac7f638ec0b5e02d876adc4f2f12a71"
+  },
+  {
+   "arquivo": "site/estados/GO/96091.html",
+   "bytes": 35776,
+   "sha512": "75cea3e8ee74855503526551675b9790672ae4c782beb140624e776de5e71a0b88e0f718982f48672672cad62ca20fa643aaba4aba6681a06d594c84f8e24ffb"
+  },
+  {
+   "arquivo": "site/estados/GO/96113.html",
+   "bytes": 34512,
+   "sha512": "e831df7b69486e0ff6a4eeb38071842c3aa9b2669a3f69fb444291478a1127387c1d67c8a77f432482c6b9e171eef4d72af91facc4928aaaa1409e5c6f205e62"
+  },
+  {
+   "arquivo": "site/estados/GO/96172.html",
+   "bytes": 33824,
+   "sha512": "c4a55f89597eea20067c21ee7e43c2898b47368f336aed62dae1f697e8923e2bee284601a0ea3dfd8cfe06c3fc37a71620190447d0977c104a51b36e4f2aa43a"
+  },
+  {
+   "arquivo": "site/estados/GO/96237.html",
+   "bytes": 33795,
+   "sha512": "c7b0107a47ad6121cde15d93fd2faed9579e5bc392d2052ac4f60f30c0e7127a3faad939bc795e90f80cb7b8f82d05321268fe8f8a0b4c11166aba9d973e5a67"
+  },
+  {
+   "arquivo": "site/estados/GO/96253.html",
+   "bytes": 36136,
+   "sha512": "2b5fb6b8dcfa77a8ba70c67e6e3161937e30db9de9955acbed8a35deed7424393e71505ffb2c93376587dc1cb6f8f8c4395f50a565e1442eb511f44ef55a58b6"
+  },
+  {
+   "arquivo": "site/estados/GO/96318.html",
+   "bytes": 34725,
+   "sha512": "85696b6f13c3ea12cf5f2a9b021574f613304cdfd3d3880f7eb604786c4a7ebd0d539ac2ded88bf36e42dc7800ee0ccbfaf60c684253725560f21fd2691ea971"
+  },
+  {
+   "arquivo": "site/estados/GO/96334.html",
+   "bytes": 35560,
+   "sha512": "2031bce9e7dcd4143e3932db622b0566079bae4f447b05b46e79f8bab51f09637c71c80e136a4efc7e7a7346d50db983bfeac47b9973456d774bd8a005da00c7"
+  },
+  {
+   "arquivo": "site/estados/GO/96350.html",
+   "bytes": 34668,
+   "sha512": "8353a5288755697ca7045a5eeacc61f9056871a8407a16ecddc1369b40473ce1c02409cf6928909ac5c0474c5eabeaa8867c4d602e5a44574325429048b341fb"
+  },
+  {
+   "arquivo": "site/estados/GO/96377.html",
+   "bytes": 33880,
+   "sha512": "0397b55110d39ecfddb80b9e172d39ae4006fca9563605395261e626ed10fb0aaef859270ce02f201878fce07b2c1ee5c1a453d68b6d1544c07332e030b8519f"
+  },
+  {
+   "arquivo": "site/estados/GO/96393.html",
+   "bytes": 33795,
+   "sha512": "8691d3f830fdf6fa906474e60f97342abc6cff6734d25e7a73be2cceb5ad74f09b3e80a926b4a02e721e3997d2e9b26025cd75467e51a7bdf00a3143c64a3b69"
+  },
+  {
+   "arquivo": "site/estados/GO/96415.html",
+   "bytes": 35380,
+   "sha512": "f0c11ea64de9c930f15628f92e619805ffcbbdd5b2b6cf3eb75ccc6fef7e5600a255834da783f624bc786e8e4757cc324512e14581b7c0466e11afc9721215f1"
+  },
+  {
+   "arquivo": "site/estados/GO/96458.html",
+   "bytes": 35561,
+   "sha512": "389b1f5ef129e2453c07f2d3f66d3091257634d74bfd792818c4277f5be6cac1d61c024348f2b6cf20e726788803c1e2e57d2830945126867625a3262678f75f"
+  },
+  {
+   "arquivo": "site/estados/GO/96474.html",
+   "bytes": 35048,
+   "sha512": "78613b0cfb0e036ffd56e7c11f8688d7ba190750f6b85be12e93a24b4fb551b59ae62d41dfe87bca5a765a2a67f559ded634fce805eb688a2781ddc29792b1ff"
+  },
+  {
+   "arquivo": "site/estados/GO/96512.html",
+   "bytes": 34465,
+   "sha512": "484b0c0bae880c4a1606b3bb630063b811bf2d4ee9fe13aa3add9a00afc86ff59d44c3f1178db0ff87160e793762e8c7a9f0de28fa8dfcdfdd90ac0f3dea0173"
+  },
+  {
+   "arquivo": "site/estados/GO/96539.html",
+   "bytes": 35623,
+   "sha512": "d21387da60494cdf8276d90394a34ce5b0b502a284a52d46722f64c38a2cbb241b82504461d08c74489e2941d884de56afd8c5dd842d9bd9313a8ef82fe3d371"
+  },
+  {
+   "arquivo": "site/estados/GO/96555.html",
+   "bytes": 35909,
+   "sha512": "014c1348a8f4e8d510a9f49e88faeff75707b9f22ba6bca85083820069e78ef89c7bd9e1f0fae33283cca2f95c9f1b6ff0f4d54d2294fd764d0aa2680fc9ef5d"
+  },
+  {
+   "arquivo": "site/estados/GO/96571.html",
+   "bytes": 34483,
+   "sha512": "a622437147118e9a50268b2e392c5a40974d147d17290f0e6be6a83afe042653138ac7f1183f8cabbb6192975846b4a0520efbbf330cd55d443a963bea1441d5"
+  },
+  {
+   "arquivo": "site/estados/GO/96610.html",
+   "bytes": 34532,
+   "sha512": "282633b07e48d4c1e7142befa7cf64d94b783e21ce2df6ef819b44994e88d6b4d54edce8d5286b974f115651244da2aa62ad07478a9de98ffe9d3bb418cb766a"
+  },
+  {
+   "arquivo": "site/estados/GO/96695.html",
+   "bytes": 33501,
+   "sha512": "8dfbbe6368dd61862aff2e299df1fb50b061ec7338e267dcb7db1d3f6b305eab8476fd6e38848ea2075c57f68816aba689df1bf66fc5d8bfb8ef0d7de99d4927"
+  },
+  {
+   "arquivo": "site/estados/GO/96717.html",
+   "bytes": 33260,
+   "sha512": "1be3c3c72d80874993ce57d965fab61a4636dff5126c0bcb6708103dd875c79236989956aff5af6d7747cdc1847f3c6389de81a93dd09a0fc247bf49a1b93246"
+  },
+  {
+   "arquivo": "site/estados/GO/96733.html",
+   "bytes": 34485,
+   "sha512": "84bb7e7432a5589709b0cb7b0b242d7a8c0bdc5f734bbfe0916f150d74bfab5e038d363a5ca71ea176b16e0d53ecbce67fb2d6d65af11b47731ea8ecff0081aa"
+  },
+  {
+   "arquivo": "site/estados/GO/96750.html",
+   "bytes": 35802,
+   "sha512": "5e0f7d912c0565842af6bc602cc1d9c131b2fd0e42f29c73628c08af7c6d8407fe6b610cb29d36d5cd18e9c4fe996ab212c18d04da249321ffa03bf38ce6f159"
+  },
+  {
+   "arquivo": "site/estados/GO/96776.html",
+   "bytes": 35810,
+   "sha512": "639821672724af5bc8a2d881033158b9610b9a388e14ed6740b5d1dc0df346fd90abf89b3c903be0d766786f181f47731d50f6c8eb5ce368f4151a9b9aba00a9"
+  },
+  {
+   "arquivo": "site/estados/GO/96814.html",
+   "bytes": 34873,
+   "sha512": "80012c82179d647e27718ab994c979d8645f9a93b541cb54f1ebc7cd319816c442135e770de2b549c8958bd2a4a0db7c2fe98aa59f36d591d5e55136829a30dd"
+  },
+  {
+   "arquivo": "site/estados/GO/96873.html",
+   "bytes": 34142,
+   "sha512": "dd02e123415fb89fd247cc40dcba0e2a3b37bc30e3dae244db5c3003b15078714b4ba5e2388e2281251853a95dbe45a7b9bb8499202d3018ae7d198c68e703d1"
+  },
+  {
+   "arquivo": "site/estados/GO/96890.html",
+   "bytes": 34498,
+   "sha512": "e6439c73c63b079cb00123e8ef1df709a0762653027e0ff17f4671b39ab913d1d4d1da13194cf5fe3ee75dc8bd2ba5b952661172516ad514d3acdc12f65d45f0"
+  },
+  {
+   "arquivo": "site/estados/GO/96911.html",
+   "bytes": 34127,
+   "sha512": "63d3d883cc22278012939ad5c8dbdfee64fb20ef4e0df0ed5156d27b66beb6fb61cc9f9bec7eb85b1da7feb20bfe9f7ccebc056eefa7e21315825b1930ea67ae"
+  },
+  {
+   "arquivo": "site/estados/GO/96938.html",
+   "bytes": 34855,
+   "sha512": "e462b09d2d79ac693e94be8cd89ddc18e18fa94014d355accc30d9b286410b89bd83c8a6c1b8613f20897da5143ffe1f443cd7ae4456f445df62471a8e77fcf6"
+  },
+  {
    "arquivo": "site/estados/MA.html",
-   "bytes": 115413,
-   "sha512": "cc637ee89cf943724964adc9089b3c073458f301a3f41fe2869a13533a034ad1cc733dd063d0572588dd7d29d3ae3b17068c87c1e6f16331a1e513160fb9df37"
+   "bytes": 115441,
+   "sha512": "944c864959c5cbd957b32abf707659a60a922d8e2883b696b65c5e2836ebd8aeca58cfbed06ca16776f65c2229ea8973a1020c13471e113093b6195304fdba78"
   },
   {
    "arquivo": "site/estados/MA/7005.html",
@@ -5954,8 +7189,8 @@
   },
   {
    "arquivo": "site/estados/index.html",
-   "bytes": 10262,
-   "sha512": "e4864c2bddd9715c07c72398bd57d70e9a0f8cb8df5c7f78b6abc99e75714b914a58b8c07d6d7d39ced30f5e1d576cfe1c89a80fbd97c64d5b77861d2eea14af"
+   "bytes": 10649,
+   "sha512": "c4dbb7add9425bd00a24395687beb2c86866c9061345158742aceab6fda8b02eb59a611ebc40a94c9636a5443f8cfc80b40b7c706910edd0162614b62caa4063"
   },
   {
    "arquivo": "site/index.html",
@@ -5979,8 +7214,8 @@
   },
   {
    "arquivo": "site/sitemap.xml",
-   "bytes": 119002,
-   "sha512": "cba65a3c8da00ef851746ac9f74b4fbef1f65e57fa7a5f8e097dc1b50d29a250b10e0b36d4978e906ccb8befa8564f0054f067c53db5fba58b750a6af81d59ba"
+   "bytes": 145425,
+   "sha512": "50cb68a22ab6ef0595f114f63539a1adc2edc2ee5bb79dc6f37e2c4a4355fcefa6c677894aec91df05a6e8aebc2e1c5e8bbe6ceef4fbbd46ada32e68b03715ac"
   },
   {
    "arquivo": "site/vercel.json",
