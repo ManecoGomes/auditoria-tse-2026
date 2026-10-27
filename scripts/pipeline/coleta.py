@@ -46,7 +46,7 @@ for r in sorted(alvo,key=lambda x:x["url"]):
     confere = (local==pub) if pub else None
     reg.append({"arquivo":nome,"bytes":os.path.getsize(p),"sha512":local,
                 "sha512_tse":pub,"confere":confere,"url":url,
-                "baixado_utc":datetime.datetime.now(datetime.UTC).isoformat()})
+                "baixado_utc":datetime.datetime.now(datetime.timezone.utc).isoformat()})
     print(f"{nome}: {'OK' if confere else ('SEM HASH TSE' if confere is None else 'DIVERGE')}",flush=True)
 
 json.dump({"turno":TURNO,"tipo":TIPO,"n":len(reg),"falhas":falhas,"arquivos":reg},
