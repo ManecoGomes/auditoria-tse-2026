@@ -20,7 +20,8 @@ EST=$( { ls -l "$DEMO"/*.json 2>/dev/null
          ls -l "$PL"/{coleta.py,audita.py,compara.py,extrai_votos.py,analises.py,demonstra.py,gera_demo_html.py} 2>/dev/null
          ls -l "$PL"/{baixa_resiliente.sh,marca_integros.sh,enfileira_restantes.sh} 2>/dev/null
          ls -l "$PL"/{roda.sh,publica.sh,publica_parcial.sh} 2>/dev/null
-         ls -l "$P"/{diagnostico.sh,destrava.sh} 2>/dev/null; } \
+         ls -l "$P"/{diagnostico.sh,destrava.sh} 2>/dev/null
+         ls -l /Volumes/SSD1TB/acervo-tse/2026-1t/originais/*.{ok,bad,sha512.local} 2>/dev/null; } \
        | awk '{print $5,$9}' | shasum | cut -d' ' -f1 )
 [ -f "$MARCA" ] && [ "$(cat "$MARCA")" = "$EST" ] && exit 0
 
@@ -43,12 +44,46 @@ cp "$PL/demonstracao_1t.json" "$PL/demonstracao_secoes.csv" "$PL/analises.json" 
    "$R/dados/analises/" 2>/dev/null
 cp "$PL/E5_municipios_1t_2t.csv" "$R/dados/analises/" 2>/dev/null || true
 
+# 4b. manifesto do ACERVO bruto -> GitHub. Os ZIPs do TSE (30-200 GB) nao cabem
+#     no GitHub; o que vai e a prova de custodia: por UF, bytes, sha512 e status de
+#     integridade, lido dos sidecars (.ok/.bad/.sha512.local) — instantaneo.
+"$PY" - <<'PYA'
+import glob,json,os,re,datetime
+AC="/Volumes/SSD1TB/acervo-tse/2026-1t/originais"
+R=os.path.expanduser("~/Claude/Projetos/eleição/repo")
+itens=[]
+for z in sorted(glob.glob(f"{AC}/bu_imgbu_logjez_rdv_vscmr_2026_1t_*.zip")):
+    uf=re.search(r"_1t_([A-Z]{2})\.zip",z).group(1)
+    tam=os.path.getsize(z)
+    ok=os.path.exists(z+".ok") and open(z+".ok").read().strip()==str(tam)
+    bad=os.path.exists(z+".bad") and open(z+".bad").read().strip()==str(tam)
+    # sidecar pode ser hash puro (novo) ou "hash  caminho" (formato antigo do shasum)
+    sha=None
+    if os.path.exists(z+".sha512.local"):
+        tok=open(z+".sha512.local").read().split()
+        sha=tok[0] if tok and len(tok[0])==128 else None
+    itens.append({"uf":uf,"arquivo":os.path.basename(z),"bytes":tam,
+                  "integridade":"ok" if ok else ("crc_falhou" if bad else "em_download_ou_nao_verificado"),
+                  "sha512":sha if ok else None,
+                  "fonte":"https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/"+os.path.basename(z)})
+man={"titulo":"Acervo bruto do TSE - logs de urna 1o turno - manifesto de custodia",
+     "nota":"Os ZIPs ficam em disco local (NVMe). O TSE nao publica hash destes arquivos; "
+            "o sha512 aqui foi calculado no instante em que zipfile.testzip() passou.",
+     "gerado_em_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),
+     "ufs_integras":sum(1 for i in itens if i["integridade"]=="ok"),"ufs_no_disco":len(itens),
+     "arquivos":itens}
+os.makedirs(f"{R}/dados",exist_ok=True)
+json.dump(man,open(f"{R}/dados/acervo-1t-custodia.json","w"),indent=1,ensure_ascii=False)
+print(f"acervo-1t-custodia.json: {man['ufs_integras']} íntegras de {len(itens)} no disco")
+PYA
+
 # 5. codigo que de fato rodou — o que sustenta a auditabilidade
 cp "$PL"/{coleta.py,audita.py,compara.py,extrai_votos.py,analises.py,demonstra.py,gera_demo_html.py} \
    "$R/scripts/pipeline/" 2>/dev/null
 cp "$PL"/{baixa_resiliente.sh,marca_integros.sh,enfileira_restantes.sh} \
    "$R/scripts/pipeline/" 2>/dev/null
 cp "$PL"/{roda.sh,publica.sh,publica_parcial.sh} "$R/scripts/pipeline/" 2>/dev/null
+cp "$PL/sha512_backfill.sh" "$R/scripts/pipeline/" 2>/dev/null
 cp "$P/diagnostico.sh" "$P/destrava.sh" "$R/scripts/" 2>/dev/null
 
 # 6. manifesto novo + carimbo no Bitcoin

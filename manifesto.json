@@ -1,11 +1,11 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "versao": 8,
+ "versao": 9,
  "escopo": "1o turno, por UF e por municipio",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-27T11:26:44.614362+00:00",
+ "gerado_em_utc": "2026-10-27T12:08:23.479345+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
- "n_arquivos": 976,
+ "n_arquivos": 978,
  "arquivos": [
   {
    "arquivo": "README.md",
@@ -13,14 +13,19 @@
    "sha512": "ba779d2dd4320349aa3ab3d9f0dfc7984c374b790b99529dbfc572c8a88565230c9180bd7fe87b6e2a312a4679072bec1f5b8b14d2f2509f9ca92efd75ca8f58"
   },
   {
+   "arquivo": "dados/acervo-1t-custodia.json",
+   "bytes": 4455,
+   "sha512": "eaebe5218bc130bb0095c5d719424c2f5235c5655758d7bc0686d8c7730790b557d254d84c8f73145bcd14f01b013f408e6a20fcc4abcf2f34a774d12cb9dbfa"
+  },
+  {
    "arquivo": "dados/analises/analises.json",
    "bytes": 11044,
-   "sha512": "ba9f55025c92a9870a797be1867d2d32a525380518b5372d3540024d87ed34e2028897cca9d502ad0c083b926e3b45ea99fa104991f800d117a1b05310b64a9e"
+   "sha512": "2af0860feff1e34d7e6acd14ad4d95db95e690896bf45a096e32d82be19c03da90a2388cd8966160a2b1429bb80042ef6cee8fc244c81d39be4110a81445f17a"
   },
   {
    "arquivo": "dados/analises/demonstracao_1t.json",
    "bytes": 528859,
-   "sha512": "4f8d106d353a32d17bd06510dba40ff0525f045456dca8de55cf95d5d0e65ddd7c49b3158b5283a7f3e9b653a01adc6b68bb455e5c5be1788c23301876985f6d"
+   "sha512": "3ef4a6e6db4a6ab01df8ba14a5e5e87a74832b634813b564cd82d13cdf3e92bab6841eacc7a5cc0f6b80fb0359cfb83768c40d6eefea92d461c74e960e6149f0"
   },
   {
    "arquivo": "dados/analises/demonstracao_secoes.csv",
@@ -210,12 +215,12 @@
   {
    "arquivo": "manifesto.json",
    "bytes": 210527,
-   "sha512": "f3b5d442260abf783109563632e51eb4a432152146aa6a346c45bde5869c9ffde13a0f35c21bb6fb5386e410f5e8eb0e725a85fa43ab66fe7873357fb2b8a282"
+   "sha512": "9ae03ec1ae635470d8a8ef0a113ea6412324aa08468b25b147c9b03ce612128111561854933893f3a83868497dcf7fc8d0620858c2cdace76cd1d7b07936a443"
   },
   {
    "arquivo": "manifesto.json.ots",
-   "bytes": 980,
-   "sha512": "4a5e46c95587c3336cb11aab6bf7ed95260235c376ad0726640b80984da8d4cbcde71be0faed78510523ecab1cb3038fb9432c14f368e51bd4f78f38fd5f15bf"
+   "bytes": 840,
+   "sha512": "e17ea8510f2df4b20b02c5eb30f5ba38d5f09b378778e21c6234eccb2c73d7feebf422b26fe7554cf729895aa06a5cb431d644f2b977d4107a84c31b281621fe"
   },
   {
    "arquivo": "manifesto.json.ots.bak",
@@ -259,8 +264,8 @@
   },
   {
    "arquivo": "scripts/destrava.sh",
-   "bytes": 7360,
-   "sha512": "7a736f36f8a5458714bc3094191cf87b406b96e286e5194c26fe9619304013da8ce4d232d30d3cbe28850598a146f7e180e4092b9689406b91ccb584fd5231d2"
+   "bytes": 7633,
+   "sha512": "b7ee0ab438632866b8b7e8d91bf9767b7eae713c5f8ad587cac97ed3339dd59a8b3d34b5f85655bbfda38af8a3d28daf0c06b90e358939e9b3be9a8ab0bb88de"
   },
   {
    "arquivo": "scripts/diagnostico.sh",
@@ -279,8 +284,8 @@
   },
   {
    "arquivo": "scripts/pipeline/baixa_resiliente.sh",
-   "bytes": 2158,
-   "sha512": "ef01acd032f1846dda36108f29d28b5463a46994de855ae953bad4b1450d8e6860d7c60cb576c206d882a137cc5c387bd2b2610f8a1a7bacd966466e8a2022b9"
+   "bytes": 2249,
+   "sha512": "395865a1516cc0cdc8bcd6de983e8933ef22f9212ad1cf01eecd6bb7e2ce7d3d00b56b7aac68df0788e6d97f770b38c2a92ffc8a6f8e0e3161ff128f699a0865"
   },
   {
    "arquivo": "scripts/pipeline/coleta.py",
@@ -314,23 +319,28 @@
   },
   {
    "arquivo": "scripts/pipeline/marca_integros.sh",
-   "bytes": 1328,
-   "sha512": "eb6d2532d771785c08ffc4e56193597febe44074c6d6f3644ea12db4b546bb6b9b04d29e9632d29f8b7eb8c1c44df6b1c347fc0f50b4e8b6b5690af8f636ef7e"
+   "bytes": 1431,
+   "sha512": "20052edd65729f7fa749dcade88565a3633e77022b0a710871729a4a51c91724bf44939267d200d87a488b6ca47d19b967087c62a8e953246c3b2df85fc3f9c8"
   },
   {
    "arquivo": "scripts/pipeline/publica.sh",
-   "bytes": 4969,
-   "sha512": "e3bb92e2b03e84f34fb8caa286927131675f18e930d4a37dc48b66005ca5231e0edce92aaaa724ce1fd296dbc165f73b134b9c143385f0f84accf2d07c3d551a"
+   "bytes": 5446,
+   "sha512": "9a3fc400ea6028cdf1f6e9d4a72cbd9d01026514d132bcfb447519ab6a9cc11c24c33b4b05a1302dbaf5b68abe4909506bfb70b93dc481208b60d5cc12a5a271"
   },
   {
    "arquivo": "scripts/pipeline/publica_parcial.sh",
-   "bytes": 5143,
-   "sha512": "2f0e55344311ac58f61cae534c6bd7d05d6bd7ef1f283ec19e7dc43396cf316a196ff3698becba347e75441c3452a2954e5736aaf0da89a89187304750cc5dd2"
+   "bytes": 7303,
+   "sha512": "433fcbd9735b4dc902070167867f305b54de5b62678cf092cf35d24dc24c8e7f992b8ae7145730ea5410976de965527c8abb385413924f04457b8d16aa2c9780"
   },
   {
    "arquivo": "scripts/pipeline/roda.sh",
-   "bytes": 3864,
-   "sha512": "cf7f0d1761465545bd37703f13fb9001c1913142f4feb7946ad642640c92872147c31af7310580f477d6385a4081e70be8e9de14a7dbb729fb645896b189003e"
+   "bytes": 3896,
+   "sha512": "da3d17b4b7679c26083e933082cfc960295bd2c30700276e24553012018f00c75c915b412a71e6d32ce31ea6e191f558c34cf80ca5da716faea440c78bd15b89"
+  },
+  {
+   "arquivo": "scripts/pipeline/sha512_backfill.sh",
+   "bytes": 722,
+   "sha512": "1b5a21209e175dbf184353af05f65178bc844423fc40279e8362c3eb1164c2bedbf78cb13f44dc0a4f9917dfbcc6d438518a873733dff220da03bd91787aef0a"
   },
   {
    "arquivo": "site/.gitignore",

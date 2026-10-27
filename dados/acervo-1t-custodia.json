@@ -1,0 +1,97 @@
+{
+ "titulo": "Acervo bruto do TSE - logs de urna 1o turno - manifesto de custodia",
+ "nota": "Os ZIPs ficam em disco local (NVMe). O TSE nao publica hash destes arquivos; o sha512 aqui foi calculado no instante em que zipfile.testzip() passou.",
+ "gerado_em_utc": "2026-10-27T12:08:23.364975+00:00",
+ "ufs_integras": 8,
+ "ufs_no_disco": 11,
+ "arquivos": [
+  {
+   "uf": "AC",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_AC.zip",
+   "bytes": 393536972,
+   "integridade": "ok",
+   "sha512": "ff71b7d514f2133ef5e644d4fe74d63802e37847211185da5501b9a70ad9fe696294a5e86ec765c3badf2e5d17059a6da595262fc2c9779533fbe0c555ad2d03",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_AC.zip"
+  },
+  {
+   "uf": "AL",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_AL.zip",
+   "bytes": 1404372980,
+   "integridade": "ok",
+   "sha512": "fb20af2909c9e22be76b536ba4f46c6203564f0c0a85b33c7e1b0a8f8520c48875f4d76ba51d2f7a99bbef17ba18d86e8bdc7dc63b65b4ed05ea6871831762f7",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_AL.zip"
+  },
+  {
+   "uf": "AM",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_AM.zip",
+   "bytes": 1595550575,
+   "integridade": "ok",
+   "sha512": "12f37ece0653a3d6055036610b92d40a1fbbdf90c7e7036f2604c8eb84054be1fff7a6f78781c7558f6c0338021e41834e1c7b71221ab0cbfb805559f123ccd2",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_AM.zip"
+  },
+  {
+   "uf": "AP",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_AP.zip",
+   "bytes": 351213339,
+   "integridade": "ok",
+   "sha512": "c408a45dd4aa3a03d49a9cda3d5d03d91fe11c720d8eb475125720ed168e2c0a0cb09fd238dfd37dcac47dbf0521415a165abda2a88bbac6bd0a65c8cf977890",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_AP.zip"
+  },
+  {
+   "uf": "BA",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_BA.zip",
+   "bytes": 6967798815,
+   "integridade": "ok",
+   "sha512": "0fa513b7c1fe1b19d35b7cb411cc41ac151dacbbb3dfa7dde2812a5c790aed9b1cc02c66ba915d856cf3946aa5452eb60632dd6f0de57c4270f011145419d23b",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_BA.zip"
+  },
+  {
+   "uf": "CE",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_CE.zip",
+   "bytes": 4506414880,
+   "integridade": "ok",
+   "sha512": "470dd35dde188cf6787c7821087778c376bee212165014805cbb4cd4bf3a4a45e3255f9401d11e69ecfc76147091072955dc7e88f125467a4da7a4027e661036",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_CE.zip"
+  },
+  {
+   "uf": "DF",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_DF.zip",
+   "bytes": 1347108781,
+   "integridade": "ok",
+   "sha512": "446d57f10d9bcb199a9ec901c4fe60881dc63d9dee60b9cc33bfd9fcb1aa32f5faa2c9c6da9dd216a42e2d81930550c9f9a3e37f50091b3becafedfc0637d24a",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_DF.zip"
+  },
+  {
+   "uf": "ES",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_ES.zip",
+   "bytes": 1799395069,
+   "integridade": "ok",
+   "sha512": "9b774d13e224f57f2f060324faf33408c13a7a4a5866ec21bee66373916789380b71196fb6f46f6f63c7ec5c6442425a4b7f0854c805dd142ab3df3bc8e8cfb6",
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_ES.zip"
+  },
+  {
+   "uf": "GO",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_GO.zip",
+   "bytes": 1698693120,
+   "integridade": "crc_falhou",
+   "sha512": null,
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_GO.zip"
+  },
+  {
+   "uf": "MA",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_MA.zip",
+   "bytes": 3266352554,
+   "integridade": "crc_falhou",
+   "sha512": null,
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MA.zip"
+  },
+  {
+   "uf": "MG",
+   "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_MG.zip",
+   "bytes": 5979009024,
+   "integridade": "em_download_ou_nao_verificado",
+   "sha512": null,
+   "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MG.zip"
+  }
+ ]
+}

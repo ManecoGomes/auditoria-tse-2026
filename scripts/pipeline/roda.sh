@@ -94,7 +94,7 @@ $RESUMO
 
 Relatorio completo: https://auditoria-tse-2026.com.br/relatorio-2t.html
 Repositorio:        https://github.com/ManecoGomes/auditoria-tse-2026
-Pasta no Drive:     Auditoria-TSE-2026
+Copia de custodia:  GitHub (Drive so no fechamento, via sobe_drive.sh)
 
 Comparacao com a regua do 1o turno esta na secao 3 do relatorio." \
 "$P/relatorio/Auditoria_TSE_2T_2026.pdf" >> "$LOG" 2>&1

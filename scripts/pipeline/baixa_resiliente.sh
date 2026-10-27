@@ -32,7 +32,8 @@ for uf in "$@"; do
     done
     # 2. prova de integridade
     if "$PY" -c "import zipfile,sys; sys.exit(0 if zipfile.ZipFile('$z').testzip() is None else 1)" 2>/dev/null; then
-      stat -f %z "$z" > "$z.ok"
+      stat -f %z "$z" > "$z.ok"; rm -f "$z.bad"
+      nice -n 10 shasum -a 512 "$z" | awk '{print $1}' > "$z.sha512.local"
       log "$uf: COMPLETO e ZIP integro ($(stat -f %z "$z") bytes, passe $passe) — sidecar .ok gravado"; ok=1; break
     fi
     log "$uf: passe $passe baixou 100% mas o ZIP nao abre inteiro — descartando e refazendo"

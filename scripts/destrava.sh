@@ -21,8 +21,9 @@ for pid in $(pgrep -f "$PL/demonstra.py|$PL/analises.py|$PL/gera_demo_html.py" 2
   et=$(ps -p "$pid" -o etime= 2>/dev/null | tr -d ' ')
   cp=$(ps -p "$pid" -o time=   2>/dev/null | tr -d ' ')
   [ -z "$et" ] && continue
-  mins=$(echo "$et" | awk -F: '{if(NF==3)print $1*60+$2; else if(NF==2)print $1+0; else print 0}')
-  segs=$(echo "$cp" | awk -F: '{if(NF==3)print $1*3600+$2*60+$3; else print $1*60+$2}')
+  # etime pode vir como MM:SS, HH:MM:SS ou D-HH:MM:SS; time (CPU) vem com centesimos (0:00.03)
+  mins=$(echo "$et" | awk -F'[-:]' '{if(NF==4)printf "%d",$1*1440+$2*60+$3; else if(NF==3)printf "%d",$1*60+$2; else if(NF==2)printf "%d",$1; else print 0}')
+  segs=$(echo "$cp" | awk -F: '{if(NF==3)printf "%d",$1*3600+$2*60+$3; else if(NF==2)printf "%d",$1*60+$2; else print 0}')
   if [ "${mins:-0}" -gt 45 ] && [ "${segs:-0}" -lt 60 ]; then
     cmd=$(ps -p "$pid" -o command= 2>/dev/null | cut -c1-70)
     kill "$pid" 2>/dev/null
@@ -102,13 +103,14 @@ if [ -f "$PL/analises.json" ] && ! pgrep -qf "$PL/analises.py"; then
   fi
 fi
 
-# 7. bloco novo que o site ainda nao reflete -> publica
+# 7. publicacao: chama o publicador SEMPRE. Ele compara a assinatura de estado
+#    (blocos, dados, scripts, sidecars do acervo) e sai em 0,1 s se nada mudou;
+#    so publica quando ha algo novo. Melhor que adivinhar aqui o que mudou.
 if ! pgrep -qf "publica_parcial.sh|$PL/demonstra.py"; then
-  if [ ! -f "$P/repo/site/estados/index.html" ]; then
-    "$PL/publica_parcial.sh" >> "$PL/parcial.log" 2>&1 && agiu "site publicado pela primeira vez"
-  elif [ -n "$(find "$DEMO" -name '*_municipios.json' -newer "$P/repo/site/estados/index.html" 2>/dev/null | head -1)" ]; then
-    "$PL/publica_parcial.sh" >> "$PL/parcial.log" 2>&1 && agiu "site republicado (bloco novo disponível)"
-  fi
+  ANTES=$(cat "$PL/.ultimo_estado" 2>/dev/null)
+  "$PL/publica_parcial.sh" >> "$PL/parcial.log" 2>&1
+  DEPOIS=$(cat "$PL/.ultimo_estado" 2>/dev/null)
+  [ "$ANTES" != "$DEPOIS" ] && agiu "site republicado — estado mudou ($(tail -1 "$PL/parcial.log" | sed 's/.*(manifesto /manifesto /;s/)$//'))"
 fi
 
 # 8. vigia/pipeline caiu do launchd -> recarrega

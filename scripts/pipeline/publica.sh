@@ -80,7 +80,14 @@ cd "$R" && git add -A && \
   git -c user.name="Maneco Gomes" -c user.email="manecogomes@gmail.com" \
       commit -q -m "Auditoria do 2º turno: resultado, dados e manifesto v$VER" && git push -q origin main
 
-# --- Drive ---
+# --- Drive: SO como copia final, por decisao do Maneco (2026-10-27) ---
+# Durante o processo a copia de custodia e o GitHub (codigo, dados derivados,
+# manifestos carimbados, manifesto do acervo com SHA512). O Drive ja truncou
+# CSV uma vez; so recebe o conjunto fechado, via sobe_drive.sh, quando tudo
+# estiver conferido. Para subir daqui: DRIVE_FINAL=1 ./publica.sh
+if [ "${DRIVE_FINAL:-0}" != "1" ]; then
+  echo "Drive: pulado (copia final so com DRIVE_FINAL=1 ou sobe_drive.sh)"
+else
 D="gdrive:Auditoria-TSE-2026"
 rclone copy "$R/relatorio"        "$D/1-Relatorio"            --transfers 3 -q || true
 rclone copy "$R/manifestos"       "$D/2-Manifestos-e-carimbos" --transfers 3 -q || true
@@ -88,4 +95,5 @@ rclone copy "$R/scripts"          "$D/3-Scripts"               --transfers 3 -q 
 rclone copy "$R/dados"            "$D/4-Dados-derivados"       --transfers 3 -q || true
 rclone copy /Volumes/SSD1TB/acervo-tse/2026-2t/boletins \
             "$D/5-Fontes-originais-TSE/Boletins-2o-turno" --drive-chunk-size 128M --transfers 3 -q || true
+fi
 echo "PUBLICACAO CONCLUIDA"
