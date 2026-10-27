@@ -26,6 +26,9 @@ for pid in $(pgrep -f "$PL/demonstra.py|$PL/analises.py|$PL/gera_demo_html.py" 2
   segs=$(echo "$cp" | awk -F: '{if(NF==3)printf "%d",$1*3600+$2*60+$3; else if(NF==2)printf "%d",$1*60+$2; else print 0}')
   if [ "${mins:-0}" -gt 45 ] && [ "${segs:-0}" -lt 60 ]; then
     cmd=$(ps -p "$pid" -o command= 2>/dev/null | cut -c1-70)
+    # captura ONDE o processo esta travado antes de matar: e o que torna o proximo
+    # diagnostico conclusivo (hipotese atual: I/O no volume externo / Spotlight)
+    mkdir -p "$P/logs-hang"; sample "$pid" 3 -file "$P/logs-hang/hang-$(date +%Y%m%d-%H%M%S)-$pid.txt" >/dev/null 2>&1
     kill "$pid" 2>/dev/null
     agiu "encerrei analise pendurada pid=$pid ($et vivo, ${segs}s de CPU): $cmd"
   fi
@@ -41,6 +44,8 @@ for uf in $TODAS; do
   # ja reprovado neste exato tamanho: nao gastar CPU refazendo o CRC a cada hora.
   # O marcador cai sozinho quando o arquivo muda de tamanho (download novo).
   [ -f "$z.bad" ] && [ "$(cat "$z.bad" 2>/dev/null)" = "$(stat -f %z "$z" 2>/dev/null)" ] && continue
+  # truncado neste tamanho ja foi classificado: nao e corrupcao, o downloader completa
+  [ -f "$z.truncado" ] && [ "$(cat "$z.truncado" 2>/dev/null)" = "$(stat -f %z "$z" 2>/dev/null)" ] && continue
   SEMOK="$SEMOK $uf"
 done
 if [ -n "$SEMOK" ]; then
@@ -48,9 +53,28 @@ if [ -n "$SEMOK" ]; then
   agiu "testzip rodado em:$SEMOK"
   for uf in $SEMOK; do
     z="$AC1/bu_imgbu_logjez_rdv_vscmr_2026_1t_$uf.zip"
-    if [ ! -f "$z.ok" ]; then
+    if [ -f "$z.ok" ]; then
+      agiu "$uf provado íntegro"
+    elif [ -f "$z.truncado" ]; then
+      log "$uf: truncado ($(cat "$z.truncado") de $(cat "$z.esperado" 2>/dev/null || echo ?) bytes) — o downloader completa; nada a fazer"
+    else
       rm -f "$DEMO/$uf.json" "$DEMO/${uf}_municipios.json"
-      agiu "$uf falhou no CRC: cache derivado invalidado, precisa rebaixar"
+      agiu "$uf falhou no CRC (completo, bytes errados): cache derivado invalidado; reparo por Range na próxima passada sem download"
+    fi
+  done
+fi
+
+# 2b. ZIP completo com CRC ruim (.bad) e NENHUM download ativo -> repara em lugar.
+#     Gateado pelo download para nao competir por banda (downloads sao sequenciais).
+if ! pgrep -qf 'baixa_resiliente.sh'; then
+  for uf in $TODAS; do
+    z="$AC1/bu_imgbu_logjez_rdv_vscmr_2026_1t_$uf.zip"
+    [ -f "$z.bad" ] || continue
+    if "$PY" -u "$PL/repara_zip.py" "$z" 4 >> "$PL/repara_zip.log" 2>&1; then
+      "$PL/marca_integros.sh" "$uf" >/dev/null 2>&1
+      agiu "$uf reparado em lugar via Range (repara_zip.py) e marcado íntegro"
+    else
+      agiu "$uf: reparo por Range não bastou — segue para rebaixar"
     fi
   done
 fi

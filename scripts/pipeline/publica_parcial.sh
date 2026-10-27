@@ -72,13 +72,16 @@ for z in sorted(glob.glob(f"{AC}/bu_imgbu_logjez_rdv_vscmr_2026_1t_*.zip")):
     tam=os.path.getsize(z)
     ok=os.path.exists(z+".ok") and open(z+".ok").read().strip()==str(tam)
     bad=os.path.exists(z+".bad") and open(z+".bad").read().strip()==str(tam)
+    esp=int(open(z+".esperado").read().strip()) if os.path.exists(z+".esperado") else None
+    trunc=(esp is not None and tam<esp)
     # sidecar pode ser hash puro (novo) ou "hash  caminho" (formato antigo do shasum)
     sha=None
     if os.path.exists(z+".sha512.local"):
         tok=open(z+".sha512.local").read().split()
         sha=tok[0] if tok and len(tok[0])==128 else None
     itens.append({"uf":uf,"arquivo":os.path.basename(z),"bytes":tam,
-                  "integridade":"ok" if ok else ("crc_falhou" if bad else "em_download_ou_nao_verificado"),
+                  "integridade":"ok" if ok else ("truncado" if trunc else ("crc_falhou" if bad else "em_download_ou_nao_verificado")),
+                  "bytes_esperados":esp,
                   "sha512":sha if ok else None,
                   "fonte":"https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/"+os.path.basename(z)})
 man={"titulo":"Acervo bruto do TSE - logs de urna 1o turno - manifesto de custodia",
@@ -99,6 +102,7 @@ cp "$PL"/{baixa_resiliente.sh,marca_integros.sh,enfileira_restantes.sh} \
    "$R/scripts/pipeline/" 2>/dev/null
 cp "$PL"/{roda.sh,publica.sh,publica_parcial.sh} "$R/scripts/pipeline/" 2>/dev/null
 cp "$PL/sha512_backfill.sh" "$R/scripts/pipeline/" 2>/dev/null
+cp "$PL/repara_zip.py" "$R/scripts/pipeline/" 2>/dev/null
 cp "$P/diagnostico.sh" "$P/destrava.sh" "$R/scripts/" 2>/dev/null
 
 # 6. manifesto novo + carimbo no Bitcoin

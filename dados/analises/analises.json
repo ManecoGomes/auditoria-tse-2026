@@ -1,12 +1,12 @@
 {
- "gerado_utc": "2026-10-27T12:15:09.721044+00:00",
+ "gerado_utc": "2026-10-27T12:43:46.108652+00:00",
  "blocos": {
   "A2_triangulacao_1t": {
-   "secoes_comparadas": 95485,
-   "divergentes": 8671,
-   "pct": 9.081,
-   "log_menor_que_bu": 8649,
-   "log_maior_que_bu": 22,
+   "secoes_comparadas": 113578,
+   "divergentes": 10222,
+   "pct": 9.0,
+   "log_menor_que_bu": 10189,
+   "log_maior_que_bu": 33,
    "exemplos": [
     {
      "secao": "1015-2-102",
@@ -311,8 +311,8 @@
    ]
   },
   "F1_geografia_1t": {
-   "municipios": 882,
-   "mediana_pct_tardio": 6.603,
+   "municipios": 1099,
+   "mediana_pct_tardio": 6.219,
    "top20_mais_tardio": [
     {
      "uf": "AL",
@@ -501,6 +501,14 @@
      "pct_tardio": 0.054
     },
     {
+     "uf": "MA",
+     "municipio": 8443,
+     "nome": "São Roberto",
+     "secoes": 19,
+     "votos": 3565,
+     "pct_tardio": 0.056
+    },
+    {
      "uf": "ES",
      "municipio": 56219,
      "nome": "",
@@ -627,29 +635,21 @@
      "secoes": 319,
      "votos": 71018,
      "pct_tardio": 0.397
-    },
-    {
-     "uf": "ES",
-     "municipio": 56499,
-     "nome": "",
-     "secoes": 38,
-     "votos": 7624,
-     "pct_tardio": 0.433
     }
    ]
   },
   "E5_municipios": {
    "estado": "aguardando o 2º turno",
-   "municipios_1t_prontos": 882,
+   "municipios_1t_prontos": 1099,
    "nota": "A linha de base por município do 1º turno está pronta. Os blocos E comparam os mesmos municípios entre turnos e saem sozinhos quando o TSE publicar os arquivos do 2º turno."
   }
  },
  "cobertura": {
   "secoes_boletim_1t": 499206,
   "secoes_boletim_2t": 0,
-  "secoes_log_1t": 95485,
+  "secoes_log_1t": 113578,
   "secoes_log_2t": 0,
-  "municipios_1t": 882,
+  "municipios_1t": 1099,
   "municipios_2t": 0
  }
 }

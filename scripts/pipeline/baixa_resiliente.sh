@@ -15,6 +15,7 @@ for uf in "$@"; do
   esperado=$(curl -sI -m 60 "$u" | awk 'BEGIN{IGNORECASE=1}/^content-length:/{gsub(/\r/,"");print $2}' | tail -1)
   [ -z "$esperado" ] && { log "$uf: sem Content-Length, pulando"; continue; }
   log "$uf: alvo $esperado bytes"
+  echo "$esperado" > "$z.esperado"   # permite distinguir TRUNCADO de CORROMPIDO
   ok=0
   for passe in $(seq 1 "$PASSES"); do
     # 1. completa o arquivo, retomando quantas vezes precisar
@@ -36,8 +37,16 @@ for uf in "$@"; do
       nice -n 10 shasum -a 512 "$z" | awk '{print $1}' > "$z.sha512.local"
       log "$uf: COMPLETO e ZIP integro ($(stat -f %z "$z") bytes, passe $passe) — sidecar .ok gravado"; ok=1; break
     fi
-    log "$uf: passe $passe baixou 100% mas o ZIP nao abre inteiro — descartando e refazendo"
-    rm -f "$z" "$z.ok"
+    # ZIP completo mas com CRC errado: o CDN e consistente (ETag estavel, Range 206),
+    # entao rebaixa SO os membros ruins em vez de jogar GBs fora (repara_zip.py).
+    log "$uf: passe $passe baixou 100% mas o ZIP nao abre inteiro — tentando reparo por Range"
+    if "$PY" -u "$(dirname "$0")/repara_zip.py" "$z" 4 >> "$LOG" 2>&1; then
+      stat -f %z "$z" > "$z.ok"; rm -f "$z.bad" "$z.truncado"
+      nice -n 10 shasum -a 512 "$z" | awk '{print $1}' > "$z.sha512.local"
+      log "$uf: REPARADO em lugar e integro ($(stat -f %z "$z") bytes) — sidecar .ok gravado"; ok=1; break
+    fi
+    log "$uf: reparo nao bastou — descartando e refazendo do zero"
+    rm -f "$z" "$z.ok" "$z.bad" "$z.truncado"
     sleep 30
   done
   [ "$ok" = 1 ] || log "$uf: DESISTI apos $PASSES passes — CDN entregando dados corrompidos"
