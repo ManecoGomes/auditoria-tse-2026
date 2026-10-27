@@ -72,7 +72,7 @@ if ! pgrep -qf 'baixa_resiliente.sh'; then
   for uf in $TODAS; do
     z="$AC1/bu_imgbu_logjez_rdv_vscmr_2026_1t_$uf.zip"
     [ -f "$z.bad" ] || continue
-    if "$PY" -u "$PL/repara_zip.py" "$z" 4 >> "$PL/repara_zip.log" 2>&1; then
+    if "$PY" -u "$PL/repara_zip.py" "$z" 40 >> "$PL/repara_zip.log" 2>&1; then
       "$PL/marca_integros.sh" "$uf" >/dev/null 2>&1
       agiu "$uf reparado em lugar via Range (repara_zip.py) e marcado íntegro"
     else

@@ -31,7 +31,7 @@ for uf in "$@"; do
       # chamada comecou e perde o que baixou (observado 2026-10-27: tamanho caindo entre
       # tentativas, 1,7 GB/h efetivos com teto de 15 MB/s). O while acima ja repete, e cada
       # chamada nova retoma do tamanho real do arquivo (-C -).
-      curl -sL -C - --speed-time 120 --speed-limit 10240 --limit-rate "${LIMITE:-15M}" -o "$z" "$u"
+      curl -sL -C - --speed-time 120 --speed-limit 10240 --limit-rate "${LIMITE:-20M}" -o "$z" "$u"
       novo=$(stat -f %z "$z" 2>/dev/null || echo 0)
       log "$uf: passe $passe tentativa $t -> $novo/$esperado ($((novo*100/esperado))%)"
       [ "$novo" -ge "$esperado" ] && break
@@ -46,7 +46,7 @@ for uf in "$@"; do
     # ZIP completo mas com CRC errado: o CDN e consistente (ETag estavel, Range 206),
     # entao rebaixa SO os membros ruins em vez de jogar GBs fora (repara_zip.py).
     log "$uf: passe $passe baixou 100% mas o ZIP nao abre inteiro — tentando reparo por Range"
-    if "$PY" -u "$(dirname "$0")/repara_zip.py" "$z" 4 >> "$LOG" 2>&1; then
+    if "$PY" -u "$(dirname "$0")/repara_zip.py" "$z" 40 >> "$LOG" 2>&1; then
       stat -f %z "$z" > "$z.ok"; rm -f "$z.bad" "$z.truncado"
       nice -n 10 shasum -a 512 "$z" | awk '{print $1}' > "$z.sha512.local"
       log "$uf: REPARADO em lugar e integro ($(stat -f %z "$z") bytes) — sidecar .ok gravado"; ok=1; break

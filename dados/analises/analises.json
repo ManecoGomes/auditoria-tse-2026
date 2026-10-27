@@ -1,12 +1,12 @@
 {
- "gerado_utc": "2026-10-27T17:25:37.368039+00:00",
+ "gerado_utc": "2026-10-27T17:49:41.999044+00:00",
  "blocos": {
   "A2_triangulacao_1t": {
-   "secoes_comparadas": 129264,
-   "divergentes": 11479,
-   "pct": 8.8803,
-   "log_menor_que_bu": 11439,
-   "log_maior_que_bu": 40,
+   "secoes_comparadas": 196716,
+   "divergentes": 15379,
+   "pct": 7.8179,
+   "log_menor_que_bu": 15327,
+   "log_maior_que_bu": 52,
    "exemplos": [
     {
      "secao": "1015-2-102",
@@ -311,8 +311,8 @@
    ]
   },
   "F1_geografia_1t": {
-   "municipios": 1345,
-   "mediana_pct_tardio": 5.584,
+   "municipios": 2419,
+   "mediana_pct_tardio": 3.778,
    "top20_mais_tardio": [
     {
      "uf": "AL",
@@ -345,6 +345,14 @@
      "secoes": 45,
      "votos": 12276,
      "pct_tardio": 22.385
+    },
+    {
+     "uf": "MT",
+     "municipio": 90921,
+     "nome": "Serra Nova Dourada",
+     "secoes": 5,
+     "votos": 1183,
+     "pct_tardio": 21.048
     },
     {
      "uf": "AL",
@@ -403,6 +411,14 @@
      "pct_tardio": 17.778
     },
     {
+     "uf": "MG",
+     "municipio": 41602,
+     "nome": "São João Das Missões",
+     "secoes": 36,
+     "votos": 7485,
+     "pct_tardio": 17.194
+    },
+    {
      "uf": "BA",
      "municipio": 38164,
      "nome": "Presidente Tancredo Neves",
@@ -443,198 +459,182 @@
      "pct_tardio": 16.809
     },
     {
+     "uf": "MG",
+     "municipio": 40843,
+     "nome": "Senador Amaral",
+     "secoes": 16,
+     "votos": 4679,
+     "pct_tardio": 16.692
+    },
+    {
      "uf": "AM",
      "municipio": 2119,
      "nome": "Barreirinha",
      "secoes": 68,
      "votos": 18413,
      "pct_tardio": 16.684
-    },
-    {
-     "uf": "AL",
-     "municipio": 27170,
-     "nome": "Belo Monte",
-     "secoes": 16,
-     "votos": 4869,
-     "pct_tardio": 16.615
-    },
-    {
-     "uf": "AL",
-     "municipio": 28398,
-     "nome": "Pindoba",
-     "secoes": 8,
-     "votos": 2403,
-     "pct_tardio": 16.604
-    },
-    {
-     "uf": "BA",
-     "municipio": 38512,
-     "nome": "Santa Bárbara",
-     "secoes": 61,
-     "votos": 16228,
-     "pct_tardio": 16.49
     }
    ],
    "top20_menos_tardio": [
     {
-     "uf": "GO",
-     "municipio": 93335,
-     "nome": "Cumari",
-     "secoes": 12,
-     "votos": 2000,
+     "uf": "MT",
+     "municipio": 91332,
+     "nome": "Ponte Branca",
+     "secoes": 9,
+     "votos": 1548,
      "pct_tardio": 0.0
     },
     {
-     "uf": "GO",
-     "municipio": 95176,
-     "nome": "Panamá",
-     "secoes": 14,
-     "votos": 2367,
+     "uf": "MT",
+     "municipio": 90239,
+     "nome": "Araguainha",
+     "secoes": 5,
+     "votos": 963,
      "pct_tardio": 0.0
     },
     {
-     "uf": "GO",
-     "municipio": 96172,
-     "nome": "Taquaral De Goiás",
-     "secoes": 17,
-     "votos": 3522,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "GO",
-     "municipio": 92614,
-     "nome": "Baliza",
-     "secoes": 15,
-     "votos": 2496,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "GO",
-     "municipio": 93513,
-     "nome": "Estrela Do Norte",
-     "secoes": 12,
-     "votos": 2484,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "GO",
-     "municipio": 93530,
-     "nome": "Fazenda Nova",
-     "secoes": 22,
-     "votos": 4450,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "GO",
-     "municipio": 93602,
-     "nome": "Lagoa Santa",
-     "secoes": 6,
-     "votos": 1286,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "GO",
-     "municipio": 93319,
-     "nome": "Cromínia",
-     "secoes": 15,
-     "votos": 3288,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "ES",
-     "municipio": 56278,
-     "nome": "",
-     "secoes": 138,
-     "votos": 23854,
-     "pct_tardio": 0.013
-    },
-    {
-     "uf": "GO",
-     "municipio": 95311,
-     "nome": "Petrolina De Goiás",
-     "secoes": 29,
-     "votos": 6125,
-     "pct_tardio": 0.016
-    },
-    {
-     "uf": "GO",
-     "municipio": 96075,
-     "nome": "Serranópolis",
-     "secoes": 21,
-     "votos": 4886,
-     "pct_tardio": 0.02
-    },
-    {
-     "uf": "GO",
-     "municipio": 93670,
-     "nome": "Goianápolis",
-     "secoes": 42,
-     "votos": 8627,
-     "pct_tardio": 0.023
-    },
-    {
-     "uf": "GO",
-     "municipio": 93696,
-     "nome": "Goiandira",
-     "secoes": 14,
-     "votos": 3749,
-     "pct_tardio": 0.027
-    },
-    {
-     "uf": "GO",
-     "municipio": 95397,
-     "nome": "Piracanjuba",
-     "secoes": 63,
-     "votos": 14300,
-     "pct_tardio": 0.028
-    },
-    {
-     "uf": "ES",
-     "municipio": 56626,
-     "nome": "",
-     "secoes": 48,
-     "votos": 9859,
-     "pct_tardio": 0.03
-    },
-    {
-     "uf": "GO",
-     "municipio": 94234,
-     "nome": "Itauçu",
-     "secoes": 31,
-     "votos": 6331,
-     "pct_tardio": 0.032
-    },
-    {
-     "uf": "GO",
-     "municipio": 92770,
-     "nome": "Buriti Alegre",
-     "secoes": 29,
-     "votos": 6207,
-     "pct_tardio": 0.032
-    },
-    {
-     "uf": "GO",
-     "municipio": 94110,
-     "nome": "Itajá",
+     "uf": "MT",
+     "municipio": 90042,
+     "nome": "Alto Boa Vista",
      "secoes": 16,
-     "votos": 2868,
-     "pct_tardio": 0.035
+     "votos": 3235,
+     "pct_tardio": 0.0
     },
     {
-     "uf": "GO",
-     "municipio": 94358,
-     "nome": "Jaupaci",
+     "uf": "MG",
+     "municipio": 46159,
+     "nome": "Ingaí",
+     "secoes": 11,
+     "votos": 2328,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 41394,
+     "nome": "Biquinhas",
+     "secoes": 10,
+     "votos": 2023,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 43796,
+     "nome": "Cordislândia",
+     "secoes": 12,
+     "votos": 2289,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 52973,
+     "nome": "São Sebastião Do Rio Verde",
+     "secoes": 7,
+     "votos": 1776,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 45055,
+     "nome": "Faria Lemos",
      "secoes": 13,
-     "votos": 2399,
-     "pct_tardio": 0.042
+     "votos": 2652,
+     "pct_tardio": 0.0
     },
     {
-     "uf": "GO",
-     "municipio": 92819,
-     "nome": "Cachoeira Alta",
-     "secoes": 27,
-     "votos": 5727,
-     "pct_tardio": 0.052
+     "uf": "MG",
+     "municipio": 44938,
+     "nome": "Estrela Do Indaiá",
+     "secoes": 11,
+     "votos": 2033,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 45470,
+     "nome": "Gonçalves",
+     "secoes": 15,
+     "votos": 3096,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 40754,
+     "nome": "Arapuá",
+     "secoes": 11,
+     "votos": 2711,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 46272,
+     "nome": "Ipiaçu",
+     "secoes": 13,
+     "votos": 2773,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 50636,
+     "nome": "Presidente Juscelino",
+     "secoes": 17,
+     "votos": 2754,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 52450,
+     "nome": "São João Da Mata",
+     "secoes": 11,
+     "votos": 2498,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 53392,
+     "nome": "Serranos",
+     "secoes": 10,
+     "votos": 1660,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 51853,
+     "nome": "Santa Rita De Jacutinga",
+     "secoes": 20,
+     "votos": 3543,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 42951,
+     "nome": "Carvalhos",
+     "secoes": 15,
+     "votos": 3262,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 48496,
+     "nome": "Monjolos",
+     "secoes": 10,
+     "votos": 1695,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 45578,
+     "nome": "Grupiara",
+     "secoes": 7,
+     "votos": 1420,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "MG",
+     "municipio": 53317,
+     "nome": "Serra Da Saudade",
+     "secoes": 4,
+     "votos": 989,
+     "pct_tardio": 0.0
     }
    ]
   },
@@ -644,16 +644,16 @@
   },
   "E5_municipios": {
    "estado": "aguardando o 2º turno",
-   "municipios_1t_prontos": 1345,
+   "municipios_1t_prontos": 2419,
    "nota": "A linha de base por município do 1º turno está pronta. Os blocos E comparam os mesmos municípios entre turnos e saem sozinhos quando o TSE publicar os arquivos do 2º turno."
   }
  },
  "cobertura": {
   "secoes_boletim_1t": 499206,
   "secoes_boletim_2t": 0,
-  "secoes_log_1t": 129264,
+  "secoes_log_1t": 196716,
   "secoes_log_2t": 0,
-  "municipios_1t": 1345,
+  "municipios_1t": 2419,
   "municipios_2t": 0
  }
 }
