@@ -5,7 +5,16 @@ Cada UF e processada uma vez e cacheada em resultados/1t/demo/{UF}.json.
 O bloco nacional e a soma dos per-UF. Rodar de novo so reprocessa UF nova
 ou UF cujo ZIP mudou de tamanho — publicacao incremental de verdade.
 """
-import csv, glob, io, json, os, re, zipfile, collections, datetime
+import csv, glob, io, json, os, re, zipfile, collections, datetime, signal, sys, time
+
+# Watchdog: o volume externo ja deixou este processo pendurado com 0,03 s de CPU por
+# mais de uma hora (2026-10-27, 00h e 08h). Se qualquer passo travar, o processo
+# morre sozinho — exit 4 — em vez de segurar o publicador e o lock para sempre.
+def _watchdog(sig, frm):
+    print("ERRO: watchdog — processo travado por 3h, abortando (exit 4)", flush=True)
+    os._exit(4)
+signal.signal(signal.SIGALRM, _watchdog)
+signal.alarm(3*3600)
 
 P   = os.path.expanduser("~/Claude/Projetos/eleição")
 AC  = "/Volumes/SSD1TB/acervo-tse/2026-1t/originais"
@@ -277,10 +286,20 @@ def processa(uf, z):
 
 
 # ---------- 1. processa cada UF, reaproveitando cache ----------
-if not os.path.isdir(AC) or not glob.glob(f"{AC}/*_1t_*.zip"):
-    # acervo indisponivel (SSD desmontado ou I/O sob pressao) nao e "zero UF":
-    # sair com erro impede a cadeia de publicacao de ir ao ar com nada.
-    print(f"ERRO: acervo inacessivel em {AC} — abortando sem tocar na publicacao", flush=True)
+def acervo_visivel():
+    try: return os.path.isdir(AC) and bool(glob.glob(f"{AC}/*_1t_*.zip"))
+    except OSError: return False
+
+# O volume externo tem estalos transitorios (3 ocorrencias em 2026-10-27). Tentar
+# 6x com 10 s de intervalo transforma um estalo em nao-evento; so depois e erro.
+for _t in range(6):
+    if acervo_visivel(): break
+    print(f"  acervo nao visivel em {AC} — tentativa {_t+1}/6, aguardando 10 s", flush=True)
+    time.sleep(10)
+else:
+    # acervo indisponivel de verdade (volume desmontado): sair com erro impede a
+    # cadeia de publicacao de ir ao ar com nada.
+    print(f"ERRO: acervo inacessivel em {AC} apos 60 s — abortando sem tocar na publicacao", flush=True)
     raise SystemExit(2)
 
 UFS = zips_integros()

@@ -1,7 +1,7 @@
 {
  "titulo": "Acervo bruto do TSE - logs de urna 1o turno - manifesto de custodia",
  "nota": "Os ZIPs ficam em disco local (NVMe). O TSE nao publica hash destes arquivos; o sha512 aqui foi calculado no instante em que zipfile.testzip() passou.",
- "gerado_em_utc": "2026-10-27T12:08:23.364975+00:00",
+ "gerado_em_utc": "2026-10-27T12:15:15.908204+00:00",
  "ufs_integras": 8,
  "ufs_no_disco": 11,
  "arquivos": [
@@ -88,7 +88,7 @@
   {
    "uf": "MG",
    "arquivo": "bu_imgbu_logjez_rdv_vscmr_2026_1t_MG.zip",
-   "bytes": 5979009024,
+   "bytes": 6304777619,
    "integridade": "em_download_ou_nao_verificado",
    "sha512": null,
    "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/arqurnatot/bu_imgbu_logjez_rdv_vscmr_2026_1t_MG.zip"

@@ -12,6 +12,21 @@ OTS="$P/.venv-ots/bin/ots"
 DEMO=/Volumes/SSD1TB/acervo-tse/auditoria/demo
 MARCA="$PL/.ultimo_estado"
 
+# --- lock: NUNCA dois publicadores ao mesmo tempo (macOS nao tem flock; mkdir e atomico) ---
+# Dois publicadores concorrentes = dois deploys, dois commits em corrida e duas
+# versoes de manifesto disputando o mesmo numero. Aconteceu em 2026-10-27 09h.
+LOCK="$PL/.publica.lock"
+if ! mkdir "$LOCK" 2>/dev/null; then
+  LPID=$(cat "$LOCK/pid" 2>/dev/null)
+  if [ -n "$LPID" ] && kill -0 "$LPID" 2>/dev/null; then
+    echo "$(date '+%F %T') publicador ja em execucao (pid $LPID) — saindo" >> "$PL/parcial.log"; exit 0
+  fi
+  # lock orfao (dono morreu): assume
+  rm -rf "$LOCK"; mkdir "$LOCK" || exit 0
+fi
+echo $$ > "$LOCK/pid"
+trap 'rm -rf "$LOCK"' EXIT
+
 # assinatura do estado: tamanho dos blocos por UF/municipio + derivados publicados
 # inclui TODO script que e sincronizado para o repo: corrigir qualquer um deles
 # tem de disparar republicacao, senao o codigo publicado descola do que roda.
