@@ -1,9 +1,9 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "versao": 18,
+ "versao": 19,
  "escopo": "1o turno, por UF e por municipio",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-27T16:52:41.676293+00:00",
+ "gerado_em_utc": "2026-10-27T17:25:46.605206+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
  "n_arquivos": 1447,
  "arquivos": [
@@ -15,17 +15,17 @@
   {
    "arquivo": "dados/acervo-1t-custodia.json",
    "bytes": 4997,
-   "sha512": "33d1d795d81e7f1f4beab579e41864de8136c2c234df4dc729e2a677f05bb0dc0c8248513e3d8edc435a844b3467122c637283d1f7b34a1f2425c160056d2396"
+   "sha512": "59b5e8f3cb7591053febf9320eda6e9780b6830e8dbc2ccdffe2646a716ef6fe98ad7b19c326ea82e96cc62d4f870de657f2dd0cdf01b32945ec5cbae650976b"
   },
   {
    "arquivo": "dados/analises/analises.json",
    "bytes": 11303,
-   "sha512": "d60d4f55d89df370857fa75df3db4310ae6db8883d6ba69f42030d90173709826cd877a5f1c6671a9ef398d39d05dd391e2d6affb60d90a87a3a2ab24f8d7a5f"
+   "sha512": "dbbfe903e7d389a5b923241fb8c80fd62ad679a4e71dde0adf2073b631a8671c4e65a639e118709710f9e7c5158caa5defd33cf295d8b25676bb3ec0ec327457"
   },
   {
    "arquivo": "dados/analises/demonstracao_1t.json",
    "bytes": 1350157,
-   "sha512": "1a8d458351370f74887f83350d81761fa678805fa38dd5467ea8c514758afe519fe8927a4692e17f8cf9c3984566a9b1a6d95ba869bb734855391aca8da1f45b"
+   "sha512": "4c703a865d15f2b4f57128e398df9c62e5b076b7acd029e9a9dda2204b899aa5956dd8927f412ac83aadc088bdb6893a2531134e2bfcf63359663f2f70e5bec4"
   },
   {
    "arquivo": "dados/analises/demonstracao_secoes.csv",
@@ -220,12 +220,12 @@
   {
    "arquivo": "manifesto.json",
    "bytes": 312096,
-   "sha512": "06ccd90247a23920eb9d1c65545ae9be2b2721f70de4e361e2e2a4c5bdf1bfce2c925fdc13639da2af2028cf1b1ea8fbf6b1a4a7a07f93abc42e29f154d90d45"
+   "sha512": "582cbb74530845e527cc259e194a8162b8c18a0a1ec04e4e3ac1d6cc7076d366996c286156b60ba7b3aad3fbb558e9e1aa57fb6e09b53aba8b3165abc3d785cd"
   },
   {
    "arquivo": "manifesto.json.ots",
-   "bytes": 805,
-   "sha512": "d2f5cd87e098e9dfbe14ee8fff8e66a99d5b93f6bc517bd9f82f592323b18ebc43c5635f22c038d0c9db571c969c44c1b9b251a371c517e9b5f4e34b5e49f385"
+   "bytes": 770,
+   "sha512": "dabd2bda85ccc9fd5049e5c53169722bee8ea723c1a1e384015311a064dc6f01eabb6115e6babaacc37568dc69577ac404aa63720485b39d0da1bcd8b467125e"
   },
   {
    "arquivo": "manifesto.json.ots.bak",
