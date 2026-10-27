@@ -1,9 +1,9 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Auditoria de horários das Eleições 2026 — Auditoria TSE 2026</title>
-<meta name="description" content="Verificação independente dos registros de horário em 499.206 boletins de urna do 1º turno.">
-<link rel="canonical" href="https://auditoria-tse-2026.com.br/">
-<meta property="og:url" content="https://auditoria-tse-2026.com.br/">
+<title>Auditoria independente das Eleições 2026</title>
+<meta name="description" content="Documento técnico integral, com metodologia, resultados e limitações.">
+<link rel="canonical" href="https://auditoria-tse-2026.com.br/index.html">
+<meta property="og:url" content="https://auditoria-tse-2026.com.br/index.html">
 <meta property="og:type" content="website">
 <meta name="robots" content="index,follow"><style>
 :root{--bg:#fbfaf8;--fg:#1a1a1a;--mut:#5c5955;--line:#ddd8d0;--accent:#8a2f2f;
@@ -58,64 +58,72 @@ ul,ol{margin:0 0 15px;padding-left:22px}li{margin:5px 0}
 hr{border:none;border-top:1px solid var(--line);margin:34px 0}
 @media(max-width:600px){h1{font-size:25px}.wrap{padding:0 17px 64px}}
 </style></head><body><div class="wrap">
-<header class="top"><div class="kicker">Auditoria independente · Eleições Gerais 2026</div>
-<h1>Auditoria de horários das Eleições 2026</h1><p class="sub">Verificação independente dos registros de horário em 499.206 boletins de urna do 1º turno.</p>
-<nav><a href="index.html" class="on">Resumo</a><a href="plano-2t.html">Plano do 2º turno</a><a href="demonstracao.html">Demonstração</a><a href="estados/index.html">Estados</a><a href="reta-final.html">Reta final</a><a href="relatorio.html">1º turno</a><a href="verificar.html">Como verificar</a><a href="dados.html">Dados e hashes</a></nav></header>
-<div class="grid">
-<div class="stat"><div class="n">499.206</div><div class="l">seções auditadas (1º turno)</div></div>
-<div class="stat"><div class="n">125,3 mi</div><div class="l">votantes</div></div>
-<div class="stat"><div class="n">28/28</div><div class="l">arquivos com SHA-512 conferido</div></div>
-<div class="stat zero"><div class="n">0</div><div class="l">indícios de voto fora de hora</div></div>
-</div>
+<header class="top"><div class="kicker">Auditoria independente · Eleições Gerais 2026</div><h1>Auditoria independente das Eleições 2026</h1><p class="sub">Dados públicos do TSE, método publicado antes dos dados, resultados seção por seção.</p><nav><a href="index.html" class="on">Resumo</a><a href="primeiro-turno.html">1º turno</a><a href="segundo-turno.html">2º turno</a><a href="comparativo.html">Comparativo</a><a href="reta-final.html">Reta final</a><a href="estados/index.html">Estados</a><a href="plano-2t.html">Plano</a><a href="verificar.html">Como verificar</a><a href="dados.html">Dados e hashes</a></nav></header>
+<h2>Objetivo</h2>
+<p>Verificar, com os dados públicos do Tribunal Superior Eleitoral e por método publicado <strong>antes</strong> de os
+dados existirem, se houve voto registrado fora das regras nas Eleições Gerais de 2026 — e, em especial, responder a
+uma pergunta concreta sobre o 2º turno: <strong>nas duas horas a mais concedidas no dia 25 de outubro, entre 17h e
+19h, houve votos registrados em ritmo incompatível com eleitor real, quantos foram e em quais urnas?</strong></p>
+<p>A hipótese testada é a descrita por Flávio Dino em <a href="reta-final.html">discurso que motivou este trabalho</a>:
+encerrada a fila, o mesário libera a urna com o número do título de eleitores ausentes e vota por eles. Voto assim é
+voto rápido demais, e voto rápido demais fica gravado no log da urna, segundo a segundo.</p>
+<p>O 1º turno, que encerrou às 17h e não teve contestação relevante, é a <strong>régua do tempo normal</strong>: ele
+diz quanto dura um voto real, em cada seção, e quantos votos "rápidos demais" existem num dia comum.</p>
 
-<blockquote style="border-left-color:#8a2f2f"><p><strong>Pré-registro.</strong> O plano completo de análise do 2º turno foi publicado em 26/10/2026, <strong>antes de os dados existirem</strong>, com data ancorada em blockchain. Nenhum critério poderá ser ajustado depois para chegar a uma conclusão desejada. <a href="plano-2t.html">Ler o plano</a>.</p></blockquote>
+<div class="grid"><div class="stat"><div class="n">28/28</div><div class="l">UFs do 1º turno auditadas</div></div><div class="stat"><div class="n">499.176</div><div class="l">seções do 1º turno</div></div><div class="stat"><div class="n">1</div><div class="l">votos discrepantes após 17h (1º turno)</div></div><div class="stat"><div class="n">15/28</div><div class="l">UFs do 2º turno auditadas</div></div><div class="stat"><div class="n">115.009</div><div class="l">seções do 2º turno</div></div><div class="stat zero"><div class="n">0</div><div class="l">votos discrepantes após 17h (2º turno)</div></div></div>
 
-<h2>O que foi feito</h2>
-<p>Foram auditados <strong>todos os boletins de urna do 1º turno</strong> das Eleições Gerais de 2026,
-verificando os registros de horário de abertura, encerramento, emissão e recebimento de cada seção
-eleitoral do país. A integridade de cada arquivo foi conferida por SHA-512 contra o resumo
-criptográfico publicado pelo próprio TSE.</p>
+<h2>Como funciona</h2>
+<ol>
+<li><strong>Coleta e integridade.</strong> Boletins de urna, logs, RDV e arquivos de votação de todas as seções do país.
+No 1º turno, os pacotes oficiais por UF (28 de 28), com integridade provada arquivo a arquivo. No 2º turno, os
+mesmos arquivos coletados <a href="segundo-turno.html">seção por seção no Portal Resultados</a>, porque o pacote
+oficial não tem prazo e ainda não saiu.</li>
+<li><strong>Testes pré-registrados.</strong> O <a href="plano-2t.html">plano</a> foi publicado em 26/10/2026, antes dos
+dados do 2º turno, com data ancorada na blockchain do Bitcoin: integridade (A), horários (B), comportamento das
+urnas pelo log (C), impossibilidades lógicas (D), comparação entre turnos seção a seção (E), geografia (F) e dispersão
+da ordem de prorrogação (G).</li>
+<li><strong>Emenda datada.</strong> O teste C4b — tempo por voto até as 17h contra depois das 17h, com contagem de
+votos discrepantes — foi acrescentado em 27/10, antes de qualquer dado do 2º turno, e está
+<a href="reta-final.html">identificado como posterior ao plano</a>.</li>
+<li><strong>Publicação contínua e verificável.</strong> Cada UF entra no site quando termina. Todo arquivo publicado tem
+SHA-512 num manifesto carimbado; scripts, dados derivados e a lista de seções apontadas são públicos.</li>
+</ol>
 
-<h2>Resultado</h2>
-<table><thead><tr><th>Verificação</th><th style="text-align:right">Ocorrências</th></tr></thead><tbody>
-<tr><td>Comparecimento maior que eleitores aptos</td><td style="text-align:right"><span class="flag ok">0</span></td></tr>
-<tr><td>Encerramento anterior à abertura</td><td style="text-align:right"><span class="flag ok">0</span></td></tr>
-<tr><td>Boletim emitido antes do encerramento</td><td style="text-align:right"><span class="flag ok">0</span></td></tr>
-<tr><td>Seção com mais de um registro de urna</td><td style="text-align:right"><span class="flag ok">0</span></td></tr>
-<tr><td>Abertura após 8h30</td><td style="text-align:right">960</td></tr>
-<tr><td>Encerramento após 19h</td><td style="text-align:right">8.324</td></tr>
-</tbody></table>
+<h2>O que este trabalho pode e não pode afirmar</h2>
+<p><strong>Pode:</strong> quantos votos, em cada seção, foram registrados num ritmo incompatível com um eleitor real,
+e se isso aconteceu mais depois das 17h do que no dia normal — no 2º turno e, como régua, no 1º.</p>
+<p><strong>Não pode:</strong> dizer em quem foi qualquer voto. O log registra o cargo, nunca o candidato; o RDV traz os
+votos embaralhados. É o mecanismo do sigilo do voto, e nenhuma análise de dados públicos o atravessa.</p>
 
-<p><strong>Nenhum indício de votação fora do horário legal foi encontrado no 1º turno.</strong>
-As quatro verificações capazes de caracterizar voto fabricado ou registro fora de sequência
-retornaram zero ocorrências em 125,3 milhões de votos.</p>
 
-<blockquote><p>Este trabalho não afirma a inexistência de irregularidades na eleição. Afirma, por
-método reproduzível sobre dados de integridade confirmada, que <strong>as irregularidades de horário
-procuradas não foram encontradas nos dados examinados</strong>.</p></blockquote>
+<h2>A pergunta decisiva: isso poderia ter virado o resultado?</h2>
+<p>A hipótese em teste é que, nas duas horas a mais do 2º turno, mesários tenham votado por eleitores ausentes.
+Antes de qualquer conclusão sobre <em>se</em> aconteceu, a aritmética responde <em>quanto</em> isso poderia valer.
+Para inverter um resultado é preciso trocar metade da margem mais um voto, porque cada voto retirado de um
+candidato e dado ao outro conta duas vezes.</p>
+<div class="scroll"><table><thead><tr><th>Grandeza</th><th style="text-align:right">Votos</th><th style="text-align:right">Observação</th></tr></thead>
+<tbody><tr><td>Margem oficial entre os dois candidatos</td><td style="text-align:right"><strong>4.430.191</strong></td><td style="text-align:right">TSE, balanço de 26/10</td></tr><tr><td>Votos necessários para inverter o resultado (metade da margem + 1)</td><td style="text-align:right"><strong>2.215.096</strong></td><td style="text-align:right">um voto trocado conta duas vezes</td></tr><tr><td>Votos depois das 17h no 2º turno, levantamento do TSE (27/10)</td><td style="text-align:right"><strong>34.393</strong></td><td style="text-align:right">1,55% do necessário</td></tr><tr><td>Votos depois das 17h nos logs já auditados (15 UFs)</td><td style="text-align:right"><strong>7.696</strong></td><td style="text-align:right">0,35% do necessário</td></tr><tr><td>Dos quais discrepantes do ritmo da própria seção</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">0,00% do necessário</td></tr><tr><td>Dos quais abaixo de 20 segundos</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">0,00% do necessário</td></tr></tbody></table></div>
+<p>Nos logs já auditados do 2º turno (15 UFs, 115.009 seções), houve <strong>7.696</strong> votos depois das 17h, dos quais <strong>0</strong> discrepantes e <strong>0</strong> abaixo de 20 segundos. <strong>Mesmo no cenário extremo</strong> — todos os votos depois das 17h fraudulentos e todos para
+um só candidato — o conjunto ficaria abaixo de 1,55% do necessário para
+inverter o resultado. Os testes desta auditoria dizem se houve voto em ritmo incompatível com eleitor real e onde;
+não dizem em quem foi cada voto, porque o log registra o cargo e nunca o candidato.</p>
+<p><strong>E a "virada" durante a apuração?</strong> O placar parcial muda de líder conforme a ordem em que os boletins
+chegam à totalização, que segue a geografia do fechamento das seções, não a hora dos votos. No 1º turno,
+100% dos votos entram na contagem depois das 17h porque a transmissão só começa com o encerramento. Uma virada no
+placar parcial não é, por si, indício de nada; o que se audita é a sequência de votos dentro de cada urna, antes
+de qualquer transmissão. O teste B3 do plano (curva de recebimento dos boletins) mede exatamente a ordem de chegada.</p>
 
-<h2>Por que 8.324 seções encerraram depois das 19h</h2>
-<p>No 1º turno o prazo legal era 17h. Ainda assim, 8.324 seções (1,67%, 2,46 milhões de eleitores)
-encerraram administrativamente após as 19h. Isso é cauda operacional ordinária: o eleitor presente
-às 17h tem direito de votar (art. 153 do Código Eleitoral), e após o último voto vêm os
-procedimentos de fechamento e a impressão das vias do boletim.</p>
-<p>Esse número é a <strong>linha de base</strong>. Qualquer afirmação futura sobre encerramentos
-tardios só adquire sentido quando confrontada com este patamar.</p>
 
-<h2>A confusão entre apurar e votar</h2>
-<p>100% dos votos entram na contagem depois das 17h — porque antes das 17h a apuração não começou.
-O que dispara às 17h é a <em>transmissão</em> dos boletins, não a <em>votação</em>. O crescimento
-abrupto do placar no início da noite é consequência do desenho do sistema e não constitui, por si,
-indício de irregularidade.</p>
-
-<h2>Situação do 2º turno</h2>
-<p>O 2º turno foi realizado em 25/10/2026, com a votação prorrogada até as 19h por decisão do
-Ministro Cristiano Zanin. Os arquivos correspondentes <strong>ainda não foram publicados pelo
-TSE</strong>. Monitoramento automatizado verifica o catálogo de hora em hora; publicados os dados,
-as mesmas verificações serão aplicadas e confrontadas com esta linha de base.</p>
-
+<h2>Onde está cada coisa</h2>
+<ul>
+<li><a href="primeiro-turno.html"><strong>1º turno — auditoria completa</strong></a>: todos os testes sobre as 28 UFs, estado por estado e município por município.</li>
+<li><a href="segundo-turno.html"><strong>2º turno — em andamento</strong></a>: coleta por seção, o que aconteceu em 25/10 com fontes, e os mesmos testes conforme cada UF entra.</li>
+<li><a href="comparativo.html"><strong>Comparativo 1º × 2º turno</strong></a>: as discrepâncias, explicadas, e a pergunta sobre o resultado.</li>
+<li><a href="reta-final.html"><strong>Reta final</strong></a>: a hipótese, o vídeo, o teste C4b e as seções apontadas.</li>
+<li><a href="verificar.html">Como verificar</a> · <a href="dados.html">Dados e hashes</a> · <a href="relatorio.html">Relatório técnico dos boletins do 1º turno</a></li>
+</ul>
 <footer><p><strong>Auditoria de horários — Eleições Gerais 2026.</strong>
 Dados públicos do Tribunal Superior Eleitoral. Método e scripts abertos; qualquer pessoa pode reproduzir.</p>
 <p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ 245.463.
-Última atualização: 26/10/2026 10:26 (America/Sao_Paulo).</p>
+Última atualização: 27/10/2026 20:07 (America/Sao_Paulo).</p>
 </footer></div></body></html>

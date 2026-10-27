@@ -1,0 +1,142 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Córdoba (ZZ) — Auditoria TSE 2026</title>
+<meta name="description" content="Documento técnico integral, com metodologia, resultados e limitações.">
+<link rel="canonical" href="https://auditoria-tse-2026.com.br/estados/ZZ/29602.html">
+<meta property="og:url" content="https://auditoria-tse-2026.com.br/estados/ZZ/29602.html">
+<meta property="og:type" content="website">
+<meta name="robots" content="index,follow"><style>
+:root{--bg:#fbfaf8;--fg:#1a1a1a;--mut:#5c5955;--line:#ddd8d0;--accent:#8a2f2f;
+--card:#fff;--code:#f4f2ee;--ok:#1f6b3a;--warn:#8a5a00}
+@media(prefers-color-scheme:dark){:root{--bg:#15140f;--fg:#e8e4dc;--mut:#9a958c;
+--line:#332f28;--accent:#d98b8b;--card:#1c1a15;--code:#201e18;--ok:#6fbf8a;--warn:#d9a93f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 Charter,"Iowan Old Style",Georgia,serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 96px}
+header.top{border-bottom:1px solid var(--line);margin-bottom:40px;padding:28px 0 20px}
+header.top .kicker{font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.14em;
+text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-size:30px;line-height:1.2;margin:0 0 10px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:16px;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin:22px 0 0}
+nav a{font:500 13px/1 ui-sans-serif,system-ui;color:var(--mut);text-decoration:none;
+padding:8px 12px;border-radius:6px}
+nav a:hover{background:var(--code);color:var(--fg)}
+nav a.on{background:var(--accent);color:#fff}
+h2{font-size:21px;margin:40px 0 14px;font-weight:600;letter-spacing:-.01em;
+padding-bottom:7px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:28px 0 10px;font-weight:600}
+p{margin:0 0 15px}
+a{color:var(--accent)}
+table{border-collapse:collapse;width:100%;margin:18px 0;font:14px/1.45 ui-sans-serif,system-ui}
+th,td{border-bottom:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+td:first-child{font-weight:500}
+tbody tr:last-child td{border-bottom:none}
+.scroll{overflow-x:auto;margin:18px -4px;padding:0 4px}
+code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+code{background:var(--code);padding:2px 5px;border-radius:4px;font-size:.87em;
+overflow-wrap:anywhere}
+pre{background:var(--code);padding:16px 18px;border-radius:8px;overflow-x:auto;
+font-size:13px;line-height:1.55;border:1px solid var(--line)}
+pre code{background:none;padding:0}
+blockquote{margin:18px 0;padding:14px 18px;border-left:3px solid var(--accent);
+background:var(--card);border-radius:0 7px 7px 0}
+blockquote p:last-child{margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:15px 16px}
+.stat .n{font:600 25px/1.15 ui-sans-serif,system-ui;letter-spacing:-.02em;margin-bottom:5px}
+.stat .l{font:13px/1.35 ui-sans-serif,system-ui;color:var(--mut)}
+.zero .n{color:var(--ok)}
+.flag{display:inline-block;font:600 11px/1 ui-sans-serif,system-ui;letter-spacing:.05em;
+text-transform:uppercase;padding:4px 8px;border-radius:4px;background:var(--code);color:var(--mut)}
+.flag.ok{color:var(--ok)}
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+color:var(--mut);font:13px/1.6 ui-sans-serif,system-ui}
+ul,ol{margin:0 0 15px;padding-left:22px}li{margin:5px 0}
+hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+@media(max-width:600px){h1{font-size:25px}.wrap{padding:0 17px 64px}}
+</style></head><body><div class="wrap">
+<header class="top"><div class="kicker">Demonstração · ZZ · município</div><h1>Córdoba</h1><p class="sub">Os testes do plano aplicados aos logs do 1º turno de Córdoba (ZZ).</p><nav><a href="../../index.html">Resumo</a><a href="../../primeiro-turno.html">1º turno</a><a href="../../segundo-turno.html">2º turno</a><a href="../../comparativo.html">Comparativo</a><a href="../../reta-final.html">Reta final</a><a href="../../estados/index.html">Estados</a><a href="../../plano-2t.html">Plano</a><a href="../../verificar.html">Como verificar</a><a href="../../dados.html">Dados e hashes</a></nav></header><blockquote><p>Os oito testes do <a href="../../plano-2t.html">plano pré-registrado</a> aplicados <strong>somente a Córdoba (ZZ)</strong>, sobre os logs do 1º turno. Para o estado inteiro, veja <a href="../ZZ.html">Exterior</a>; para o país, a <a href="../../demonstracao.html">demonstração nacional</a>.</p><p>Esta página é a linha de base desta cidade. Quando o TSE publicar o 2º turno, os mesmos números sairão aqui ao lado, para comparação direta.</p></blockquote>
+
+<div class="grid">
+<div class="stat"><div class="n">2</div><div class="l">seções auditadas</div></div>
+<div class="stat"><div class="n">376</div><div class="l">votos analisados</div></div>
+<div class="stat"><div class="n">2</div><div class="l">urnas identificadas</div></div>
+<div class="stat zero"><div class="n">0</div><div class="l">urnas divergentes sem explicação</div></div>
+</div>
+
+<h2>A1 e A4 — Procedência e identidade da urna</h2>
+<p>Cada log traz o <strong>número de série da urna</strong> que o gerou, e cada boletim traz o campo
+<code>NR_URNA_EFETIVADA</code>. Os dois têm de apontar o mesmo equipamento; se divergirem, o log não
+pertence àquela seção.</p>
+<p>Resultado: <strong>2 seções conferidas, 0 com série
+divergente</strong> — das quais <strong>0</strong> são urnas de
+contingência e <strong>0</strong> seguem <strong>sem explicação</strong>. Exemplo conferido — seção 29602/1/813: o log registra a urna <code>1778571</code> e o boletim registra <code>NR_URNA_EFETIVADA 1778571</code>, com 167 votos. Mesmo equipamento.</p>
+
+
+<h2>A2 — Triangulação entre boletim e log</h2>
+<p>Boletim e log são arquivos independentes gerados pela mesma urna. A contagem de votos deve bater.</p>
+<p>Resultado: 2 seções comparadas, <strong>0 com diferença
+(0.0%)</strong>. </p>
+<p>A cadeia de eventos: 376 habilitações →
+376 votos computados → 376 com confirmação de Presidente.
+São eleitores que se habilitaram e não concluíram, ou cujo tempo esgotou. <strong>A direção importa:
+nunca há mais votos do que eleitores.</strong></p>
+
+<h2>C3 — Formato da curva de votação</h2>
+<p>O que se examina não é o volume, e sim o formato. Fluxo contínuo e declinante é compatível com fila
+real; degraus, saltos e rajadas não são.</p>
+<svg viewBox="0 0 900 260" style="width:100%;height:auto" role="img" aria-label="Curva de votação por minuto"><line x1="60" y1="226" x2="880" y2="226" stroke="#38342b"/><path d="M60.0,126.0 L62.7,126.0 L65.5,26.0 L68.2,126.0 L71.0,126.0 L73.7,126.0 L76.5,26.0 L79.2,126.0 L81.9,126.0 L84.7,126.0 L87.4,126.0 L90.2,126.0 L92.9,126.0 L95.7,126.0 L98.4,126.0 L101.1,126.0 L103.9,126.0 L106.6,126.0 L109.4,126.0 L112.1,126.0 L114.8,26.0 L117.6,126.0 L120.3,126.0 L123.1,126.0 L125.8,126.0 L128.6,26.0 L131.3,126.0 L134.0,126.0 L136.8,126.0 L139.5,126.0 L142.3,126.0 L145.0,126.0 L147.8,126.0 L150.5,126.0 L153.2,126.0 L156.0,126.0 L158.7,26.0 L161.5,126.0 L164.2,26.0 L167.0,126.0 L169.7,126.0 L172.4,126.0 L175.2,126.0 L177.9,126.0 L180.7,126.0 L183.4,126.0 L186.2,126.0 L188.9,126.0 L191.6,26.0 L194.4,126.0 L197.1,26.0 L199.9,126.0 L202.6,126.0 L205.4,126.0 L208.1,126.0 L210.8,126.0 L213.6,26.0 L216.3,126.0 L219.1,126.0 L221.8,126.0 L224.5,126.0 L227.3,126.0 L230.0,126.0 L232.8,126.0 L235.5,126.0 L238.3,126.0 L241.0,126.0 L243.7,126.0 L246.5,126.0 L249.2,126.0 L252.0,126.0 L254.7,126.0 L257.5,126.0 L260.2,126.0 L262.9,126.0 L265.7,126.0 L268.4,126.0 L271.2,126.0 L273.9,26.0 L276.7,126.0 L279.4,26.0 L282.1,126.0 L284.9,126.0 L287.6,126.0 L290.4,126.0 L293.1,126.0 L295.9,26.0 L298.6,126.0 L301.3,126.0 L304.1,126.0 L306.8,126.0 L309.6,26.0 L312.3,26.0 L315.1,126.0 L317.8,126.0 L320.5,126.0 L323.3,26.0 L326.0,26.0 L328.8,126.0 L331.5,26.0 L334.2,126.0 L337.0,26.0 L339.7,126.0 L342.5,26.0 L345.2,26.0 L348.0,126.0 L350.7,26.0 L353.4,26.0 L356.2,26.0 L358.9,26.0 L361.7,126.0 L364.4,126.0 L367.2,126.0 L369.9,26.0 L372.6,126.0 L375.4,126.0 L378.1,126.0 L380.9,26.0 L383.6,126.0 L386.4,26.0 L389.1,126.0 L391.8,126.0 L394.6,126.0 L397.3,126.0 L400.1,126.0 L402.8,126.0 L405.6,26.0 L408.3,26.0 L411.0,126.0 L413.8,126.0 L416.5,126.0 L419.3,126.0 L422.0,126.0 L424.7,126.0 L427.5,126.0 L430.2,126.0 L433.0,126.0 L435.7,26.0 L438.5,126.0 L441.2,26.0 L443.9,26.0 L446.7,126.0 L449.4,26.0 L452.2,126.0 L454.9,126.0 L457.7,126.0 L460.4,126.0 L463.1,126.0 L465.9,26.0 L468.6,126.0 L471.4,26.0 L474.1,26.0 L476.9,26.0 L479.6,126.0 L482.3,126.0 L485.1,126.0 L487.8,26.0 L490.6,26.0 L493.3,126.0 L496.1,126.0 L498.8,126.0 L501.5,126.0 L504.3,126.0 L507.0,126.0 L509.8,26.0 L512.5,26.0 L515.3,126.0 L518.0,126.0 L520.7,126.0 L523.5,26.0 L526.2,126.0 L529.0,26.0 L531.7,126.0 L534.4,26.0 L537.2,126.0 L539.9,26.0 L542.7,126.0 L545.4,126.0 L548.2,26.0 L550.9,26.0 L553.6,126.0 L556.4,126.0 L559.1,126.0 L561.9,126.0 L564.6,126.0 L567.4,26.0 L570.1,126.0 L572.8,126.0 L575.6,126.0 L578.3,126.0 L581.1,126.0 L583.8,126.0 L586.6,126.0 L589.3,26.0 L592.0,126.0 L594.8,26.0 L597.5,26.0 L600.3,126.0 L603.0,126.0 L605.8,126.0 L608.5,26.0 L611.2,126.0 L614.0,126.0 L616.7,26.0 L619.5,126.0 L622.2,126.0 L624.9,126.0 L627.7,26.0 L630.4,26.0 L633.2,26.0 L635.9,26.0 L638.7,126.0 L641.4,126.0 L644.1,126.0 L646.9,126.0 L649.6,26.0 L652.4,126.0 L655.1,126.0 L657.9,126.0 L660.6,126.0 L663.3,26.0 L666.1,126.0 L668.8,126.0 L671.6,126.0 L674.3,26.0 L677.1,126.0 L679.8,126.0 L682.5,126.0 L685.3,126.0 L688.0,126.0 L690.8,126.0 L693.5,126.0 L696.3,126.0 L699.0,126.0 L701.7,126.0 L704.5,26.0 L707.2,126.0 L710.0,26.0 L712.7,126.0 L715.5,126.0 L718.2,126.0 L720.9,26.0 L723.7,126.0 L726.4,126.0 L729.2,126.0 L731.9,126.0 L734.6,126.0 L737.4,126.0 L740.1,126.0 L742.9,126.0 L745.6,26.0 L748.4,26.0 L751.1,126.0 L753.8,126.0 L756.6,126.0 L759.3,26.0 L762.1,126.0 L764.8,26.0 L767.6,126.0 L770.3,126.0 L773.0,126.0 L775.8,126.0 L778.5,126.0 L781.3,126.0 L784.0,126.0 L786.8,126.0 L789.5,126.0 L792.2,26.0 L795.0,126.0 L797.7,26.0 L800.5,126.0 L803.2,126.0 L806.0,126.0 L808.7,126.0 L811.4,126.0 L814.2,26.0 L816.9,126.0 L819.7,126.0 L822.4,126.0 L825.2,26.0 L827.9,126.0 L830.6,126.0 L833.4,26.0 L836.1,126.0 L838.9,126.0 L841.6,26.0 L844.3,126.0 L847.1,126.0 L849.8,126.0 L852.6,126.0 L855.3,26.0 L858.1,126.0 L860.8,126.0 L863.5,126.0 L866.3,26.0 L869.0,26.0 L871.8,126.0 L874.5,126.0 L877.3,126.0 L880.0,126.0" fill="none" stroke="#e8a33d" stroke-width="2"/><text x="430" y="248" font-size="11" fill="#8a857c" text-anchor="middle">12:00</text><text x="655" y="248" font-size="11" fill="#8a857c" text-anchor="middle">14:00</text><text x="798" y="248" font-size="11" fill="#8a857c" text-anchor="middle">16:00</text><text x="8" y="26" font-size="11" fill="#8a857c">2 votos/min</text></svg>
+<p> No 2º turno a curva terá outro formato, porque houve duas
+horas legais a mais — o que se compara é a suavidade, não a altura.</p>
+
+<h2>C4 — Intervalo entre votos consecutivos</h2>
+<p>Um eleitor precisa de tempo físico para ser identificado, entrar na cabine e votar em todos os cargos.
+Sequências rápidas demais indicam registro não-humano.</p>
+<svg viewBox="0 0 900 200" style="width:100%;height:auto" role="img" aria-label="Intervalo entre votos"><line x1="60" y1="170" x2="880" y2="170" stroke="#38342b"/><rect x="60.0" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="65.7" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="71.5" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="77.2" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="82.9" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="88.7" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="94.4" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="100.1" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="105.9" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="111.6" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="117.3" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="123.1" y="46.6" width="5.2" height="123.4" fill="#4fa96f"/><rect x="128.8" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="134.5" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="140.3" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="146.0" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="151.7" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="157.5" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="163.2" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="169.0" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="174.7" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="180.4" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="186.2" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="191.9" y="26.0" width="5.2" height="144.0" fill="#4fa96f"/><rect x="197.6" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="203.4" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="209.1" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="214.8" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="220.6" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="226.3" y="67.1" width="5.2" height="102.9" fill="#4fa96f"/><rect x="232.0" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="237.8" y="46.6" width="5.2" height="123.4" fill="#4fa96f"/><rect x="243.5" y="67.1" width="5.2" height="102.9" fill="#4fa96f"/><rect x="249.2" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="255.0" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="260.7" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="266.4" y="46.6" width="5.2" height="123.4" fill="#4fa96f"/><rect x="272.2" y="26.0" width="5.2" height="144.0" fill="#4fa96f"/><rect x="277.9" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="283.6" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="289.4" y="46.6" width="5.2" height="123.4" fill="#4fa96f"/><rect x="295.1" y="67.1" width="5.2" height="102.9" fill="#4fa96f"/><rect x="300.8" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="306.6" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="312.3" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="318.0" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="323.8" y="67.1" width="5.2" height="102.9" fill="#4fa96f"/><rect x="329.5" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="335.2" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="341.0" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="346.7" y="67.1" width="5.2" height="102.9" fill="#4fa96f"/><rect x="352.4" y="67.1" width="5.2" height="102.9" fill="#4fa96f"/><rect x="358.2" y="46.6" width="5.2" height="123.4" fill="#4fa96f"/><rect x="363.9" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="369.7" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="375.4" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="381.1" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="386.9" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="392.6" y="67.1" width="5.2" height="102.9" fill="#4fa96f"/><rect x="398.3" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="404.1" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="409.8" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="415.5" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="421.3" y="87.7" width="5.2" height="82.3" fill="#4fa96f"/><rect x="427.0" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="432.7" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="438.5" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="444.2" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="449.9" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="455.7" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="461.4" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="467.1" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="472.9" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="478.6" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="484.3" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="490.1" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="495.8" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="501.5" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="507.3" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="513.0" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="518.7" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="524.5" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="530.2" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="535.9" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="541.7" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="547.4" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="553.1" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="558.9" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="564.6" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="570.3" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="576.1" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="581.8" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="587.6" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="593.3" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="599.0" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="604.8" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="610.5" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="616.2" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="622.0" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="627.7" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="633.4" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="639.2" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="644.9" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="650.6" y="108.3" width="5.2" height="61.7" fill="#4fa96f"/><rect x="656.4" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="662.1" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="667.8" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="673.6" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="679.3" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="685.0" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="690.8" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="696.5" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="702.2" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="708.0" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="713.7" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="719.4" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="725.2" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="730.9" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="736.6" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="742.4" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="748.1" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="753.8" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="759.6" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="765.3" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="771.0" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="776.8" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="782.5" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="788.3" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="794.0" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><rect x="799.7" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="805.5" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="811.2" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="816.9" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="822.7" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="828.4" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="834.1" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="839.9" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="845.6" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="851.3" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="857.1" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="862.8" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="868.5" y="149.4" width="5.2" height="20.6" fill="#4fa96f"/><rect x="874.3" y="128.9" width="5.2" height="41.1" fill="#4fa96f"/><text x="60" y="190" font-size="11" fill="#8a857c">0 s</text><text x="880" y="190" font-size="11" fill="#8a857c" text-anchor="end">300 s</text><text x="8" y="22" font-size="11" fill="#8a857c">frequência</text><text x="175" y="18" font-size="11" fill="#c0462f">◀ faixa implausível (&lt;20 s): zero ocorrências</text></svg>
+<p>Amostra de <strong>363 intervalos</strong>. Mediana: <strong>119 segundos</strong>.
+Intervalos abaixo de 20 segundos: <strong>0</strong> (0.0%).</p>
+
+<h2>C4b — Tempo por voto: o dia normal até as 17h contra as horas depois das 17h</h2>
+<p>Teste acrescentado em 27 de outubro de 2026 — <a href="../../reta-final.html">veja a hipótese, o vídeo
+que a motivou e o que o teste pode e não pode demonstrar</a>. A pergunta é direta: depois das 17h, alguém
+votou numa velocidade discrepante da média do próprio dia, e quantos votos foram esses? O mesmo intervalo
+entre votos do teste C4, separado em dois blocos com a mesma régua nos dois turnos: <strong>A</strong>, o dia
+normal até as 17h (prazo legal do 1º turno), e <strong>B</strong>, de 17h em diante — que no 2º turno são as
+duas horas a mais da prorrogação, até as 19h, e o que passou das 19h. <strong>Voto discrepante</strong> é o
+registrado com intervalo abaixo de 25% da mediana da própria seção no bloco A; a régua da seção só vale com
+pelo menos 30 intervalos nessa base (seção que abriu tarde ou trocou de urna não tem dia normal para servir de
+régua) e, abaixo disso, vale o piso de 20 segundos.</p>
+<div class="scroll"><table><thead><tr><th>Janela</th><th style="text-align:right">Votos</th><th style="text-align:right">Tempo médio<br>por voto</th><th style="text-align:right">Mediana</th><th style="text-align:right">Atendimento<br>(média dos ≤120 s)</th><th style="text-align:right">Votos<br>discrepantes</th><th style="text-align:right">% discre-<br>pantes</th><th style="text-align:right">&lt;20 s</th><th style="text-align:right">% &lt;20 s</th></tr></thead><tbody><tr><td><strong>A — dia normal, até as 17h</strong></td><td style="text-align:right">376</td><td style="text-align:right">154s</td><td style="text-align:right">119s</td><td style="text-align:right">93s</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">0.000%</td><td style="text-align:right">0</td><td style="text-align:right">0.00%</td></tr><tr><td>&nbsp;&nbsp;↳ última meia hora, 16h30 a 16h59</td><td style="text-align:right">14</td><td style="text-align:right">160s</td><td style="text-align:right">125s</td><td style="text-align:right">92s</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">0.000%</td><td style="text-align:right">0</td><td style="text-align:right">0.00%</td></tr><tr><td><strong>B — 17h em diante (no 2º turno, as 2 horas a mais)</strong></td><td style="text-align:right">0</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">—</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr><td>&nbsp;&nbsp;↳ 17h00 a 17h59</td><td style="text-align:right">0</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">—</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr><td>&nbsp;&nbsp;↳ 18h00 a 18h59</td><td style="text-align:right">0</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">—</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr><td>&nbsp;&nbsp;↳ 19h00 a 19h29</td><td style="text-align:right">0</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">—</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr><tr><td>&nbsp;&nbsp;↳ 19h30 em diante</td><td style="text-align:right">0</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">—</td><td style="text-align:right">0</td><td style="text-align:right">—</td></tr></tbody></table></div>
+<p></p>
+
+
+<p>Intervalos encurtam no fim do dia por uma razão legítima — a fila é contínua e não há tempo ocioso
+entre eleitores. O que <strong>não</strong> encurta é o tempo físico de identificar o eleitor, entrar na
+cabine e votar: por isso o que se conta são os <strong>votos discrepantes</strong> (abaixo de um quarto do
+ritmo normal daquela mesma urna) e a faixa abaixo de 20 s. No 1º turno o eleitor votou em mais cargos;
+este número é o teto da comparação com o 2º turno.</p>
+
+
+<h2>C1 e C2 — Lacre e prazo</h2>
+<p>A urna sela o próprio log ao encerrar: a última linha do arquivo é o registro da geração do log.
+Voto posterior a esse marco indicaria reabertura.</p>
+<p>Seções com voto após o lacre do boletim: <strong>0</strong>.</p>
+<p>Votos registrados após as 17h (prazo legal do 1º turno): <strong>0</strong>,
+ou 0.0% do total — atendimento de fila remanescente, conforme o art. 153 do Código Eleitoral.</p>
+
+<h2>B4 — Hora do último voto por seção</h2>
+<p>Diferente do horário de encerramento, que é ato administrativo do mesário.</p>
+<table><thead><tr><th>Hora do último voto</th><th style="text-align:right">Seções</th></tr></thead>
+<tbody><tr><td>16h</td><td style='text-align:right'>2</td></tr></tbody></table>
+
+<h2>C6 — Habilitações contra votos computados</h2>
+<p>Diferença: <strong>0</strong> habilitações sem voto computado.
+O número de votos é sempre menor ou igual ao de habilitações — nunca maior.</p>
+<h2>Vizinhos no estado</h2><p>◀ <a href="29599.html">Copenhague</a> · <a href="29610.html">Dacar</a> ▶</p><p><a href="../ZZ.html">◀ Todos os municípios de Exterior</a></p><footer><p><strong>Auditoria de horários — Eleições Gerais 2026.</strong>
+Dados públicos do Tribunal Superior Eleitoral. Método e scripts abertos; qualquer pessoa pode reproduzir.</p>
+<p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ 245.463.
+Última atualização: 27/10/2026 20:07 (America/Sao_Paulo).</p>
+</footer></div></body></html>

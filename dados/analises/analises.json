@@ -1,12 +1,12 @@
 {
- "gerado_utc": "2026-10-27T17:49:41.999044+00:00",
+ "gerado_utc": "2026-10-27T23:06:21.309869+00:00",
  "blocos": {
   "A2_triangulacao_1t": {
-   "secoes_comparadas": 196716,
-   "divergentes": 15379,
-   "pct": 7.8179,
-   "log_menor_que_bu": 15327,
-   "log_maior_que_bu": 52,
+   "secoes_comparadas": 499150,
+   "divergentes": 33850,
+   "pct": 6.7815,
+   "log_menor_que_bu": 33719,
+   "log_maior_que_bu": 131,
    "exemplos": [
     {
      "secao": "1015-2-102",
@@ -311,8 +311,8 @@
    ]
   },
   "F1_geografia_1t": {
-   "municipios": 2419,
-   "mediana_pct_tardio": 3.778,
+   "municipios": 5634,
+   "mediana_pct_tardio": 2.013,
    "top20_mais_tardio": [
     {
      "uf": "AL",
@@ -347,12 +347,36 @@
      "pct_tardio": 22.385
     },
     {
+     "uf": "PR",
+     "municipio": 75779,
+     "nome": "Guaporema",
+     "secoes": 6,
+     "votos": 1518,
+     "pct_tardio": 21.08
+    },
+    {
      "uf": "MT",
      "municipio": 90921,
      "nome": "Serra Nova Dourada",
      "secoes": 5,
      "votos": 1183,
      "pct_tardio": 21.048
+    },
+    {
+     "uf": "PE",
+     "municipio": 23043,
+     "nome": "Santa Cruz Da Baixa Verde",
+     "secoes": 27,
+     "votos": 8116,
+     "pct_tardio": 20.663
+    },
+    {
+     "uf": "PE",
+     "municipio": 23353,
+     "nome": "Betânia",
+     "secoes": 30,
+     "votos": 7986,
+     "pct_tardio": 20.523
     },
     {
      "uf": "AL",
@@ -363,12 +387,28 @@
      "pct_tardio": 20.302
     },
     {
+     "uf": "PE",
+     "municipio": 23191,
+     "nome": "Angelim",
+     "secoes": 25,
+     "votos": 7278,
+     "pct_tardio": 20.239
+    },
+    {
      "uf": "GO",
      "municipio": 92096,
      "nome": "Aloândia",
      "secoes": 6,
      "votos": 1731,
      "pct_tardio": 19.931
+    },
+    {
+     "uf": "PE",
+     "municipio": 24392,
+     "nome": "Inajá",
+     "secoes": 45,
+     "votos": 12252,
+     "pct_tardio": 19.662
     },
     {
      "uf": "AL",
@@ -387,12 +427,36 @@
      "pct_tardio": 19.229
     },
     {
+     "uf": "PE",
+     "municipio": 30015,
+     "nome": "Fernando De Noronha",
+     "secoes": 10,
+     "votos": 2463,
+     "pct_tardio": 19.204
+    },
+    {
      "uf": "AL",
      "municipio": 28479,
      "nome": "Porto De Pedras",
      "secoes": 23,
      "votos": 6617,
      "pct_tardio": 19.117
+    },
+    {
+     "uf": "PE",
+     "municipio": 23167,
+     "nome": "Carnaubeira Da Penha",
+     "secoes": 37,
+     "votos": 10026,
+     "pct_tardio": 19.08
+    },
+    {
+     "uf": "RN",
+     "municipio": 16730,
+     "nome": "Felipe Guerra",
+     "secoes": 20,
+     "votos": 6014,
+     "pct_tardio": 17.991
     },
     {
      "uf": "BA",
@@ -403,257 +467,1006 @@
      "pct_tardio": 17.939
     },
     {
-     "uf": "BA",
-     "municipio": 38431,
-     "nome": "Rodelas",
-     "secoes": 22,
-     "votos": 6193,
-     "pct_tardio": 17.778
-    },
-    {
-     "uf": "MG",
-     "municipio": 41602,
-     "nome": "São João Das Missões",
-     "secoes": 36,
-     "votos": 7485,
-     "pct_tardio": 17.194
-    },
-    {
-     "uf": "BA",
-     "municipio": 38164,
-     "nome": "Presidente Tancredo Neves",
-     "secoes": 65,
-     "votos": 17786,
-     "pct_tardio": 17.109
-    },
-    {
-     "uf": "AL",
-     "municipio": 27499,
-     "nome": "Dois Riachos",
-     "secoes": 27,
-     "votos": 6775,
-     "pct_tardio": 17.107
-    },
-    {
-     "uf": "AL",
-     "municipio": 28894,
-     "nome": "Craíbas",
-     "secoes": 59,
-     "votos": 17435,
-     "pct_tardio": 17.086
-    },
-    {
-     "uf": "AM",
-     "municipio": 2739,
-     "nome": "Santo Antônio Do Içá",
-     "secoes": 51,
-     "votos": 14968,
-     "pct_tardio": 16.943
-    },
-    {
-     "uf": "BA",
-     "municipio": 39195,
-     "nome": "Tanhaçu",
-     "secoes": 57,
-     "votos": 14980,
-     "pct_tardio": 16.809
-    },
-    {
-     "uf": "MG",
-     "municipio": 40843,
-     "nome": "Senador Amaral",
-     "secoes": 16,
-     "votos": 4679,
-     "pct_tardio": 16.692
-    },
-    {
-     "uf": "AM",
-     "municipio": 2119,
-     "nome": "Barreirinha",
-     "secoes": 68,
-     "votos": 18413,
-     "pct_tardio": 16.684
+     "uf": "PE",
+     "municipio": 24716,
+     "nome": "Lagoa Do Ouro",
+     "secoes": 35,
+     "votos": 9174,
+     "pct_tardio": 17.931
     }
    ],
    "top20_menos_tardio": [
+    {
+     "uf": "ZZ",
+     "municipio": 30260,
+     "nome": "Panama",
+     "secoes": 2,
+     "votos": 677,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "ZZ",
+     "municipio": 30503,
+     "nome": "São Francisco",
+     "secoes": 20,
+     "votos": 3896,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "ZZ",
+     "municipio": 29327,
+     "nome": "Assunção",
+     "secoes": 4,
+     "votos": 1151,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "ZZ",
+     "municipio": 30104,
+     "nome": "Mexico",
+     "secoes": 6,
+     "votos": 1315,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "ZZ",
+     "municipio": 30465,
+     "nome": "Salto Del Guairá",
+     "secoes": 2,
+     "votos": 537,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "ZZ",
+     "municipio": 30252,
+     "nome": "Ottawa",
+     "secoes": 4,
+     "votos": 1434,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "ZZ",
+     "municipio": 29513,
+     "nome": "Chicago",
+     "secoes": 18,
+     "votos": 2779,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "ZZ",
+     "municipio": 29947,
+     "nome": "Lima",
+     "secoes": 3,
+     "votos": 760,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "ZZ",
+     "municipio": 30473,
+     "nome": "Santa Cruz De La Sierra",
+     "secoes": 5,
+     "votos": 1473,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "ZZ",
+     "municipio": 29408,
+     "nome": "Bogotá",
+     "secoes": 2,
+     "votos": 556,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 92509,
+     "nome": "Porto Alegre Do Tocantins",
+     "secoes": 12,
+     "votos": 2066,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 73067,
+     "nome": "Cachoeirinha",
+     "secoes": 8,
+     "votos": 1661,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 73130,
+     "nome": "Santa Maria Do Tocantins",
+     "secoes": 11,
+     "votos": 2090,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "SP",
+     "municipio": 68152,
+     "nome": "Paraíso",
+     "secoes": 15,
+     "votos": 3751,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "SP",
+     "municipio": 72079,
+     "nome": "Turmalina",
+     "secoes": 7,
+     "votos": 1500,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "SP",
+     "municipio": 62049,
+     "nome": "Torre De Pedra",
+     "secoes": 9,
+     "votos": 1988,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "SP",
+     "municipio": 71897,
+     "nome": "Terra Roxa",
+     "secoes": 22,
+     "votos": 5102,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "SP",
+     "municipio": 66834,
+     "nome": "Marinópolis",
+     "secoes": 7,
+     "votos": 1445,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "SP",
+     "municipio": 68195,
+     "nome": "Paranapuã",
+     "secoes": 13,
+     "votos": 2795,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "SP",
+     "municipio": 61930,
+     "nome": "Balbinos",
+     "secoes": 6,
+     "votos": 1050,
+     "pct_tardio": 0.0
+    }
+   ]
+  },
+  "F1_geografia_2t": {
+   "municipios": 1506,
+   "mediana_pct_tardio": 0.014,
+   "top20_mais_tardio": [
+    {
+     "uf": "AL",
+     "municipio": 28215,
+     "nome": "Ouro Branco",
+     "secoes": 27,
+     "votos": 7699,
+     "pct_tardio": 0.533
+    },
+    {
+     "uf": "MT",
+     "municipio": 90328,
+     "nome": "Santo Afonso",
+     "secoes": 12,
+     "votos": 2069,
+     "pct_tardio": 0.242
+    },
     {
      "uf": "MT",
      "municipio": 91332,
      "nome": "Ponte Branca",
      "secoes": 9,
-     "votos": 1548,
-     "pct_tardio": 0.0
+     "votos": 1487,
+     "pct_tardio": 0.202
+    },
+    {
+     "uf": "TO",
+     "municipio": 73547,
+     "nome": "Santa Rita Do Tocantins",
+     "secoes": 8,
+     "votos": 1616,
+     "pct_tardio": 0.186
     },
     {
      "uf": "MT",
-     "municipio": 90239,
-     "nome": "Araguainha",
-     "secoes": 5,
-     "votos": 963,
-     "pct_tardio": 0.0
+     "municipio": 90425,
+     "nome": "Cotriguaçu",
+     "secoes": 30,
+     "votos": 5987,
+     "pct_tardio": 0.184
     },
     {
      "uf": "MT",
-     "municipio": 90042,
-     "nome": "Alto Boa Vista",
-     "secoes": 16,
-     "votos": 3235,
-     "pct_tardio": 0.0
+     "municipio": 89818,
+     "nome": "Nova Brasilândia",
+     "secoes": 14,
+     "votos": 2957,
+     "pct_tardio": 0.169
     },
     {
-     "uf": "MG",
-     "municipio": 46159,
-     "nome": "Ingaí",
-     "secoes": 11,
-     "votos": 2328,
-     "pct_tardio": 0.0
+     "uf": "PI",
+     "municipio": 10472,
+     "nome": "Capitão De Campos",
+     "secoes": 43,
+     "votos": 8516,
+     "pct_tardio": 0.164
     },
     {
-     "uf": "MG",
-     "municipio": 41394,
-     "nome": "Biquinhas",
+     "uf": "CE",
+     "municipio": 14354,
+     "nome": "Jaguaretama",
+     "secoes": 58,
+     "votos": 13011,
+     "pct_tardio": 0.154
+    },
+    {
+     "uf": "MS",
+     "municipio": 98116,
+     "nome": "Selvíria",
+     "secoes": 22,
+     "votos": 5230,
+     "pct_tardio": 0.153
+    },
+    {
+     "uf": "TO",
+     "municipio": 73563,
+     "nome": "Monte Santo Do Tocantins",
      "secoes": 10,
-     "votos": 2023,
-     "pct_tardio": 0.0
+     "votos": 1999,
+     "pct_tardio": 0.15
     },
     {
-     "uf": "MG",
-     "municipio": 43796,
-     "nome": "Cordislândia",
-     "secoes": 12,
-     "votos": 2289,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "MG",
-     "municipio": 52973,
-     "nome": "São Sebastião Do Rio Verde",
-     "secoes": 7,
-     "votos": 1776,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "MG",
-     "municipio": 45055,
-     "nome": "Faria Lemos",
-     "secoes": 13,
-     "votos": 2652,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "MG",
-     "municipio": 44938,
-     "nome": "Estrela Do Indaiá",
-     "secoes": 11,
-     "votos": 2033,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "MG",
-     "municipio": 45470,
-     "nome": "Gonçalves",
-     "secoes": 15,
-     "votos": 3096,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "MG",
-     "municipio": 40754,
-     "nome": "Arapuá",
-     "secoes": 11,
-     "votos": 2711,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "MG",
-     "municipio": 46272,
-     "nome": "Ipiaçu",
-     "secoes": 13,
-     "votos": 2773,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "MG",
-     "municipio": 50636,
-     "nome": "Presidente Juscelino",
+     "uf": "MT",
+     "municipio": 91081,
+     "nome": "Ipiranga Do Norte",
      "secoes": 17,
-     "votos": 2754,
-     "pct_tardio": 0.0
+     "votos": 4813,
+     "pct_tardio": 0.145
     },
     {
-     "uf": "MG",
-     "municipio": 52450,
-     "nome": "São João Da Mata",
-     "secoes": 11,
-     "votos": 2498,
-     "pct_tardio": 0.0
+     "uf": "MT",
+     "municipio": 90204,
+     "nome": "Glória D'Oeste",
+     "secoes": 9,
+     "votos": 2147,
+     "pct_tardio": 0.14
     },
     {
-     "uf": "MG",
-     "municipio": 53392,
-     "nome": "Serranos",
-     "secoes": 10,
-     "votos": 1660,
-     "pct_tardio": 0.0
+     "uf": "RO",
+     "municipio": 493,
+     "nome": "Itapuã Do Oeste",
+     "secoes": 25,
+     "votos": 5324,
+     "pct_tardio": 0.131
     },
     {
-     "uf": "MG",
-     "municipio": 51853,
-     "nome": "Santa Rita De Jacutinga",
-     "secoes": 20,
-     "votos": 3543,
-     "pct_tardio": 0.0
+     "uf": "AC",
+     "municipio": 1554,
+     "nome": "Manoel Urbano",
+     "secoes": 31,
+     "votos": 6133,
+     "pct_tardio": 0.13
     },
     {
-     "uf": "MG",
-     "municipio": 42951,
-     "nome": "Carvalhos",
-     "secoes": 15,
-     "votos": 3262,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "MG",
-     "municipio": 48496,
-     "nome": "Monjolos",
-     "secoes": 10,
-     "votos": 1695,
-     "pct_tardio": 0.0
-    },
-    {
-     "uf": "MG",
-     "municipio": 45578,
-     "nome": "Grupiara",
+     "uf": "MT",
+     "municipio": 90980,
+     "nome": "Santa Cruz Do Xingu",
      "secoes": 7,
-     "votos": 1420,
+     "votos": 1617,
+     "pct_tardio": 0.124
+    },
+    {
+     "uf": "AM",
+     "municipio": 2038,
+     "nome": "Anori",
+     "secoes": 31,
+     "votos": 8120,
+     "pct_tardio": 0.123
+    },
+    {
+     "uf": "MT",
+     "municipio": 90263,
+     "nome": "Apiacás",
+     "secoes": 22,
+     "votos": 4865,
+     "pct_tardio": 0.123
+    },
+    {
+     "uf": "AC",
+     "municipio": 1015,
+     "nome": "Capixaba",
+     "secoes": 34,
+     "votos": 5785,
+     "pct_tardio": 0.121
+    },
+    {
+     "uf": "RO",
+     "municipio": 477,
+     "nome": "Candeias Do Jamari",
+     "secoes": 76,
+     "votos": 14958,
+     "pct_tardio": 0.12
+    },
+    {
+     "uf": "MT",
+     "municipio": 90123,
+     "nome": "Nova Maringá",
+     "secoes": 15,
+     "votos": 3376,
+     "pct_tardio": 0.118
+    }
+   ],
+   "top20_menos_tardio": [
+    {
+     "uf": "TO",
+     "municipio": 96954,
+     "nome": "Aliança Do Tocantins",
+     "secoes": 18,
+     "votos": 3305,
      "pct_tardio": 0.0
     },
     {
-     "uf": "MG",
-     "municipio": 53317,
-     "nome": "Serra Da Saudade",
-     "secoes": 4,
-     "votos": 989,
+     "uf": "TO",
+     "municipio": 96830,
+     "nome": "Fátima",
+     "secoes": 12,
+     "votos": 2686,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 96792,
+     "nome": "Rio Sono",
+     "secoes": 19,
+     "votos": 3531,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 96490,
+     "nome": "Palmeirópolis",
+     "secoes": 22,
+     "votos": 4841,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 96431,
+     "nome": "Xambioá",
+     "secoes": 35,
+     "votos": 6989,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 96296,
+     "nome": "Presidente Kennedy",
+     "secoes": 12,
+     "votos": 2259,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 96199,
+     "nome": "Tocantínia",
+     "secoes": 28,
+     "votos": 4642,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 95699,
+     "nome": "Lizarda",
+     "secoes": 15,
+     "votos": 2208,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 95532,
+     "nome": "Ponte Alta Do Tocantins",
+     "secoes": 24,
+     "votos": 4479,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 95516,
+     "nome": "Ponte Alta Do Bom Jesus",
+     "secoes": 14,
+     "votos": 2883,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 95478,
+     "nome": "Pium",
+     "secoes": 23,
+     "votos": 4427,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 95370,
+     "nome": "Pindorama Do Tocantins",
+     "secoes": 16,
+     "votos": 2946,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 95290,
+     "nome": "Colméia",
+     "secoes": 29,
+     "votos": 5272,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 95273,
+     "nome": "Peixe",
+     "secoes": 30,
+     "votos": 5667,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 95214,
+     "nome": "Paranã",
+     "secoes": 34,
+     "votos": 6262,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 94838,
+     "nome": "Nazaré",
+     "secoes": 15,
+     "votos": 3422,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 94692,
+     "nome": "Monte Do Carmo",
+     "secoes": 23,
+     "votos": 4025,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 94170,
+     "nome": "Itaporã Do Tocantins",
+     "secoes": 10,
+     "votos": 2178,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 94099,
+     "nome": "Itaguatins",
+     "secoes": 25,
+     "votos": 3793,
+     "pct_tardio": 0.0
+    },
+    {
+     "uf": "TO",
+     "municipio": 94056,
+     "nome": "Itacajá",
+     "secoes": 22,
+     "votos": 4534,
      "pct_tardio": 0.0
     }
    ]
   },
   "E6_janela_final_secoes": {
-   "estado": "aguardando o 2º turno",
-   "inicio_janela": "17:00"
+   "inicio_janela": "17:00",
+   "secoes_comuns_com_10_votos_na_janela_2t": 3,
+   "votos_discrepantes_apos_17h_2t": 0,
+   "votos_discrepantes_apos_17h_1t_mesmas_secoes": 0,
+   "secoes_2t_com_discrepantes_sem_ter_no_1t": 0,
+   "secoes_2t_com_intervalo_abaixo_20s_sem_ter_no_1t": 0,
+   "secoes_2t_mediana_final_abaixo_20s": 0,
+   "secoes_1t_mediana_final_abaixo_20s": 0,
+   "variacao_media_final_2t_menos_1t_s": {
+    "mediana": -231.61,
+    "p10": -406.75,
+    "p90": -56.47
+   },
+   "municipios_com_secoes_rapidas_2t": [],
+   "exemplos_rapidas_2t": [],
+   "exemplos_discrepantes_2t": [],
+   "exemplos_novo_abaixo20": []
   },
   "E5_municipios": {
-   "estado": "aguardando o 2º turno",
-   "municipios_1t_prontos": 2419,
-   "nota": "A linha de base por município do 1º turno está pronta. Os blocos E comparam os mesmos municípios entre turnos e saem sozinhos quando o TSE publicar os arquivos do 2º turno."
+   "municipios_comuns": 1506,
+   "com_indicador_pior_no_2t": 18,
+   "exemplos_piora": [
+    {
+     "uf": "AL",
+     "municipio": 27855,
+     "nome": "Maceió",
+     "secoes_1t": 1661,
+     "secoes_2t": 1661,
+     "votos_1t": 524127,
+     "votos_2t": 537292,
+     "var_votos_pct": 2.512,
+     "pct_apos17h_1t": 9.7522,
+     "pct_apos17h_2t": 0.0337,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 6,
+     "mediana_s_1t": 91.0,
+     "mediana_s_2t": 57.0,
+     "atend_final_1t": 80.2,
+     "atend_final_2t": 65.32,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 163,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "AL",
+     "municipio": 27898,
+     "nome": "Maragogi",
+     "secoes_1t": 69,
+     "secoes_2t": 69,
+     "votos_1t": 20182,
+     "votos_2t": 20783,
+     "var_votos_pct": 2.978,
+     "pct_apos17h_1t": 11.9314,
+     "pct_apos17h_2t": 0.0577,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 2,
+     "mediana_s_1t": 101.0,
+     "mediana_s_2t": 59.0,
+     "atend_final_1t": 85.49,
+     "atend_final_2t": 34.0,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 7,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "AL",
+     "municipio": 28533,
+     "nome": "Rio Largo",
+     "secoes_1t": 205,
+     "secoes_2t": 205,
+     "votos_1t": 57313,
+     "votos_2t": 55675,
+     "var_votos_pct": -2.858,
+     "pct_apos17h_1t": 6.6704,
+     "pct_apos17h_2t": 0.0269,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 97.0,
+     "mediana_s_2t": 63.0,
+     "atend_final_1t": 83.05,
+     "atend_final_2t": 56.0,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 12,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "AL",
+     "municipio": 28576,
+     "nome": "Santa Luzia Do Norte",
+     "secoes_1t": 18,
+     "secoes_2t": 18,
+     "votos_1t": 5374,
+     "votos_2t": 5414,
+     "var_votos_pct": 0.744,
+     "pct_apos17h_1t": 11.537,
+     "pct_apos17h_2t": 0.0,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 99.0,
+     "mediana_s_2t": 57.0,
+     "atend_final_1t": 85.06,
+     "atend_final_2t": null,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 1,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "AP",
+     "municipio": 6157,
+     "nome": "Santana",
+     "secoes_1t": 274,
+     "secoes_2t": 274,
+     "votos_1t": 73116,
+     "votos_2t": 67857,
+     "var_votos_pct": -7.193,
+     "pct_apos17h_1t": 5.3176,
+     "pct_apos17h_2t": 0.0368,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 102.0,
+     "mediana_s_2t": 72.0,
+     "atend_final_1t": 86.85,
+     "atend_final_2t": 59.5,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 35,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "CE",
+     "municipio": 13196,
+     "nome": "Aquiraz",
+     "secoes_1t": 229,
+     "secoes_2t": 229,
+     "votos_1t": 59732,
+     "votos_2t": 60413,
+     "var_votos_pct": 1.14,
+     "pct_apos17h_1t": 4.2573,
+     "pct_apos17h_2t": 0.0116,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 2,
+     "mediana_s_1t": 102.0,
+     "mediana_s_2t": 64.0,
+     "atend_final_1t": 85.94,
+     "atend_final_2t": null,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 12,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "CE",
+     "municipio": 13730,
+     "nome": "Caucaia",
+     "secoes_1t": 783,
+     "secoes_2t": 783,
+     "votos_1t": 215335,
+     "votos_2t": 218403,
+     "var_votos_pct": 1.425,
+     "pct_apos17h_1t": 5.2096,
+     "pct_apos17h_2t": 0.0133,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 100.0,
+     "mediana_s_2t": 65.0,
+     "atend_final_1t": 84.64,
+     "atend_final_2t": 42.5,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 67,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "CE",
+     "municipio": 13854,
+     "nome": "Crato",
+     "secoes_1t": 327,
+     "secoes_2t": 327,
+     "votos_1t": 82632,
+     "votos_2t": 85180,
+     "var_votos_pct": 3.084,
+     "pct_apos17h_1t": 5.2377,
+     "pct_apos17h_2t": 0.007,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 106.0,
+     "mediana_s_2t": 65.0,
+     "atend_final_1t": 86.47,
+     "atend_final_2t": null,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 50,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "CE",
+     "municipio": 13897,
+     "nome": "Fortaleza",
+     "secoes_1t": 5335,
+     "secoes_2t": 5335,
+     "votos_1t": 1560107,
+     "votos_2t": 1597344,
+     "var_votos_pct": 2.387,
+     "pct_apos17h_1t": 5.8636,
+     "pct_apos17h_2t": 0.0188,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 5,
+     "mediana_s_1t": 94.0,
+     "mediana_s_2t": 62.0,
+     "atend_final_1t": 81.44,
+     "atend_final_2t": 59.42,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 501,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "CE",
+     "municipio": 14478,
+     "nome": "Juazeiro Do Norte",
+     "secoes_1t": 646,
+     "secoes_2t": 646,
+     "votos_1t": 168217,
+     "votos_2t": 173082,
+     "var_votos_pct": 2.892,
+     "pct_apos17h_1t": 2.8404,
+     "pct_apos17h_2t": 0.0237,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 3,
+     "mediana_s_1t": 100.0,
+     "mediana_s_2t": 67.0,
+     "atend_final_1t": 85.92,
+     "atend_final_2t": 69.5,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 85,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "MS",
+     "municipio": 90514,
+     "nome": "Campo Grande",
+     "secoes_1t": 2189,
+     "secoes_2t": 2189,
+     "votos_1t": 511747,
+     "votos_2t": 526466,
+     "var_votos_pct": 2.876,
+     "pct_apos17h_1t": 0.2968,
+     "pct_apos17h_2t": 0.0247,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 99.0,
+     "mediana_s_2t": 72.0,
+     "atend_final_1t": 86.82,
+     "atend_final_2t": 81.31,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 125,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "PB",
+     "municipio": 19372,
+     "nome": "Bayeux",
+     "secoes_1t": 248,
+     "secoes_2t": 248,
+     "votos_1t": 63074,
+     "votos_2t": 64267,
+     "var_votos_pct": 1.891,
+     "pct_apos17h_1t": 3.0789,
+     "pct_apos17h_2t": 0.014,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 104.0,
+     "mediana_s_2t": 72.0,
+     "atend_final_1t": 86.15,
+     "atend_final_2t": 49.0,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 21,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "PB",
+     "municipio": 19810,
+     "nome": "Campina Grande",
+     "secoes_1t": 957,
+     "secoes_2t": 957,
+     "votos_1t": 262618,
+     "votos_2t": 268543,
+     "var_votos_pct": 2.256,
+     "pct_apos17h_1t": 2.0787,
+     "pct_apos17h_2t": 0.0145,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 94.0,
+     "mediana_s_2t": 67.0,
+     "atend_final_1t": 82.05,
+     "atend_final_2t": 62.0,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 89,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "PB",
+     "municipio": 19976,
+     "nome": "Coremas",
+     "secoes_1t": 50,
+     "secoes_2t": 50,
+     "votos_1t": 10083,
+     "votos_2t": 10263,
+     "var_votos_pct": 1.785,
+     "pct_apos17h_1t": 0.9918,
+     "pct_apos17h_2t": 0.0,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 120.0,
+     "mediana_s_2t": 80.0,
+     "atend_final_1t": 91.95,
+     "atend_final_2t": null,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 9,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "PB",
+     "municipio": 20672,
+     "nome": "Lagoa Seca",
+     "secoes_1t": 68,
+     "secoes_2t": 68,
+     "votos_1t": 18715,
+     "votos_2t": 19322,
+     "var_votos_pct": 3.243,
+     "pct_apos17h_1t": 6.6204,
+     "pct_apos17h_2t": 0.0207,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 99.0,
+     "mediana_s_2t": 66.0,
+     "atend_final_1t": 83.48,
+     "atend_final_2t": 103.0,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 12,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "PB",
+     "municipio": 21318,
+     "nome": "Pilar",
+     "secoes_1t": 33,
+     "secoes_2t": 33,
+     "votos_1t": 9121,
+     "votos_2t": 9243,
+     "var_votos_pct": 1.338,
+     "pct_apos17h_1t": 6.1835,
+     "pct_apos17h_2t": 0.0325,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 102.0,
+     "mediana_s_2t": 62.0,
+     "atend_final_1t": 86.75,
+     "atend_final_2t": null,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 1,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "PI",
+     "municipio": 11592,
+     "nome": "Picos",
+     "secoes_1t": 231,
+     "secoes_2t": 231,
+     "votos_1t": 47229,
+     "votos_2t": 46809,
+     "var_votos_pct": -0.889,
+     "pct_apos17h_1t": 2.4286,
+     "pct_apos17h_2t": 0.0235,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 1,
+     "mediana_s_1t": 114.0,
+     "mediana_s_2t": 76.0,
+     "atend_final_1t": 88.5,
+     "atend_final_2t": null,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 22,
+     "a2_divergentes_2t": 0
+    },
+    {
+     "uf": "PI",
+     "municipio": 12190,
+     "nome": "Teresina",
+     "secoes_1t": 1843,
+     "secoes_2t": 1843,
+     "votos_1t": 503766,
+     "votos_2t": 510190,
+     "var_votos_pct": 1.275,
+     "pct_apos17h_1t": 3.6265,
+     "pct_apos17h_2t": 0.018,
+     "apos_lacre_1t": 0,
+     "apos_lacre_2t": 0,
+     "abaixo20s_1t": 0,
+     "abaixo20s_2t": 2,
+     "mediana_s_1t": 96.0,
+     "mediana_s_2t": 63.0,
+     "atend_final_1t": 83.62,
+     "atend_final_2t": 68.45,
+     "abaixo20_final_1t": 0,
+     "abaixo20_final_2t": 0,
+     "secoes_final_rapida_1t": 0,
+     "secoes_final_rapida_2t": 0,
+     "a2_divergentes_1t": 133,
+     "a2_divergentes_2t": 0
+    }
+   ],
+   "csv": "E5_municipios_1t_2t.csv"
   }
  },
  "cobertura": {
   "secoes_boletim_1t": 499206,
   "secoes_boletim_2t": 0,
-  "secoes_log_1t": 196716,
-  "secoes_log_2t": 0,
-  "municipios_1t": 2419,
-  "municipios_2t": 0
+  "secoes_log_1t": 499150,
+  "secoes_log_2t": 115006,
+  "municipios_1t": 5688,
+  "municipios_2t": 1506
  }
 }

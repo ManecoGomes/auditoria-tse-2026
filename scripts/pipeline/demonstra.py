@@ -25,13 +25,16 @@ AC  = f"{ACV}/originais"
 BOL = f"{ACV}/boletins"
 DEMO= "/Volumes/SSD1TB/acervo-tse/auditoria/demo" + ("2t" if T == "2" else "")  # fora do Google Drive: ele truncava os CSV
 PRAZO = 17 if T == "1" else 19     # prazo legal do turno (19h no 2T por decisao de 25/10/2026)
+# O log da urna e CUMULATIVO: o do 2T traz o 1T inteiro (votos de 04/10, lacre de 04/10).
+# Tudo que e contado por evento filtra pela DATA DO PLEITO (hora local da urna).
+DATA_PLEITO = {"1": b"04/10/2026", "2": b"25/10/2026"}[T]
 SAIDA_JSON = f"{P}/pipeline/demonstracao_{T}t.json"
 SAIDA_CSV  = f"{P}/pipeline/demonstracao_secoes" + ("_2t" if T == "2" else "") + ".csv"
 SO_UFS = set(filter(None, os.environ.get("DEMONSTRA_UFS", "").split(",")))
 os.makedirs(DEMO, exist_ok=True)
 
 # deslocamento para hora de Brasilia
-VERSAO = 9   # bump invalida o cache quando o esquema muda (9: corte em 17h, votos discrepantes, 2026-10-27)
+VERSAO = 10  # bump invalida o cache quando o esquema muda (10: base minima de 30 intervalos para a regua da secao, 2026-10-27)
 
 OFF = {"AC":2, "AM":1, "MT":1, "MS":1, "RO":1, "RR":1}
 
@@ -44,10 +47,10 @@ NOME = {"AC":"Acre","AL":"Alagoas","AM":"Amazonas","AP":"Amapá","BA":"Bahia",
  "TO":"Tocantins","ZZ":"Exterior"}
 
 URNA = re.compile(rb"^\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2}\t\w+\t(\d+)\t", re.M)
-VOTO = re.compile(rb"^(\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2})\t.*Voto confirmado para \[Presidente\]", re.M)
-BUG  = re.compile(rb"^(\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2})\t.*Gerando arquivo de resultado \[bu\.dat\] \+ \[In", re.M)
-HAB  = re.compile(rb"Eleitor foi habilitado")
-COMP = re.compile(rb"O voto do eleitor foi computado")
+VOTO = re.compile(rb"^(" + DATA_PLEITO + rb" \d{2}:\d{2}:\d{2})\t.*Voto confirmado para \[Presidente\]", re.M)
+BUG  = re.compile(rb"^(" + DATA_PLEITO + rb" \d{2}:\d{2}:\d{2})\t.*Gerando arquivo de resultado \[bu\.dat\] \+ \[In", re.M)
+HAB  = re.compile(rb"^" + DATA_PLEITO + rb" .*Eleitor foi habilitado", re.M)
+COMP = re.compile(rb"^" + DATA_PLEITO + rb" .*O voto do eleitor foi computado", re.M)
 CONT = b"Urna de conting"   # urna reserva: preparada, jamais usada
 
 def Pt(b): return datetime.datetime.strptime(b.decode(), "%d/%m/%Y %H:%M:%S")
@@ -62,8 +65,11 @@ def Pt(b): return datetime.datetime.strptime(b.decode(), "%d/%m/%Y %H:%M:%S")
 #   f17 / f18 / f19 / f1930 : subfaixas — 17h-17h59, 18h-18h59, 19h-19h29, 19h30 em diante
 JAN = ("antes", "a1630", "final", "f17", "f18", "f19", "f1930")
 # voto DISCREPANTE: intervalo abaixo de FRAC da mediana da PROPRIA secao antes das 17h
-# (a regua e o dia normal daquela urna). Sem mediana (secao sem votos antes), usa o piso de 20 s.
+# (a regua e o dia normal daquela urna). A regua da secao so vale com BASE_MIN intervalos
+# antes das 17h; com menos (secao que abriu tarde, urna trocada), vale o piso de 20 s —
+# senao uma secao com 3 votos no dia "aponta" qualquer fila normal (Marituba/PA 78-307).
 FRAC_DISC = 0.25
+BASE_MIN = 30
 INICIO_FINAL = 17*60
 INICIO_SERIE = 16*60+30     # a serie de 10 min comeca meia hora antes, para mostrar a rampa
 def janelas(t):
@@ -156,6 +162,8 @@ def nomes_municipios(uf):
     """{CD_MUNICIPIO: NM_MUNICIPIO} do boletim — o TSE so publica o codigo no log."""
     d = {}
     zb = glob.glob(f"{BOL}/bweb_[12]t_{uf}_*.zip")
+    # 2T antes do bweb do 2T: os codigos de municipio sao os mesmos, usa o bweb do 1T para os nomes
+    if not zb: zb = glob.glob(f"/Volumes/SSD1TB/acervo-tse/2026-1t/boletins/bweb_1t_{uf}_*.zip")
     if not zb: return d
     try:
         with zipfile.ZipFile(zb[0]) as zf:
@@ -191,7 +199,7 @@ def fecha_c4b(a, dist=False):
         jan[j]["discrepantes"] = a["disc"][j]
         jan[j]["pct_discrepantes"] = round(100*a["disc"][j]/jan[j]["intervalos"], 4) if jan[j]["intervalos"] else None
     out = {"inicio_final": "17:00", "janelas": jan,
-           "limiar_discrepante": f"intervalo abaixo de {int(FRAC_DISC*100)}% da mediana da própria seção antes das 17h (ou de 20 s, se a seção não tem base)",
+           "limiar_discrepante": f"intervalo abaixo de {int(FRAC_DISC*100)}% da mediana da própria seção antes das 17h, exigindo ao menos {BASE_MIN} intervalos nessa base; com base menor, piso de 20 s",
            "votos_discrepantes_final": a["disc"]["final"],
            "aceleracao": round(ma/mr, 3) if (ma and mr) else None,
            "secoes_final_com_10_votos": a["reta_com_10"],
@@ -319,7 +327,7 @@ def processa(uf, z):
                 for j, q in sv.items(): a["jan_votos"][j] += q
             ra, rr = resumo_janela(sj["antes"], sv["antes"]), resumo_janela(sj["final"], sv["final"])
             med_a = ra["mediana_s"]
-            limiar = max(FRAC_DISC*med_a, 0) if med_a else 20
+            limiar = FRAC_DISC*med_a if (med_a and ra["intervalos"] >= BASE_MIN) else 20
             dsec = collections.Counter()
             for x, y in zip(votos, votos[1:]):
                 sg = int((y-x).total_seconds())
@@ -506,7 +514,7 @@ for j in _jan:
     _jan[j]["pct_discrepantes"] = round(100*_disc[j]/_jan[j]["intervalos"], 4) if _jan[j]["intervalos"] else None
 _ma, _mr = _jan["antes"]["media_s"], _jan["final"]["media_s"]
 C4B = {"inicio_final": "17:00", "janelas": _jan,
-       "limiar_discrepante": f"intervalo abaixo de {int(FRAC_DISC*100)}% da mediana da própria seção antes das 17h (ou de 20 s, se a seção não tem base)",
+       "limiar_discrepante": f"intervalo abaixo de {int(FRAC_DISC*100)}% da mediana da própria seção antes das 17h, exigindo ao menos {BASE_MIN} intervalos nessa base; com base menor, piso de 20 s",
        "votos_discrepantes_final": _disc["final"],
        "aceleracao": round(_ma/_mr, 3) if (_ma and _mr) else None,
        "secoes_final_com_10_votos": _r10, "secoes_final_rapida": _rr,

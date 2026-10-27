@@ -259,7 +259,9 @@ votou numa velocidade discrepante da média do próprio dia, e quantos votos for
 entre votos do teste C4, separado em dois blocos com a mesma régua nos dois turnos: <strong>A</strong>, o dia
 normal até as 17h (prazo legal do 1º turno), e <strong>B</strong>, de 17h em diante — que no 2º turno são as
 duas horas a mais da prorrogação, até as 19h, e o que passou das 19h. <strong>Voto discrepante</strong> é o
-registrado com intervalo abaixo de 25% da mediana da própria seção no bloco A.</p>
+registrado com intervalo abaixo de 25% da mediana da própria seção no bloco A; a régua da seção só vale com
+pelo menos 30 intervalos nessa base (seção que abriu tarde ou trocou de urna não tem dia normal para servir de
+régua) e, abaixo disso, vale o piso de 20 segundos.</p>
 {tabela_janelas(d)}
 <p>{frase_c4b(c)}</p>
 {svg_serie(d)}
@@ -444,12 +446,16 @@ def tabela_municipios(uf, d):
 BASE = open(f"{SITE}/relatorio.html").read()
 _i = BASE.index('<header class="top">'); _j = BASE.index('<footer>')
 CABECA, RODAPE = BASE[:_i], BASE[_j:]
+# rodape: a hora de "ultima atualizacao" e a da geracao, nao a do molde
+import datetime as _dt
+_agora = _dt.datetime.now().strftime("%d/%m/%Y %H:%M")
+RODAPE = re.sub(r"Última atualização: [0-9/]+ [0-9:]+", f"Última atualização: {_agora}", RODAPE)
 
 def nav(ativo, pre=""):
-    its = [("index.html","Resumo"),("plano-2t.html","Plano do 2º turno"),
-           ("demonstracao.html","Demonstração"),("estados/index.html","Estados"),
-           ("reta-final.html","Reta final"),
-           ("relatorio.html","1º turno"),("verificar.html","Como verificar"),
+    its = [("index.html","Resumo"),("primeiro-turno.html","1º turno"),
+           ("segundo-turno.html","2º turno"),("comparativo.html","Comparativo"),
+           ("reta-final.html","Reta final"),("estados/index.html","Estados"),
+           ("plano-2t.html","Plano"),("verificar.html","Como verificar"),
            ("dados.html","Dados e hashes")]
     out = []
     for h, t in its:
@@ -612,7 +618,8 @@ turnos: <strong>A, o dia normal</strong>, da abertura até as 17h, e <strong>B, 
 aparece à parte para mostrar a rampa). Para cada bloco, em cada seção, município, estado e no país:
 votos, tempo médio por voto, mediana, média só dos intervalos de até 120 segundos (o tempo de atendimento,
 sem o tempo ocioso), <strong>quantos votos foram discrepantes</strong> — intervalo abaixo de 25% da mediana
-da própria seção no bloco A — e quantos ficaram abaixo de 20 segundos, o limite físico para um eleitor real.</p>
+da própria seção no bloco A, exigindo ao menos 30 intervalos nessa base; com base menor, piso de 20 s — e
+quantos ficaram abaixo de 20 segundos, o limite físico para um eleitor real.</p>
 <p>A assinatura de fraude seria: depois das 17h, votos discrepantes em quantidade <strong>que não existe
 antes das 17h</strong>, em seções identificáveis, formando sequências — não casos isolados. A assinatura
 de normalidade é a oposta: o tempo por voto depois das 17h igual ou maior que o do dia, e os votos
@@ -641,7 +648,8 @@ do 2º turno, com o 1º turno mostrando quanto disso é fila legítima.</p>
 <h3>Seções apontadas no 1º turno</h3>
 {tabela_rapidas(f"{P}/pipeline/secoes_rapidas_janela_final.csv")}
 <p>Critério: depois das 17h, qualquer voto discrepante (intervalo abaixo de 25% da mediana da própria seção
-até as 17h), qualquer intervalo abaixo de 20 segundos, ou mediana abaixo de 20 segundos com 10 ou mais votos.
+até as 17h, com ao menos 30 intervalos de base; senão, 20 s), qualquer intervalo abaixo de 20 segundos, ou
+mediana abaixo de 20 segundos com 10 ou mais votos.
 A lista completa está em <code>dados/analises/secoes_rapidas_janela_final.csv</code>; cada seção está também em
 <code>demonstracao_secoes.csv</code> (colunas <code>votos_17h_em_diante</code>, <code>media_s_final</code>,
 <code>mediana_s_final</code>, <code>limiar_discrepante_s</code>, <code>discrepantes_antes</code>,
@@ -770,8 +778,11 @@ for uf in sorted(PORMUN):
         n_mun += 1
 print(f"paginas de municipio geradas: {n_mun}")
 
+# ---------------------------------------------------------------- 3c. paginas de sintese (index, 1T, 2T, comparativo)
+exec(open(f"{P}/pipeline/paginas_extra.py").read())
+
 # ---------------------------------------------------------------- 4. nav das demais paginas
-for f in ["index.html", "plano-2t.html", "relatorio.html", "verificar.html", "dados.html"]:
+for f in ["plano-2t.html", "relatorio.html", "relatorio-2t.html", "verificar.html", "dados.html"]:
     p = f"{SITE}/{f}"
     if not os.path.exists(p): continue
     s = open(p).read()
@@ -780,8 +791,8 @@ for f in ["index.html", "plano-2t.html", "relatorio.html", "verificar.html", "da
 
 # ---------------------------------------------------------------- 5. sitemap
 hoje = datetime.date.today().isoformat()
-urls = (["index.html","plano-2t.html","demonstracao.html","estados/index.html","reta-final.html",
-         "relatorio.html","verificar.html","dados.html"]
+urls = (["index.html","primeiro-turno.html","segundo-turno.html","comparativo.html","reta-final.html",
+         "plano-2t.html","demonstracao.html","estados/index.html","relatorio.html","verificar.html","dados.html"]
         + [f"estados/{u}.html" for u in sorted(PORUF)]
         + [f"estados/{u}/{slug_mun(c)}.html" for u in sorted(PORMUN) for c in sorted(PORMUN[u])])
 open(f"{SITE}/sitemap.xml","w").write(

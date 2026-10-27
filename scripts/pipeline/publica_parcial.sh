@@ -44,6 +44,12 @@ EST=$( { ls -l "$DEMO"/*.json 2>/dev/null
 #    nesses casos NAO se publica nada.
 "$PY" -u "$PL/demonstra.py" >> "$PL/parcial.log" 2>&1
 rc=$?
+# 2T: roda a mesma bateria quando ja houver UF do 2T provada integra (ZIP remontado por secao ou oficial)
+if ls /Volumes/SSD1TB/acervo-tse/2026-2t/originais/*_2t_*.zip.ok >/dev/null 2>&1; then
+  "$PY" -u "$PL/demonstra.py" 2 >> "$PL/parcial.log" 2>&1 || echo "$(date '+%F %T') demonstra.py 2 falhou (segue so com o 1T)" >> "$PL/parcial.log"
+fi
+(exit $rc)
+rc=$?
 [ "$rc" -ne 0 ] && { echo "$(date '+%F %T') demonstra.py saiu $rc — publicacao abortada" >> "$PL/parcial.log"; exit "$rc"; }
 
 # 2. analises (os blocos E saem sozinhos quando o 2T existir)
@@ -56,6 +62,10 @@ rc=$?
 # 4. dados derivados para o repo
 mkdir -p "$R/dados/analises" "$R/scripts/pipeline"
 cp "$PL/secoes_rapidas_janela_final.csv" "$R/dados/analises/" 2>/dev/null || true
+cp "$PL/demonstracao_2t.json" "$PL/demonstracao_secoes_2t.csv" "$PL/secoes_rapidas_janela_final_2t.csv" "$R/dados/analises/" 2>/dev/null || true
+cp /Volumes/SSD1TB/acervo-tse/2026-2t/registro_secoes_*.json "$R/dados/2t/" 2>/dev/null || true
+cp "$PL/coleta_secoes.py" "$R/scripts/pipeline/" 2>/dev/null || true
+cp "$P/relatorio/PESQUISA-PUBLICACAO-2T.md" "$R/relatorio/" 2>/dev/null || true
 cp "$PL/demonstracao_1t.json" "$PL/demonstracao_secoes.csv" "$PL/analises.json" \
    "$R/dados/analises/" 2>/dev/null
 cp "$PL/E5_municipios_1t_2t.csv" "$R/dados/analises/" 2>/dev/null || true

@@ -1,22 +1,31 @@
 #!/usr/bin/env python3
 """Descobre, baixa, confere e preserva os arquivos do TSE de um turno.
-uso: coleta.py <turno 1|2> <bu|logs>"""
+uso: coleta.py <turno 1|2> <bu|logs|cesp|ceft|gedai>
+  bu    boletins de urna (bweb)            logs  logs de votacao (bu_imgbu_logjez_rdv_vscmr)
+  cesp  correspondencia ESPERADA urna x secao (CESP, antes da eleicao)   -> teste A4
+  ceft  correspondencia EFETIVADA urna x secao (CEFT, depois da eleicao) -> teste A4
+  gedai logs do GEDAI (preparacao/carga das urnas, antes da eleicao)     -> teste C5"""
 import hashlib, json, os, subprocess, sys, datetime, zipfile
 
 TURNO=sys.argv[1]; TIPO=sys.argv[2]
 AC=f"/Volumes/SSD1TB/acervo-tse/2026-{TURNO}t"
 API="https://dadosabertos.tse.jus.br/api/3/action/package_show?id="
 DS={"bu":"resultados-2026-boletim-de-urna",
-    "logs":"resultados-2026-arquivos-transmitidos-para-totalizacao"}[TIPO]
-SUB={"bu":"boletins","logs":"originais"}[TIPO]
+    "logs":"resultados-2026-arquivos-transmitidos-para-totalizacao",
+    "cesp":f"resultados-2026-correspondencias-esperadas-e-efetivadas-{TURNO}-turno",
+    "ceft":f"resultados-2026-correspondencias-esperadas-e-efetivadas-{TURNO}-turno",
+    "gedai":f"resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-{TURNO}-turno"}[TIPO]
+SUB={"bu":"boletins","logs":"originais","cesp":"correspesp","ceft":"correspefet","gedai":"logsgedai"}[TIPO]
+PREFIXO={"cesp":"CESP_","ceft":"CEFT_","gedai":"log_gedai_"}.get(TIPO,"")   # cesp e ceft dividem o dataset
 os.makedirs(f"{AC}/{SUB}",exist_ok=True)
 
 j=json.loads(subprocess.run(["curl","-sL","-m","120",API+DS],capture_output=True,text=True).stdout)
 res=j["result"]["resources"]
-alvo=[r for r in res if f"_{TURNO}t_" in r["url"].lower() and r["url"].endswith(".zip")]
+alvo=[r for r in res if f"_{TURNO}t_" in r["url"].lower() and r["url"].endswith(".zip")
+      and os.path.basename(r["url"]).startswith(PREFIXO)]
 hashes={}
 for r in res:
-    if r["url"].endswith(".sha512") and f"_{TURNO}t_" in r["url"].lower():
+    if r["url"].endswith(".sha512") and f"_{TURNO}t_" in r["url"].lower() and os.path.basename(r["url"]).startswith(PREFIXO):
         hashes[os.path.basename(r["url"])[:-7]]=r["url"]
 if not alvo:
     print(json.dumps({"ok":False,"motivo":"sem arquivos publicados","turno":TURNO,"tipo":TIPO})); sys.exit(2)
