@@ -1,0 +1,655 @@
+{
+ "gerado_utc": "2026-10-27T04:08:08.374945+00:00",
+ "blocos": {
+  "A2_triangulacao_1t": {
+   "secoes_comparadas": 95485,
+   "divergentes": 8671,
+   "pct": 9.081,
+   "log_menor_que_bu": 8649,
+   "log_maior_que_bu": 22,
+   "exemplos": [
+    {
+     "secao": "1015-2-102",
+     "log": 176,
+     "bu": 177,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-104",
+     "log": 204,
+     "bu": 271,
+     "dif": -67
+    },
+    {
+     "secao": "1392-9-253",
+     "log": 267,
+     "bu": 268,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-369",
+     "log": 279,
+     "bu": 280,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-326",
+     "log": 237,
+     "bu": 239,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-344",
+     "log": 264,
+     "bu": 265,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-282",
+     "log": 244,
+     "bu": 245,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-194",
+     "log": 251,
+     "bu": 253,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-135",
+     "log": 268,
+     "bu": 270,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-225",
+     "log": 158,
+     "bu": 159,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-96",
+     "log": 203,
+     "bu": 205,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-382",
+     "log": 245,
+     "bu": 246,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-127",
+     "log": 269,
+     "bu": 270,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-229",
+     "log": 250,
+     "bu": 251,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-460",
+     "log": 174,
+     "bu": 175,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-266",
+     "log": 278,
+     "bu": 279,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-387",
+     "log": 282,
+     "bu": 283,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-209",
+     "log": 234,
+     "bu": 236,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-159",
+     "log": 260,
+     "bu": 261,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-90",
+     "log": 287,
+     "bu": 288,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-174",
+     "log": 270,
+     "bu": 274,
+     "dif": -4
+    },
+    {
+     "secao": "1392-9-133",
+     "log": 276,
+     "bu": 277,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-165",
+     "log": 250,
+     "bu": 251,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-251",
+     "log": 243,
+     "bu": 245,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-354",
+     "log": 279,
+     "bu": 280,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-55",
+     "log": 232,
+     "bu": 233,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-119",
+     "log": 250,
+     "bu": 251,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-402",
+     "log": 240,
+     "bu": 242,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-457",
+     "log": 208,
+     "bu": 209,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-468",
+     "log": 249,
+     "bu": 250,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-224",
+     "log": 259,
+     "bu": 260,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-456",
+     "log": 247,
+     "bu": 248,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-324",
+     "log": 260,
+     "bu": 261,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-129",
+     "log": 292,
+     "bu": 293,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-76",
+     "log": 265,
+     "bu": 266,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-335",
+     "log": 290,
+     "bu": 291,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-196",
+     "log": 222,
+     "bu": 224,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-357",
+     "log": 248,
+     "bu": 249,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-93",
+     "log": 254,
+     "bu": 255,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-321",
+     "log": 216,
+     "bu": 218,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-160",
+     "log": 269,
+     "bu": 270,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-267",
+     "log": 192,
+     "bu": 193,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-211",
+     "log": 255,
+     "bu": 256,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-422",
+     "log": 194,
+     "bu": 195,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-431",
+     "log": 229,
+     "bu": 231,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-16",
+     "log": 280,
+     "bu": 281,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-24",
+     "log": 278,
+     "bu": 279,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-64",
+     "log": 271,
+     "bu": 273,
+     "dif": -2
+    },
+    {
+     "secao": "1392-9-23",
+     "log": 277,
+     "bu": 278,
+     "dif": -1
+    },
+    {
+     "secao": "1392-9-478",
+     "log": 261,
+     "bu": 262,
+     "dif": -1
+    }
+   ]
+  },
+  "F1_geografia_1t": {
+   "municipios": 882,
+   "mediana_pct_tardio": 6.603,
+   "top20_mais_tardio": [
+    {
+     "uf": "AL",
+     "municipio": 28215,
+     "nome": "Ouro Branco",
+     "secoes": 27,
+     "votos": 7752,
+     "pct_tardio": 23.942
+    },
+    {
+     "uf": "BA",
+     "municipio": 34363,
+     "nome": "Caraíbas",
+     "secoes": 24,
+     "votos": 6791,
+     "pct_tardio": 22.839
+    },
+    {
+     "uf": "AL",
+     "municipio": 27910,
+     "nome": "Maravilha",
+     "secoes": 26,
+     "votos": 6398,
+     "pct_tardio": 22.82
+    },
+    {
+     "uf": "BA",
+     "municipio": 33030,
+     "nome": "Abaré",
+     "secoes": 45,
+     "votos": 12276,
+     "pct_tardio": 22.385
+    },
+    {
+     "uf": "AL",
+     "municipio": 28150,
+     "nome": "Olho D'Água Do Casado",
+     "secoes": 21,
+     "votos": 5635,
+     "pct_tardio": 20.302
+    },
+    {
+     "uf": "AL",
+     "municipio": 28436,
+     "nome": "Poço Das Trincheiras",
+     "secoes": 34,
+     "votos": 8826,
+     "pct_tardio": 19.533
+    },
+    {
+     "uf": "AL",
+     "municipio": 28673,
+     "nome": "São José Da Tapera",
+     "secoes": 64,
+     "votos": 17427,
+     "pct_tardio": 19.229
+    },
+    {
+     "uf": "AL",
+     "municipio": 28479,
+     "nome": "Porto De Pedras",
+     "secoes": 23,
+     "votos": 6617,
+     "pct_tardio": 19.117
+    },
+    {
+     "uf": "BA",
+     "municipio": 38199,
+     "nome": "Quijingue",
+     "secoes": 69,
+     "votos": 17532,
+     "pct_tardio": 17.939
+    },
+    {
+     "uf": "BA",
+     "municipio": 38431,
+     "nome": "Rodelas",
+     "secoes": 22,
+     "votos": 6193,
+     "pct_tardio": 17.778
+    },
+    {
+     "uf": "BA",
+     "municipio": 38164,
+     "nome": "Presidente Tancredo Neves",
+     "secoes": 65,
+     "votos": 17786,
+     "pct_tardio": 17.109
+    },
+    {
+     "uf": "AL",
+     "municipio": 27499,
+     "nome": "Dois Riachos",
+     "secoes": 27,
+     "votos": 6775,
+     "pct_tardio": 17.107
+    },
+    {
+     "uf": "AL",
+     "municipio": 28894,
+     "nome": "Craíbas",
+     "secoes": 59,
+     "votos": 17435,
+     "pct_tardio": 17.086
+    },
+    {
+     "uf": "AM",
+     "municipio": 2739,
+     "nome": "Santo Antônio Do Içá",
+     "secoes": 51,
+     "votos": 14968,
+     "pct_tardio": 16.943
+    },
+    {
+     "uf": "BA",
+     "municipio": 39195,
+     "nome": "Tanhaçu",
+     "secoes": 57,
+     "votos": 14980,
+     "pct_tardio": 16.809
+    },
+    {
+     "uf": "AM",
+     "municipio": 2119,
+     "nome": "Barreirinha",
+     "secoes": 68,
+     "votos": 18413,
+     "pct_tardio": 16.684
+    },
+    {
+     "uf": "AL",
+     "municipio": 27170,
+     "nome": "Belo Monte",
+     "secoes": 16,
+     "votos": 4869,
+     "pct_tardio": 16.615
+    },
+    {
+     "uf": "AL",
+     "municipio": 28398,
+     "nome": "Pindoba",
+     "secoes": 8,
+     "votos": 2403,
+     "pct_tardio": 16.604
+    },
+    {
+     "uf": "BA",
+     "municipio": 38512,
+     "nome": "Santa Bárbara",
+     "secoes": 61,
+     "votos": 16228,
+     "pct_tardio": 16.49
+    },
+    {
+     "uf": "BA",
+     "municipio": 39918,
+     "nome": "Tanque Novo",
+     "secoes": 45,
+     "votos": 12233,
+     "pct_tardio": 16.472
+    }
+   ],
+   "top20_menos_tardio": [
+    {
+     "uf": "ES",
+     "municipio": 56278,
+     "nome": "",
+     "secoes": 138,
+     "votos": 23854,
+     "pct_tardio": 0.013
+    },
+    {
+     "uf": "ES",
+     "municipio": 56626,
+     "nome": "",
+     "secoes": 48,
+     "votos": 9859,
+     "pct_tardio": 0.03
+    },
+    {
+     "uf": "ES",
+     "municipio": 56510,
+     "nome": "",
+     "secoes": 42,
+     "votos": 9176,
+     "pct_tardio": 0.054
+    },
+    {
+     "uf": "ES",
+     "municipio": 56219,
+     "nome": "",
+     "secoes": 33,
+     "votos": 6730,
+     "pct_tardio": 0.059
+    },
+    {
+     "uf": "ES",
+     "municipio": 56731,
+     "nome": "",
+     "secoes": 58,
+     "votos": 11227,
+     "pct_tardio": 0.071
+    },
+    {
+     "uf": "ES",
+     "municipio": 56030,
+     "nome": "",
+     "secoes": 93,
+     "votos": 17934,
+     "pct_tardio": 0.106
+    },
+    {
+     "uf": "ES",
+     "municipio": 56839,
+     "nome": "",
+     "secoes": 69,
+     "votos": 14059,
+     "pct_tardio": 0.114
+    },
+    {
+     "uf": "ES",
+     "municipio": 56391,
+     "nome": "",
+     "secoes": 25,
+     "votos": 4952,
+     "pct_tardio": 0.121
+    },
+    {
+     "uf": "ES",
+     "municipio": 56618,
+     "nome": "",
+     "secoes": 35,
+     "votos": 7874,
+     "pct_tardio": 0.127
+    },
+    {
+     "uf": "ES",
+     "municipio": 56570,
+     "nome": "",
+     "secoes": 32,
+     "votos": 7361,
+     "pct_tardio": 0.136
+    },
+    {
+     "uf": "ES",
+     "municipio": 56022,
+     "nome": "",
+     "secoes": 46,
+     "votos": 8538,
+     "pct_tardio": 0.141
+    },
+    {
+     "uf": "ES",
+     "municipio": 56057,
+     "nome": "",
+     "secoes": 49,
+     "votos": 10049,
+     "pct_tardio": 0.179
+    },
+    {
+     "uf": "ES",
+     "municipio": 56090,
+     "nome": "",
+     "secoes": 25,
+     "votos": 4903,
+     "pct_tardio": 0.184
+    },
+    {
+     "uf": "ES",
+     "municipio": 56758,
+     "nome": "",
+     "secoes": 38,
+     "votos": 8912,
+     "pct_tardio": 0.202
+    },
+    {
+     "uf": "ES",
+     "municipio": 56154,
+     "nome": "",
+     "secoes": 90,
+     "votos": 19240,
+     "pct_tardio": 0.203
+    },
+    {
+     "uf": "ES",
+     "municipio": 56910,
+     "nome": "",
+     "secoes": 64,
+     "votos": 15387,
+     "pct_tardio": 0.279
+    },
+    {
+     "uf": "ES",
+     "municipio": 56952,
+     "nome": "",
+     "secoes": 37,
+     "votos": 7645,
+     "pct_tardio": 0.34
+    },
+    {
+     "uf": "AC",
+     "municipio": 1040,
+     "nome": "Marechal Thaumaturgo",
+     "secoes": 47,
+     "votos": 9347,
+     "pct_tardio": 0.374
+    },
+    {
+     "uf": "ES",
+     "municipio": 56294,
+     "nome": "",
+     "secoes": 319,
+     "votos": 71018,
+     "pct_tardio": 0.397
+    },
+    {
+     "uf": "ES",
+     "municipio": 56499,
+     "nome": "",
+     "secoes": 38,
+     "votos": 7624,
+     "pct_tardio": 0.433
+    }
+   ]
+  },
+  "E5_municipios": {
+   "estado": "aguardando o 2º turno",
+   "municipios_1t_prontos": 882,
+   "nota": "A linha de base por município do 1º turno está pronta. Os blocos E comparam os mesmos municípios entre turnos e saem sozinhos quando o TSE publicar os arquivos do 2º turno."
+  }
+ },
+ "cobertura": {
+  "secoes_boletim_1t": 499206,
+  "secoes_boletim_2t": 0,
+  "secoes_log_1t": 95485,
+  "secoes_log_2t": 0,
+  "municipios_1t": 882,
+  "municipios_2t": 0
+ }
+}
