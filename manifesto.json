@@ -1,9 +1,9 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "versao": 7,
+ "versao": 8,
  "escopo": "1o turno, por UF e por municipio",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-27T08:14:32.085276+00:00",
+ "gerado_em_utc": "2026-10-27T11:26:44.614362+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
  "n_arquivos": 976,
  "arquivos": [
@@ -15,12 +15,12 @@
   {
    "arquivo": "dados/analises/analises.json",
    "bytes": 11044,
-   "sha512": "702e9a8bbeffd84f936e0902a46e244df222f65d73fb2fdf8f4d4209fd950bba53a3d5048c7b2abe0c7fe43e4367ae8435fc175ca464011159ceda532c4c111a"
+   "sha512": "ba9f55025c92a9870a797be1867d2d32a525380518b5372d3540024d87ed34e2028897cca9d502ad0c083b926e3b45ea99fa104991f800d117a1b05310b64a9e"
   },
   {
    "arquivo": "dados/analises/demonstracao_1t.json",
    "bytes": 528859,
-   "sha512": "8ee00182513e6bbdf57230c3d0dd1e564c0cdb41d0ee1b2dd20aebb91d8e275189a263d34e24751ebd74459d4514da09d918cf45ee3b2796f8f8bbeed0349bca"
+   "sha512": "4f8d106d353a32d17bd06510dba40ff0525f045456dca8de55cf95d5d0e65ddd7c49b3158b5283a7f3e9b653a01adc6b68bb455e5c5be1788c23301876985f6d"
   },
   {
    "arquivo": "dados/analises/demonstracao_secoes.csv",
@@ -210,12 +210,12 @@
   {
    "arquivo": "manifesto.json",
    "bytes": 210527,
-   "sha512": "d8ec46b8d82072790ad47a282eb51fc09c2bc81d9416c1c55d9fe94c5514580cd8dc2077662892fdd735855e49ce0d006cca4e151a8124b7e03437ded735e752"
+   "sha512": "f3b5d442260abf783109563632e51eb4a432152146aa6a346c45bde5869c9ffde13a0f35c21bb6fb5386e410f5e8eb0e725a85fa43ab66fe7873357fb2b8a282"
   },
   {
    "arquivo": "manifesto.json.ots",
-   "bytes": 910,
-   "sha512": "0e77ab748a450017edc96366896a6a446d8e2bf7e1c5c9503fc10a093a39dd3a91a05046467dd4075147f1794e635191e51a5db0baf5493d45423718433e3a96"
+   "bytes": 980,
+   "sha512": "4a5e46c95587c3336cb11aab6bf7ed95260235c376ad0726640b80984da8d4cbcde71be0faed78510523ecab1cb3038fb9432c14f368e51bd4f78f38fd5f15bf"
   },
   {
    "arquivo": "manifesto.json.ots.bak",
@@ -259,8 +259,8 @@
   },
   {
    "arquivo": "scripts/destrava.sh",
-   "bytes": 7227,
-   "sha512": "08225a9d27ecf5469e6ca91cd869062fd21f88c58e87d48cb4fc3d0da1eac2c044bf6dfa8031a8add22e641a515050a8f6d79022d2a7984c3f5fed7ea0bc4078"
+   "bytes": 7360,
+   "sha512": "7a736f36f8a5458714bc3094191cf87b406b96e286e5194c26fe9619304013da8ce4d232d30d3cbe28850598a146f7e180e4092b9689406b91ccb584fd5231d2"
   },
   {
    "arquivo": "scripts/diagnostico.sh",

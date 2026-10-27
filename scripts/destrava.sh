@@ -140,7 +140,7 @@ if [ -n "$ESCALA" ]; then
   log "ESCALANDO para o agente auditoria-tse"
   if command -v claude >/dev/null 2>&1; then
     claude -p "Use o agente auditoria-tse. O destrava.sh automático não resolveu: $ESCALA
-Rode ./diagnostico.sh, ache a causa raiz, conserte, registre a falha na tabela do §5 do arquivo do agente para o próximo não repetir o diagnóstico, e publique se houver bloco novo. Relate em no máximo 10 linhas." \
+Rode ./diagnostico.sh, ache a causa raiz, conserte, e publique se houver bloco novo. O diretório .claude/ é só leitura para você: NÃO tente editar o arquivo do agente nem o settings.json — em vez disso, termine o relato com a linha pronta para a tabela do §5 (sintoma | causa | conserto), que o Maneco aplica. Relate em no máximo 12 linhas." \
       >> "$P/destrava-agente.log" 2>&1 \
       && log "agente concluiu (ver destrava-agente.log)" || log "agente retornou erro"
   else
