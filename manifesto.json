@@ -1,9 +1,9 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "versao": 5,
+ "versao": 6,
  "escopo": "1o turno, por UF e por municipio",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-27T08:10:54.931791+00:00",
+ "gerado_em_utc": "2026-10-27T08:11:53.279324+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
  "n_arquivos": 976,
  "arquivos": [
@@ -15,12 +15,12 @@
   {
    "arquivo": "dados/analises/analises.json",
    "bytes": 11044,
-   "sha512": "3a8b6fc0a17b0b42f3b6f35ef8637587f74151393b81957b421068298b72cacf1b8351d9be4ac1bcc004680a091c694851b3353165b5de94717b6df956d9c2d5"
+   "sha512": "1b8fc18bd1b9cc47237140cad2fc014362f17a8cffbfdd41a0b81d720ed52d45aaa71c207fdb6a7d2453e30d540d76d0847315bf4b18bfc4d09da560cec478a7"
   },
   {
    "arquivo": "dados/analises/demonstracao_1t.json",
    "bytes": 528859,
-   "sha512": "04aeab8777b03ae28a4da961a78a7b6c1bc64051ee13e4d8da5321b2fb573d0810ed8cd7eb884763f2476f21c775b8ce5f4187bdc2a2fc9af0cb5d915a6a4012"
+   "sha512": "4bcf4b97a4e9b9433e15ece9ab7026362cca45ce15152f3596f0074cb3120b9a4ba8ff05fd4424b3771ab942be8c049ad5fab4d5711e974f742f2364ea465694"
   },
   {
    "arquivo": "dados/analises/demonstracao_secoes.csv",
@@ -209,13 +209,13 @@
   },
   {
    "arquivo": "manifesto.json",
-   "bytes": 209874,
-   "sha512": "678078272b0b28c0edac65c00ad6baa370f9de3deeecfdd2ad6036a345d90bd2a6d1898f791eb2949a5d417581fb043f03adb52ec475eb6f2804ba342618a2c1"
+   "bytes": 210527,
+   "sha512": "5794228e4dec3e0553a34aa731ef58f666b922a20a1ea82552bf4f1c6b8118ef7bfb6d41bbc9e4ca0f73280915638943ac373a726683e46ccff2584c71f8b40e"
   },
   {
    "arquivo": "manifesto.json.ots",
-   "bytes": 735,
-   "sha512": "6b62b05d11334807a715e04a8f770526e5e829bcde1483c063eb93fd4c28728650fe1baad9e0ec57523ca0ef4ee97254fec9ea6677faa3ed2e0b74346be7abb7"
+   "bytes": 910,
+   "sha512": "9911794441231808e7aced1d6064a8acf8788a38d419c370719a276dbb30b60f3c3830c8c432e7b5ad9df6952eeb00fc795cfb103169fac4908b2befeddd8584"
   },
   {
    "arquivo": "manifesto.json.ots.bak",
@@ -319,13 +319,13 @@
   },
   {
    "arquivo": "scripts/pipeline/publica.sh",
-   "bytes": 4966,
-   "sha512": "e1a3b072831fd9673d96d1288d151bedcfbb63881d5e0323e9a39c94f3e124cc937e1907cf17561a0278582fea1cc06c545818352470f43ad79d601cd949c16b"
+   "bytes": 4969,
+   "sha512": "e3bb92e2b03e84f34fb8caa286927131675f18e930d4a37dc48b66005ca5231e0edce92aaaa724ce1fd296dbc165f73b134b9c143385f0f84accf2d07c3d551a"
   },
   {
    "arquivo": "scripts/pipeline/publica_parcial.sh",
-   "bytes": 5140,
-   "sha512": "5d83d5e8ea2fd5bb2455d13a57e955e5567398378565810f6b56a737f9eb2bf7aa620499da6363b687fe2eb4f8e4575263461f04fb12643970aaebe484438101"
+   "bytes": 5143,
+   "sha512": "2f0e55344311ac58f61cae534c6bd7d05d6bd7ef1f283ec19e7dc43396cf316a196ff3698becba347e75441c3452a2954e5736aaf0da89a89187304750cc5dd2"
   },
   {
    "arquivo": "scripts/pipeline/roda.sh",

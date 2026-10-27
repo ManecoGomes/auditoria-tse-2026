@@ -78,7 +78,7 @@ cp "manifestos/manifesto-v$VER-$TS.json.ots" manifesto.json.ots 2>/dev/null || t
 cd "$R/site" && vercel deploy --prod --yes > /dev/null 2>&1
 cd "$R" && git add -A && \
   git -c user.name="Maneco Gomes" -c user.email="manecogomes@gmail.com" \
-      commit -q -m "Auditoria do 2º turno: resultado, dados e manifesto v3" && git push -q origin main
+      commit -q -m "Auditoria do 2º turno: resultado, dados e manifesto v$VER" && git push -q origin main
 
 # --- Drive ---
 D="gdrive:Auditoria-TSE-2026"

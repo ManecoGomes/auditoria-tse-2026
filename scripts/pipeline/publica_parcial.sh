@@ -95,4 +95,4 @@ cd "$R" && git add -A && \
   git push -q origin main 2>/dev/null
 
 echo "$EST" > "$MARCA"
-echo "$(date '+%F %T') publicado incremento (manifesto v3-$TS)" >> "$PL/parcial.log"
+echo "$(date '+%F %T') publicado incremento (manifesto v$VER-$TS)" >> "$PL/parcial.log"
