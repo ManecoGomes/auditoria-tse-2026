@@ -15,7 +15,9 @@ agiu(){ AGIU=1; log "AÇÃO: $*"; }
 cd "$P" || exit 1
 log "--- destrava iniciado ---"
 
-# 1. script de analise pendurado: vivo > 45 min com CPU acumulada irrisoria.
+# 1. script de analise pendurado: vivo > 15 min com CPU acumulada irrisoria (era 45; em
+#    2026-10-27 12:25 o demonstra.py ficou preso em opendir no SSD USB enquanto o curl
+#    escrevia a ~25 MB/s, e segurou o publicador por uma hora inteira).
 #    Alcanca SO os tres scripts de analise do projeto — nunca download, nunca terceiros.
 for pid in $(pgrep -f "$PL/demonstra.py|$PL/analises.py|$PL/gera_demo_html.py" 2>/dev/null); do
   et=$(ps -p "$pid" -o etime= 2>/dev/null | tr -d ' ')
@@ -24,7 +26,7 @@ for pid in $(pgrep -f "$PL/demonstra.py|$PL/analises.py|$PL/gera_demo_html.py" 2
   # etime pode vir como MM:SS, HH:MM:SS ou D-HH:MM:SS; time (CPU) vem com centesimos (0:00.03)
   mins=$(echo "$et" | awk -F'[-:]' '{if(NF==4)printf "%d",$1*1440+$2*60+$3; else if(NF==3)printf "%d",$1*60+$2; else if(NF==2)printf "%d",$1; else print 0}')
   segs=$(echo "$cp" | awk -F: '{if(NF==3)printf "%d",$1*3600+$2*60+$3; else if(NF==2)printf "%d",$1*60+$2; else print 0}')
-  if [ "${mins:-0}" -gt 45 ] && [ "${segs:-0}" -lt 60 ]; then
+  if [ "${mins:-0}" -gt 15 ] && [ "${segs:-0}" -lt 60 ]; then
     cmd=$(ps -p "$pid" -o command= 2>/dev/null | cut -c1-70)
     # captura ONDE o processo esta travado antes de matar: e o que torna o proximo
     # diagnostico conclusivo (hipotese atual: I/O no volume externo / Spotlight)
