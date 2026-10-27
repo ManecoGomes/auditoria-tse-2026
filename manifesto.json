@@ -1,9 +1,9 @@
 {
  "titulo": "Auditoria de horarios - Eleicoes Gerais 2026",
- "versao": 16,
+ "versao": 17,
  "escopo": "1o turno, por UF e por municipio",
  "site": "https://auditoria-tse-2026.com.br",
- "gerado_em_utc": "2026-10-27T15:50:23.528112+00:00",
+ "gerado_em_utc": "2026-10-27T16:25:46.402825+00:00",
  "responsavel": "Luis Manuel Jordao Elias Gomes - OAB/RJ 245.463",
  "n_arquivos": 1447,
  "arquivos": [
@@ -15,17 +15,17 @@
   {
    "arquivo": "dados/acervo-1t-custodia.json",
    "bytes": 4997,
-   "sha512": "ff7a8a00da4b00a2bc3b204c0b7408d588c34668f1b5956e01bf47247be7a48202edb7810ee2d867507a06de6c17858bae61dd33c7e810fc6b3109ef7a67bb19"
+   "sha512": "cee27309609e5df8a89dfb56862992771cebacb3731bfbf7be5b48b1927e703d29e4c12ef7e3b4191c88f5b7d4503c566ebe8bb93ac421acf7a66a7a3992d740"
   },
   {
    "arquivo": "dados/analises/analises.json",
    "bytes": 11303,
-   "sha512": "44f53f0c7e000ae7c432d0733733fd7730a8e3b01899576727992daa33cd1388614d3a1097f0e1f03558c703e889bc8ad84a84e2234e32a4a94b9ed5c8e42844"
+   "sha512": "92e9e717e42283e15ff14be2e87a009af284755e608c6cd83251865f03e976d3287bc57f78dc610065e284efc4f5a97fb08e6360df7522cfa7220d5bcea9bbab"
   },
   {
    "arquivo": "dados/analises/demonstracao_1t.json",
    "bytes": 1350157,
-   "sha512": "b6138d513d59b730853687eb6b14b372e6b7614c629185fb8292ff91e9a7603fe4d85f743757ba6875957c855be03671a71d57277d71f699dd24d2eb1119dece"
+   "sha512": "0051a3a1f9b6249cac04b7128c00ead8f2095dbfbfc2dc4ca052f24b14972cefdd6e52a3324faa3dec833e184d3c3e1ad2170abc6c6103cb952fa94d0fb65731"
   },
   {
    "arquivo": "dados/analises/demonstracao_secoes.csv",
@@ -220,12 +220,12 @@
   {
    "arquivo": "manifesto.json",
    "bytes": 312096,
-   "sha512": "097085b07139ae356873d08be4e73d9b548cba2c95b538e4369801bd2882bd6db378676e6377d4127be69ace79b2744140c7ece469af887986c1c3972abf5a44"
+   "sha512": "7224ec1e3b11bece262b79fada02b38b3e1eae99c1750fb6e51efb68ac8a9c6376a54db9d7ff300612bfab257afd9a3d7a0b3eeb2c61a3c3b1fdb10a2504561c"
   },
   {
    "arquivo": "manifesto.json.ots",
-   "bytes": 875,
-   "sha512": "8132881db9b51e45791376d421ebdd38cd7449e2d2cc8f8de5b6d695d59f25ecb48bedc8421915d600e832be3f18d05d162f9c994484406b1df02dffb3e7a317"
+   "bytes": 634,
+   "sha512": "cd76b6c1f95b28807b68ab4ceb9181437533276c2823048d09e50b5cd834460cb913b16d352e9bebbb99ef455c0ca7c20a29f3a763f1153d75486cda94ccb10b"
   },
   {
    "arquivo": "manifesto.json.ots.bak",
@@ -269,8 +269,8 @@
   },
   {
    "arquivo": "scripts/destrava.sh",
-   "bytes": 9191,
-   "sha512": "b41e2895dba83604a4fad07b504dd2b2da1f9c7199c77208509d62973fb0277d594b79d3d6909f1c0fa39b392aa2caba23f7bb195154d7921ac58538a840b306"
+   "bytes": 9722,
+   "sha512": "fe1daec9a3639115b600f7b4e01b5d135a8ab0a95d66549e32f2e502450c87bf12169250a5c7c0a7879e8c572f43919700baf214bd8cb8c142b90ef0a73dedcd"
   },
   {
    "arquivo": "scripts/diagnostico.sh",

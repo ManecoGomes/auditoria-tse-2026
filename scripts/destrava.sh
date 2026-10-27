@@ -82,7 +82,16 @@ if ! pgrep -qf 'baixa_resiliente.sh'; then
 fi
 
 # 3. nenhum download em curso e UF faltando -> enfileira o resto
+#    Antes, encerra curl ORFAO (pai = 1): e o que sobra quando o baixa_resiliente.sh morre
+#    com o curl no ar. Dois curl no mesmo ZIP = arquivo 100% baixado e corrompido (GO as
+#    09:34 e MG as 11:50 de 2026-10-27 tem essa assinatura).
 if ! pgrep -qf 'baixa_resiliente.sh'; then
+  for pid in $(pgrep -f 'curl.*arqurnatot' 2>/dev/null); do
+    if [ "$(ps -o ppid= -p "$pid" 2>/dev/null | tr -d ' ')" = "1" ]; then
+      kill -9 "$pid" 2>/dev/null && agiu "curl órfão pid=$pid encerrado antes de enfileirar (evita dois escritores no mesmo ZIP)"
+    fi
+  done
+  sleep 2
   FALTA=""
   for uf in $TODAS; do
     [ -f "$AC1/bu_imgbu_logjez_rdv_vscmr_2026_1t_$uf.zip.ok" ] || FALTA="$FALTA $uf"
