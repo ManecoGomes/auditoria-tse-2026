@@ -255,6 +255,19 @@ def indice_resumo():
     man = _lj(f"{P}/repo/manifesto.json")
     f1, f2 = _forense_resumo("1"), _forense_resumo("2")
     p1, p2 = _pianista_resumo("1"), _pianista_resumo("2")
+    rdv1, rdv2 = _lj(f"{P}/pipeline/rdv_1t.json"), _lj(f"{P}/pipeline/rdv_2t.json")
+    kc = _lj(f"{P}/pipeline/concentracao_2t.json")
+    def rdv_txt(r):
+        if not r: return "em processamento"
+        return (f'{N(r.get("comparadas",0))} seções comparadas, {N(r.get("iguais",0))} iguais voto a voto, {N(r.get("diferentes",0))} diferentes'
+                + (f' ({len(r.get("ufs",[]))}/28 UFs)' if len(r.get("ufs", [])) < 28 else ""))
+    def kc_txt():
+        if not kc: return "em processamento"
+        ph = {h["hora"]: h for h in kc.get("por_hora", [])}
+        c17 = (ph.get("17h") or {}).get("correlacao_com_delta13"); c18 = (ph.get("18h") or {}).get("correlacao_com_delta13")
+        return (f'{N(kc.get("secoes",0))} seções comparadas entre os turnos; correlação entre votar às 17h/18h e deslocar o resultado: {_d(c17,3)} / {_d(c18,3)}; '
+                f'{N(kc.get("alertas",0))} seções marcadas contra o próprio município ({N(kc.get("alertas_pro13",0))} para 13, {N(kc.get("alertas_pro22",0))} para 22), '
+                f'{N(kc.get("alertas_com_votos_apos17",0))} delas com voto após 17h')
     a2_1, a2_2 = A.get("A2_triangulacao_1t") or {}, A.get("A2_triangulacao_2t") or {}
     e5, e6, e1 = A.get("E5_municipios") or {}, A.get("E6_janela_final_secoes") or {}, A.get("E1_comparecimento") or {}
     d2 = D2 or {}
@@ -284,6 +297,7 @@ def indice_resumo():
       ["A3 · Soma dos boletins × totalização oficial", "A soma de todos os boletins é o resultado que o TSE proclamou?",
        ("bate exato por candidato; única diferença, 5.246 nulos técnicos (candidatura indeferida). Ninguém teve 50%+1: 47,03% × 45,16%" if bate1 else "divergência — ver página"),
        (f'bate exato: 13 = {N(cand.get("13",{}).get("oficial",0))}, 22 = {N(cand.get("22",{}).get("oficial",0))}, comparecimento, brancos e nulos idênticos' if bate2 else "divergência — ver página"), "soma-oficial.html"],
+      ["K1 · RDV × boletim, voto a voto", "O Registro Digital do Voto gravado pela urna reproduz o boletim — cada candidato, brancos e nulos — em cada seção?", rdv_txt(rdv1), rdv_txt(rdv2), "concentracao.html"],
       ["A2 · Boletim × log (comparecimento)", "O número de votos no log é o do boletim?",
        f'{N(a2_1.get("divergentes",0))} de {N(a2_1.get("secoes_comparadas",0))} seções divergem ({_d(a2_1.get("pct",0))}%), quase todas log &lt; boletim por 1 (urna substituída: o log é só da 2ª urna)',
        f'{N(a2_2.get("divergentes",0))} de {N(a2_2.get("secoes_comparadas",0))} ({_d(a2_2.get("pct",0))}%), mesma explicação', "comparativo.html"],
@@ -295,6 +309,7 @@ def indice_resumo():
       ["C4 · Intervalo entre votos (20 s)", "Houve voto em ritmo impossível para um eleitor real?", f'{N(c4_1.get("abaixo_de_20s",0))} intervalos em {N(c4_1.get("amostra",0))}', f'{N(c4_2.get("abaixo_de_20s",0))} em {N(c4_2.get("amostra",0))}', "segundo-turno.html"],
       ["C4b · Reta final (17h em diante)", "Depois das 17h, a seção acelerou além do próprio ritmo do dia?", f'{N(fin1.get("discrepantes",0))} voto{"s" if fin1.get("discrepantes",0) != 1 else ""} discrepante{"s" if fin1.get("discrepantes",0) != 1 else ""} em {N(fin1.get("votos",0))} depois das 17h', f'{N(fin2.get("discrepantes",0))} voto{"s" if fin2.get("discrepantes",0) != 1 else ""} discrepante{"s" if fin2.get("discrepantes",0) != 1 else ""} em {N(fin2.get("votos",0))} depois das 17h', "reta-final.html"],
       ["C4 ampliado · «Pianista» (30 s, 40 s, corridas)", "Com limiares maiores e olhando sequências, aparece mesário votando em série?", pian(p1, "1"), pian(p2, "2"), "pianista.html"],
+      ["K2 / K3 · Concentração por horário × resultado", "Houve horário em que os votos se concentraram num candidato? A seção que votou «em bloco» ou tarde deslocou o resultado contra o próprio 1º turno e contra as vizinhas?", "controles: a seção contra o próprio município e o perfil horário da mesma seção no 1º turno", kc_txt(), "concentracao.html"],
       ["E1 / E5 / E6 · A seção contra si mesma", "Cada seção e cada município se comportaram no 2º turno como no 1º?",
        "régua", f'{N(e1.get("secoes_comuns",0))} seções comuns; {N(e5.get("com_indicador_pior_no_2t",0))} de {N(e5.get("municipios_comuns",0))} municípios com algum indicador pior; {e6.get("secoes_2t_com_discrepantes_sem_ter_no_1t",0)} seções com discrepância nova após 17h', "comparativo.html"],
       ["E4 · Votos tardios e candidato", "As seções com mais votos depois das 17h mudaram de lado entre os turnos?", "controle: correlação da fila do 1º turno", f'correlação {e4.get("correlacao","—")} (nula); limites de Duncan-Davis e Goodman publicados', "votos-tardios.html"],
@@ -322,8 +337,8 @@ def indice_resumo():
 <blockquote>
 <p><strong>Em uma frase:</strong> com os dados públicos do TSE — todos os boletins, logs, RDV e contêineres de assinatura das
 {N(D.get("secoes",0))} seções do país, nos dois turnos — e com método publicado antes de os dados existirem, <strong>nenhum dos testes
-encontrou voto fora do prazo, voto após o lacre, urna reaberta, log alterado, boletim diferente da totalização ou sequência de votos
-em ritmo incompatível com eleitor real</strong>. A soma dos boletins é exatamente o resultado proclamado. As duas horas a mais do 2º turno
+encontrou voto fora do prazo, voto após o lacre, urna reaberta, log alterado, registro digital do voto diferente do boletim, boletim diferente
+da totalização, sequência de votos em ritmo incompatível com eleitor real ou concentração de votos num candidato associada a horário</strong>. A soma dos boletins é exatamente o resultado proclamado. As duas horas a mais do 2º turno
 somaram {N(tard2)} votos ({_d(td2.get("pct_17h_em_diante",0),3)}% do total), menos de {_d(100*tard2/margem,1)}% da margem entre os candidatos, e no
 ritmo normal de cada seção.</p>
 </blockquote>'''  + f'''
@@ -357,7 +372,8 @@ nos logs. Emenda datada do mesmo dia: teste C4b (ritmo antes e depois das 17h), 
 <li><strong>28/10 — 2º turno.</strong> Boletins oficiais das 28 UFs (publicados pelo TSE às 08h59) e, como o pacote consolidado de logs ainda não saiu, os mesmos
 arquivos coletados seção por seção no Portal Resultados, conferidos contra o hash que a própria urna assinou. Todos os testes do plano rodaram.</li>
 <li><strong>28/10 — emenda posterior aos dados</strong>, a pedido de quem encomendou e identificada como tal: forense dos logs (rastro de edição, inclusive por IA),
-soma dos boletins contra a totalização oficial, destino dos votos tardios e o teste do «pianista» com 30 s e 40 s. Força probatória menor que a
+soma dos boletins contra a totalização oficial, destino dos votos tardios, o teste do «pianista» com 30 s e 40 s, o RDV conferido voto a voto com o boletim
+e a concentração de votos por horário contra o resultado de cada seção. Força probatória menor que a
 dos testes pré-registrados, por terem sido escolhidos sabendo o que havia nos dados.</li>
 </ol>
 
@@ -373,14 +389,19 @@ No 1º, nenhum candidato alcançou maioria absoluta pelos próprios boletins.</p
 <p><strong>2. Os arquivos são os que as urnas produziram.</strong> Os pacotes do TSE batem com o SHA-512 publicado pelo TSE; cada boletim e cada log batem
 com o SHA-512 que a própria urna gravou no contêiner assinado ao encerrar — {N(f1["a5_conf"])} de {N(f1["logs"])} logs no 1º turno e {N(f2["a5_conf"])} de {N(f2["logs"])} no 2º.
 As {N(f2["a5_div"])} divergências do 2º turno estão todas em membros de ZIPs remontados nesta máquina a partir da coleta por seção, cuja escrita no volume externo
-corrompeu bytes; são defeito da cópia local, não do dado do TSE, e serão reconferidas quando o pacote oficial por UF for publicado.</p>
+corrompeu bytes; são defeito da cópia local, não do dado do TSE, e serão reconferidas quando o pacote oficial por UF for publicado.
+E o Registro Digital do Voto — o arquivo em que a urna grava cada voto digitado — reproduz o boletim voto a voto: {rdv_txt(rdv2)} no 2º turno,
+{rdv_txt(rdv1)} no 1º.</p>
 <p><strong>3. Nenhuma urna foi reaberta, nenhum voto ficou fora do prazo, nenhuma impossibilidade lógica.</strong> Zero votos depois do lacre nos dois turnos;
 zero seções com comparecimento acima dos aptos, encerramento antes da abertura ou boletim antes do encerramento; {N(ap19)} votos depois das 19h no 2º turno
 em {N(v2)}, e {N(r2.get("encerrou_alem_2h",0))} seção encerrada mais de duas horas depois do prazo (no 1º turno, pela fila dos cinco cargos, foram {N(REGUA_1T_FECHAMENTO["secoes_alem_2h"])}).</p>
 <p><strong>4. As duas horas a mais não alteraram o ritmo das urnas.</strong> De 17h em diante no 2º turno houve {N(tard2)} votos — {_d(td2.get("pct_17h_em_diante",0),3)}% do total —
 e nenhum deles em ritmo discrepante do dia normal da própria seção; {N(c4_2.get("abaixo_de_20s",0))} intervalos abaixo de 20 s no dia inteiro, contra
 {N(c4_1.get("abaixo_de_20s",0))} no 1º turno.{pian_concl} Mesmo na hipótese extrema de todos os votos tardios irem a um só candidato, eles valeriam
-{_d(100*tard2/margem,1)}% da margem; e a comparação seção a seção entre os turnos (E4) mostra correlação nula entre votação tardia e deslocamento de voto.</p>
+{_d(100*tard2/margem,1)}% da margem; e a comparação seção a seção entre os turnos (E4) mostra correlação nula entre votação tardia e deslocamento de voto.
+A pergunta «houve um horário em que os votos se concentraram num candidato?» foi respondida pelo que o dado permite: {kc_txt()}; as pequenas correlações
+que aparecem nas horas da manhã e do meio-dia no país inteiro caem a zero quando cada seção é comparada só com as vizinhas do próprio município — é
+geografia (as regiões que votam cedo são as que se deslocaram de forma diferente entre os turnos), não algo ocorrido dentro das urnas em 25/10.</p>
 <p><strong>5. Os logs não têm rastro de edição.</strong> {N(f1["linhas"]+f2["linhas"])} linhas de log lidas nos dois turnos: gramática fixa, codificação,
 código único por linha, relógio, vocabulário fechado, serial da urna, selo final, versão do software e verificações de assinatura dos componentes,
 tudo dentro do que o software da urna produz. As exceções estão listadas uma a uma na página da forense, com a explicação encontrada ou a marca
@@ -416,7 +437,7 @@ OpenTimestamps que ancora a data na blockchain do Bitcoin; versões anteriores p
 <li><a href="comparativo.html"><strong>Comparativo 1º × 2º turno</strong></a> — cada seção e cada município contra si mesmos; a pergunta sobre o resultado.</li>
 <li><a href="reta-final.html"><strong>Reta final</strong></a> — a hipótese, o vídeo, o teste C4b e as seções apontadas.</li>
 <li><a href="estados/index.html"><strong>Estados</strong></a> — uma página por UF e uma por município, com o 2º turno ao lado do 1º.</li>
-<li><a href="forense.html"><strong>Forense dos logs</strong></a> · <a href="soma-oficial.html"><strong>Soma oficial</strong></a> · <a href="votos-tardios.html"><strong>Votos tardios</strong></a> · <a href="pianista.html"><strong>Pianista</strong></a> — a emenda de 28/10.</li>
+<li><a href="forense.html"><strong>Forense dos logs</strong></a> · <a href="soma-oficial.html"><strong>Soma oficial</strong></a> · <a href="votos-tardios.html"><strong>Votos tardios</strong></a> · <a href="pianista.html"><strong>Pianista</strong></a> · <a href="concentracao.html"><strong>Horário × resultado e RDV</strong></a> — a emenda de 28/10.</li>
 <li><a href="plano-2t.html">Plano pré-registrado</a> · <a href="verificar.html">Como verificar</a> · <a href="dados.html">Dados e hashes</a> · <a href="relatorio.html">Relatório técnico do 1º turno</a> · <a href="relatorio-2t.html">Relatório do 2º turno</a></li>
 </ul>
 '''

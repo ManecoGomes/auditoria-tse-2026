@@ -1,7 +1,7 @@
 {
  "titulo": "Acervo bruto do TSE - logs de urna 1o turno - manifesto de custodia",
  "nota": "Os ZIPs ficam em disco local (NVMe). O TSE nao publica hash destes arquivos; o sha512 aqui foi calculado no instante em que zipfile.testzip() passou.",
- "gerado_em_utc": "2026-10-28T21:26:11.066772+00:00",
+ "gerado_em_utc": "2026-10-28T22:26:32.140226+00:00",
  "ufs_integras": 28,
  "ufs_no_disco": 28,
  "arquivos": [
