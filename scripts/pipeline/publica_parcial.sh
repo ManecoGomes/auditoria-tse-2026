@@ -199,7 +199,12 @@ PY
 cp "manifestos/manifesto-v$VER-$TS.json.ots" manifesto.json.ots 2>/dev/null || true
 
 # 7. deploy e push
-cd "$R/site" && vercel deploy --prod --yes >/dev/null 2>&1
+# --archive=tgz: upload unico; por arquivo estoura o limite de 40 mil uploads/dia do Vercel (28/10/2026)
+cd "$R/site"
+if ! vercel deploy --prod --yes --archive=tgz > "$PL/deploy.log" 2>&1; then
+  echo "$(date '+%F %T') deploy falhou; 2a tentativa em 60 s" >> "$PL/deploy.log"; sleep 60
+  vercel deploy --prod --yes --archive=tgz >> "$PL/deploy.log" 2>&1
+fi
 cd "$R" && git add -A && \
   git -c user.name="Maneco Gomes" -c user.email="manecogomes@gmail.com" \
       commit -q -m "Publicação incremental: dados, código e manifesto carimbado" 2>/dev/null && \

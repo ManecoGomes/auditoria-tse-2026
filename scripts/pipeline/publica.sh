@@ -23,10 +23,10 @@ cp -r "$PL/resultados/2t" "$R/dados/" 2>/dev/null || true
 cp "$PL"/{coleta.py,audita.py,compara.py,demonstra.py,gera_demo_html.py} "$R/scripts/pipeline/" 2>/dev/null || true
 cp "$PL/demonstracao_2t.json" "$PL/demonstracao_secoes_2t.csv" "$PL/secoes_rapidas_janela_final_2t.csv" "$R/dados/analises/" 2>/dev/null || true
 
-# --- site: paginas nacional/estado/municipio com o 2T ao lado do 1T (C4b, E5) ---
-"$PY" -u "$PL/gera_demo_html.py" || echo "gera_demo_html falhou (segue com o relatorio)"
-
 # --- site: pagina do 2o turno ---
+# Gerada ANTES do gera_demo_html.py: e ele quem reescreve a <nav> das paginas
+# estaticas (passo 4). Na ordem inversa a pagina saia com a nav velha de 5 itens
+# (sem Forense/Soma oficial/Votos tardios) — aconteceu em 28/10/2026.
 pandoc -f gfm -t html "$P/relatorio/RELATORIO-2T.md" -o /tmp/rel2t.html
 "$PY" - <<'PY'
 import os,datetime
@@ -42,6 +42,9 @@ novo=head+f'<header class="top"><div class="kicker">Auditoria independente · El
 open(f"{P}/repo/site/relatorio-2t.html","w").write(novo)
 print("relatorio-2t.html gerado")
 PY
+
+# --- site: paginas nacional/estado/municipio com o 2T ao lado do 1T (C4b, E5) + nav ---
+"$PY" -u "$PL/gera_demo_html.py" || echo "gera_demo_html falhou (segue com o relatorio)"
 
 # --- manifesto novo + carimbo ---
 cd "$R"
@@ -79,7 +82,16 @@ PY
 cp "manifestos/manifesto-v$VER-$TS.json.ots" manifesto.json.ots 2>/dev/null || true
 
 # --- deploy e push ---
-cd "$R/site" && vercel deploy --prod --yes > /dev/null 2>&1
+# --archive=tgz: um upload so. Por arquivo, ~6 mil paginas x varios deploys/dia estouram
+# o limite de 40 mil uploads/dia do Vercel ("api-upload-paid", bloqueio de 24 h) — foi o
+# que derrubou as publicacoes de 16h16, 16h30 e 17h18 de 28/10/2026, em silencio.
+# Uma tentativa extra: em 28/10 17h31 o job launchd recebeu "Not authorized" e o mesmo
+# comando, 3 min depois, publicou normalmente (token rotacionado pela CLI, provavelmente).
+cd "$R/site"
+if ! vercel deploy --prod --yes --archive=tgz > "$PL/deploy.log" 2>&1; then
+  echo "$(date '+%F %T') deploy falhou; 2a tentativa em 60 s" >> "$PL/deploy.log"; sleep 60
+  vercel deploy --prod --yes --archive=tgz >> "$PL/deploy.log" 2>&1
+fi
 cd "$R" && git add -A && \
   git -c user.name="Maneco Gomes" -c user.email="manecogomes@gmail.com" \
       commit -q -m "Auditoria do 2º turno: resultado, dados e manifesto v$VER" && git push -q origin main
