@@ -1,5 +1,5 @@
 {
- "gerado_utc": "2026-10-28T13:03:52.874848+00:00",
+ "gerado_utc": "2026-10-28T15:25:45.266028+00:00",
  "turnos": {
   "1": {
    "ufs_com_log": [
@@ -580,9 +580,12 @@
    "ufs_com_log": [
     "AC",
     "AL",
+    "AM",
     "AP",
+    "BA",
     "CE",
     "DF",
+    "ES",
     "GO",
     "MA",
     "MS",
@@ -598,48 +601,51 @@
     "RR",
     "RS",
     "SC",
-    "TO"
+    "SE",
+    "SP",
+    "TO",
+    "ZZ"
    ],
-   "secoes": 281181,
-   "votos_log": 71469207,
-   "votos_17h_em_diante": 17287,
-   "pct_17h_em_diante": 0.024,
-   "votos_apos_19h": 6,
-   "fracao_13_geral": 0.5008,
-   "fracao_22_geral": 0.4721,
+   "secoes": 445322,
+   "votos_log": 114598876,
+   "votos_17h_em_diante": 32222,
+   "pct_17h_em_diante": 0.028,
+   "votos_apos_19h": 13,
+   "fracao_13_geral": 0.5036,
+   "fracao_22_geral": 0.4655,
    "limites_duncan_davis": {
     "L17": {
      "13": {
-      "secoes_com_tardios": 15126,
-      "votos_tardios": 17287,
-      "minimo": 4096,
-      "maximo": 17287,
-      "fracao_min": 0.2369,
+      "secoes_com_tardios": 27714,
+      "votos_tardios": 32222,
+      "minimo": 6881,
+      "maximo": 32222,
+      "fracao_min": 0.2135,
       "fracao_max": 1.0
      },
      "22": {
-      "secoes_com_tardios": 15126,
-      "votos_tardios": 17287,
-      "minimo": 3157,
-      "maximo": 17278,
-      "fracao_min": 0.1826,
-      "fracao_max": 0.9995
+      "secoes_com_tardios": 27714,
+      "votos_tardios": 32222,
+      "minimo": 4742,
+      "maximo": 32213,
+      "fracao_min": 0.1472,
+      "fracao_max": 0.9997
      }
     },
     "L19": {
      "13": {
-      "secoes_com_tardios": 5,
-      "votos_tardios": 6,
+      "secoes_com_tardios": 12,
+      "votos_tardios": 13,
       "minimo": 0,
-      "maximo": 6,
+      "maximo": 13,
       "fracao_min": 0.0,
       "fracao_max": 1.0
      },
      "22": {
-      "secoes_com_tardios": 5,
-      "votos_tardios": 6,
+      "secoes_com_tardios": 12,
+      "votos_tardios": 13,
       "minimo": 0,
-      "maximo": 6,
+      "maximo": 13,
       "fracao_min": 0.0,
       "fracao_max": 1.0
      }
@@ -648,33 +654,33 @@
    "goodman": {
     "L17": {
      "13": {
-      "a_fracao_entre_nao_tardios": 0.4979,
-      "b_inclinacao": 12.22,
-      "a_mais_b_fracao_entre_tardios": 12.7179,
-      "correlacao": 0.1155,
-      "media_fracao_tardia": 0.0002
+      "a_fracao_entre_nao_tardios": 0.4997,
+      "b_inclinacao": 13.6914,
+      "a_mais_b_fracao_entre_tardios": 14.1911,
+      "correlacao": 0.1384,
+      "media_fracao_tardia": 0.0003
      },
      "22": {
-      "a_fracao_entre_nao_tardios": 0.4697,
-      "b_inclinacao": 10.108,
-      "a_mais_b_fracao_entre_tardios": 10.5777,
-      "correlacao": 0.096,
-      "media_fracao_tardia": 0.0002
+      "a_fracao_entre_nao_tardios": 0.4637,
+      "b_inclinacao": 6.3777,
+      "a_mais_b_fracao_entre_tardios": 6.8413,
+      "correlacao": 0.0651,
+      "media_fracao_tardia": 0.0003
      }
     },
     "L19": {
      "13": {
-      "a_fracao_entre_nao_tardios": 0.5008,
-      "b_inclinacao": 8.6955,
-      "a_mais_b_fracao_entre_tardios": 9.1963,
-      "correlacao": 0.001,
+      "a_fracao_entre_nao_tardios": 0.5036,
+      "b_inclinacao": 19.3655,
+      "a_mais_b_fracao_entre_tardios": 19.8691,
+      "correlacao": 0.0024,
       "media_fracao_tardia": 0.0
      },
      "22": {
-      "a_fracao_entre_nao_tardios": 0.4721,
-      "b_inclinacao": -8.8736,
-      "a_mais_b_fracao_entre_tardios": -8.4014,
-      "correlacao": -0.001,
+      "a_fracao_entre_nao_tardios": 0.4655,
+      "b_inclinacao": -20.1294,
+      "a_mais_b_fracao_entre_tardios": -19.6639,
+      "correlacao": -0.0025,
       "media_fracao_tardia": 0.0
      }
     }
@@ -684,31 +690,31 @@
      "13": [
       {
        "faixa": "0",
-       "secoes": 266055,
-       "votos": 67389981,
+       "secoes": 417608,
+       "votos": 106988359,
        "votos_tardios": 0,
-       "y_medio": 0.5009
+       "y_medio": 0.502
       },
       {
        "faixa": "0%–2%",
-       "secoes": 15064,
-       "votos": 4072647,
-       "votos_tardios": 16885,
-       "y_medio": 0.4978
+       "secoes": 27612,
+       "votos": 7598011,
+       "votos_tardios": 31496,
+       "y_medio": 0.5252
       },
       {
        "faixa": "2%–5%",
-       "secoes": 30,
-       "votos": 4630,
-       "votos_tardios": 134,
-       "y_medio": 0.6957
+       "secoes": 54,
+       "votos": 8614,
+       "votos_tardios": 233,
+       "y_medio": 0.6948
       },
       {
        "faixa": "5%–10%",
-       "secoes": 9,
-       "votos": 1710,
-       "votos_tardios": 113,
-       "y_medio": 0.6468
+       "secoes": 15,
+       "votos": 3484,
+       "votos_tardios": 252,
+       "y_medio": 0.6139
       },
       {
        "faixa": "10%–20%",
@@ -719,10 +725,10 @@
       },
       {
        "faixa": "20%–35%",
-       "secoes": 1,
-       "votos": 9,
-       "votos_tardios": 2,
-       "y_medio": 18.5556
+       "secoes": 2,
+       "votos": 114,
+       "votos_tardios": 24,
+       "y_medio": 3.0526
       },
       {
        "faixa": "35%–50%",
@@ -733,40 +739,40 @@
       },
       {
        "faixa": ">50%",
-       "secoes": 19,
-       "votos": 140,
-       "votos_tardios": 133,
-       "y_medio": 19.1857
+       "secoes": 28,
+       "votos": 204,
+       "votos_tardios": 197,
+       "y_medio": 20.7157
       }
      ],
      "22": [
       {
        "faixa": "0",
-       "secoes": 266055,
-       "votos": 67389981,
+       "secoes": 417608,
+       "votos": 106988359,
        "votos_tardios": 0,
-       "y_medio": 0.472
+       "y_medio": 0.4672
       },
       {
        "faixa": "0%–2%",
-       "secoes": 15064,
-       "votos": 4072647,
-       "votos_tardios": 16885,
-       "y_medio": 0.4737
+       "secoes": 27612,
+       "votos": 7598011,
+       "votos_tardios": 31496,
+       "y_medio": 0.4413
       },
       {
        "faixa": "2%–5%",
-       "secoes": 30,
-       "votos": 4630,
-       "votos_tardios": 134,
-       "y_medio": 0.4836
+       "secoes": 54,
+       "votos": 8614,
+       "votos_tardios": 233,
+       "y_medio": 0.4341
       },
       {
        "faixa": "5%–10%",
-       "secoes": 9,
-       "votos": 1710,
-       "votos_tardios": 113,
-       "y_medio": 0.4053
+       "secoes": 15,
+       "votos": 3484,
+       "votos_tardios": 252,
+       "y_medio": 0.3921
       },
       {
        "faixa": "10%–20%",
@@ -777,10 +783,10 @@
       },
       {
        "faixa": "20%–35%",
-       "secoes": 1,
-       "votos": 9,
-       "votos_tardios": 2,
-       "y_medio": 5.6667
+       "secoes": 2,
+       "votos": 114,
+       "votos_tardios": 24,
+       "y_medio": 0.886
       },
       {
        "faixa": "35%–50%",
@@ -791,10 +797,10 @@
       },
       {
        "faixa": ">50%",
-       "secoes": 19,
-       "votos": 140,
-       "votos_tardios": 133,
-       "y_medio": 15.8071
+       "secoes": 28,
+       "votos": 204,
+       "votos_tardios": 197,
+       "y_medio": 15.7794
       }
      ]
     },
@@ -802,17 +808,17 @@
      "13": [
       {
        "faixa": "0",
-       "secoes": 281176,
-       "votos": 71467646,
+       "secoes": 445310,
+       "votos": 114595255,
        "votos_tardios": 0,
-       "y_medio": 0.5008
+       "y_medio": 0.5036
       },
       {
        "faixa": "0%–2%",
-       "secoes": 5,
-       "votos": 1561,
-       "votos_tardios": 6,
-       "y_medio": 0.5227
+       "secoes": 12,
+       "votos": 3621,
+       "votos_tardios": 13,
+       "y_medio": 0.578
       },
       {
        "faixa": "2%–5%",
@@ -860,17 +866,17 @@
      "22": [
       {
        "faixa": "0",
-       "secoes": 281176,
-       "votos": 71467646,
+       "secoes": 445310,
+       "votos": 114595255,
        "votos_tardios": 0,
-       "y_medio": 0.4721
+       "y_medio": 0.4655
       },
       {
        "faixa": "0%–2%",
-       "secoes": 5,
-       "votos": 1561,
-       "votos_tardios": 6,
-       "y_medio": 0.4459
+       "secoes": 12,
+       "votos": 3621,
+       "votos_tardios": 13,
+       "y_medio": 0.3864
       },
       {
        "faixa": "2%–5%",
@@ -934,12 +940,28 @@
      "fracao_13_tardios_min": 0.53,
      "fracao_13_tardios_max": 1.0
     },
+    "AM": {
+     "votos": 2182927,
+     "tardios_17h": 967,
+     "pct_tardios": 0.04,
+     "apos_19h": 0,
+     "fracao_13_tardios_min": 0.064,
+     "fracao_13_tardios_max": 1.0
+    },
     "AP": {
      "votos": 429689,
      "tardios_17h": 142,
      "pct_tardios": 0.03,
      "apos_19h": 0,
      "fracao_13_tardios_min": 0.0,
+     "fracao_13_tardios_max": 1.0
+    },
+    "BA": {
+     "votos": 9399409,
+     "tardios_17h": 4173,
+     "pct_tardios": 0.04,
+     "apos_19h": 2,
+     "fracao_13_tardios_min": 0.395,
      "fracao_13_tardios_max": 1.0
     },
     "CE": {
@@ -956,6 +978,14 @@
      "pct_tardios": 0.05,
      "apos_19h": 0,
      "fracao_13_tardios_min": 0.051,
+     "fracao_13_tardios_max": 1.0
+    },
+    "ES": {
+     "votos": 2404361,
+     "tardios_17h": 290,
+     "pct_tardios": 0.01,
+     "apos_19h": 0,
+     "fracao_13_tardios_min": 0.369,
      "fracao_13_tardios_max": 1.0
     },
     "GO": {
@@ -1078,10 +1108,34 @@
      "fracao_13_tardios_min": 0.0,
      "fracao_13_tardios_max": 1.0
     },
+    "SE": {
+     "votos": 1463659,
+     "tardios_17h": 285,
+     "pct_tardios": 0.02,
+     "apos_19h": 0,
+     "fracao_13_tardios_min": 0.456,
+     "fracao_13_tardios_max": 1.0
+    },
+    "SP": {
+     "votos": 27299084,
+     "tardios_17h": 8804,
+     "pct_tardios": 0.03,
+     "apos_19h": 5,
+     "fracao_13_tardios_min": 0.095,
+     "fracao_13_tardios_max": 1.0
+    },
     "TO": {
      "votos": 953492,
      "tardios_17h": 222,
      "pct_tardios": 0.02,
+     "apos_19h": 0,
+     "fracao_13_tardios_min": 0.0,
+     "fracao_13_tardios_max": 1.0
+    },
+    "ZZ": {
+     "votos": 380229,
+     "tardios_17h": 416,
+     "pct_tardios": 0.11,
      "apos_19h": 0,
      "fracao_13_tardios_min": 0.0,
      "fracao_13_tardios_max": 1.0
@@ -1090,56 +1144,56 @@
   }
  },
  "E4_secao_contra_si_mesma": {
-  "secoes_comuns": 280937,
+  "secoes_comuns": 444946,
   "regressao_delta13_vs_tardios2T": {
-   "inclinacao": 2.015,
-   "intercepto": 0.066,
-   "correlacao": 0.0454,
-   "media_x": 0.0002,
-   "media_y": 0.0665
+   "inclinacao": 2.1217,
+   "intercepto": 0.0687,
+   "correlacao": 0.0475,
+   "media_x": 0.0003,
+   "media_y": 0.0693
   },
   "regressao_delta22_vs_tardios2T": {
-   "inclinacao": 0.2498,
-   "intercepto": 0.0157,
-   "correlacao": 0.0054,
-   "media_x": 0.0002,
-   "media_y": 0.0158
+   "inclinacao": 0.0972,
+   "intercepto": 0.0173,
+   "correlacao": 0.0022,
+   "media_x": 0.0003,
+   "media_y": 0.0173
   },
   "controle_regressao_delta13_vs_tardios1T": {
-   "inclinacao": -0.124,
-   "intercepto": 0.0709,
-   "correlacao": -0.1327,
-   "media_x": 0.0353,
-   "media_y": 0.0665
+   "inclinacao": -0.1688,
+   "intercepto": 0.0746,
+   "correlacao": -0.17,
+   "media_x": 0.0313,
+   "media_y": 0.0693
   },
   "por_faixa": [
    {
     "faixa_tardios_2T": "0",
-    "secoes": 265837,
-    "votos_2T": 67368639,
-    "delta13_medio_pp": 6.624,
-    "delta22_medio_pp": 1.594
+    "secoes": 417272,
+    "votos_2T": 106955379,
+    "delta13_medio_pp": 6.878,
+    "delta22_medio_pp": 1.748
    },
    {
     "faixa_tardios_2T": "0%–2%",
-    "secoes": 15061,
-    "votos_2T": 4072006,
-    "delta13_medio_pp": 7.058,
-    "delta22_medio_pp": 1.322
+    "secoes": 27604,
+    "votos_2T": 7596028,
+    "delta13_medio_pp": 7.616,
+    "delta22_medio_pp": 1.487
    },
    {
     "faixa_tardios_2T": "2%–5%",
-    "secoes": 29,
-    "votos_2T": 4606,
-    "delta13_medio_pp": 16.503,
-    "delta22_medio_pp": 7.944
+    "secoes": 53,
+    "votos_2T": 8590,
+    "delta13_medio_pp": 15.822,
+    "delta22_medio_pp": 7.403
    },
    {
     "faixa_tardios_2T": "5%–10%",
-    "secoes": 8,
-    "votos_2T": 1698,
-    "delta13_medio_pp": 7.729,
-    "delta22_medio_pp": 2.609
+    "secoes": 14,
+    "votos_2T": 3472,
+    "delta13_medio_pp": 7.312,
+    "delta22_medio_pp": 2.806
    },
    {
     "faixa_tardios_2T": "10%–20%",
@@ -1150,10 +1204,10 @@
    },
    {
     "faixa_tardios_2T": "20%–35%",
-    "secoes": 0,
-    "votos_2T": 0,
-    "delta13_medio_pp": null,
-    "delta22_medio_pp": null
+    "secoes": 1,
+    "votos_2T": 105,
+    "delta13_medio_pp": 98.258,
+    "delta22_medio_pp": 29.637
    },
    {
     "faixa_tardios_2T": "35%–50%",

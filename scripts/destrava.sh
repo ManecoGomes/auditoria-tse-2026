@@ -138,6 +138,21 @@ if [ -f "$PL/analises.json" ] && ! pgrep -qf "$PL/analises.py"; then
   fi
 fi
 
+# 6b. script invocado por caminho sem bit de execucao -> restaura.
+#     Editar um .sh por temp + os.replace (obrigatorio pelo bug do inode) cria o
+#     arquivo novo com 0644: o conteudo certo, o modo errado. Quem invoca pelo
+#     caminho ("$PL/publica_parcial.sh", e o launchd com /bin/bash -lc "<path>")
+#     morre com exit 126 ANTES de escrever uma linha de log — foi o que calou o
+#     vigia por 145 min em 2026-10-28 e matou a publicacao do destrava no mesmo dia.
+#     Alcanca so os .sh do projeto, fora do repo publicado.
+for s in "$P"/*.sh "$PL"/*.sh "$P"/vigia/*.sh; do
+  [ -f "$s" ] || continue
+  case "$s" in *.bak-*|*.disabled-*) continue;; esac
+  if [ ! -x "$s" ]; then
+    chmod +x "$s" && agiu "bit de execucao restaurado em ${s#$P/} (exit 126 silencioso)"
+  fi
+done
+
 # 7. publicacao: chama o publicador SEMPRE. Ele compara a assinatura de estado
 #    (blocos, dados, scripts, sidecars do acervo) e sai em 0,1 s se nada mudou;
 #    so publica quando ha algo novo. Melhor que adivinhar aqui o que mudou.
