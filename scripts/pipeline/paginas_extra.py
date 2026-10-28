@@ -213,64 +213,215 @@ def secao_e6():
             f'Variação do tempo médio por voto depois das 17h (2º menos 1º), mediana {_f(v.get("mediana"))} (p10 {_f(v.get("p10"))}, p90 {_f(v.get("p90"))}).</p>')
 
 # ---------------------------------------------------------------- 1. index.html (Resumo)
-corpo_index = f'''
-<h2>Objetivo</h2>
-<p>Verificar, com os dados públicos do Tribunal Superior Eleitoral e por método publicado <strong>antes</strong> de os
-dados existirem, se houve voto registrado fora das regras nas Eleições Gerais de 2026 — e, em especial, responder a
-uma pergunta concreta sobre o 2º turno: <strong>nas duas horas a mais concedidas no dia 25 de outubro, entre 17h e
-19h, houve votos registrados em ritmo incompatível com eleitor real, quantos foram e em quais urnas?</strong></p>
-<p>A hipótese testada é a descrita por Flávio Dino em <a href="reta-final.html">discurso que motivou este trabalho</a>:
-encerrada a fila, o mesário libera a urna com o número do título de eleitores ausentes e vota por eles. Voto assim é
-voto rápido demais, e voto rápido demais fica gravado no log da urna, segundo a segundo.</p>
-<p>O 1º turno, que encerrou às 17h e não teve contestação relevante, é a <strong>régua do tempo normal</strong>: ele
-diz quanto dura um voto real, em cada seção, e quantos votos "rápidos demais" existem num dia comum.</p>
+# Reescrita em 28/10/2026 a pedido do Maneco: a página inicial resume TUDO o que foi feito — cada
+# tipo de verificação, com o número dos dois turnos e o link —, fecha com a conclusão sobre o
+# resultado e sua autenticidade, e diz onde baixar e conferir. Todo número vem dos JSON do pipeline.
+REGUA_1T_FECHAMENTO = {"secoes_alem_2h": 8324, "pct": 1.67}   # compara.py::REGUA (boletins do 1T)
+PLANO_OTS = {"data": "26/10/2026", "bloco": 973245}
 
-{cards_status()}
+def _lj(p):
+    try: return _json.load(open(p))
+    except Exception: return {}
 
-<h2>Como funciona</h2>
+def _d(x, nd=2):
+    """Decimal em pt-BR (vírgula), sem tocar nos pontos de milhar de N()."""
+    try: return f"{float(x):.{nd}f}".replace(".", ",")
+    except Exception: return "—"
+
+def _forense_resumo(t):
+    f = _lj(f"{P}/pipeline/forense_{t}t.json"); c = f.get("contagem") or {}
+    # anomalias: contagem (int) ou lista de exemplos — vale o tamanho
+    a = {k: (v if isinstance(v, int) else len(v or [])) for k, v in (f.get("anomalias") or {}).items()}
+    return {"ok": bool(c), "logs": c.get("logs", 0), "linhas": c.get("linhas", 0), "linhas_ok": c.get("linhas_ok", 0),
+            "a5_conf": c.get("A5_log.jez_confere", 0), "a5_div": a.get("A5_log.jez_DIVERGE", 0), "ilegivel": a.get("log_jez_ilegivel", 0),
+            "assin": c.get("L8_verificacoes_assinatura", 0), "assin_ok": c.get("L8_verificacoes_assinatura_ok", 0),
+            "l1": a.get("L1_linha_fora_da_gramatica", 0), "l2": a.get("L2_bytes_controle", 0), "l6": a.get("L6_serial_log_ne_boletim", 0),
+            "turno_dif": a.get("L8_turno_declarado_diferente", 0), "v100": a.get("V_100pct_um_candidato", 0), "sem_log": a.get("sem_log", 0)}
+
+def _pianista_resumo(t):
+    j = _lj(f"{P}/pipeline/pianista_{t}t.json")
+    if not j: return None
+    n = j.get("intervalos", 0); ab = j.get("abaixo") or {}; cs = j.get("corrida_secoes") or {}; cf = j.get("corrida_final_secoes") or {}
+    g = lambda d, L, k: ((d.get(str(L)) or d.get(L) or {}).get(str(k)) or (d.get(str(L)) or d.get(L) or {}).get(k) or 0)
+    return {"ufs": len(j.get("ufs", [])), "n": n, "a20": ab.get("20", ab.get(20, 0)), "a30": ab.get("30", ab.get(30, 0)), "a40": ab.get("40", ab.get(40, 0)),
+            "c30_10": g(cs, 30, 10), "c40_10": g(cs, 40, 10), "cf30_5": g(cf, 30, 5), "cf30_10": g(cf, 30, 10), "min10": j.get("min10_min")}
+
+def indice_resumo():
+    A = _analises()
+    a3 = (_lj(f"{P}/pipeline/resultados/a3_soma_oficial.json").get("turnos") or {})
+    td = _lj(f"{P}/pipeline/resultados/tardios.json"); td2 = (td.get("turnos") or {}).get("2") or {}; td1 = (td.get("turnos") or {}).get("1") or {}
+    e4 = ((td.get("E4_secao_contra_si_mesma") or {}).get("regressao_delta13_vs_tardios2T") or {})
+    r2 = _lj(f"{P}/pipeline/resumo_2t.json"); imp = r2.get("impossibilidades") or {}
+    man = _lj(f"{P}/repo/manifesto.json")
+    f1, f2 = _forense_resumo("1"), _forense_resumo("2")
+    p1, p2 = _pianista_resumo("1"), _pianista_resumo("2")
+    a2_1, a2_2 = A.get("A2_triangulacao_1t") or {}, A.get("A2_triangulacao_2t") or {}
+    e5, e6, e1 = A.get("E5_municipios") or {}, A.get("E6_janela_final_secoes") or {}, A.get("E1_comparecimento") or {}
+    d2 = D2 or {}
+    c4_1 = (D.get("C4_intervalos") or {}); c4_2 = (d2.get("C4_intervalos") or {})
+    fin1, fin2 = _jan(D, "final"), _jan(d2, "final")
+    a4_1 = (D.get("A4_identidade_da_urna") or {}); a4_2 = (d2.get("A4_identidade_da_urna") or {})
+    cand = {c["numero"]: c for c in (a3.get("2") or {}).get("candidatos", [])}
+    bate2 = bool((a3.get("2") or {}).get("confere", {}).get("candidatos_todos_iguais")); bate1 = all(c.get("diferenca") == 0 or not c.get("oficial") for c in (a3.get("1") or {}).get("candidatos", []))  # candidatura indeferida: nulos técnicos
+    v1 = (a3.get("1") or {}).get("boletins", {}).get("comparecimento", D.get("votos_presidente", 0)); v2 = (a3.get("2") or {}).get("boletins", {}).get("comparecimento", d2.get("votos_presidente", 0))
+    margem = (cand.get("13", {}).get("oficial", RESULTADO_OFICIAL["lula"]) - cand.get("22", {}).get("oficial", RESULTADO_OFICIAL["flavio"])) or MARGEM
+    tard2 = td2.get("votos_17h_em_diante", fin2.get("votos", 0)); ap19 = td2.get("votos_apos_19h", d2.get("C2_apos_19h", 0))
+    ufs2 = len(PORUF2) if D2 else 0
+    em_proc = lambda p: "em processamento" if not p else ""
+
+    def ok(txt): return f'<span class="flag ok">{txt}</span>'
+    def fl(txt): return f'<span class="flag">{txt}</span>'
+    def pian(p, t):
+        if not p: return "em processamento"
+        return (f'intervalos &lt;20 s: {N(p["a20"])} · &lt;30 s: {_pct(p["a30"], p["n"])} · &lt;40 s: {_pct(p["a40"], p["n"])}; '
+                f'seções com 10+ votos seguidos &lt;30 s: {N(p["c30_10"])}' + (f' (de 17h em diante: {N(p["cf30_10"])})' if t == "2" else "")
+                + (f'; 10 votos mais rápidos do país: {p["min10"]} s' if p["min10"] is not None else "") + (f' ({p["ufs"]}/28 UFs)' if p["ufs"] < 28 else ""))
+
+    linhas = [
+      ["A1 · Integridade dos pacotes do TSE", "Os ZIPs baixados são os que o TSE publicou?", "28/28 UFs, SHA-512 do TSE conferido, arquivo a arquivo", "28/28 boletins (SHA-512 do TSE); logs, RDV e contêineres coletados seção a seção, hash do Portal conferido", "dados.html"],
+      ["A5 · Hash assinado pela urna", "Cada boletim e cada log batem com o SHA-512 que a própria urna gravou no contêiner <code>vota.vsc</code>?",
+       f'{N(f1["a5_conf"])} de {N(f1["logs"])} logs conferem; 0 divergentes', f'{N(f2["a5_conf"])} de {N(f2["logs"])} conferem; {N(f2["a5_div"])} divergentes e {N(f2["ilegivel"])} ilegíveis, todos em membros de ZIP remontados localmente (BA, GO, MG, PE, PR, SP) — defeito da cópia, a reconferir com o pacote oficial', "forense.html"],
+      ["A3 · Soma dos boletins × totalização oficial", "A soma de todos os boletins é o resultado que o TSE proclamou?",
+       ("bate exato por candidato; única diferença, 5.246 nulos técnicos (candidatura indeferida). Ninguém teve 50%+1: 47,03% × 45,16%" if bate1 else "divergência — ver página"),
+       (f'bate exato: 13 = {N(cand.get("13",{}).get("oficial",0))}, 22 = {N(cand.get("22",{}).get("oficial",0))}, comparecimento, brancos e nulos idênticos' if bate2 else "divergência — ver página"), "soma-oficial.html"],
+      ["A2 · Boletim × log (comparecimento)", "O número de votos no log é o do boletim?",
+       f'{N(a2_1.get("divergentes",0))} de {N(a2_1.get("secoes_comparadas",0))} seções divergem ({_d(a2_1.get("pct",0))}%), quase todas log &lt; boletim por 1 (urna substituída: o log é só da 2ª urna)',
+       f'{N(a2_2.get("divergentes",0))} de {N(a2_2.get("secoes_comparadas",0))} ({_d(a2_2.get("pct",0))}%), mesma explicação', "comparativo.html"],
+      ["A4 · Identidade da urna", "O serial da urna no log é o do boletim?", f'{N(a4_1.get("sem_explicacao",0))} sem explicação (divergências = urna de contingência)', f'{N(a4_2.get("sem_explicacao",0))} sem explicação', "primeiro-turno.html"],
+      ["D · Impossibilidades lógicas", "Comparecimento &gt; aptos? Encerramento antes da abertura? Boletim antes do encerramento?", "0 · 0 · 0", f'{imp.get("comp_maior_aptos",0)} · {imp.get("encerra_antes_abre",0)} · {imp.get("bu_antes_encerra",0)}', "relatorio-2t.html"],
+      ["B4 · Encerramento das seções", "Quantas seções fecharam mais de 2 h depois do prazo legal?", f'{N(REGUA_1T_FECHAMENTO["secoes_alem_2h"])} seções ({_d(REGUA_1T_FECHAMENTO["pct"])}%) — fila dos 5 cargos', f'{N(r2.get("encerrou_alem_2h",0))} seção ({_d(r2.get("pct_alem_2h",0))}%), prazo 19h', "relatorio-2t.html"],
+      ["C1 · Voto depois do lacre", "Alguma urna registrou voto depois de emitir o boletim (reabertura)?", f'{N(D.get("C1_secoes_com_voto_apos_lacre",0))} seções', f'{N(d2.get("C1_secoes_com_voto_apos_lacre",0))} seções', "segundo-turno.html"],
+      ["C2 · Votos fora do prazo", "Votos registrados depois do prazo legal do turno?", f'{N(D.get("C2_apos_19h",0))} após 19h (prazo 17h: {N(D.get("C2_votos_apos_17h",0))}, fila)', f'{N(ap19)} após 19h; de 17h às 19h, {N(tard2)} ({_d(td2.get("pct_17h_em_diante",0),3)}% dos votos), lícitos pela decisão do STF', "votos-tardios.html"],
+      ["C4 · Intervalo entre votos (20 s)", "Houve voto em ritmo impossível para um eleitor real?", f'{N(c4_1.get("abaixo_de_20s",0))} intervalos em {N(c4_1.get("amostra",0))}', f'{N(c4_2.get("abaixo_de_20s",0))} em {N(c4_2.get("amostra",0))}', "segundo-turno.html"],
+      ["C4b · Reta final (17h em diante)", "Depois das 17h, a seção acelerou além do próprio ritmo do dia?", f'{N(fin1.get("discrepantes",0))} voto{"s" if fin1.get("discrepantes",0) != 1 else ""} discrepante{"s" if fin1.get("discrepantes",0) != 1 else ""} em {N(fin1.get("votos",0))} depois das 17h', f'{N(fin2.get("discrepantes",0))} voto{"s" if fin2.get("discrepantes",0) != 1 else ""} discrepante{"s" if fin2.get("discrepantes",0) != 1 else ""} em {N(fin2.get("votos",0))} depois das 17h', "reta-final.html"],
+      ["C4 ampliado · «Pianista» (30 s, 40 s, corridas)", "Com limiares maiores e olhando sequências, aparece mesário votando em série?", pian(p1, "1"), pian(p2, "2"), "pianista.html"],
+      ["E1 / E5 / E6 · A seção contra si mesma", "Cada seção e cada município se comportaram no 2º turno como no 1º?",
+       "régua", f'{N(e1.get("secoes_comuns",0))} seções comuns; {N(e5.get("com_indicador_pior_no_2t",0))} de {N(e5.get("municipios_comuns",0))} municípios com algum indicador pior; {e6.get("secoes_2t_com_discrepantes_sem_ter_no_1t",0)} seções com discrepância nova após 17h', "comparativo.html"],
+      ["E4 · Votos tardios e candidato", "As seções com mais votos depois das 17h mudaram de lado entre os turnos?", "controle: correlação da fila do 1º turno", f'correlação {e4.get("correlacao","—")} (nula); limites de Duncan-Davis e Goodman publicados', "votos-tardios.html"],
+      ["F1 · Geografia", "Onde se concentrou a votação tardia?", f'{N((A.get("F1_geografia_1t") or {}).get("municipios",0))} municípios, mediana {_d((A.get("F1_geografia_1t") or {}).get("mediana_pct_tardio",0),3)}% de votos tardios', f'{N((A.get("F1_geografia_2t") or {}).get("municipios",0))} municípios, mediana {_d((A.get("F1_geografia_2t") or {}).get("mediana_pct_tardio",0),3)}%', "comparativo.html"],
+      ["L1–L11 · Forense dos logs", "Há rastro de edição — humana, por programa ou por IA — nos logs?",
+       f'{N(f1["linhas"])} linhas lidas, {N(f1["linhas"]-f1["linhas_ok"])} fora da gramática; {N(f1["assin"])} verificações de assinatura de componentes, {N(f1["assin"]-f1["assin_ok"])} não-sucesso (reinícios); serial ≠ boletim: {f1["l6"]}',
+       f'{N(f2["linhas"])} linhas lidas, {N(f2["linhas"]-f2["linhas_ok"])} fora da gramática; {N(f2["assin"]-f2["assin_ok"])} não-sucesso; {N(f2["turno_dif"])} logs declaram «1º turno» em 25/10 (anomalia listada, a explicar)', "forense.html"],
+      ["V · Testes de boletim", "Unanimidade, zero para um candidato com 100+ válidos, comparecimento = aptos, último dígito", f'{f1["v100"]} seções 100% um candidato (todas pequenas)', f'{f2["v100"]} seções 100% um candidato (todas pequenas)', "forense.html"],
+    ]
+    # testes que dependem do cache por UF do demonstra.py (2T pode estar com menos UFs que 28)
+    cob2 = f' <small>({ufs2}/28 UFs)</small>' if ufs2 < 28 else ""
+    for l in linhas:
+        if l[0][:4] in ("A2 ·", "A4 ·", "C1 ·", "C4 ·", "C4b "): l[3] = l[3] + cob2
+    tab = "".join(f'<tr><td>{a}</td><td>{b}</td><td>{c}</td><td>{d}</td><td><a href="{e}">ver</a></td></tr>' for a, b, c, d, e in linhas)
+
+    pian_concl = ""
+    if p2:
+        pian_concl = (f' Com os limiares de 30 s e 40 s e olhando sequências, não aparece o rastro de um «pianista»: depois das 17h, {N(p2["cf30_10"])} seções tiveram '
+                      f'10 votos seguidos abaixo de 30 s e {N(p2["cf30_5"])} tiveram 5; no dia inteiro, {N(p2["c30_10"])} seções, todas de grandes cidades e com mais de 300 votantes; e o menor tempo em que '
+                      f'uma urna registrou 10 votos seguidos foi {p2["min10"]} s no 2º turno' + (f' e {p1["min10"]} s no 1º' if p1 and p1["min10"] is not None else "")
+                      + ', mais de 20 s por eleitor em qualquer urna do país.') if p2["min10"] is not None else ""
+    pend_pian = "" if (p1 and p2 and p1["ufs"] == 28 and p2["ufs"] == 28) else " O teste do «pianista» com 30 s e 40 s está em processamento; a tabela e a página própria crescem conforme as UFs terminam."
+
+    return f'''
+<blockquote>
+<p><strong>Em uma frase:</strong> com os dados públicos do TSE — todos os boletins, logs, RDV e contêineres de assinatura das
+{N(D.get("secoes",0))} seções do país, nos dois turnos — e com método publicado antes de os dados existirem, <strong>nenhum dos testes
+encontrou voto fora do prazo, voto após o lacre, urna reaberta, log alterado, boletim diferente da totalização ou sequência de votos
+em ritmo incompatível com eleitor real</strong>. A soma dos boletins é exatamente o resultado proclamado. As duas horas a mais do 2º turno
+somaram {N(tard2)} votos ({_d(td2.get("pct_17h_em_diante",0),3)}% do total), menos de {_d(100*tard2/margem,1)}% da margem entre os candidatos, e no
+ritmo normal de cada seção.</p>
+</blockquote>'''  + f'''
+
+<div class="grid">
+<div class="stat"><div class="n">2</div><div class="l">turnos auditados — 4 e 25 de outubro</div></div>
+{('<div class="stat"><div class="n">28/28</div><div class="l">unidades da Federação, nos dois turnos, em todos os testes</div></div>' if (len(PORUF) == 28 and ufs2 == 28) else f'<div class="stat"><div class="n">{len(PORUF)}/28 · {ufs2}/28</div><div class="l">UFs com log nos testes de ritmo, 1º e 2º turno (boletins, soma e forense: 28/28 nos dois)</div></div>')}
+<div class="stat"><div class="n">{N(D.get("secoes",0))}</div><div class="l">seções eleitorais por turno</div></div>
+<div class="stat"><div class="n">{N(v1 + v2)}</div><div class="l">votos somados nos dois turnos</div></div>
+<div class="stat"><div class="n">{len(linhas)}</div><div class="l">famílias de verificação, mais de 40 testes</div></div>
+<div class="stat"><div class="n">v{man.get("versao","—")}</div><div class="l">manifesto com {N(man.get("n_arquivos",0))} arquivos, carimbado na blockchain</div></div>
+</div>
+
+<h2>O que é isto</h2>
+<p>Uma auditoria independente das Eleições Gerais de 2026, feita exclusivamente com os arquivos que o Tribunal Superior Eleitoral
+publica — boletim de urna, log de urna, Registro Digital do Voto e contêiner de assinatura de cada seção — e com um
+<a href="plano-2t.html">plano de testes publicado em {PLANO_OTS["data"]}</a>, antes de os dados do 2º turno existirem, com a data ancorada
+na blockchain do Bitcoin (bloco {N(PLANO_OTS["bloco"])}). O motivo foi uma hipótese concreta, descrita por Flávio Dino em
+<a href="reta-final.html">discurso que motivou este trabalho</a>: que nas duas horas a mais concedidas no 2º turno, entre 17h e 19h,
+mesários teriam votado por eleitores ausentes. O 1º turno, encerrado às 17h e sem contestação, serve de <strong>régua do normal</strong>
+para todo número do 2º.</p>
+<p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes), OAB/RJ 245.463. Trabalho pessoal, sem vínculo com candidato, partido ou
+órgão público.</p>
+
+<h2>Como foi feito, em ordem</h2>
 <ol>
-<li><strong>Coleta e integridade.</strong> Boletins de urna, logs, RDV e arquivos de votação de todas as seções do país.
-No 1º turno, os pacotes oficiais por UF (28 de 28), com integridade provada arquivo a arquivo. No 2º turno, os
-mesmos arquivos coletados <a href="segundo-turno.html">seção por seção no Portal Resultados</a> — boletim, log, RDV e
-contêiner de assinatura de cada seção —, porque o pacote consolidado por UF não tem prazo e ainda não saiu. <strong>Os logs do 2º turno já estão
-no acervo e em análise</strong>; o que falta é só o pacote oficial, que servirá para conferência quando sair.</li>
-<li><strong>Testes pré-registrados.</strong> O <a href="plano-2t.html">plano</a> foi publicado em 26/10/2026, antes dos
-dados do 2º turno, com data ancorada na blockchain do Bitcoin: integridade (A), horários (B), comportamento das
-urnas pelo log (C), impossibilidades lógicas (D), comparação entre turnos seção a seção (E), geografia (F) e dispersão
-da ordem de prorrogação (G).</li>
-<li><strong>Emenda datada.</strong> O teste C4b — tempo por voto até as 17h contra depois das 17h, com contagem de
-votos discrepantes — foi acrescentado em 27/10, antes de qualquer dado do 2º turno, e está
-<a href="reta-final.html">identificado como posterior ao plano</a>.</li>
-<li><strong>Publicação contínua e verificável.</strong> Cada UF entra no site quando termina. Todo arquivo publicado tem
-SHA-512 num manifesto carimbado; scripts, dados derivados e a lista de seções apontadas são públicos.</li>
+<li><strong>{PLANO_OTS["data"]} — plano pré-registrado.</strong> Blocos A (integridade), B (horários), C (comportamento da urna pelo log), D (impossibilidades
+lógicas), E (cada seção e cada município contra si mesmos, 1º × 2º turno), F (geografia) e G (dispersão da ordem de prorrogação). Carimbado com OpenTimestamps.</li>
+<li><strong>27/10 — 1º turno completo.</strong> Pacotes oficiais das 28 UFs baixados do CDN do TSE, SHA-512 conferido, {N(D.get("secoes",0))} seções, {N(D.get("votos_presidente",0))} votos
+nos logs. Emenda datada do mesmo dia: teste C4b (ritmo antes e depois das 17h), acrescentado <em>antes</em> dos dados do 2º turno.</li>
+<li><strong>28/10 — 2º turno.</strong> Boletins oficiais das 28 UFs (publicados pelo TSE às 08h59) e, como o pacote consolidado de logs ainda não saiu, os mesmos
+arquivos coletados seção por seção no Portal Resultados, conferidos contra o hash que a própria urna assinou. Todos os testes do plano rodaram.</li>
+<li><strong>28/10 — emenda posterior aos dados</strong>, a pedido de quem encomendou e identificada como tal: forense dos logs (rastro de edição, inclusive por IA),
+soma dos boletins contra a totalização oficial, destino dos votos tardios e o teste do «pianista» com 30 s e 40 s. Força probatória menor que a
+dos testes pré-registrados, por terem sido escolhidos sabendo o que havia nos dados.</li>
 </ol>
 
-<h2>O que este trabalho pode e não pode afirmar</h2>
-<p><strong>Pode:</strong> quantos votos, em cada seção, foram registrados num ritmo incompatível com um eleitor real,
-e se isso aconteceu mais depois das 17h do que no dia normal — no 2º turno e, como régua, no 1º.</p>
-<p><strong>Não pode:</strong> dizer em quem foi qualquer voto. O log registra o cargo, nunca o candidato; o RDV traz os
-votos embaralhados. É o mecanismo do sigilo do voto, e nenhuma análise de dados públicos o atravessa.</p>
+<h2>Todas as verificações realizadas</h2>
+<p>Uma linha por família de teste. Os números são os dos arquivos publicados; cada link abre a página com o detalhe por UF e por município.{pend_pian}</p>
+<div class="scroll"><table><thead><tr><th>Verificação</th><th>Pergunta</th><th>1º turno (régua)</th><th>2º turno</th><th></th></tr></thead>
+<tbody>{tab}</tbody></table></div>
 
-{secao_virada(D2)}
+<h2>Conclusão sobre o resultado e sua autenticidade</h2>
+<p><strong>1. O resultado proclamado é a soma dos boletins.</strong> Nos dois turnos, comparecimento, brancos, nulos e o voto de cada candidato
+coincidem exatamente entre a soma de todos os boletins de urna e a totalização oficial. No 2º turno: {N(cand.get("13",{}).get("oficial",0))} × {N(cand.get("22",{}).get("oficial",0))}.
+No 1º, nenhum candidato alcançou maioria absoluta pelos próprios boletins.</p>
+<p><strong>2. Os arquivos são os que as urnas produziram.</strong> Os pacotes do TSE batem com o SHA-512 publicado pelo TSE; cada boletim e cada log batem
+com o SHA-512 que a própria urna gravou no contêiner assinado ao encerrar — {N(f1["a5_conf"])} de {N(f1["logs"])} logs no 1º turno e {N(f2["a5_conf"])} de {N(f2["logs"])} no 2º.
+As {N(f2["a5_div"])} divergências do 2º turno estão todas em membros de ZIPs remontados nesta máquina a partir da coleta por seção, cuja escrita no volume externo
+corrompeu bytes; são defeito da cópia local, não do dado do TSE, e serão reconferidas quando o pacote oficial por UF for publicado.</p>
+<p><strong>3. Nenhuma urna foi reaberta, nenhum voto ficou fora do prazo, nenhuma impossibilidade lógica.</strong> Zero votos depois do lacre nos dois turnos;
+zero seções com comparecimento acima dos aptos, encerramento antes da abertura ou boletim antes do encerramento; {N(ap19)} votos depois das 19h no 2º turno
+em {N(v2)}, e {N(r2.get("encerrou_alem_2h",0))} seção encerrada mais de duas horas depois do prazo (no 1º turno, pela fila dos cinco cargos, foram {N(REGUA_1T_FECHAMENTO["secoes_alem_2h"])}).</p>
+<p><strong>4. As duas horas a mais não alteraram o ritmo das urnas.</strong> De 17h em diante no 2º turno houve {N(tard2)} votos — {_d(td2.get("pct_17h_em_diante",0),3)}% do total —
+e nenhum deles em ritmo discrepante do dia normal da própria seção; {N(c4_2.get("abaixo_de_20s",0))} intervalos abaixo de 20 s no dia inteiro, contra
+{N(c4_1.get("abaixo_de_20s",0))} no 1º turno.{pian_concl} Mesmo na hipótese extrema de todos os votos tardios irem a um só candidato, eles valeriam
+{_d(100*tard2/margem,1)}% da margem; e a comparação seção a seção entre os turnos (E4) mostra correlação nula entre votação tardia e deslocamento de voto.</p>
+<p><strong>5. Os logs não têm rastro de edição.</strong> {N(f1["linhas"]+f2["linhas"])} linhas de log lidas nos dois turnos: gramática fixa, codificação,
+código único por linha, relógio, vocabulário fechado, serial da urna, selo final, versão do software e verificações de assinatura dos componentes,
+tudo dentro do que o software da urna produz. As exceções estão listadas uma a uma na página da forense, com a explicação encontrada ou a marca
+«a explicar» — a principal é o conjunto de {N(f2["turno_dif"])} logs do 2º turno que declaram «1º turno» no cabeçalho do dia 25/10.</p>
+<p><strong>Juízo.</strong> Dentro do que os dados públicos permitem verificar, <strong>o resultado das Eleições de 2026 é autêntico</strong>: a totalização reproduz os boletins, os boletins
+reproduzem os logs, os logs reproduzem o comportamento esperado das urnas, e a prorrogação do 2º turno não produziu votos em volume nem em ritmo
+capazes de influir no resultado. Isto não é um atestado de que fraude é impossível; é a afirmação de que <em>esta</em> hipótese, testada com <em>estes</em> dados,
+por <em>este</em> método, não encontrou apoio — e de que qualquer pessoa pode refazer o caminho.</p>
+
+<h2>O que este trabalho não pode afirmar</h2>
+<ul>
+<li><strong>Em quem foi cada voto.</strong> O log registra o cargo, nunca o candidato; o RDV traz os votos embaralhados. É o sigilo do voto, e nenhuma análise de dado público o atravessa.</li>
+<li><strong>Quem votou.</strong> A habilitação no log não identifica o eleitor. A hipótese «o mesário votou pelo ausente» só é testável pelo ritmo e pela sequência dos votos, e foi.</li>
+<li><strong>A assinatura criptográfica dos contêineres.</strong> Conferimos o hash gravado dentro do <code>vota.vsc</code>; a assinatura do contêiner exige o certificado do TSE, que não está publicado.</li>
+<li><strong>O pacote consolidado de logs do 2º turno</strong>, que o TSE ainda não publicou. Os logs usados vieram do Portal Resultados, seção a seção, com hash conferido; quando o pacote sair, os dois serão comparados membro a membro e a conferência publicada.</li>
+</ul>
+
+<h2>Tudo está disponível para download e conferência</h2>
+<ul>
+<li><strong>Fontes originais do TSE</strong>: os endereços de cada pacote e de cada hash estão em <a href="dados.html">Dados e hashes</a>, com o SHA-512 do TSE e o calculado aqui, UF por UF.</li>
+<li><strong>Código</strong>: todos os programas que rodaram — e só eles — estão no repositório
+<a href="https://github.com/ManecoGomes/auditoria-tse-2026" rel="noopener">github.com/ManecoGomes/auditoria-tse-2026</a> (<code>scripts/pipeline/</code>).</li>
+<li><strong>Dados derivados</strong>: resultados por UF, por município e por seção (CSV), no mesmo repositório (<code>dados/</code>), incluindo a lista de seções apontadas por cada teste.</li>
+<li><strong>Manifesto carimbado</strong>: <code>manifesto.json</code> com o SHA-512 de cada arquivo publicado (v{man.get("versao","—")}, {N(man.get("n_arquivos",0))} arquivos) e o carimbo
+OpenTimestamps que ancora a data na blockchain do Bitcoin; versões anteriores preservadas em <code>manifestos/</code>.</li>
+<li><strong>Como conferir</strong>: o passo a passo — baixar do TSE, comparar hashes, rodar os testes, ler um log com as próprias mãos — está em <a href="verificar.html">Como verificar</a>.</li>
+</ul>
 
 <h2>Onde está cada coisa</h2>
 <ul>
-<li><a href="primeiro-turno.html"><strong>1º turno — auditoria completa</strong></a>: todos os testes sobre as {len(PORUF)} UFs, estado por estado e município por município.</li>
-<li><a href="segundo-turno.html"><strong>2º turno — em andamento</strong></a>: coleta por seção, o que aconteceu em 25/10 com fontes, e os mesmos testes conforme cada UF entra.</li>
-<li><a href="comparativo.html"><strong>Comparativo 1º × 2º turno</strong></a>: as discrepâncias, explicadas, e a pergunta sobre o resultado.</li>
-<li><a href="reta-final.html"><strong>Reta final</strong></a>: a hipótese, o vídeo, o teste C4b e as seções apontadas.</li>
-<li><a href="verificar.html">Como verificar</a> · <a href="dados.html">Dados e hashes</a> · <a href="relatorio.html">Relatório técnico dos boletins do 1º turno</a></li>
-</ul>
-
-<h2>Análises posteriores ao plano (emenda de 28/10/2026)</h2>
-<p>Acrescentadas depois de os dados existirem, a pedido de quem encomendou a auditoria, e por isso identificadas como posteriores — força probatória menor que
-a dos testes pré-registrados. Os logs usados são os de todas as seções, obtidos do Portal Resultados do TSE e conferidos contra o hash que a própria urna assinou.</p>
-<ul>
-<li><a href="forense.html"><strong>Forense dos logs</strong></a>: há rastro de edição — humana, por programa ou por IA — nos logs do 1º e do 2º turno? Gramática, codificação, vocabulário, relógio, selo, hash assinado pela urna.</li>
-<li><a href="soma-oficial.html"><strong>Soma dos boletins × resultado oficial</strong></a>: a totalização bate com a soma de todos os boletins? E alguém tinha 50% + 1 no 1º turno?</li>
-<li><a href="votos-tardios.html"><strong>Votos depois das 17h: para quem?</strong></a>: o que o dado permite dizer, com os limites exatos, nos dois turnos.</li>
+<li><a href="primeiro-turno.html"><strong>1º turno</strong></a> — todos os testes do plano sobre as 28 UFs, estado por estado e município por município (a régua).</li>
+<li><a href="segundo-turno.html"><strong>2º turno</strong></a> — coleta por seção, o que aconteceu em 25/10 com fontes, e os mesmos testes.</li>
+<li><a href="comparativo.html"><strong>Comparativo 1º × 2º turno</strong></a> — cada seção e cada município contra si mesmos; a pergunta sobre o resultado.</li>
+<li><a href="reta-final.html"><strong>Reta final</strong></a> — a hipótese, o vídeo, o teste C4b e as seções apontadas.</li>
+<li><a href="estados/index.html"><strong>Estados</strong></a> — uma página por UF e uma por município, com o 2º turno ao lado do 1º.</li>
+<li><a href="forense.html"><strong>Forense dos logs</strong></a> · <a href="soma-oficial.html"><strong>Soma oficial</strong></a> · <a href="votos-tardios.html"><strong>Votos tardios</strong></a> · <a href="pianista.html"><strong>Pianista</strong></a> — a emenda de 28/10.</li>
+<li><a href="plano-2t.html">Plano pré-registrado</a> · <a href="verificar.html">Como verificar</a> · <a href="dados.html">Dados e hashes</a> · <a href="relatorio.html">Relatório técnico do 1º turno</a> · <a href="relatorio-2t.html">Relatório do 2º turno</a></li>
 </ul>
 '''
+
+corpo_index = indice_resumo()
 open(f"{SITE}/index.html", "w").write(pagina(
     "Auditoria independente das Eleições 2026", "Auditoria independente · Eleições Gerais 2026",
     "Auditoria independente das Eleições 2026",

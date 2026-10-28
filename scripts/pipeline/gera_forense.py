@@ -23,7 +23,7 @@ _agora = datetime.datetime.now().strftime("%d/%m/%Y %H:%M")
 RODAPE = re.sub(r"Última atualização: [0-9/]+ [0-9:]+", f"Última atualização: {_agora}", RODAPE)
 NAV = [("index.html","Resumo"),("primeiro-turno.html","1º turno"),("segundo-turno.html","2º turno"),
        ("comparativo.html","Comparativo"),("reta-final.html","Reta final"),("estados/index.html","Estados"),
-       ("forense.html","Forense dos logs"),("soma-oficial.html","Soma oficial"),("votos-tardios.html","Votos tardios"),
+       ("forense.html","Forense dos logs"),("soma-oficial.html","Soma oficial"),("votos-tardios.html","Votos tardios"),("pianista.html","Pianista"),
        ("plano-2t.html","Plano"),("verificar.html","Como verificar"),("dados.html","Dados e hashes")]
 def nav(ativo):
     return "<nav>" + "".join(f'<a href="{h}"{" class=\"on\"" if h == ativo else ""}>{t}</a>' for h, t in NAV) + "</nav>"

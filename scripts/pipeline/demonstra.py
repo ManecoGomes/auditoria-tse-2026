@@ -123,6 +123,12 @@ def zips_integros():
         uf, ok = m.group(1), z + ".ok"
         if SO_UFS and uf not in SO_UFS: continue
         if not os.path.exists(ok):
+            # ZIP remontado com membro defeituoso (.bad) mas com os arquivos soltos da coleta por
+            # secao ao lado: processa mesmo assim, lendo o membro solto quando o do ZIP falha
+            # (mesma regra de forense.py). MG 2T, 28/10/2026 — o volume externo corrompe escrita grande.
+            if os.path.exists(z + ".bad") and os.path.isdir(f"{ACV}/secoes/{uf}"):
+                print(f"  {uf}: ZIP .bad com arquivos soltos em secoes/{uf} — processado com fallback", flush=True)
+                out.append((uf, z)); continue
             print(f"  {uf}: sem sidecar .ok (em download ou nao verificado) — ignorado", flush=True); continue
         try:
             if open(ok).read().strip() != str(os.path.getsize(z)):
@@ -265,12 +271,18 @@ def processa(uf, z):
                     "votos_ate_17h","votos_17h_em_diante","media_s_antes","media_s_final",
                     "mediana_s_final","abaixo_20s_final","mediana_s_antes","limiar_discrepante_s",
                     "discrepantes_antes","discrepantes_final"])
+        solto = f"{ACV}/secoes/{uf}"
         for i, nome in enumerate(nomes_log):
             try:
                 with zipfile.ZipFile(io.BytesIO(OZ.read(nome))) as inn:
                     d = inn.read("logd.dat")
             except Exception:
-                continue
+                # membro defeituoso no ZIP remontado: o mesmo arquivo, solto, da coleta por secao
+                try:
+                    with zipfile.ZipFile(f"{solto}/{nome}") as inn:
+                        d = inn.read("logd.dat")
+                except Exception:
+                    continue
             r = nome.split("-")[0][8:]
             try: key = (int(r[0:5]), int(r[5:9]), int(r[9:]))
             except Exception: key = None

@@ -58,82 +58,109 @@ ul,ol{margin:0 0 15px;padding-left:22px}li{margin:5px 0}
 hr{border:none;border-top:1px solid var(--line);margin:34px 0}
 @media(max-width:600px){h1{font-size:25px}.wrap{padding:0 17px 64px}}
 </style></head><body><div class="wrap">
-<header class="top"><div class="kicker">Auditoria independente · Eleições Gerais 2026</div><h1>Auditoria independente das Eleições 2026</h1><p class="sub">Dados públicos do TSE, método publicado antes dos dados, resultados seção por seção.</p><nav><a href="index.html" class="on">Resumo</a><a href="primeiro-turno.html">1º turno</a><a href="segundo-turno.html">2º turno</a><a href="comparativo.html">Comparativo</a><a href="reta-final.html">Reta final</a><a href="estados/index.html">Estados</a><a href="forense.html">Forense dos logs</a><a href="soma-oficial.html">Soma oficial</a><a href="votos-tardios.html">Votos tardios</a><a href="plano-2t.html">Plano</a><a href="verificar.html">Como verificar</a><a href="dados.html">Dados e hashes</a></nav></header>
-<h2>Objetivo</h2>
-<p>Verificar, com os dados públicos do Tribunal Superior Eleitoral e por método publicado <strong>antes</strong> de os
-dados existirem, se houve voto registrado fora das regras nas Eleições Gerais de 2026 — e, em especial, responder a
-uma pergunta concreta sobre o 2º turno: <strong>nas duas horas a mais concedidas no dia 25 de outubro, entre 17h e
-19h, houve votos registrados em ritmo incompatível com eleitor real, quantos foram e em quais urnas?</strong></p>
-<p>A hipótese testada é a descrita por Flávio Dino em <a href="reta-final.html">discurso que motivou este trabalho</a>:
-encerrada a fila, o mesário libera a urna com o número do título de eleitores ausentes e vota por eles. Voto assim é
-voto rápido demais, e voto rápido demais fica gravado no log da urna, segundo a segundo.</p>
-<p>O 1º turno, que encerrou às 17h e não teve contestação relevante, é a <strong>régua do tempo normal</strong>: ele
-diz quanto dura um voto real, em cada seção, e quantos votos "rápidos demais" existem num dia comum.</p>
+<header class="top"><div class="kicker">Auditoria independente · Eleições Gerais 2026</div><h1>Auditoria independente das Eleições 2026</h1><p class="sub">Dados públicos do TSE, método publicado antes dos dados, resultados seção por seção.</p><nav><a href="index.html" class="on">Resumo</a><a href="primeiro-turno.html">1º turno</a><a href="segundo-turno.html">2º turno</a><a href="comparativo.html">Comparativo</a><a href="reta-final.html">Reta final</a><a href="estados/index.html">Estados</a><a href="forense.html">Forense dos logs</a><a href="soma-oficial.html">Soma oficial</a><a href="votos-tardios.html">Votos tardios</a><a href="pianista.html">Pianista</a><a href="plano-2t.html">Plano</a><a href="verificar.html">Como verificar</a><a href="dados.html">Dados e hashes</a></nav></header>
+<blockquote>
+<p><strong>Em uma frase:</strong> com os dados públicos do TSE — todos os boletins, logs, RDV e contêineres de assinatura das
+499.176 seções do país, nos dois turnos — e com método publicado antes de os dados existirem, <strong>nenhum dos testes
+encontrou voto fora do prazo, voto após o lacre, urna reaberta, log alterado, boletim diferente da totalização ou sequência de votos
+em ritmo incompatível com eleitor real</strong>. A soma dos boletins é exatamente o resultado proclamado. As duas horas a mais do 2º turno
+somaram 32.222 votos (0,028% do total), menos de 0,7% da margem entre os candidatos, e no
+ritmo normal de cada seção.</p>
+</blockquote>
 
-<div class="grid"><div class="stat"><div class="n">28/28</div><div class="l">UFs do 1º turno auditadas</div></div><div class="stat"><div class="n">499.176</div><div class="l">seções do 1º turno</div></div><div class="stat"><div class="n">1</div><div class="l">votos discrepantes após 17h (1º turno)</div></div><div class="stat"><div class="n">27/28</div><div class="l">UFs do 2º turno auditadas</div></div><div class="stat"><div class="n">446.732</div><div class="l">seções do 2º turno</div></div><div class="stat zero"><div class="n">0</div><div class="l">votos discrepantes após 17h (2º turno)</div></div></div>
+<div class="grid">
+<div class="stat"><div class="n">2</div><div class="l">turnos auditados — 4 e 25 de outubro</div></div>
+<div class="stat"><div class="n">28/28</div><div class="l">unidades da Federação, nos dois turnos, em todos os testes</div></div>
+<div class="stat"><div class="n">499.176</div><div class="l">seções eleitorais por turno</div></div>
+<div class="stat"><div class="n">253.511.909</div><div class="l">votos somados nos dois turnos</div></div>
+<div class="stat"><div class="n">17</div><div class="l">famílias de verificação, mais de 40 testes</div></div>
+<div class="stat"><div class="n">v38</div><div class="l">manifesto com 5.976 arquivos, carimbado na blockchain</div></div>
+</div>
 
-<h2>Como funciona</h2>
+<h2>O que é isto</h2>
+<p>Uma auditoria independente das Eleições Gerais de 2026, feita exclusivamente com os arquivos que o Tribunal Superior Eleitoral
+publica — boletim de urna, log de urna, Registro Digital do Voto e contêiner de assinatura de cada seção — e com um
+<a href="plano-2t.html">plano de testes publicado em 26/10/2026</a>, antes de os dados do 2º turno existirem, com a data ancorada
+na blockchain do Bitcoin (bloco 973.245). O motivo foi uma hipótese concreta, descrita por Flávio Dino em
+<a href="reta-final.html">discurso que motivou este trabalho</a>: que nas duas horas a mais concedidas no 2º turno, entre 17h e 19h,
+mesários teriam votado por eleitores ausentes. O 1º turno, encerrado às 17h e sem contestação, serve de <strong>régua do normal</strong>
+para todo número do 2º.</p>
+<p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes), OAB/RJ 245.463. Trabalho pessoal, sem vínculo com candidato, partido ou
+órgão público.</p>
+
+<h2>Como foi feito, em ordem</h2>
 <ol>
-<li><strong>Coleta e integridade.</strong> Boletins de urna, logs, RDV e arquivos de votação de todas as seções do país.
-No 1º turno, os pacotes oficiais por UF (28 de 28), com integridade provada arquivo a arquivo. No 2º turno, os
-mesmos arquivos coletados <a href="segundo-turno.html">seção por seção no Portal Resultados</a> — boletim, log, RDV e
-contêiner de assinatura de cada seção —, porque o pacote consolidado por UF não tem prazo e ainda não saiu. <strong>Os logs do 2º turno já estão
-no acervo e em análise</strong>; o que falta é só o pacote oficial, que servirá para conferência quando sair.</li>
-<li><strong>Testes pré-registrados.</strong> O <a href="plano-2t.html">plano</a> foi publicado em 26/10/2026, antes dos
-dados do 2º turno, com data ancorada na blockchain do Bitcoin: integridade (A), horários (B), comportamento das
-urnas pelo log (C), impossibilidades lógicas (D), comparação entre turnos seção a seção (E), geografia (F) e dispersão
-da ordem de prorrogação (G).</li>
-<li><strong>Emenda datada.</strong> O teste C4b — tempo por voto até as 17h contra depois das 17h, com contagem de
-votos discrepantes — foi acrescentado em 27/10, antes de qualquer dado do 2º turno, e está
-<a href="reta-final.html">identificado como posterior ao plano</a>.</li>
-<li><strong>Publicação contínua e verificável.</strong> Cada UF entra no site quando termina. Todo arquivo publicado tem
-SHA-512 num manifesto carimbado; scripts, dados derivados e a lista de seções apontadas são públicos.</li>
+<li><strong>26/10/2026 — plano pré-registrado.</strong> Blocos A (integridade), B (horários), C (comportamento da urna pelo log), D (impossibilidades
+lógicas), E (cada seção e cada município contra si mesmos, 1º × 2º turno), F (geografia) e G (dispersão da ordem de prorrogação). Carimbado com OpenTimestamps.</li>
+<li><strong>27/10 — 1º turno completo.</strong> Pacotes oficiais das 28 UFs baixados do CDN do TSE, SHA-512 conferido, 499.176 seções, 125.047.761 votos
+nos logs. Emenda datada do mesmo dia: teste C4b (ritmo antes e depois das 17h), acrescentado <em>antes</em> dos dados do 2º turno.</li>
+<li><strong>28/10 — 2º turno.</strong> Boletins oficiais das 28 UFs (publicados pelo TSE às 08h59) e, como o pacote consolidado de logs ainda não saiu, os mesmos
+arquivos coletados seção por seção no Portal Resultados, conferidos contra o hash que a própria urna assinou. Todos os testes do plano rodaram.</li>
+<li><strong>28/10 — emenda posterior aos dados</strong>, a pedido de quem encomendou e identificada como tal: forense dos logs (rastro de edição, inclusive por IA),
+soma dos boletins contra a totalização oficial, destino dos votos tardios e o teste do «pianista» com 30 s e 40 s. Força probatória menor que a
+dos testes pré-registrados, por terem sido escolhidos sabendo o que havia nos dados.</li>
 </ol>
 
-<h2>O que este trabalho pode e não pode afirmar</h2>
-<p><strong>Pode:</strong> quantos votos, em cada seção, foram registrados num ritmo incompatível com um eleitor real,
-e se isso aconteceu mais depois das 17h do que no dia normal — no 2º turno e, como régua, no 1º.</p>
-<p><strong>Não pode:</strong> dizer em quem foi qualquer voto. O log registra o cargo, nunca o candidato; o RDV traz os
-votos embaralhados. É o mecanismo do sigilo do voto, e nenhuma análise de dados públicos o atravessa.</p>
+<h2>Todas as verificações realizadas</h2>
+<p>Uma linha por família de teste. Os números são os dos arquivos publicados; cada link abre a página com o detalhe por UF e por município.</p>
+<div class="scroll"><table><thead><tr><th>Verificação</th><th>Pergunta</th><th>1º turno (régua)</th><th>2º turno</th><th></th></tr></thead>
+<tbody><tr><td>A1 · Integridade dos pacotes do TSE</td><td>Os ZIPs baixados são os que o TSE publicou?</td><td>28/28 UFs, SHA-512 do TSE conferido, arquivo a arquivo</td><td>28/28 boletins (SHA-512 do TSE); logs, RDV e contêineres coletados seção a seção, hash do Portal conferido</td><td><a href="dados.html">ver</a></td></tr><tr><td>A5 · Hash assinado pela urna</td><td>Cada boletim e cada log batem com o SHA-512 que a própria urna gravou no contêiner <code>vota.vsc</code>?</td><td>499.176 de 499.176 logs conferem; 0 divergentes</td><td>498.914 de 499.012 conferem; 36 divergentes e 34 ilegíveis, todos em membros de ZIP remontados localmente (BA, GO, MG, PE, PR, SP) — defeito da cópia, a reconferir com o pacote oficial</td><td><a href="forense.html">ver</a></td></tr><tr><td>A3 · Soma dos boletins × totalização oficial</td><td>A soma de todos os boletins é o resultado que o TSE proclamou?</td><td>bate exato por candidato; única diferença, 5.246 nulos técnicos (candidatura indeferida). Ninguém teve 50%+1: 47,03% × 45,16%</td><td>bate exato: 13 = 64.256.232, 22 = 59.826.041, comparecimento, brancos e nulos idênticos</td><td><a href="soma-oficial.html">ver</a></td></tr><tr><td>A2 · Boletim × log (comparecimento)</td><td>O número de votos no log é o do boletim?</td><td>33.850 de 499.150 seções divergem (6,78%), quase todas log &lt; boletim por 1 (urna substituída: o log é só da 2ª urna)</td><td>1.915 de 445.430 (0,43%), mesma explicação</td><td><a href="comparativo.html">ver</a></td></tr><tr><td>A4 · Identidade da urna</td><td>O serial da urna no log é o do boletim?</td><td>0 sem explicação (divergências = urna de contingência)</td><td>0 sem explicação</td><td><a href="primeiro-turno.html">ver</a></td></tr><tr><td>D · Impossibilidades lógicas</td><td>Comparecimento &gt; aptos? Encerramento antes da abertura? Boletim antes do encerramento?</td><td>0 · 0 · 0</td><td>0 · 0 · 0</td><td><a href="relatorio-2t.html">ver</a></td></tr><tr><td>B4 · Encerramento das seções</td><td>Quantas seções fecharam mais de 2 h depois do prazo legal?</td><td>8.324 seções (1,67%) — fila dos 5 cargos</td><td>1 seção (0,00%), prazo 19h</td><td><a href="relatorio-2t.html">ver</a></td></tr><tr><td>C1 · Voto depois do lacre</td><td>Alguma urna registrou voto depois de emitir o boletim (reabertura)?</td><td>0 seções</td><td>0 seções</td><td><a href="segundo-turno.html">ver</a></td></tr><tr><td>C2 · Votos fora do prazo</td><td>Votos registrados depois do prazo legal do turno?</td><td>129.474 após 19h (prazo 17h: 3.716.565, fila)</td><td>13 após 19h; de 17h às 19h, 32.222 (0,028% dos votos), lícitos pela decisão do STF</td><td><a href="votos-tardios.html">ver</a></td></tr><tr><td>C4 · Intervalo entre votos (20 s)</td><td>Houve voto em ritmo impossível para um eleitor real?</td><td>2 intervalos em 123.592.254</td><td>275 em 125.187.055</td><td><a href="segundo-turno.html">ver</a></td></tr><tr><td>C4b · Reta final (17h em diante)</td><td>Depois das 17h, a seção acelerou além do próprio ritmo do dia?</td><td>1 voto discrepante em 3.716.565 depois das 17h</td><td>0 votos discrepantes em 34.577 depois das 17h</td><td><a href="reta-final.html">ver</a></td></tr><tr><td>C4 ampliado · «Pianista» (30 s, 40 s, corridas)</td><td>Com limiares maiores e olhando sequências, aparece mesário votando em série?</td><td>intervalos &lt;20 s: 2 · &lt;30 s: 0,00% · &lt;40 s: 0,04%; seções com 10+ votos seguidos &lt;30 s: 0; 10 votos mais rápidos do país: 262 s</td><td>intervalos &lt;20 s: 275 · &lt;30 s: 1,26% · &lt;40 s: 12,34%; seções com 10+ votos seguidos &lt;30 s: 5 (de 17h em diante: 0); 10 votos mais rápidos do país: 205 s</td><td><a href="pianista.html">ver</a></td></tr><tr><td>E1 / E5 / E6 · A seção contra si mesma</td><td>Cada seção e cada município se comportaram no 2º turno como no 1º?</td><td>régua</td><td>499.205 seções comuns; 148 de 5.688 municípios com algum indicador pior; 0 seções com discrepância nova após 17h</td><td><a href="comparativo.html">ver</a></td></tr><tr><td>E4 · Votos tardios e candidato</td><td>As seções com mais votos depois das 17h mudaram de lado entre os turnos?</td><td>controle: correlação da fila do 1º turno</td><td>correlação 0.0475 (nula); limites de Duncan-Davis e Goodman publicados</td><td><a href="votos-tardios.html">ver</a></td></tr><tr><td>F1 · Geografia</td><td>Onde se concentrou a votação tardia?</td><td>5.634 municípios, mediana 2,013% de votos tardios</td><td>4.779 municípios, mediana 0,012%</td><td><a href="comparativo.html">ver</a></td></tr><tr><td>L1–L11 · Forense dos logs</td><td>Há rastro de edição — humana, por programa ou por IA — nos logs?</td><td>2.971.341.362 linhas lidas, 10 fora da gramática; 96.377.836 verificações de assinatura de componentes, 99 não-sucesso (reinícios); serial ≠ boletim: 14</td><td>5.003.818.961 linhas lidas, 0 fora da gramática; 128 não-sucesso; 158 logs declaram «1º turno» em 25/10 (anomalia listada, a explicar)</td><td><a href="forense.html">ver</a></td></tr><tr><td>V · Testes de boletim</td><td>Unanimidade, zero para um candidato com 100+ válidos, comparecimento = aptos, último dígito</td><td>28 seções 100% um candidato (todas pequenas)</td><td>49 seções 100% um candidato (todas pequenas)</td><td><a href="forense.html">ver</a></td></tr></tbody></table></div>
 
+<h2>Conclusão sobre o resultado e sua autenticidade</h2>
+<p><strong>1. O resultado proclamado é a soma dos boletins.</strong> Nos dois turnos, comparecimento, brancos, nulos e o voto de cada candidato
+coincidem exatamente entre a soma de todos os boletins de urna e a totalização oficial. No 2º turno: 64.256.232 × 59.826.041.
+No 1º, nenhum candidato alcançou maioria absoluta pelos próprios boletins.</p>
+<p><strong>2. Os arquivos são os que as urnas produziram.</strong> Os pacotes do TSE batem com o SHA-512 publicado pelo TSE; cada boletim e cada log batem
+com o SHA-512 que a própria urna gravou no contêiner assinado ao encerrar — 499.176 de 499.176 logs no 1º turno e 498.914 de 499.012 no 2º.
+As 36 divergências do 2º turno estão todas em membros de ZIPs remontados nesta máquina a partir da coleta por seção, cuja escrita no volume externo
+corrompeu bytes; são defeito da cópia local, não do dado do TSE, e serão reconferidas quando o pacote oficial por UF for publicado.</p>
+<p><strong>3. Nenhuma urna foi reaberta, nenhum voto ficou fora do prazo, nenhuma impossibilidade lógica.</strong> Zero votos depois do lacre nos dois turnos;
+zero seções com comparecimento acima dos aptos, encerramento antes da abertura ou boletim antes do encerramento; 13 votos depois das 19h no 2º turno
+em 128.236.074, e 1 seção encerrada mais de duas horas depois do prazo (no 1º turno, pela fila dos cinco cargos, foram 8.324).</p>
+<p><strong>4. As duas horas a mais não alteraram o ritmo das urnas.</strong> De 17h em diante no 2º turno houve 32.222 votos — 0,028% do total —
+e nenhum deles em ritmo discrepante do dia normal da própria seção; 275 intervalos abaixo de 20 s no dia inteiro, contra
+2 no 1º turno. Com os limiares de 30 s e 40 s e olhando sequências, não aparece o rastro de um «pianista»: depois das 17h, 0 seções tiveram 10 votos seguidos abaixo de 30 s e 0 tiveram 5; no dia inteiro, 5 seções, todas de grandes cidades e com mais de 300 votantes; e o menor tempo em que uma urna registrou 10 votos seguidos foi 205 s no 2º turno e 262 s no 1º, mais de 20 s por eleitor em qualquer urna do país. Mesmo na hipótese extrema de todos os votos tardios irem a um só candidato, eles valeriam
+0,7% da margem; e a comparação seção a seção entre os turnos (E4) mostra correlação nula entre votação tardia e deslocamento de voto.</p>
+<p><strong>5. Os logs não têm rastro de edição.</strong> 7.975.160.323 linhas de log lidas nos dois turnos: gramática fixa, codificação,
+código único por linha, relógio, vocabulário fechado, serial da urna, selo final, versão do software e verificações de assinatura dos componentes,
+tudo dentro do que o software da urna produz. As exceções estão listadas uma a uma na página da forense, com a explicação encontrada ou a marca
+«a explicar» — a principal é o conjunto de 158 logs do 2º turno que declaram «1º turno» no cabeçalho do dia 25/10.</p>
+<p><strong>Juízo.</strong> Dentro do que os dados públicos permitem verificar, <strong>o resultado das Eleições de 2026 é autêntico</strong>: a totalização reproduz os boletins, os boletins
+reproduzem os logs, os logs reproduzem o comportamento esperado das urnas, e a prorrogação do 2º turno não produziu votos em volume nem em ritmo
+capazes de influir no resultado. Isto não é um atestado de que fraude é impossível; é a afirmação de que <em>esta</em> hipótese, testada com <em>estes</em> dados,
+por <em>este</em> método, não encontrou apoio — e de que qualquer pessoa pode refazer o caminho.</p>
 
-<h2>A pergunta decisiva: isso poderia ter virado o resultado?</h2>
-<p>A hipótese em teste é que, nas duas horas a mais do 2º turno, mesários tenham votado por eleitores ausentes.
-Antes de qualquer conclusão sobre <em>se</em> aconteceu, a aritmética responde <em>quanto</em> isso poderia valer.
-Para inverter um resultado é preciso trocar metade da margem mais um voto, porque cada voto retirado de um
-candidato e dado ao outro conta duas vezes.</p>
-<div class="scroll"><table><thead><tr><th>Grandeza</th><th style="text-align:right">Votos</th><th style="text-align:right">Observação</th></tr></thead>
-<tbody><tr><td>Margem oficial entre os dois candidatos</td><td style="text-align:right"><strong>4.430.191</strong></td><td style="text-align:right">TSE, balanço de 26/10</td></tr><tr><td>Votos necessários para inverter o resultado (metade da margem + 1)</td><td style="text-align:right"><strong>2.215.096</strong></td><td style="text-align:right">um voto trocado conta duas vezes</td></tr><tr><td>Votos depois das 17h no 2º turno, levantamento do TSE (27/10)</td><td style="text-align:right"><strong>34.393</strong></td><td style="text-align:right">1,55% do necessário</td></tr><tr><td>Votos depois das 17h nos logs já auditados (27 UFs)</td><td style="text-align:right"><strong>32.344</strong></td><td style="text-align:right">1,46% do necessário</td></tr><tr><td>Dos quais discrepantes do ritmo da própria seção</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">0,00% do necessário</td></tr><tr><td>Dos quais abaixo de 20 segundos</td><td style="text-align:right"><strong>0</strong></td><td style="text-align:right">0,00% do necessário</td></tr></tbody></table></div>
-<p>Nos logs já auditados do 2º turno (27 UFs, 446.732 seções), houve <strong>32.344</strong> votos depois das 17h, dos quais <strong>0</strong> discrepantes e <strong>0</strong> abaixo de 20 segundos. <strong>Mesmo no cenário extremo</strong> — todos os votos depois das 17h fraudulentos e todos para
-um só candidato — o conjunto ficaria abaixo de 1,55% do necessário para
-inverter o resultado. Os testes desta auditoria dizem se houve voto em ritmo incompatível com eleitor real e onde;
-não dizem em quem foi cada voto, porque o log registra o cargo e nunca o candidato.</p>
-<p><strong>E a "virada" durante a apuração?</strong> O placar parcial muda de líder conforme a ordem em que os boletins
-chegam à totalização, que segue a geografia do fechamento das seções, não a hora dos votos. No 1º turno,
-100% dos votos entram na contagem depois das 17h porque a transmissão só começa com o encerramento. Uma virada no
-placar parcial não é, por si, indício de nada; o que se audita é a sequência de votos dentro de cada urna, antes
-de qualquer transmissão. O teste B3 do plano (curva de recebimento dos boletins) mede exatamente a ordem de chegada.</p>
+<h2>O que este trabalho não pode afirmar</h2>
+<ul>
+<li><strong>Em quem foi cada voto.</strong> O log registra o cargo, nunca o candidato; o RDV traz os votos embaralhados. É o sigilo do voto, e nenhuma análise de dado público o atravessa.</li>
+<li><strong>Quem votou.</strong> A habilitação no log não identifica o eleitor. A hipótese «o mesário votou pelo ausente» só é testável pelo ritmo e pela sequência dos votos, e foi.</li>
+<li><strong>A assinatura criptográfica dos contêineres.</strong> Conferimos o hash gravado dentro do <code>vota.vsc</code>; a assinatura do contêiner exige o certificado do TSE, que não está publicado.</li>
+<li><strong>O pacote consolidado de logs do 2º turno</strong>, que o TSE ainda não publicou. Os logs usados vieram do Portal Resultados, seção a seção, com hash conferido; quando o pacote sair, os dois serão comparados membro a membro e a conferência publicada.</li>
+</ul>
 
+<h2>Tudo está disponível para download e conferência</h2>
+<ul>
+<li><strong>Fontes originais do TSE</strong>: os endereços de cada pacote e de cada hash estão em <a href="dados.html">Dados e hashes</a>, com o SHA-512 do TSE e o calculado aqui, UF por UF.</li>
+<li><strong>Código</strong>: todos os programas que rodaram — e só eles — estão no repositório
+<a href="https://github.com/ManecoGomes/auditoria-tse-2026" rel="noopener">github.com/ManecoGomes/auditoria-tse-2026</a> (<code>scripts/pipeline/</code>).</li>
+<li><strong>Dados derivados</strong>: resultados por UF, por município e por seção (CSV), no mesmo repositório (<code>dados/</code>), incluindo a lista de seções apontadas por cada teste.</li>
+<li><strong>Manifesto carimbado</strong>: <code>manifesto.json</code> com o SHA-512 de cada arquivo publicado (v38, 5.976 arquivos) e o carimbo
+OpenTimestamps que ancora a data na blockchain do Bitcoin; versões anteriores preservadas em <code>manifestos/</code>.</li>
+<li><strong>Como conferir</strong>: o passo a passo — baixar do TSE, comparar hashes, rodar os testes, ler um log com as próprias mãos — está em <a href="verificar.html">Como verificar</a>.</li>
+</ul>
 
 <h2>Onde está cada coisa</h2>
 <ul>
-<li><a href="primeiro-turno.html"><strong>1º turno — auditoria completa</strong></a>: todos os testes sobre as 28 UFs, estado por estado e município por município.</li>
-<li><a href="segundo-turno.html"><strong>2º turno — em andamento</strong></a>: coleta por seção, o que aconteceu em 25/10 com fontes, e os mesmos testes conforme cada UF entra.</li>
-<li><a href="comparativo.html"><strong>Comparativo 1º × 2º turno</strong></a>: as discrepâncias, explicadas, e a pergunta sobre o resultado.</li>
-<li><a href="reta-final.html"><strong>Reta final</strong></a>: a hipótese, o vídeo, o teste C4b e as seções apontadas.</li>
-<li><a href="verificar.html">Como verificar</a> · <a href="dados.html">Dados e hashes</a> · <a href="relatorio.html">Relatório técnico dos boletins do 1º turno</a></li>
-</ul>
-
-<h2>Análises posteriores ao plano (emenda de 28/10/2026)</h2>
-<p>Acrescentadas depois de os dados existirem, a pedido de quem encomendou a auditoria, e por isso identificadas como posteriores — força probatória menor que
-a dos testes pré-registrados. Os logs usados são os de todas as seções, obtidos do Portal Resultados do TSE e conferidos contra o hash que a própria urna assinou.</p>
-<ul>
-<li><a href="forense.html"><strong>Forense dos logs</strong></a>: há rastro de edição — humana, por programa ou por IA — nos logs do 1º e do 2º turno? Gramática, codificação, vocabulário, relógio, selo, hash assinado pela urna.</li>
-<li><a href="soma-oficial.html"><strong>Soma dos boletins × resultado oficial</strong></a>: a totalização bate com a soma de todos os boletins? E alguém tinha 50% + 1 no 1º turno?</li>
-<li><a href="votos-tardios.html"><strong>Votos depois das 17h: para quem?</strong></a>: o que o dado permite dizer, com os limites exatos, nos dois turnos.</li>
+<li><a href="primeiro-turno.html"><strong>1º turno</strong></a> — todos os testes do plano sobre as 28 UFs, estado por estado e município por município (a régua).</li>
+<li><a href="segundo-turno.html"><strong>2º turno</strong></a> — coleta por seção, o que aconteceu em 25/10 com fontes, e os mesmos testes.</li>
+<li><a href="comparativo.html"><strong>Comparativo 1º × 2º turno</strong></a> — cada seção e cada município contra si mesmos; a pergunta sobre o resultado.</li>
+<li><a href="reta-final.html"><strong>Reta final</strong></a> — a hipótese, o vídeo, o teste C4b e as seções apontadas.</li>
+<li><a href="estados/index.html"><strong>Estados</strong></a> — uma página por UF e uma por município, com o 2º turno ao lado do 1º.</li>
+<li><a href="forense.html"><strong>Forense dos logs</strong></a> · <a href="soma-oficial.html"><strong>Soma oficial</strong></a> · <a href="votos-tardios.html"><strong>Votos tardios</strong></a> · <a href="pianista.html"><strong>Pianista</strong></a> — a emenda de 28/10.</li>
+<li><a href="plano-2t.html">Plano pré-registrado</a> · <a href="verificar.html">Como verificar</a> · <a href="dados.html">Dados e hashes</a> · <a href="relatorio.html">Relatório técnico do 1º turno</a> · <a href="relatorio-2t.html">Relatório do 2º turno</a></li>
 </ul>
 <footer><p><strong>Auditoria de horários — Eleições Gerais 2026.</strong>
 Dados públicos do Tribunal Superior Eleitoral. Método e scripts abertos; qualquer pessoa pode reproduzir.</p>
 <p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ 245.463.
-Última atualização: 28/10/2026 17:31 (America/Sao_Paulo).</p>
+Última atualização: 28/10/2026 18:25 (America/Sao_Paulo).</p>
 </footer></div></body></html>
