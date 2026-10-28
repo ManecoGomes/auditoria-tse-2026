@@ -1,5 +1,5 @@
 {
- "gerado_utc": "2026-10-27T23:50:03.672395+00:00",
+ "gerado_utc": "2026-10-28T00:11:24.745174+00:00",
  "blocos": {
   "A2_triangulacao_1t": {
    "secoes_comparadas": 499150,
@@ -639,8 +639,8 @@
    ]
   },
   "F1_geografia_2t": {
-   "municipios": 2298,
-   "mediana_pct_tardio": 0.015,
+   "municipios": 2992,
+   "mediana_pct_tardio": 0.012,
    "top20_mais_tardio": [
     {
      "uf": "PE",
@@ -986,8 +986,8 @@
    "exemplos_novo_abaixo20": []
   },
   "E5_municipios": {
-   "municipios_comuns": 2298,
-   "com_indicador_pior_no_2t": 52,
+   "municipios_comuns": 2992,
+   "com_indicador_pior_no_2t": 77,
    "exemplos_piora": [
     {
      "uf": "AL",
@@ -2297,8 +2297,8 @@
   "secoes_boletim_1t": 499206,
   "secoes_boletim_2t": 0,
   "secoes_log_1t": 499150,
-  "secoes_log_2t": 190980,
+  "secoes_log_2t": 235387,
   "municipios_1t": 5688,
-  "municipios_2t": 2298
+  "municipios_2t": 2992
  }
 }
