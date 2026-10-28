@@ -163,8 +163,36 @@ if [ -f "$P/vigia/vigia.log" ]; then
 fi
 
 # 10. erro fora do catalogo conhecido -> escala
-NOVOS=$(grep -h -iE 'traceback|AttributeError|KeyError|ValueError|DESISTI' \
-        "$PL"/*.log 2>/dev/null | grep -v 'datetime.UTC' | tail -3)
+# SO olha o que foi escrito DESDE a ultima verificacao, por marca d'agua de byte.
+# Os logs do pipeline sao append-only: sem marca d'agua, um unico erro ja
+# corrigido reescala para sempre, queimando uma sessao `claude -p` e um
+# WhatsApp por rodada. Foi o que o Traceback das 20h08 de 2026-10-27 (sidecar
+# .esperado do PE) fez — continuou escalando depois de consertado e publicado.
+MARCAS="$P/.destrava_offsets"
+NOVOS=""
+for L in "$PL"/*.log; do
+  [ -f "$L" ] || continue
+  N=$(basename "$L"); TAM=$(stat -f %z "$L" 2>/dev/null || echo 0)
+  ANT=$(awk -F'\t' -v n="$N" '$1==n{print $2}' "$MARCAS" 2>/dev/null | tail -1)
+  # primeira vez: adota o tamanho atual, para nao reclamar de historia passada
+  [ -z "$ANT" ] && ANT=$TAM
+  # log rotacionado ou truncado: recomeca do zero
+  [ "$ANT" -gt "$TAM" ] && ANT=0
+  if [ "$TAM" -gt "$ANT" ]; then
+    T=$(tail -c "+$((ANT+1))" "$L" 2>/dev/null \
+        | grep -h -iE 'traceback|AttributeError|KeyError|ValueError|DESISTI' \
+        | grep -v 'datetime.UTC' | tail -3)
+    [ -n "$T" ] && NOVOS="$NOVOS$T
+"
+  fi
+done
+# marca d'agua nova so depois de ler: se o destrava morrer no meio, nao se perde erro
+: > "$MARCAS.tmp"
+for L in "$PL"/*.log; do
+  [ -f "$L" ] && printf '%s\t%s\n' "$(basename "$L")" "$(stat -f %z "$L" 2>/dev/null || echo 0)" >> "$MARCAS.tmp"
+done
+mv -f "$MARCAS.tmp" "$MARCAS"
+NOVOS=$(printf '%s' "$NOVOS" | grep -v '^$' | tail -3)
 [ -n "$NOVOS" ] && ESCALA="$ESCALA erro não catalogado: $(echo "$NOVOS" | head -1);"
 
 log "resultado: agiu=$AGIU escala=${ESCALA:-nada}"

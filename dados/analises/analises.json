@@ -1,5 +1,5 @@
 {
- "gerado_utc": "2026-10-28T00:11:24.745174+00:00",
+ "gerado_utc": "2026-10-28T00:29:56.744822+00:00",
  "blocos": {
   "A2_triangulacao_1t": {
    "secoes_comparadas": 499150,
@@ -639,8 +639,8 @@
    ]
   },
   "F1_geografia_2t": {
-   "municipios": 2992,
-   "mediana_pct_tardio": 0.012,
+   "municipios": 3488,
+   "mediana_pct_tardio": 0.01,
    "top20_mais_tardio": [
     {
      "uf": "PE",
@@ -723,6 +723,14 @@
      "pct_tardio": 0.154
     },
     {
+     "uf": "RS",
+     "municipio": 87866,
+     "nome": "São Valério Do Sul",
+     "secoes": 10,
+     "votos": 1954,
+     "pct_tardio": 0.154
+    },
+    {
      "uf": "MS",
      "municipio": 98116,
      "nome": "Selvíria",
@@ -793,14 +801,6 @@
      "secoes": 7,
      "votos": 1617,
      "pct_tardio": 0.124
-    },
-    {
-     "uf": "AM",
-     "municipio": 2038,
-     "nome": "Anori",
-     "secoes": 31,
-     "votos": 8120,
-     "pct_tardio": 0.123
     }
    ],
    "top20_menos_tardio": [
@@ -968,7 +968,7 @@
   },
   "E6_janela_final_secoes": {
    "inicio_janela": "17:00",
-   "secoes_comuns_com_10_votos_na_janela_2t": 11,
+   "secoes_comuns_com_10_votos_na_janela_2t": 12,
    "votos_discrepantes_apos_17h_2t": 0,
    "votos_discrepantes_apos_17h_1t_mesmas_secoes": 0,
    "secoes_2t_com_discrepantes_sem_ter_no_1t": 0,
@@ -976,7 +976,7 @@
    "secoes_2t_mediana_final_abaixo_20s": 0,
    "secoes_1t_mediana_final_abaixo_20s": 0,
    "variacao_media_final_2t_menos_1t_s": {
-    "mediana": 30.91,
+    "mediana": 26.76,
     "p10": -406.75,
     "p90": 188.63
    },
@@ -986,8 +986,8 @@
    "exemplos_novo_abaixo20": []
   },
   "E5_municipios": {
-   "municipios_comuns": 2992,
-   "com_indicador_pior_no_2t": 77,
+   "municipios_comuns": 3489,
+   "com_indicador_pior_no_2t": 100,
    "exemplos_piora": [
     {
      "uf": "AL",
@@ -2297,8 +2297,8 @@
   "secoes_boletim_1t": 499206,
   "secoes_boletim_2t": 0,
   "secoes_log_1t": 499150,
-  "secoes_log_2t": 235387,
+  "secoes_log_2t": 262829,
   "municipios_1t": 5688,
-  "municipios_2t": 2992
+  "municipios_2t": 3489
  }
 }
