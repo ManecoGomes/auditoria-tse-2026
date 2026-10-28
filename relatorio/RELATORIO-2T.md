@@ -1,6 +1,6 @@
 # Auditoria do 2º turno — Eleições Gerais 2026
 
-*Gerado automaticamente em 28/10/2026 11:38 (America/Sao_Paulo)*
+*Gerado automaticamente em 28/10/2026 13:36 (America/Sao_Paulo)*
 *Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ 245.463*
 
 Prazo legal de encerramento no 2º turno: **19h** (horário de Brasília), por decisão do
@@ -12,8 +12,8 @@ Ministro Cristiano Zanin de 25/10/2026, que prorrogou a votação a partir das 1
 - Seções eleitorais: 499.205
 - Comparecimento: 128.236.074
 - Eleitores aptos: 158.744.977
-- Seções com log analisado: 224.653
-- Votos para Presidente nos logs: 56.733.716
+- Seções com log analisado: 278.116
+- Votos para Presidente nos logs: 70.727.343
 
 ## 2. Verificações de impossibilidade lógica
 
@@ -40,9 +40,9 @@ Razão muito acima de 1 indica desvio que exige explicação.
 ## 4. Verificações específicas do 2º turno
 
 - Seções com voto registrado **após o lacre do boletim** (reabertura de urna): **0**
-- Seções com voto registrado **após as 19h** (fora do prazo mesmo sob a regra nova): **1**
-- Seções com divergência entre habilitações e votos computados: **25.276**
-- Habilitações: 112.112.979 · Votos computados: 112.082.179 (diferença 30.800)
+- Seções com voto registrado **após as 19h** (fora do prazo mesmo sob a regra nova): **3**
+- Seções com divergência entre habilitações e votos computados: **30.511**
+- Habilitações: 139.570.799 · Votos computados: 139.533.552 (diferença 37.247)
 
 Voto registrado entre 17h e 19h no 2º turno é **lícito** — era o prazo vigente por
 força da decisão judicial. Volume nessa faixa não constitui, por si, irregularidade.

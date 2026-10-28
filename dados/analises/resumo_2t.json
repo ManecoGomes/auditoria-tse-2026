@@ -1,6 +1,6 @@
 {
  "ufs_bu": 28,
- "ufs_logs": 28,
+ "ufs_logs": 31,
  "secoes": 499205,
  "comparecimento": 128236074,
  "impossibilidades": {
@@ -9,7 +9,7 @@
   "bu_antes_encerra": 0
  },
  "voto_apos_lacre": 0,
- "voto_apos_19h": 1,
+ "voto_apos_19h": 3,
  "encerrou_alem_2h": 1,
  "pct_alem_2h": 0.0
 }
