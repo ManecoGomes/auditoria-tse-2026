@@ -1,5 +1,5 @@
 {
- "gerado_utc": "2026-10-28T15:25:09.418952+00:00",
+ "gerado_utc": "2026-10-28T16:25:09.279567+00:00",
  "blocos": {
   "A2_triangulacao_1t": {
    "secoes_comparadas": 499150,
@@ -986,7 +986,7 @@
     {
      "uf": "BA",
      "municipio": 38873,
-     "nome": "São Miguel Das Matas",
+     "nome": "",
      "secoes": 35,
      "votos": 7815,
      "pct_tardio": 0.384
@@ -1281,7 +1281,7 @@
   },
   "E6_janela_final_secoes": {
    "inicio_janela": "17:00",
-   "secoes_comuns_com_10_votos_na_janela_2t": 7,
+   "secoes_comuns_com_10_votos_na_janela_2t": 5,
    "votos_discrepantes_apos_17h_2t": 0,
    "votos_discrepantes_apos_17h_1t_mesmas_secoes": 0,
    "secoes_2t_com_discrepantes_sem_ter_no_1t": 0,
@@ -1289,8 +1289,8 @@
    "secoes_2t_mediana_final_abaixo_20s": 0,
    "secoes_1t_mediana_final_abaixo_20s": 0,
    "variacao_media_final_2t_menos_1t_s": {
-    "mediana": -122.05,
-    "p10": -497.25,
+    "mediana": -51.54,
+    "p10": -323.36,
     "p90": 43.33
    },
    "municipios_com_secoes_rapidas_2t": [],
