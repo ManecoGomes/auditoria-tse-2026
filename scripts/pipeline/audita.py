@@ -91,6 +91,9 @@ else:  # logs
     BUG =re.compile(rb"^(\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2})\t.*Gerando arquivo de resultado \[bu\.dat\] \+ \[In",re.M)
     HAB=re.compile(rb"Eleitor foi habilitado"); COMP=re.compile(rb"O voto do eleitor foi computado")
     def P(b): return datetime.datetime.strptime(b.decode(),"%d/%m/%Y %H:%M:%S")
+    # O log da urna e CUMULATIVO: o do 2T traz o 1T inteiro (votos de 04/10 e lacre de 04/10).
+    # Sem este filtro todo voto do 2T aparecia "apos o lacre" do BU do 1T (bug visto em 28/10/2026).
+    PLEITO={"1":b"04/10/2026","2":b"25/10/2026"}[TURNO]
     for z in sorted(os.listdir(f"{AC}/originais")):
         if not z.endswith(".zip"): continue
         uf=uf_de(z)
@@ -113,12 +116,14 @@ else:  # logs
             n+=1
             _r=nome.split("-")[0][8:]
             mun,zon,sec=int(_r[0:5]),int(_r[5:9]),int(_r[9:]); sid=f"{mun}-{zon}-{sec}"
-            votos=[P(m.group(1))+off for m in VOTO.finditer(d)]
+            votos=[P(m.group(1))+off for m in VOTO.finditer(d) if m.group(1).startswith(PLEITO)]
             h=len(HAB.findall(d)); c=len(COMP.findall(d)); th+=h; tc+=c; tv+=len(votos)
             if not votos: continue
             for t in votos: permin[t.replace(second=0).isoformat()]+=1
             mx=max(votos); ult[mx.replace(minute=0,second=0).isoformat()]+=1
-            g=BUG.search(d)
+            g=None
+            for _m in BUG.finditer(d):
+                if _m.group(1).startswith(PLEITO): g=_m
             if g:
                 tbu=P(g.group(1))+off
                 dep=[t for t in votos if t>tbu]

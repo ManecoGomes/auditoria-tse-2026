@@ -58,7 +58,7 @@ ul,ol{margin:0 0 15px;padding-left:22px}li{margin:5px 0}
 hr{border:none;border-top:1px solid var(--line);margin:34px 0}
 @media(max-width:600px){h1{font-size:25px}.wrap{padding:0 17px 64px}}
 </style></head><body><div class="wrap">
-<header class="top"><div class="kicker">Auditoria independente · Eleições Gerais 2026</div><h1>Auditoria independente das Eleições 2026</h1><p class="sub">Dados públicos do TSE, método publicado antes dos dados, resultados seção por seção.</p><nav><a href="index.html" class="on">Resumo</a><a href="primeiro-turno.html">1º turno</a><a href="segundo-turno.html">2º turno</a><a href="comparativo.html">Comparativo</a><a href="reta-final.html">Reta final</a><a href="estados/index.html">Estados</a><a href="plano-2t.html">Plano</a><a href="verificar.html">Como verificar</a><a href="dados.html">Dados e hashes</a></nav></header>
+<header class="top"><div class="kicker">Auditoria independente · Eleições Gerais 2026</div><h1>Auditoria independente das Eleições 2026</h1><p class="sub">Dados públicos do TSE, método publicado antes dos dados, resultados seção por seção.</p><nav><a href="index.html" class="on">Resumo</a><a href="primeiro-turno.html">1º turno</a><a href="segundo-turno.html">2º turno</a><a href="comparativo.html">Comparativo</a><a href="reta-final.html">Reta final</a><a href="estados/index.html">Estados</a><a href="forense.html">Forense dos logs</a><a href="soma-oficial.html">Soma oficial</a><a href="votos-tardios.html">Votos tardios</a><a href="plano-2t.html">Plano</a><a href="verificar.html">Como verificar</a><a href="dados.html">Dados e hashes</a></nav></header>
 <h2>Objetivo</h2>
 <p>Verificar, com os dados públicos do Tribunal Superior Eleitoral e por método publicado <strong>antes</strong> de os
 dados existirem, se houve voto registrado fora das regras nas Eleições Gerais de 2026 — e, em especial, responder a
@@ -76,8 +76,9 @@ diz quanto dura um voto real, em cada seção, e quantos votos "rápidos demais"
 <ol>
 <li><strong>Coleta e integridade.</strong> Boletins de urna, logs, RDV e arquivos de votação de todas as seções do país.
 No 1º turno, os pacotes oficiais por UF (28 de 28), com integridade provada arquivo a arquivo. No 2º turno, os
-mesmos arquivos coletados <a href="segundo-turno.html">seção por seção no Portal Resultados</a>, porque o pacote
-oficial não tem prazo e ainda não saiu.</li>
+mesmos arquivos coletados <a href="segundo-turno.html">seção por seção no Portal Resultados</a> — boletim, log, RDV e
+contêiner de assinatura de cada seção —, porque o pacote consolidado por UF não tem prazo e ainda não saiu. <strong>Os logs do 2º turno já estão
+no acervo e em análise</strong>; o que falta é só o pacote oficial, que servirá para conferência quando sair.</li>
 <li><strong>Testes pré-registrados.</strong> O <a href="plano-2t.html">plano</a> foi publicado em 26/10/2026, antes dos
 dados do 2º turno, com data ancorada na blockchain do Bitcoin: integridade (A), horários (B), comportamento das
 urnas pelo log (C), impossibilidades lógicas (D), comparação entre turnos seção a seção (E), geografia (F) e dispersão
@@ -122,8 +123,17 @@ de qualquer transmissão. O teste B3 do plano (curva de recebimento dos boletins
 <li><a href="reta-final.html"><strong>Reta final</strong></a>: a hipótese, o vídeo, o teste C4b e as seções apontadas.</li>
 <li><a href="verificar.html">Como verificar</a> · <a href="dados.html">Dados e hashes</a> · <a href="relatorio.html">Relatório técnico dos boletins do 1º turno</a></li>
 </ul>
+
+<h2>Análises posteriores ao plano (emenda de 28/10/2026)</h2>
+<p>Acrescentadas depois de os dados existirem, a pedido de quem encomendou a auditoria, e por isso identificadas como posteriores — força probatória menor que
+a dos testes pré-registrados. Os logs usados são os de todas as seções, obtidos do Portal Resultados do TSE e conferidos contra o hash que a própria urna assinou.</p>
+<ul>
+<li><a href="forense.html"><strong>Forense dos logs</strong></a>: há rastro de edição — humana, por programa ou por IA — nos logs do 1º e do 2º turno? Gramática, codificação, vocabulário, relógio, selo, hash assinado pela urna.</li>
+<li><a href="soma-oficial.html"><strong>Soma dos boletins × resultado oficial</strong></a>: a totalização bate com a soma de todos os boletins? E alguém tinha 50% + 1 no 1º turno?</li>
+<li><a href="votos-tardios.html"><strong>Votos depois das 17h: para quem?</strong></a>: o que o dado permite dizer, com os limites exatos, nos dois turnos.</li>
+</ul>
 <footer><p><strong>Auditoria de horários — Eleições Gerais 2026.</strong>
 Dados públicos do Tribunal Superior Eleitoral. Método e scripts abertos; qualquer pessoa pode reproduzir.</p>
 <p>Responsável: Luis Manuel Jordão Elias Gomes (Maneco Gomes) — OAB/RJ 245.463.
-Última atualização: 27/10/2026 23:26 (America/Sao_Paulo).</p>
+Última atualização: 28/10/2026 10:03 (America/Sao_Paulo).</p>
 </footer></div></body></html>

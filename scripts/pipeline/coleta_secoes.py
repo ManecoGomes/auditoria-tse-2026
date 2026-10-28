@@ -101,7 +101,17 @@ def monta_zip(uf, reg):
         for n in nomes: zf.write(f"{d}/{n}", n)
     os.replace(tmp, z)
     tam = os.path.getsize(z)
-    open(z + ".esperado", "w").write(str(tam)); open(z + ".ok", "w").write(str(tam))
+    open(z + ".esperado", "w").write(str(tam))
+    # .ok so depois de testzip() passar: em 27/10 cinco ZIPs remontados (AM BA ES MG SE) sairam
+    # com diretorio central ou CRC ruins e levaram .ok mesmo assim (regressao vista em 28/10).
+    for s in (".ok", ".bad"):
+        try: os.remove(z + s)
+        except FileNotFoundError: pass
+    try: ruim = zipfile.ZipFile(z).testzip()
+    except Exception as e: ruim = str(e)
+    if ruim is None: open(z + ".ok", "w").write(str(tam))
+    else:
+        open(z + ".bad", "w").write(str(tam)); log(f"{uf}: ZIP remontado FALHOU no testzip ({ruim}) — sidecar .bad")
     h = hashlib.sha512()
     with open(z, "rb") as f:
         for b in iter(lambda: f.read(1 << 22), b""): h.update(b)

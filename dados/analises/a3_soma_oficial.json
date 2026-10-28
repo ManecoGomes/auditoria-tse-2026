@@ -1,0 +1,921 @@
+{
+ "gerado_utc": "2026-10-28T12:49:24.359121+00:00",
+ "turnos": {
+  "1": {
+   "boletins": {
+    "secoes": 499206,
+    "comparecimento": 125275835,
+    "aptos": 158745007,
+    "validos_nominais": 119306034,
+    "brancos": 2300798,
+    "nulos": 3669003
+   },
+   "oficial_pdf": {
+    "arquivo": "6257_BR_BRASIL_2026_T1_PRESIDENTE.pdf",
+    "comparecimento": 125275835,
+    "validos": 119300788,
+    "nulos": 3674249,
+    "nulos_urna": 3669003,
+    "nulos_tecnico": 5246,
+    "brancos": 2300798,
+    "secoes_urna": 499176,
+    "secoes_sa": 31,
+    "aptos": 158745079
+   },
+   "candidatos": [
+    {
+     "numero": "22",
+     "nome": "FLAVIO BOLSONARO (PL)",
+     "boletins": 56104503,
+     "oficial": 56104503,
+     "diferenca": 0,
+     "pct_validos_oficial": 47.03
+    },
+    {
+     "numero": "13",
+     "nome": "LULA (PT)",
+     "boletins": 53879538,
+     "oficial": 53879538,
+     "diferenca": 0,
+     "pct_validos_oficial": 45.16
+    },
+    {
+     "numero": "70",
+     "nome": "ESCRITOR AUGUSTO CURY (AVANTE)",
+     "boletins": 3448569,
+     "oficial": 3448569,
+     "diferenca": 0,
+     "pct_validos_oficial": 2.89
+    },
+    {
+     "numero": "14",
+     "nome": "RENAN SANTOS (MISSÃO)",
+     "boletins": 2675887,
+     "oficial": 2675887,
+     "diferenca": 0,
+     "pct_validos_oficial": 2.24
+    },
+    {
+     "numero": "55",
+     "nome": "RONALDO CAIADO (PSD)",
+     "boletins": 2605148,
+     "oficial": 2605148,
+     "diferenca": 0,
+     "pct_validos_oficial": 2.18
+    },
+    {
+     "numero": "30",
+     "nome": "ZEMA (NOVO)",
+     "boletins": 326488,
+     "oficial": 326488,
+     "diferenca": 0,
+     "pct_validos_oficial": 0.27
+    },
+    {
+     "numero": "80",
+     "nome": "SAMARA (UP)",
+     "boletins": 122911,
+     "oficial": 122911,
+     "diferenca": 0,
+     "pct_validos_oficial": 0.1
+    },
+    {
+     "numero": "16",
+     "nome": "HERTZ DIAS (PSTU)",
+     "boletins": 43103,
+     "oficial": 43103,
+     "diferenca": 0,
+     "pct_validos_oficial": 0.04
+    },
+    {
+     "numero": "27",
+     "nome": "CLARIANA BARAO (DC)",
+     "boletins": 40043,
+     "oficial": 40043,
+     "diferenca": 0,
+     "pct_validos_oficial": 0.03
+    },
+    {
+     "numero": "21",
+     "nome": "EDMILSON COSTA (PCB)",
+     "boletins": 22693,
+     "oficial": 22693,
+     "diferenca": 0,
+     "pct_validos_oficial": 0.02
+    },
+    {
+     "numero": "35",
+     "nome": "VETERINÁRIO WILSON GRASSI (DEMOCRATA)",
+     "boletins": 16881,
+     "oficial": 16881,
+     "diferenca": 0,
+     "pct_validos_oficial": 0.01
+    },
+    {
+     "numero": "29",
+     "nome": "RUI COSTA PIMENTA (PCO)",
+     "boletins": 15024,
+     "oficial": 15024,
+     "diferenca": 0,
+     "pct_validos_oficial": 0.01
+    },
+    {
+     "numero": "28",
+     "nome": "28",
+     "boletins": 5246,
+     "oficial": 0,
+     "diferenca": 5246,
+     "pct_validos_oficial": 0.0
+    }
+   ],
+   "por_uf": [
+    {
+     "uf": "AC",
+     "13": {
+      "boletins": 134770,
+      "oficial": 134770,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 302807,
+      "oficial": 302807,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "AL",
+     "13": {
+      "boletins": 995459,
+      "oficial": 995459,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 735718,
+      "oficial": 735718,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "AM",
+     "13": {
+      "boletins": 1046996,
+      "oficial": 1046996,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 976764,
+      "oficial": 976764,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "AP",
+     "13": {
+      "boletins": 212503,
+      "oficial": 212503,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 212278,
+      "oficial": 212278,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "BA",
+     "13": {
+      "boletins": 5664771,
+      "oficial": 5664771,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 2442585,
+      "oficial": 2442585,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "CE",
+     "13": {
+      "boletins": 3555263,
+      "oficial": 3555263,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1756850,
+      "oficial": 1756850,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "DF",
+     "13": {
+      "boletins": 675627,
+      "oficial": 675627,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 909616,
+      "oficial": 909616,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "ES",
+     "13": {
+      "boletins": 850028,
+      "oficial": 850028,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1233194,
+      "oficial": 1233194,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "GO",
+     "13": {
+      "boletins": 1188880,
+      "oficial": 1188880,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 2051888,
+      "oficial": 2051888,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "MA",
+     "13": {
+      "boletins": 2566301,
+      "oficial": 2566301,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1239040,
+      "oficial": 1239040,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "MG",
+     "13": {
+      "boletins": 5188936,
+      "oficial": 5188936,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 5777548,
+      "oficial": 5777548,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "MS",
+     "13": {
+      "boletins": 516855,
+      "oficial": 516855,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 873351,
+      "oficial": 873351,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "MT",
+     "13": {
+      "boletins": 581681,
+      "oficial": 581681,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1298581,
+      "oficial": 1298581,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PA",
+     "13": {
+      "boletins": 2427237,
+      "oficial": 2427237,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 2163957,
+      "oficial": 2163957,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PB",
+     "13": {
+      "boletins": 1541127,
+      "oficial": 1541127,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 831377,
+      "oficial": 831377,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PE",
+     "13": {
+      "boletins": 3553971,
+      "oficial": 3553971,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1738043,
+      "oficial": 1738043,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PI",
+     "13": {
+      "boletins": 1523710,
+      "oficial": 1523710,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 517028,
+      "oficial": 517028,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PR",
+     "13": {
+      "boletins": 2054597,
+      "oficial": 2054597,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 3945345,
+      "oficial": 3945345,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RJ",
+     "13": {
+      "boletins": 3693021,
+      "oficial": 3693021,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 4966844,
+      "oficial": 4966844,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RN",
+     "13": {
+      "boletins": 1237963,
+      "oficial": 1237963,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 720493,
+      "oficial": 720493,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RO",
+     "13": {
+      "boletins": 250667,
+      "oficial": 250667,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 652988,
+      "oficial": 652988,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RR",
+     "13": {
+      "boletins": 74420,
+      "oficial": 74420,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 231322,
+      "oficial": 231322,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RS",
+     "13": {
+      "boletins": 2294759,
+      "oficial": 2294759,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 3573783,
+      "oficial": 3573783,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "SC",
+     "13": {
+      "boletins": 1127168,
+      "oficial": 1127168,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 3000020,
+      "oficial": 3000020,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "SE",
+     "13": {
+      "boletins": 856019,
+      "oficial": 856019,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 417839,
+      "oficial": 417839,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "SP",
+     "13": {
+      "boletins": 9505413,
+      "oficial": 9505413,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 12922023,
+      "oficial": 12922023,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "TO",
+     "13": {
+      "boletins": 404009,
+      "oficial": 404009,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 469321,
+      "oficial": 469321,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "ZZ",
+     "13": {
+      "boletins": 157387,
+      "oficial": 157387,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 143900,
+      "oficial": 143900,
+      "diferenca": 0
+     }
+    }
+   ],
+   "confere": {
+    "comparecimento": true,
+    "brancos": true,
+    "nulos_na_urna": true,
+    "candidatos_todos_iguais": false,
+    "validos_oficial_menos_boletins": -5246,
+    "nota": "validos oficiais = nominais dos boletins menos os 'nulos tecnicos' (votos a candidatura indeferida, anulados na totalizacao)"
+   }
+  },
+  "2": {
+   "boletins": {
+    "secoes": 499205,
+    "comparecimento": 128236074,
+    "aptos": 158744977,
+    "validos_nominais": 124082273,
+    "brancos": 1430496,
+    "nulos": 2723305
+   },
+   "oficial_pdf": {
+    "arquivo": "6258_BR_BRASIL_2026_T2_PRESIDENTE.pdf",
+    "comparecimento": 128236074,
+    "validos": 124082273,
+    "nulos": 2723305,
+    "nulos_urna": 2723305,
+    "nulos_tecnico": 0,
+    "brancos": 1430496,
+    "secoes_urna": 499178,
+    "secoes_sa": 29,
+    "aptos": 158745079
+   },
+   "candidatos": [
+    {
+     "numero": "13",
+     "nome": "LULA (PT)",
+     "boletins": 64256232,
+     "oficial": 64256232,
+     "diferenca": 0,
+     "pct_validos_oficial": 51.79
+    },
+    {
+     "numero": "22",
+     "nome": "FLAVIO BOLSONARO (PL)",
+     "boletins": 59826041,
+     "oficial": 59826041,
+     "diferenca": 0,
+     "pct_validos_oficial": 48.21
+    }
+   ],
+   "por_uf": [
+    {
+     "uf": "AC",
+     "13": {
+      "boletins": 144513,
+      "oficial": 144513,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 287715,
+      "oficial": 287715,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "AL",
+     "13": {
+      "boletins": 1152621,
+      "oficial": 1152621,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 744140,
+      "oficial": 744140,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "AM",
+     "13": {
+      "boletins": 1145783,
+      "oficial": 1145783,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 975245,
+      "oficial": 975245,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "AP",
+     "13": {
+      "boletins": 222968,
+      "oficial": 222968,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 198674,
+      "oficial": 198674,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "BA",
+     "13": {
+      "boletins": 6485258,
+      "oficial": 6485258,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 2608761,
+      "oficial": 2608761,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "CE",
+     "13": {
+      "boletins": 4036124,
+      "oficial": 4036124,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1819478,
+      "oficial": 1819478,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "DF",
+     "13": {
+      "boletins": 825224,
+      "oficial": 825224,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 979542,
+      "oficial": 979542,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "ES",
+     "13": {
+      "boletins": 1001965,
+      "oficial": 1001965,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1294504,
+      "oficial": 1294504,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "GO",
+     "13": {
+      "boletins": 1585555,
+      "oficial": 1585555,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 2345334,
+      "oficial": 2345334,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "MA",
+     "13": {
+      "boletins": 2808231,
+      "oficial": 2808231,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1229971,
+      "oficial": 1229971,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "MG",
+     "13": {
+      "boletins": 6351099,
+      "oficial": 6351099,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 6241786,
+      "oficial": 6241786,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "MS",
+     "13": {
+      "boletins": 628973,
+      "oficial": 628973,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 927892,
+      "oficial": 927892,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "MT",
+     "13": {
+      "boletins": 694167,
+      "oficial": 694167,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1351099,
+      "oficial": 1351099,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PA",
+     "13": {
+      "boletins": 2690449,
+      "oficial": 2690449,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 2199940,
+      "oficial": 2199940,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PB",
+     "13": {
+      "boletins": 1794059,
+      "oficial": 1794059,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 865210,
+      "oficial": 865210,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PE",
+     "13": {
+      "boletins": 4117513,
+      "oficial": 4117513,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 1832554,
+      "oficial": 1832554,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PI",
+     "13": {
+      "boletins": 1653989,
+      "oficial": 1653989,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 525859,
+      "oficial": 525859,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "PR",
+     "13": {
+      "boletins": 2566504,
+      "oficial": 2566504,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 4291444,
+      "oficial": 4291444,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RJ",
+     "13": {
+      "boletins": 4565393,
+      "oficial": 4565393,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 5169033,
+      "oficial": 5169033,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RN",
+     "13": {
+      "boletins": 1413596,
+      "oficial": 1413596,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 737409,
+      "oficial": 737409,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RO",
+     "13": {
+      "boletins": 294446,
+      "oficial": 294446,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 674382,
+      "oficial": 674382,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RR",
+     "13": {
+      "boletins": 83505,
+      "oficial": 83505,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 219675,
+      "oficial": 219675,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "RS",
+     "13": {
+      "boletins": 2824552,
+      "oficial": 2824552,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 3874378,
+      "oficial": 3874378,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "SC",
+     "13": {
+      "boletins": 1418314,
+      "oficial": 1418314,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 3220071,
+      "oficial": 3220071,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "SE",
+     "13": {
+      "boletins": 989041,
+      "oficial": 989041,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 433354,
+      "oficial": 433354,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "SP",
+     "13": {
+      "boletins": 12119274,
+      "oficial": 12119274,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 14139178,
+      "oficial": 14139178,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "TO",
+     "13": {
+      "boletins": 442962,
+      "oficial": 442962,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 467916,
+      "oficial": 467916,
+      "diferenca": 0
+     }
+    },
+    {
+     "uf": "ZZ",
+     "13": {
+      "boletins": 200154,
+      "oficial": 200154,
+      "diferenca": 0
+     },
+     "22": {
+      "boletins": 171497,
+      "oficial": 171497,
+      "diferenca": 0
+     }
+    }
+   ],
+   "confere": {
+    "comparecimento": true,
+    "brancos": true,
+    "nulos_na_urna": true,
+    "candidatos_todos_iguais": true,
+    "validos_oficial_menos_boletins": 0,
+    "nota": "validos oficiais = nominais dos boletins menos os 'nulos tecnicos' (votos a candidatura indeferida, anulados na totalizacao)"
+   }
+  }
+ }
+}

@@ -33,6 +33,8 @@ trap 'rm -rf "$LOCK"' EXIT
 EST=$( { ls -l "$DEMO"/*.json 2>/dev/null
          ls -l "$PL"/demonstracao_1t.json "$PL"/analises.json "$PL"/E5_municipios_1t_2t.csv 2>/dev/null
          ls -l "$PL"/{coleta.py,audita.py,compara.py,extrai_votos.py,analises.py,demonstra.py,gera_demo_html.py} 2>/dev/null
+         ls -l "$PL"/{forense.py,tardios.py,soma_oficial.py,gera_forense.py,remonta_2t.py,paginas_extra.py} 2>/dev/null
+         ls -l /Volumes/SSD1TB/acervo-tse/auditoria/forense/*/*.json "$PL"/resultados/{a3_soma_oficial.json,tardios.json} 2>/dev/null
          ls -l "$PL"/{baixa_resiliente.sh,marca_integros.sh,enfileira_restantes.sh} 2>/dev/null
          ls -l "$PL"/{roda.sh,publica.sh,publica_parcial.sh} 2>/dev/null
          ls -l "$P"/{diagnostico.sh,destrava.sh} 2>/dev/null
@@ -53,10 +55,15 @@ EST="$EST-$ESTS"
 
 # 1. processa o que falta. exit 2/3 = acervo inacessivel ou nenhuma UF integra:
 #    nesses casos NAO se publica nada.
+if [ "${SEM_DEMONSTRA:-0}" = "1" ]; then
+  echo "$(date '+%F %T') SEM_DEMONSTRA=1: pulando demonstra/analises (so paginas, manifesto e deploy)" >> "$PL/parcial.log"
+  rc=0
+else
 "$PY" -u "$PL/demonstra.py" >> "$PL/parcial.log" 2>&1
 rc=$?
+fi
 # 2T: roda a mesma bateria quando ja houver UF do 2T provada integra (ZIP remontado por secao ou oficial)
-if ls /Volumes/SSD1TB/acervo-tse/2026-2t/originais/*_2t_*.zip.ok >/dev/null 2>&1; then
+if [ "${SEM_DEMONSTRA:-0}" != "1" ] && ls /Volumes/SSD1TB/acervo-tse/2026-2t/originais/*_2t_*.zip.ok >/dev/null 2>&1; then
   "$PY" -u "$PL/demonstra.py" 2 >> "$PL/parcial.log" 2>&1 || echo "$(date '+%F %T') demonstra.py 2 falhou (segue so com o 1T)" >> "$PL/parcial.log"
 fi
 (exit $rc)
@@ -64,11 +71,15 @@ rc=$?
 [ "$rc" -ne 0 ] && { echo "$(date '+%F %T') demonstra.py saiu $rc — publicacao abortada" >> "$PL/parcial.log"; exit "$rc"; }
 
 # 2. analises (os blocos E saem sozinhos quando o 2T existir)
-"$PY" -u "$PL/analises.py" >> "$PL/parcial.log" 2>&1 || \
+[ "${SEM_DEMONSTRA:-0}" = "1" ] || "$PY" -u "$PL/analises.py" >> "$PL/parcial.log" 2>&1 || \
   echo "$(date '+%F %T') analises.py falhou — seguindo" >> "$PL/parcial.log"
 
 # 3. HTML: nacional + por estado + por municipio
 "$PY" -u "$PL/gera_demo_html.py" >> "$PL/parcial.log" 2>&1 || exit 0
+# 3b. emenda de 28/10: forense dos logs, soma oficial, votos tardios (tolera dados parciais)
+"$PY" -u "$PL/tardios.py" >> "$PL/parcial.log" 2>&1 || echo "$(date '+%F %T') tardios.py falhou — seguindo" >> "$PL/parcial.log"
+"$PY" -u "$PL/gera_forense.py" >> "$PL/parcial.log" 2>&1 || echo "$(date '+%F %T') gera_forense.py falhou — seguindo" >> "$PL/parcial.log"
+cp "$P/relatorio/EMENDA-2026-10-28.md" "$R/relatorio/" 2>/dev/null || true
 
 # 4. dados derivados para o repo
 mkdir -p "$R/dados/analises" "$R/scripts/pipeline"
@@ -148,6 +159,7 @@ cp "$PL"/{baixa_resiliente.sh,marca_integros.sh,enfileira_restantes.sh} \
 cp "$PL"/{roda.sh,publica.sh,publica_parcial.sh} "$R/scripts/pipeline/" 2>/dev/null
 cp "$PL/sha512_backfill.sh" "$R/scripts/pipeline/" 2>/dev/null
 cp "$PL/repara_zip.py" "$R/scripts/pipeline/" 2>/dev/null
+cp "$PL"/{forense.py,tardios.py,soma_oficial.py,gera_forense.py,remonta_2t.py,paginas_extra.py} "$R/scripts/pipeline/" 2>/dev/null
 cp "$P/diagnostico.sh" "$P/destrava.sh" "$R/scripts/" 2>/dev/null
 
 # 6. manifesto novo + carimbo no Bitcoin
