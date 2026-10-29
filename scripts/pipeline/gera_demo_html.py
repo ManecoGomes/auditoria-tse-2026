@@ -455,7 +455,7 @@ def nav(ativo, pre=""):
     its = [("index.html","Resumo"),("primeiro-turno.html","1º turno"),
            ("segundo-turno.html","2º turno"),("comparativo.html","Comparativo"),
            ("reta-final.html","Reta final"),("estados/index.html","Estados"),
-           ("forense.html","Forense dos logs"),("soma-oficial.html","Soma oficial"),("votos-tardios.html","Votos tardios"),("pianista.html","Pianista"),("concentracao.html","Horário × resultado"),
+           ("forense.html","Forense dos logs"),("soma-oficial.html","Soma oficial"),("votos-tardios.html","Votos tardios"),("pianista.html","Pianista"),("concentracao.html","Horário × resultado"),("algoritmo.html","Queda linear?"),
            ("plano-2t.html","Plano"),("verificar.html","Como verificar"),
            ("dados.html","Dados e hashes")]
     out = []
