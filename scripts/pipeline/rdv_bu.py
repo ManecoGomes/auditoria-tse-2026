@@ -22,7 +22,7 @@ import collections, csv, datetime, io, json, multiprocessing as mp, os, signal, 
 VERSAO = 1
 T = sys.argv[1]
 UFS_ARG = [u.upper() for u in sys.argv[2:]]
-WORKERS = int(os.environ.get("WORKERS", "3"))
+WORKERS = int(os.environ.get("WORKERS", "2"))   # 2: CPU a 100 °C com 3+3 em 28/10; a ponte USB é o gargalo
 P = os.path.expanduser("~/Claude/Projetos/eleição")
 AC = f"/Volumes/SSD1TB/acervo-tse/2026-{T}t"
 OUTD = f"/Volumes/SSD1TB/acervo-tse/auditoria/rdv/{T}t"

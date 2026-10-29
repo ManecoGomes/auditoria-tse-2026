@@ -16,7 +16,7 @@ import collections, datetime, io, json, multiprocessing as mp, os, re, signal, s
 VERSAO = 1
 T = sys.argv[1]
 UFS_ARG = [u.upper() for u in sys.argv[2:]]
-WORKERS = int(os.environ.get("WORKERS", "3"))
+WORKERS = int(os.environ.get("WORKERS", "2"))   # 2: CPU a 100 °C com 3+3 em 28/10; a ponte USB é o gargalo
 AC = f"/Volumes/SSD1TB/acervo-tse/2026-{T}t"
 OUTD = f"/Volumes/SSD1TB/acervo-tse/auditoria/concentracao/{T}t"
 os.makedirs(OUTD, exist_ok=True)

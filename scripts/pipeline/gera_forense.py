@@ -200,7 +200,86 @@ def sec_html(t, A):
                     [[u, N(d["secoes"]), N(d["logs"]), esc(d["fonte"]), N(d["membros_com_falha_no_zip"]), N(d["moldes"]), f'{d["segundos"]} s'] for u, d in sorted(ufs.items())])
     return cab + "<h3>Testes de consistência do arquivo</h3>" + tab + a5 + sw + ciclo + erros + voc + dig + vet + "<h3>Cobertura por UF</h3>" + porufs
 
-def pagina_forense(A1, A2):
+LAC = "/Volumes/SSD1TB/acervo-tse/auditoria/lacracao"
+def agrega_lacracao(t):
+    """L12: pacotes verificados pelas urnas (log) × lista lacrada do TSE por modelo."""
+    sel = {}
+    try: sel = json.load(open(f"{R}/lacracao_2026.json"))
+    except Exception: pass
+    norm = lambda p: re.sub(r"(avmodue|avusrlibue)20\d\d\.vst$", r"\1.vst", p)
+    A = {"ufs": [], "secoes": 0, "versoes": collections.Counter(), "modelos": collections.Counter(), "multi_versao": 0, "sem_modelo": 0,
+         "por_modelo": {}, "nao_sucesso": [], "resultados": collections.Counter()}
+    pac = collections.defaultdict(collections.Counter)      # modelo -> pacote -> verificações
+    conj = collections.defaultdict(collections.Counter)     # modelo -> conjunto -> seções
+    for f in sorted(glob.glob(f"{LAC}/{t}t/??.json")):
+        try: d = json.load(open(f))
+        except Exception: continue
+        if d.get("versao") != 2: continue
+        A["ufs"].append(d["uf"]); A["secoes"] += d["secoes"]; A["multi_versao"] += d["secoes_com_mais_de_uma_versao"]; A["sem_modelo"] += d["sem_modelo"]
+        for v, n in d["versoes"].items(): A["versoes"][v] += n
+        for m, n in d["modelos"].items(): A["modelos"][m] += n
+        for m, p, r, n in d["pacotes"]:
+            pac[m][p] += n; A["resultados"][r] += n
+        for m, c, n in d["conjuntos"]: conj[m][c] += n
+        for e in d["nao_sucesso"][:20]:
+            if len(A["nao_sucesso"]) < 100: A["nao_sucesso"].append({"uf": d["uf"], **e})
+    for m in sorted(pac):
+        lista_mod = "UE2022" if m == "UE2020" else m
+        lacrados = set((sel.get(lista_mod) or {}).get("pacotes_vst") or [])
+        verificados = set(pac[m])
+        vnorm = {p: norm(p) for p in verificados}
+        proprio = sorted(p for p in verificados if vnorm[p] in lacrados and not re.search(r"(avmodue|avusrlibue)20\d\d\.vst$", p) or (vnorm[p] in lacrados and m[2:] in p))
+        outros_modelos = sorted(p for p in verificados if re.search(r"(avmodue|avusrlibue)20\d\d\.vst$", p) and m[2:] not in p)
+        dados_pleito = sorted(p for p in verificados if p.startswith("/dsk/fe/estatico/"))
+        nao_lacrados = sorted(p for p in verificados if p not in proprio and p not in outros_modelos and p not in dados_pleito)
+        nunca = sorted(p for p in lacrados if p not in {vnorm[q] for q in verificados})
+        secs = A["modelos"][m]
+        A["por_modelo"][m] = {"urnas": secs, "lista_lacrada": lista_mod, "lacrados_vst": len(lacrados), "verificados_distintos": len(verificados),
+                              "lacrados_do_modelo_verificados": proprio, "variantes_de_outros_modelos": outros_modelos, "dados_do_pleito": dados_pleito,
+                              "fora_da_lista": nao_lacrados, "lacrados_nunca_verificados": nunca,
+                              "conjuntos_distintos": len(conj[m]), "conjunto_majoritario_secoes": conj[m].most_common(1)[0][1] if conj[m] else 0,
+                              "pacotes_por_urna_majoritario": len(conj[m].most_common(1)[0][0].split("|")) if conj[m] else 0}
+    A["faltam"] = [u for u in UFS if u not in A["ufs"]]
+    return A
+
+def sec_lacracao(L1, L2, sel):
+    def bloco(t, A):
+        if not A["ufs"]: return f"<h3>{t}º turno</h3><p>Em processamento.</p>"
+        ok = A["resultados"].get("SUCESSO", 0); tot = sum(A["resultados"].values())
+        out = f'<h3>{t}º turno</h3><div class="grid">' + stat(f'{len(A["ufs"])}/28', "UFs") + stat(N(A["secoes"]), "urnas (seções) lidas") + stat(N(tot), "verificações de assinatura de pacote") + stat(N(tot - ok), "fora de SUCESSO", zero=(tot - ok == 0)) + stat(str(len(A["versoes"])), "versão de software declarada", zero=(len(A["versoes"]) == 1)) + stat(N(A["multi_versao"]), "urnas com mais de uma versão", zero=(A["multi_versao"] == 0)) + "</div>"
+        if A["faltam"]: out += f'<p><strong>Em processamento:</strong> {", ".join(A["faltam"])}.</p>'
+        out += "<p>Versão declarada: " + ", ".join(f"<code>{esc(v)}</code> ({N(n)} urnas)" for v, n in A["versoes"].most_common()) + ".</p>"
+        rows = []
+        for m, d in A["por_modelo"].items():
+            rows.append([m, N(d["urnas"]), d["lista_lacrada"] + (" (o TSE não publica lista própria para 2020)" if m == "UE2020" else ""), f'{len(d["lacrados_do_modelo_verificados"])} de {d["lacrados_vst"]}',
+                         f'{d["pacotes_por_urna_majoritario"]} ({N(d["conjunto_majoritario_secoes"])} urnas; {d["conjuntos_distintos"]} conjuntos distintos)',
+                         ", ".join(esc(p.split("/")[-1]) for p in d["lacrados_nunca_verificados"]) or "—",
+                         ", ".join(esc(p) for p in d["fora_da_lista"]) or "—", len(d["variantes_de_outros_modelos"]), len(d["dados_do_pleito"])])
+        out += tabela(["Modelo", "Urnas", "Lista lacrada usada", "Pacotes lacrados verificados por todas as urnas", "Pacotes verificados por urna", "Lacrados nunca verificados ao carregar", "Verificados que não constam da lista", "Variantes de outros modelos", "Pacotes do pleito (/dsk/fe/estatico)"], rows)
+        if A["nao_sucesso"]:
+            out += '<details><summary>Verificações fora de SUCESSO (até 100)</summary>' + tabela(["UF", "Seção", "Modelo", "Data", "Pacote", "Resultado"], [[e["uf"], e["secao"], e["modelo"], e["data"], esc(e["pacote"]), esc(e["resultado"])] for e in A["nao_sucesso"]]) + "</details>"
+        return out
+    datas = ", ".join(f'{m}: {esc((sel.get(m) or {}).get("titulo", "—"))}' for m in ("UE2013", "UE2015", "UE2022"))
+    return f'''
+<h2>L12 — o que a urna verificou ao carregar × o que foi lacrado no TSE</h2>
+<p>O software das urnas não é auditável de fora: fonte e executáveis só são inspecionados pelas entidades fiscalizadoras, no TSE, sob sigilo. O que o
+TSE publica é a lista de arquivos lacrados de cada modelo de urna com o SHA-512 de cada um (Cerimônia de Assinatura Digital e Lacração, 04/09/2026;
+listas datadas de 02/09/2026 — {datas}). E o que cada urna grava no log, a cada inicialização, é «Verificação de assinatura de aplicação por etapa [n] –
+[Pacote: /caminho/x.vst] – [SUCESSO]», além da versão do software e do modelo. A urna <strong>não</strong> grava o hash no log; grava o resultado da
+verificação da assinatura do pacote. Logo o cotejo possível é de <em>nomes e resultados</em>: cada urna verificou os pacotes lacrados para o seu modelo, todas
+as verificações deram SUCESSO, e todas declaram a mesma versão. O que este cotejo <strong>não</strong> prova é que o binário instalado é o lacrado — isso é o
+Teste de Autenticidade, feito pelo TSE e pelos TREs em urnas sorteadas no dia da eleição, com os programas verificadores das entidades.</p>
+<p>Leitura das colunas: os pacotes de sistema lacrados (<code>.vst</code>) aparecem no log com o mesmo caminho, exceto os módulos específicos de modelo, que o log
+nomeia com o ano (<code>avmodue2022.vst</code>) e a lista nomeia sem ele (<code>avmodue.vst</code>); cada urna verifica também as variantes dos outros modelos
+contidas na mesma imagem. Os pacotes em <code>/dsk/fe/estatico</code> são dados do pleito (candidatos, tabela de correspondência, chaves), gerados por seção
+na preparação e assinados — não constam da lacração dos sistemas, por natureza. Pacotes lacrados «nunca verificados ao carregar» são partições alternativas
+e utilitários que a urna só verifica quando os usa. Fontes: <code>dados/analises/lacracao_2026.json</code> (listas do TSE, com os hashes), <code>lacracao_1t.json</code>,
+<code>lacracao_2t.json</code>; código <code>scripts/pipeline/lacracao.py</code>.</p>
+{bloco("2", L2)}
+{bloco("1", L1)}
+'''
+
+def pagina_forense(A1, A2, LAC_HTML=""):
     intro = f'''
 <blockquote><p><strong>Emenda datada de 28/10/2026, posterior ao plano.</strong> Estes testes foram acrescentados depois de os dados dos dois turnos existirem,
 a pedido de quem encomendou a auditoria, para responder a uma pergunta direta: <em>há no log das urnas algum rastro de que o arquivo tenha sido alterado —
@@ -223,6 +302,7 @@ estritamente o que mediu.</p>
 <p>Código: <code>scripts/pipeline/forense.py</code>. Dados agregados: <code>dados/analises/forense_1t.json</code> e <code>forense_2t.json</code>.</p>
 <h2>2º turno (25/10/2026)</h2>{sec_html("2", A2)}
 <h2>1º turno (04/10/2026) — régua</h2>{sec_html("1", A1)}
+{LAC_HTML}
 <h2>Como ler</h2>
 <p>«Zero» nas linhas de codificação, código repetido, hash divergente, voto antes da zerésima e relógio retrocedendo no dia significa: nenhum dos arquivos lidos
 exibe o rastro que uma edição deixaria. Os números diferentes de zero em «habilitados ≠ computados», «comparecimento do boletim ≠ log» e «urna ligada 3+ vezes»
@@ -362,7 +442,15 @@ def main():
         j["digitos"] = {c: dict(v) for c, v in A["digitos"].items()}; j["gerado_utc"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
         json.dump(j, open(f"{PL}/forense_{t}t.json", "w"), ensure_ascii=False)
         shutil.copy(f"{PL}/forense_{t}t.json", f"{P}/repo/dados/analises/")
-    open(f"{SITE}/forense.html", "w").write(pagina_forense(A1, A2))
+    # L12: lacração × log (emenda de 28/10, noite)
+    sel = {}
+    try: sel = json.load(open(f"{R}/lacracao_2026.json")); shutil.copy(f"{R}/lacracao_2026.json", f"{P}/repo/dados/analises/")
+    except Exception: pass
+    L1, L2 = agrega_lacracao("1"), agrega_lacracao("2")
+    for t, L in (("1", L1), ("2", L2)):
+        j = dict(L); j["versoes"] = dict(L["versoes"]); j["modelos"] = dict(L["modelos"]); j["resultados"] = dict(L["resultados"]); j["gerado_utc"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        json.dump(j, open(f"{PL}/lacracao_{t}t.json", "w"), ensure_ascii=False); shutil.copy(f"{PL}/lacracao_{t}t.json", f"{P}/repo/dados/analises/")
+    open(f"{SITE}/forense.html", "w").write(pagina_forense(A1, A2, sec_lacracao(L1, L2, sel)))
     if os.path.exists(f"{R}/a3_soma_oficial.json"):
         open(f"{SITE}/soma-oficial.html", "w").write(pagina_soma()); shutil.copy(f"{R}/a3_soma_oficial.json", f"{P}/repo/dados/analises/")
     if os.path.exists(f"{R}/tardios.json"):

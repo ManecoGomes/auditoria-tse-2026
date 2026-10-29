@@ -31,7 +31,7 @@ import os, sys, re, io, json, csv, zipfile, hashlib, collections, time, signal, 
 VERSAO = 4
 T = sys.argv[1]
 UFS_ARG = [u.upper() for u in sys.argv[2:]]
-WORKERS = int(os.environ.get("WORKERS", "4"))
+WORKERS = int(os.environ.get("WORKERS", "2"))   # 2: CPU a 100 °C com passagens paralelas em 28/10; a ponte USB é o gargalo
 AC = f"/Volumes/SSD1TB/acervo-tse/2026-{T}t"
 OUTD = f"/Volumes/SSD1TB/acervo-tse/auditoria/forense/{T}t"
 os.makedirs(OUTD, exist_ok=True)

@@ -1,0 +1,1781 @@
+{
+ "UE2013": {
+  "titulo": "Urna 2013 - 02/09/2026",
+  "arquivos": 139,
+  "secoes": [
+   "ARQUIVOS BASE"
+  ],
+  "pacotes_vst": [
+   "/bin/avbin.vst",
+   "/boot/boot/avboot.vst",
+   "/etc/avetc.vst",
+   "/etc/RHVoice/avrhvoice.vst",
+   "/lib/avlib.vst",
+   "/lib/modules/avmod.vst",
+   "/lib/modules/ue2013/avmodue.vst",
+   "/lib/plugins/generic/avlibqtgeneric.vst",
+   "/lib/plugins/imageformats/avlibqtimageformats.vst",
+   "/lib/plugins/platforms/avlibqtplatforms.vst",
+   "/share/RHVoice/languages/Brazilian-Portuguese/avsharerhvoicelang.vst",
+   "/share/RHVoice/languages/Brazilian-Portuguese/userdict/src/avsharerhvoicelangdict.vst",
+   "/share/RHVoice/voices/Leticia-F123/avsharerhvoiceleticia.vst",
+   "/share/RHVoice/voices/Leticia-F123/16000/avsharerhvoice24khz.vst",
+   "/uenux/bin/avpart90.vst",
+   "/uenux/bin/avpart91.vst",
+   "/uenux/bin/avpart97.vst",
+   "/uenux/bin/avpart99.vst",
+   "/uenux/bin/avusrbin.vst",
+   "/uenux/bin/avusrbinof.vst",
+   "/uenux/lib/avusrlib.vst",
+   "/uenux/lib/avusrlibue.vst"
+  ],
+  "arquivos_hash": {
+   "/bin/avbin.vst": {
+    "sha512_b64": "1OBO/fue8Hh4PSLkzxEFEYTx/S+PqiLDxkq56B4Z/D94xSmpX4pBJQG9CC3M5ed84YXakgykj32031OH7F5gUQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/bin/initje": {
+    "sha512_b64": "cJT6ON6LoxwigRHGpbll73RyvEVBCvZucueziwwc/QxV9BYj9C+zeFVpUnQ26v3/LByUkmJZw67ekzkujPB/kw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/bin/syslogd": {
+    "sha512_b64": "yhrcZPBwGmzcyQ31uyWEAUMCHs1+nteOvMa+3zVxQ3WKVDVuD33Wtc4gkvnHEbcdrLexuvcBi6dw7Tsj8nkOHQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/appbootloader.efi": {
+    "sha512_b64": "v6jcLi5nLbqroQ2Xk6GoKhOzQhdx2k/MAa+516Augf8f2awDgnR9NwKiTCmFDR1Uvu6k9mw6gWvapJRcea6IPg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/avboot.vst": {
+    "sha512_b64": "IiAHu29HvLkFvnSnpXrMywhIjpGwNMOomfBmI2OBojbahPVo+raJFMvYozIahI4kBH+ZiPg++10/Z0uhC/y3wg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/config.ini": {
+    "sha512_b64": "DGeE57pHzRsHksxZYU83Bgcaa4QyxdBAPIlk/62B8W2F/BIPauQziNItI5fER3Rm3ujZ4BxMGtHSdx6ejSihPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/uenux": {
+    "sha512_b64": "RKOIF8iFtK3MRewHe6+1qV94XAnXetgOXtK2NIWkrMMscNEJ+V5biK+nDo+26lhyOADUTp6KUgPUV8l6Qj6TRg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/alsa.conf": {
+    "sha512_b64": "2lzYkFFlMtj92VxnRbyGqZOWulA0/N9HrNDVhdmEjAmCezfyrYXYlXdx8JoYkyIM1ARZU4bUsLlUkrHqAILBwg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/avetc.vst": {
+    "sha512_b64": "7ruXryqerNV1Pnf+tvRiejjHYSOcjxeszkO/GJUe3xGZgf4due36Tl8UwEeNPnnRgknswapnbhhNN8W99s0Ttw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/dependencias.properties": {
+    "sha512_b64": "BKTJ72c14pme3oSVhLGGN3Uv87Zfs2y0zIF5mFetohXJ+VVoYJ71rEtQpTrfsFvEiGYfLZw2yEODJy9A+JuBkw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.cache": {
+    "sha512_b64": "IpBHnZxazwUkpiuBKfu/xk1wLTZaVoVhhDV4mAFGx1djqdoSTjmLXo648gW6vHsONeC16vnLMG8pMiYvOCP/fg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.cache.sig": {
+    "sha512_b64": "wc18fy84BUXpGSjdliGf9u1Z+NqbuyKMA7uaqo6aXFdkGrEHuakUkwxxSMwc1DnUQFjf1qyN91/IKS7VLN9nkQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.preload": {
+    "sha512_b64": "GuM1JQOVguSZSaqZJk/YVyOs4U+FMwV16pbkLmwlE+1EQMkfAa52PAsJkXqBMHKRnBMKkCjtXAfkhaA+KxxoGg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.preload.sig": {
+    "sha512_b64": "Mh6Ij0UkTe70tkC1z2j4getIFA69XfdDhkLTJioWyAyUYVbp94Eh0ABwCLTeTZx+B3dTXbSPSn8Rvi3b6Y9mmw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/versoes.properties": {
+    "sha512_b64": "aGN9HJl4/rSW3piRpoTaiePIxljD9G2zhA+V9TLq5ry1F0ruCyM/fix9NYCuzja7lIfX/N51iRYv/HRzlFFFMA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/RHVoice/RHVoice.conf": {
+    "sha512_b64": "4cNwyMj+3zE5DXLXfAh3futBLKN5yxiTBfSWCPC57MX/ip4NsiL/+FnD7PT9XKuUbc552Vp2x1hnlbCf/CynZA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/RHVoice/avrhvoice.vst": {
+    "sha512_b64": "4C2+vWs1+p5K/HveGRrlVNTO5DX4KWBEOhOx+/EISRa7cQzhZI5Po0e4eKiuckl8LjzwU+WNY6u5SQr0ipBepA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/avlib.vst": {
+    "sha512_b64": "mLbJIseXmXgGuFg28YFSOLd6WLHnt0ttZffD/QXnK1kauqrn2ZO78zQNEGDGeXM1Rq1YuYpEXQ+S7MIsan8xCA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/ld-linux.so": {
+    "sha512_b64": "wswDpjFuSX+dwBNAEOUiffokPxYOXPtyYgQK0+jabP/2ar46SDoO6TL5dYHAsJQpAFxmKRKDSWAqQNrBRvTtIQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/ld-linux.so.2": {
+    "sha512_b64": "wswDpjFuSX+dwBNAEOUiffokPxYOXPtyYgQK0+jabP/2ar46SDoO6TL5dYHAsJQpAFxmKRKDSWAqQNrBRvTtIQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libQt6Core.so.6": {
+    "sha512_b64": "iRjMuUmHZ7J7K3J5bAC6qVuHwgzHSISe3z6HVWNxnHii9mHPpxYDO3ivy39HzdhpdOg4GM4XJowANzR2QpYSqA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libQt6Gui.so.6": {
+    "sha512_b64": "ZSvL+Nv7gmUQ/kT0riGKyZS+qGh5/pNnrKN2ODUU97mJjB+KLz4jMIzMEIF33jysKhrjKuoimlhgC6dHJHKbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libQt6Widgets.so.6": {
+    "sha512_b64": "kTwyWPptP+ZXOq8RXFXdIeNM6of+/fCStcI8m7qMCZedaJ+OvZP5shYpC74RJnpgs4NSI4MLynvSxAYImSmbiQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libRHVoice_core.so": {
+    "sha512_b64": "zURWjgOaSoo1XD9EHSUc3itqN78GRLcJoMRAYS3rJDnvQ/+SPaUU3LHyJDgVvANJcjx2UXl2l5BuDJoJcWXEaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libRHVoice_core.so.1": {
+    "sha512_b64": "zURWjgOaSoo1XD9EHSUc3itqN78GRLcJoMRAYS3rJDnvQ/+SPaUU3LHyJDgVvANJcjx2UXl2l5BuDJoJcWXEaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libRHVoice_core.so.1.14.0": {
+    "sha512_b64": "zURWjgOaSoo1XD9EHSUc3itqN78GRLcJoMRAYS3rJDnvQ/+SPaUU3LHyJDgVvANJcjx2UXl2l5BuDJoJcWXEaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libc.so": {
+    "sha512_b64": "Pgy1kPwlR2bq3iEu1jXC5oeNCegvdm7r81tPkLGMz2RwrYmWaHom44JpNG5u5+05a1GNSw0bz0BL8avUVTLuCg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libc.so.6": {
+    "sha512_b64": "Pgy1kPwlR2bq3iEu1jXC5oeNCegvdm7r81tPkLGMz2RwrYmWaHom44JpNG5u5+05a1GNSw0bz0BL8avUVTLuCg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libdl.so": {
+    "sha512_b64": "wlA/SaWGb/0rJIXCpCSVmpwowYgyuV4C8NyYrqPB5bAGnrhd0f2PgDpqzSW/ZJ2HgxJwaUQgMexqMn8vmKgNFg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libdl.so.2": {
+    "sha512_b64": "wlA/SaWGb/0rJIXCpCSVmpwowYgyuV4C8NyYrqPB5bAGnrhd0f2PgDpqzSW/ZJ2HgxJwaUQgMexqMn8vmKgNFg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libgcc_s.so": {
+    "sha512_b64": "Y/a9OLN8FF/uWjl07BrROe2uA7jy7PLsRte88Ue7pDbJ+uTsKF8LP/KrjBRB1oa4clfrIC8iWJ3Bc18b4jMM+Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libgcc_s.so.1": {
+    "sha512_b64": "Y/a9OLN8FF/uWjl07BrROe2uA7jy7PLsRte88Ue7pDbJ+uTsKF8LP/KrjBRB1oa4clfrIC8iWJ3Bc18b4jMM+Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libm.so": {
+    "sha512_b64": "QQAOc+lAHSD38mqNsxZs5BYhchc2FzGEQnXkoYChtCJhIogqq1Wxc3F55Hd2ypYfxukZl8rvg517T/8XQnKr3g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libm.so.6": {
+    "sha512_b64": "QQAOc+lAHSD38mqNsxZs5BYhchc2FzGEQnXkoYChtCJhIogqq1Wxc3F55Hd2ypYfxukZl8rvg517T/8XQnKr3g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libpthread.so": {
+    "sha512_b64": "yEl93dXoQLkxpyrwW7C8gAOSalHAhoZABs5W4DAkzUxZdY2HKV4u+VEZBqbsvAe8G6MjwZLI/BjpAWVZuxVE2g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libpthread.so.0": {
+    "sha512_b64": "yEl93dXoQLkxpyrwW7C8gAOSalHAhoZABs5W4DAkzUxZdY2HKV4u+VEZBqbsvAe8G6MjwZLI/BjpAWVZuxVE2g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/librt.so": {
+    "sha512_b64": "dfBwe5KsaC/Sk+hSnnNrX/TK3hLv4LVsDf0KtodGGthT2ZpjXiIf6CL1Qg7Cw4uTiUAXqAbxdAthIUf0dHbWbw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/librt.so.1": {
+    "sha512_b64": "dfBwe5KsaC/Sk+hSnnNrX/TK3hLv4LVsDf0KtodGGthT2ZpjXiIf6CL1Qg7Cw4uTiUAXqAbxdAthIUf0dHbWbw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libstdc++.so": {
+    "sha512_b64": "ZsQfzPB1zvSOgAYdz7rc9UXxec41gFkjz4HHQpNp4L+r/CG+DLgmnAW83Lxl/On7uk+dS8iUV4/8UHFdLOiFPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libstdc++.so.6": {
+    "sha512_b64": "ZsQfzPB1zvSOgAYdz7rc9UXxec41gFkjz4HHQpNp4L+r/CG+DLgmnAW83Lxl/On7uk+dS8iUV4/8UHFdLOiFPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libts.so.0": {
+    "sha512_b64": "XShx/fM0zgD0MXoEOYHWUuGGrwHJH67j3OelMxaEupfDtToNI1p0ZfShKugnym1GZiGGD7yut22R9cf2iNvIHw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/avmod.vst": {
+    "sha512_b64": "XBakPfmeGX2Uzz754/jpz5zjYebWmlTcVLd/fMg390LubXbPAMkqS+Ql7o2j9UgdTYiS3WRaX5R9rOQdHVfrEg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ehci-hcd.ko": {
+    "sha512_b64": "3R1MKZTVb3ajESmGYkHju5GhNCAr2DgxuxazoReMavHEwAf1NaxnxmAM41GITwb3O4i35czthmTd9b1REb0hng==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ehci-pci.ko": {
+    "sha512_b64": "Z45lsEr0TyrDbFtJ4JtcYHfVTFB5lKWH1XNx3zD/dpVdjyutuSJNavMhiUv6gggHuSmhVXBrKS2zfjeCtnoFFQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ueinfo.ko": {
+    "sha512_b64": "+3s+IhaO0mV/v0fJFcLXlQ6HNbSOJZrde++wdRCx/L7msEyWCKKnSl7z+diSQHr/mgsKU3LyQ4g+ChDMwCw1WA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/uhci-hcd.ko": {
+    "sha512_b64": "m0xpEwFN4UEC9W7JFKnPriFJmX+7v4RZYeY1i4sYjwwQ0x5h5xEql9WadqbF4jaS6SIHs5HzyE7IxLV5jVdCfw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2013/avmodue.vst": {
+    "sha512_b64": "VDKzXlVb4Fkv3W7/mzDUtkDRlppqOntb63H7lbUv8l4uZJrNrKRQ7iySxpp9lq6YoJc53cK3GApyynqxLdJeQw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2013/gma500_gfx.ko": {
+    "sha512_b64": "m+Xxf8YnNwreii7yE7jQQggNBXWnAXtG6uLjOkrwBIxb2gXbVtcwJNKyh8IziYAcMzIYugFjHdOxMxa4ppEtrg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2013/hs_core.ko": {
+    "sha512_b64": "0M+Cy1cOs2I5f+LxX+jNvEOnfQLyMmi0Hxr1Yapfmqlhv7WyVfZGAzVHcf9OVfrJohQDm/Qw8WMZrNzbTlANaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2013/msd.ko": {
+    "sha512_b64": "nhRuQ6y1YQU3OChipPYMvGa4HwUy2me+ZX5QSSwH+uHWn7Oolv5QKT0duxHkBZZvO6IldAPxuMJWFNT4Lp7bbw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2013/sck.ko": {
+    "sha512_b64": "KLu14JsGxf6PQmaE5Mt1KiYjVEY+UKcavpNA9EPC9o3a1fUOiTqNKWetHMc/MuW8wxJkrWXDn2Pq/4kIwn/bTA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2013/smt.ko": {
+    "sha512_b64": "c/iVwherGdyBg8hOSJP2zB9P7JxazTFq7txJYN0PI3wvAqrb1IWkTP2HF2oHcatQ5BHJqoeUtkMM5fidAT51Hw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2013/ue_power_ctl.ko": {
+    "sha512_b64": "ePwAokIEh9KNmbwLeiB743bbWc7g289lDZ4ZsDNJTL0n7pYhHDeOo0VbCqyuGWkzGQa22LsXpeTQ+1mdZ7eKdQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2013/usbdpfp.ko": {
+    "sha512_b64": "B8ifg3eMqmbpKIfzynPk2VPc4KbWgDaAGxfHXXSat6tKNZ6oVCqsMncYC1jjE4JIyTKhgBWzqX7kuqwxwqAGBg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/generic/avlibqtgeneric.vst": {
+    "sha512_b64": "U5XRW9mjaWuXaNWTxD6RnBRmlo7zSouoG7c11dobzI+Ng+0Hr/BeFOT9aqjMICyBkAwb63DYb7nsshUmw7noHw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/generic/libqevdevtouchplugin.so": {
+    "sha512_b64": "Sn6JwqI+9sFr3/i9NTYAzD7HNVTUeWvzTX8L59AXIFa+EevSc9BXVE3MdVrTwBOPjgSl0vYkdxunWGmgdy2zgg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/generic/libqtuiotouchplugin.so": {
+    "sha512_b64": "jbCLZW11bqkDt7LhNm9h/rXfueH2o6bakm4OTI63Y3MAMyHz7s38DROzv0riL2dq3wUd3noas1BfcPwnaFncfQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/imageformats/avlibqtimageformats.vst": {
+    "sha512_b64": "S+OHgdNg34x+PB2cK3uKVIJNC22ticVsA45pAxp1CLtxPYW3/YFM46iduhevGNIs9uf/yvvJhLvU++TgUL7kEg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/imageformats/libqgif.so": {
+    "sha512_b64": "RbDBU/XmQjFqLtYzMrivy73WYv3ab+k+NbuNd0VoTnDmDi1dcGF6kCuJ/fPrLmU8/RKTkYUCXFYHPf9P4IOvfw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/imageformats/libqjpeg.so": {
+    "sha512_b64": "X8Q+mCtNZDjoFIGwJTDa/CsIGeeFEqyDjTzhdZ4u9dj2XgFJsKBPMGPwbIW0jdxPCSacV2n9wiXNmkR+rCcL1Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/platforms/avlibqtplatforms.vst": {
+    "sha512_b64": "YP7m3pA77vzeh1RMsuGk8AXswcl72l1edm2AT6Its0Act4JHOgB41bFbqDVK+HyAtXMlaQozudmjL+S9KIZKUw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/platforms/libqlinuxfb.so": {
+    "sha512_b64": "67dAKVDr2Ha8v4MNMdBU3J1StcBClYiWSW9ZBKrK95L3vbGaGmX1/lDrLRDrgvWPfAh+yPwXqveZpkFkj76nFA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/avsharerhvoicelang.vst": {
+    "sha512_b64": "Eu9BDdfim8wwKquIReZb1ZDeOzydr3hTGdIhuG1LBXN9exSTyB62VD51HPeP2UZ2MdkSQA/CA0LzhldYi4/LDg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/downcase.fst": {
+    "sha512_b64": "gwxcRsfK5P8O1lUmccdwQIyBnB7qmnJmpI8eT2/4oCXeK3OYwlhaVmduvSbWdSN3jomiUzVfh+9tv5rHdN20gA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/dur-mod.dt": {
+    "sha512_b64": "g3o1rBvn1HTFRVFTTmOUUobD/4R9yjqaQN4+lgv6xPUzc94hStWGi9Xhh/m8LtL74xmBRdNvhZBzRqf6u31OlQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/emoji.fst": {
+    "sha512_b64": "Q5LSn1KLnGWfeFsQtolW4hrQg7WhrMssMuGR2/c0tYRGblwuzhNmQ4WjAYFbSWccSWXgyAY1wsg2/vwuagEusA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/g2p.fst": {
+    "sha512_b64": "pAhxGuzcU8Q0/FI69owQlmkuIDQ2J/t3KUJouqJ7oHggE8Ee6ULv93doJdk5N1ARzZBABbAtKbPb3bNlXkDD2Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/gpos.fst": {
+    "sha512_b64": "FniPwGrQ6pKEt9Igf0pzIAf1TE7yrIwF/DV556iNg7rUREoqjdK2s0+PHulTt/aFPNQbe6nRqKWZi3f38b9O8g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/homographs.fst": {
+    "sha512_b64": "efLdCKIGC+Pt3oGIF5wrCSyMIzlJXwmi18nx4OsT9zv2WKllVtDILKRNIz3qTDOzHLsFJKKeR584j7gQ0J0ydg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/key.fst": {
+    "sha512_b64": "D03wQ1ZpQmfya0UywMlxhYF3gMUBI2HcD19Vpd/cGdyAFzX/M4sf9yzaF9K04BJjGFzhush9rvEgfFqz9WUK7A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/labelling.xml": {
+    "sha512_b64": "qDpRGjMp14vyVPN5//z6KyBTwE3/cyIPQ5vP+fwcClbsGDZ3cynqe7Yl1edEvPsy02tqZ+IlrssPHEKjtoh46g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/language.info": {
+    "sha512_b64": "b4T/KA88BOqOWgaBKBuIpRoAoxCjlHSo6HCBBq7WO9lxpdMXn/g0/mhTcRX1/OaJWKOXXUQKn1yHwgGQwUm2Wg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/lseq.fst": {
+    "sha512_b64": "eymuWnveJar5VlSlSPnz2SGZItm+ljZSbdYzWmskJmkTFsuyAP5vXozyZ5VYpDcagBwVwvMnTwz2PXUpM1SL7Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/msg.fst": {
+    "sha512_b64": "QRiZZOS7ZzQZ0jyddA9HwVdqRNKCthFhYFq3Ke+o8mvyylrsm9WhgY92+bK1c1nSFUVPOMyYrytG8L8Bgd950Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/numbers.fst": {
+    "sha512_b64": "KxMgkCV+T74Ii0V67Zs8yYaJeCzrBR2HCIvqSaJ4HLhTtzDw5bSybTpLz8nCk/ddPP7PlJFm7rc7zhWENwMvjA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/phonemes.xml": {
+    "sha512_b64": "Z4zqY6c9lDL9w0F77/WkacVE0w9Z/zbyNmDi1S+3e5H/bL1YRsS1I8kvxCOfIMlteH/3YtBcmrRMDGLBiI9HEw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/phrasing.dt": {
+    "sha512_b64": "Qfq0Hed6uRRMLwH6dFrl1UQ1fYmkbDO2rCEQNPyDHKbGWkO9/Xu05DWuLbtao6RU2uYwsgy3EPCfTta9VyJdlw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/pitch-mod.dt": {
+    "sha512_b64": "g+Ta8tw12NSQnHdwJUYUpTcI+ZawyLRxVRms3umOrU8El07XfxM1oQ5L6fAgozUrc78dAZTxiq2MJZb0CKLpGA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/qst.fst": {
+    "sha512_b64": "J06yhxpTX2Taqle25iTmfSRRqltS/N/llIGnYUtyW57IRLd7sF0ov8+iVbISVB3ty5CC8Y81UjRR23YwcizGyg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/spell.fst": {
+    "sha512_b64": "mtTPr0pI0s0PiudEN8kFmCozRFDoetCSQeEtjTNyAxBk1Fd+iNs+47owLuQVsQm69VDlgjwd/DYPQn2TI79mnA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/syl.fst": {
+    "sha512_b64": "3XW2eMrDVcrAwPxCibLQuyb/TDy92oBgcliWue9qPUr27xsvanZt1iQeC/eZu7jlfK4NHiMt2OYGoh29XMd46A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/tok.fst": {
+    "sha512_b64": "DhKzT1hlh7cBTswPIql3R/U5Z6m9YtkmjZ9JsbXhGyrYGNmja7U5Vkcx0vwXDdZWdt8XzxqPqncMcLXZsJDQjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/userdict/src/avsharerhvoicelangdict.vst": {
+    "sha512_b64": "HFJEgjvaphB6NdAsH5dqDywSJG2V20NwpUBd1FIfXuKax3gDn1/sNFiBfLZbG9qMf213Q+1YI6QTgTYY1Uh5tg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/userdict/src/dict.txt": {
+    "sha512_b64": "jIrnStMsx+ty07vQbORWRq0kKUo+9FB7d4y1up6+7kFuVVVlipUWDzN+u9Lxh+3G3Mof2IQvhxr0UKTQGnOE+g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/avsharerhvoiceleticia.vst": {
+    "sha512_b64": "usXGNp3fFY2YtjL9Ift1ZDSfKXvdaLgzTvW0UzYVAd4+HJeTsNegmaig+xIvIb+VBVX1+k4c1++JqIqbPX5juA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/voice.info": {
+    "sha512_b64": "n5PLAAvIk0tthlItiqY9SjWQ2dpriX+upmu54reWt452BWQPSBUIw0uNEdzLfCxSs6nlIAN9x1EAyUSpWCvOHQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/voice.params": {
+    "sha512_b64": "m0GjvdFyFAQ2zPLbUc0s8XxqgwzUJpDloAmEoaOdH0DZtnfzHHP8xHgXML9Uq0vkOi4a7tQtOD+tq8hPMvFTsg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/avsharerhvoice24khz.vst": {
+    "sha512_b64": "6vS08eyVk7fP0r8MwPpg8sxBGuHMF/bVVYHNrleua3188QngBzKsRWeRRitcpAM1SFYs3/IPayk3EHNh/9scOw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.pdf": {
+    "sha512_b64": "pveeM7SkiCxGDyONazs86kHeM+zF4XAfSrvpGG4ujImNS6NQNb/JeENWqHi1q3ZsMqQQsHrK12NrN480yC4f9g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.win1": {
+    "sha512_b64": "bnKDVgAqb8OoXTKrCtoA2fTkl9kWhTBd/8+m1Cnr7GECstILdsMBLH6H+vC1NMVmhL55pXl4TMbg5ob7Wn0XTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.win2": {
+    "sha512_b64": "lesfGWDaVpaz433oQ+MPidzc9Whv53bg213vTsxhN91vwBuBopguweD2U0Mch6vKME76r2Uhcm2e2wUDS6qTWA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.win3": {
+    "sha512_b64": "Ew1pSkgcMarAqBsvEIfOisZtkUi1M7IuWBy37gxNSKwN3yAU8g8eP6GrcWH77i/oDFlK5Cxsq5tQ5IHK+evbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bpf.txt": {
+    "sha512_b64": "zxRyUi8c/8dm99OZQNu9cCAoRwJoKQ0k/UakJMGHOTV9y2cfmg8x/c/U4ST7eihL7tds4qGgrUSKuoFKI4V/uA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/dur.pdf": {
+    "sha512_b64": "Qp0NMao3ZAZkrqOrEYm5ZwbibFXlqIBbBbloDc8J6q1e5qWC+aXQL8k42U0G3U/qnlAm2yUmLH2jBJ+X52Q26w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.pdf": {
+    "sha512_b64": "BcKVZ46/BCujAVH8JmpTtZsumj0YFEaG+Vs7Ue5xdXeUsNO7eukQSgSHhIHtx3oe3If5jIDeYZbEDE3fw9yhtQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.win1": {
+    "sha512_b64": "bnKDVgAqb8OoXTKrCtoA2fTkl9kWhTBd/8+m1Cnr7GECstILdsMBLH6H+vC1NMVmhL55pXl4TMbg5ob7Wn0XTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.win2": {
+    "sha512_b64": "lesfGWDaVpaz433oQ+MPidzc9Whv53bg213vTsxhN91vwBuBopguweD2U0Mch6vKME76r2Uhcm2e2wUDS6qTWA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.win3": {
+    "sha512_b64": "Ew1pSkgcMarAqBsvEIfOisZtkUi1M7IuWBy37gxNSKwN3yAU8g8eP6GrcWH77i/oDFlK5Cxsq5tQ5IHK+evbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.pdf": {
+    "sha512_b64": "Le+nk1IdnLwQFRFnO6fpJr78ZU7OAizToTMlw8BsSuoGQjj7E9SDGi0N7HhKk9WsmbNrVwqCZ/2+gEQsMrrrAg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.win1": {
+    "sha512_b64": "bnKDVgAqb8OoXTKrCtoA2fTkl9kWhTBd/8+m1Cnr7GECstILdsMBLH6H+vC1NMVmhL55pXl4TMbg5ob7Wn0XTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.win2": {
+    "sha512_b64": "lesfGWDaVpaz433oQ+MPidzc9Whv53bg213vTsxhN91vwBuBopguweD2U0Mch6vKME76r2Uhcm2e2wUDS6qTWA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.win3": {
+    "sha512_b64": "Ew1pSkgcMarAqBsvEIfOisZtkUi1M7IuWBy37gxNSKwN3yAU8g8eP6GrcWH77i/oDFlK5Cxsq5tQ5IHK+evbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-bap.inf": {
+    "sha512_b64": "r+SvpXON7Wd7PexpHZETZUbFxJeCPlCFa1OaCEHJOZHQDbmNM3l6ZkCUypaNanBVJmHJIX4yixNLvnC3enUFbg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-dur.inf": {
+    "sha512_b64": "jKmDsqJoWoJuwGjJPA+c17IcU+D9lueRIypJur+VbhDP+bsRt1h9gEzjSh8J+8o5ApQ2HVABdf0n9E6FxCI8LA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-lf0.inf": {
+    "sha512_b64": "RMpp8sL56/L63jHTaMw33iatUSl0jb9BXXa6qxzXPcUDjtmygf3p9jDh35lR9S9ZzPt2tuEY2kqZvMUq5RqR7g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-mgc.inf": {
+    "sha512_b64": "d+HHjLuqR67erhJFGSyn8wX/qiW38C5zrdpf/OCBugw555DcnAI97JJGGN3iyqNwR+cujLdqzEmMAMEZn1RJkw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/voice.data": {
+    "sha512_b64": "5aiRVH3yetpBSd+O6vPQOwTNresRRGnNHIpAgRVkMdt6U+bCKGwzJJD+H8yLHb0etj0IqJ3YP/uDrEfzsHVc2w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/adh": {
+    "sha512_b64": "91Rt9UJVKjFM/6XOE7S1yrtlItB0CJGSsTa4zY+VDdMPCyHVueFckGGU82g0NWUsnDJW9MRoPmkeBtYmaaf8OQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/atue": {
+    "sha512_b64": "wxp6w1DFZqzs1PL0ChsHXP+7A+Z6nv3/cnKbjktnjSkOuonGNiOiMMVSeFg5DNBkSYAjR4yBuFg0nSRHRHmzDg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart90.vst": {
+    "sha512_b64": "dLneVIHk5g63MUJvx+2Aft9xHCJp5aV00JsVUbgr0CWQfuQCcP2DlERV/TQDiDIQ7Pgh8/MGuBW0L2CFjG9bZw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart91.vst": {
+    "sha512_b64": "J42eOxceblFqdR1vrh49o9/9ANQXlX57LTCekLdR2L2H7APFq0O8Mt1kYaEQqQHKHEPqCj9655lLsSmcFh3Knw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart97.vst": {
+    "sha512_b64": "jM/qrljMWHiCptlk60jPppfeZ0Os01z6Ri69XRpX7XlpRffDxjQpM62C8jLjBIcLSdOMPWX5wVwOphD20jbGPw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart99.vst": {
+    "sha512_b64": "/o7iheMlbHr/0o5ULXtF0OD7N5Oq7xmxyNWZqe9QZJXXQG/8lPdR0DY44T4t5AWlM7XSHkVVhOSMCGjsknTlTQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/o7iheMlbHr/0o5ULXtF0OD7N5Oq7xmxyNWZqe9QZJXXQG/8lPdR0DY44T4t5AWlM7XSHkVVhOSMCGjsknTlTQ==": {
+    "sha512_b64": "/uenux/bin/avusrbin.vst",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avusrbin.vst": {
+    "sha512_b64": "ZmpRs80WMKMpBCxhhw8i6OmxK1V/2w0CprrrBxSpIq92rGLDpffGf4kiQXi1IxkvTYJDQqFn5Qc6v/FeGEa6sg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avusrbinof.vst": {
+    "sha512_b64": "de+hOP9SXz5LCyCQemflo1/BZCJW1EL8We2Kaeg79cvR8UdQqvpN2yyt6plk/Ey8Q9JsnZcN5VhIrKslolENlg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/gap": {
+    "sha512_b64": "vn6OBbNKLegdryJxailSUCpWf4mSq+Bg8zzHQpQ7x5L2mQ11aUQewNB9kzvgAYwDquGMcHWExDmIuBFsAjnDTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/logd": {
+    "sha512_b64": "AeyizZAWkP9GDClxfZGU76ItdhU/eUfw3lUFY2NcKS/dQblolfpwVd/ENhyOneg74D6Q8Wd2g7+vp64yCPdV1w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/red": {
+    "sha512_b64": "jB1bcavfph8sh5PFahwmnNiIRS0ZQhJHZNeDlut7rT2jpHbJQVlwqgEMjXpNE/KHg5qAKCPyIr9Fc3MWe4t15Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/sa.of": {
+    "sha512_b64": "gQmCNMnFefqHvZyB9c9GGld3jwr6YN5hOiN6MpXsm47hs6Wh1ZkTxRHMsHvZbPi5+7oRy2O/52Gu62ohjuoByw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/savd": {
+    "sha512_b64": "BqfBbW3xnsIWGfJvXrbpEV91JKcGTjMryjVTiGPgaLOdcNY66YMd+tPWhM6SGq2mR6YK6IhXrxXZIHScKFFy3w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/ste": {
+    "sha512_b64": "YNBj8Lt15UQgt760I3/Sd2b62HA92+RWETqteTOWoYu3e4i6Ni4jg7pHbL/dcvOSCMSEQotTtJ/0Ix2QXbydag==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/udevd": {
+    "sha512_b64": "gEDcgB8/5Pz6hXYKsSocBDfiDJA95GcFLAcBx+/884ejKw5DeAZK1E9yvm6jO83GnVfvIrVn9WLFW3ipK3rRSg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/vota.of": {
+    "sha512_b64": "fq1YwFejLXAoPTE2HNfRkKS/AV4/puiT2+X0+YZNzo3gS7GG42GrN/mpziRbcrBFvEaz+V+ekPr2z+KaDcDQ5A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/vpp": {
+    "sha512_b64": "gPBAhTCoKURLW2PD/KzaT5oOi4lbQABOAyqNym4dM6GWjLxirmkgF+2mejkYVja/iFdScSG/LN7F0ilVXEtKhA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/avusrlib.vst": {
+    "sha512_b64": "yybGLoomZd3HfNpTH7RkIVSiyKL6EVv2HPrcei14ykTOSYi648YScYkROxJ16OLoON+hBgGsNBh1hWtAhQeo5A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/avusrlibue.vst": {
+    "sha512_b64": "4bhqFYSlk9pZkHfPv8YAzjcIU953ZV+NnMHEB4UGhjmm7okAcnkxVeK3PuU2fsDrgGD9TmsNntAGsWQ9ZbB3Tw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapigeneric.so": {
+    "sha512_b64": "4UtXp1pYuKsMS7zK0toPTYQe384xwEiD+S+o4Vx3/m2f0iZZloDnLo8a6S+XWgCr58M8cHJWHG7cdf4Ins5w6Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapihwil2013.so": {
+    "sha512_b64": "crSJj9vH4uTXI9K/ytT6Bexl3CrGkW9fhi5rwx0Npx/zxuF/x/sFHanAeeC1s0K0lVa0sI3cun3Ez0o0/MyI2g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapihwilmsd.so": {
+    "sha512_b64": "x6f2e0sc9yejgoYnLn5dYeAccDJXal27vkht4XVNbYwjPr77B2N6zc2E2UzZLunULpLt/yEsh98BPhNCgZw7WQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapihwilue.so": {
+    "sha512_b64": "crSJj9vH4uTXI9K/ytT6Bexl3CrGkW9fhi5rwx0Npx/zxuF/x/sFHanAeeC1s0K0lVa0sI3cun3Ez0o0/MyI2g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapiio_resources.so": {
+    "sha512_b64": "cFloSvTOUncVdOqq6b85S8zpVPf0GuwWqpblQ5g5bdLlWDpjla0V5ed7hY/0b5zro7uuJK0+H4I7OHeiwtRNKg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapisdk.so": {
+    "sha512_b64": "fzdEBQC7qN2zdF+EiKIvXvXKqqdLabx4Rs423loA6ltp1MhoLVzqrdJRxKWVd/iC087RShqOuCRaYwC6ERHJOA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapisdkurna.so": {
+    "sha512_b64": "fzdEBQC7qN2zdF+EiKIvXvXKqqdLabx4Rs423loA6ltp1MhoLVzqrdJRxKWVd/iC087RShqOuCRaYwC6ERHJOA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapiui.so": {
+    "sha512_b64": "35uAUwKniUMf0JmWT/8ClfQ2sTiQ4iRquhWuzj19t0Ly/IfYAQBmX2hb5iru18gHF8oqaJf4aifOMnah14oDqA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libecourna.so": {
+    "sha512_b64": "j+hZBxv7si81XJwCPSXC7pDnYAmhDGPz5qJLLmivXIoG8Um9Xhgl2BhV5ToS5M4mgyIzXYXKpcC7chEOHPyXFw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/vY6XijIXzfa1rdzXtvgGu8JkwiEp/nHQwSLf6lmTmi6/J78eottshHivGShJsk4MpzO002L8DpXo/bDIOMfTA==": {
+    "sha512_b64": "UF = AM",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/StaYlEOr5gUhL0NQqYevWJG3/x+VoD+4NrB3H2C4c4aYDtdle3+pFCs3kksSdeGQnXys+7J6+GjKiUGm0EKkg==": {
+    "sha512_b64": "UF = PA",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/xkHQZeMdsk/mwjufTunEhGEwQrKueEgKtynTP9pkqhizbvH1pS9dEPMO4F9hiq8VyRqvl/4c8hHCga/p/L28g==": {
+    "sha512_b64": "PB - /dsk/fi/estatico/chave/ue.ber.pri",
+    "secao": "ARQUIVOS BASE"
+   }
+  }
+ },
+ "UE2015": {
+  "titulo": "Urna 2015 - 02/09/2026",
+  "arquivos": 139,
+  "secoes": [
+   "ARQUIVOS BASE"
+  ],
+  "pacotes_vst": [
+   "/bin/avbin.vst",
+   "/boot/boot/avboot.vst",
+   "/etc/avetc.vst",
+   "/etc/RHVoice/avrhvoice.vst",
+   "/lib/avlib.vst",
+   "/lib/modules/avmod.vst",
+   "/lib/modules/ue2015/avmodue.vst",
+   "/lib/plugins/generic/avlibqtgeneric.vst",
+   "/lib/plugins/imageformats/avlibqtimageformats.vst",
+   "/lib/plugins/platforms/avlibqtplatforms.vst",
+   "/share/RHVoice/languages/Brazilian-Portuguese/avsharerhvoicelang.vst",
+   "/share/RHVoice/languages/Brazilian-Portuguese/userdict/src/avsharerhvoicelangdict.vst",
+   "/share/RHVoice/voices/Leticia-F123/avsharerhvoiceleticia.vst",
+   "/share/RHVoice/voices/Leticia-F123/16000/avsharerhvoice24khz.vst",
+   "/uenux/bin/avpart90.vst",
+   "/uenux/bin/avpart91.vst",
+   "/uenux/bin/avpart97.vst",
+   "/uenux/bin/avpart99.vst",
+   "/uenux/bin/avusrbin.vst",
+   "/uenux/bin/avusrbinof.vst",
+   "/uenux/lib/avusrlib.vst",
+   "/uenux/lib/avusrlibue.vst"
+  ],
+  "arquivos_hash": {
+   "/bin/avbin.vst": {
+    "sha512_b64": "1OBO/fue8Hh4PSLkzxEFEYTx/S+PqiLDxkq56B4Z/D94xSmpX4pBJQG9CC3M5ed84YXakgykj32031OH7F5gUQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/bin/initje": {
+    "sha512_b64": "cJT6ON6LoxwigRHGpbll73RyvEVBCvZucueziwwc/QxV9BYj9C+zeFVpUnQ26v3/LByUkmJZw67ekzkujPB/kw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/bin/syslogd": {
+    "sha512_b64": "yhrcZPBwGmzcyQ31uyWEAUMCHs1+nteOvMa+3zVxQ3WKVDVuD33Wtc4gkvnHEbcdrLexuvcBi6dw7Tsj8nkOHQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/appbootloader.efi": {
+    "sha512_b64": "v6jcLi5nLbqroQ2Xk6GoKhOzQhdx2k/MAa+516Augf8f2awDgnR9NwKiTCmFDR1Uvu6k9mw6gWvapJRcea6IPg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/avboot.vst": {
+    "sha512_b64": "IiAHu29HvLkFvnSnpXrMywhIjpGwNMOomfBmI2OBojbahPVo+raJFMvYozIahI4kBH+ZiPg++10/Z0uhC/y3wg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/config.ini": {
+    "sha512_b64": "DGeE57pHzRsHksxZYU83Bgcaa4QyxdBAPIlk/62B8W2F/BIPauQziNItI5fER3Rm3ujZ4BxMGtHSdx6ejSihPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/uenux": {
+    "sha512_b64": "RKOIF8iFtK3MRewHe6+1qV94XAnXetgOXtK2NIWkrMMscNEJ+V5biK+nDo+26lhyOADUTp6KUgPUV8l6Qj6TRg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/alsa.conf": {
+    "sha512_b64": "2lzYkFFlMtj92VxnRbyGqZOWulA0/N9HrNDVhdmEjAmCezfyrYXYlXdx8JoYkyIM1ARZU4bUsLlUkrHqAILBwg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/avetc.vst": {
+    "sha512_b64": "7ruXryqerNV1Pnf+tvRiejjHYSOcjxeszkO/GJUe3xGZgf4due36Tl8UwEeNPnnRgknswapnbhhNN8W99s0Ttw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/dependencias.properties": {
+    "sha512_b64": "BKTJ72c14pme3oSVhLGGN3Uv87Zfs2y0zIF5mFetohXJ+VVoYJ71rEtQpTrfsFvEiGYfLZw2yEODJy9A+JuBkw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.cache": {
+    "sha512_b64": "IpBHnZxazwUkpiuBKfu/xk1wLTZaVoVhhDV4mAFGx1djqdoSTjmLXo648gW6vHsONeC16vnLMG8pMiYvOCP/fg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.cache.sig": {
+    "sha512_b64": "wc18fy84BUXpGSjdliGf9u1Z+NqbuyKMA7uaqo6aXFdkGrEHuakUkwxxSMwc1DnUQFjf1qyN91/IKS7VLN9nkQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.preload": {
+    "sha512_b64": "GuM1JQOVguSZSaqZJk/YVyOs4U+FMwV16pbkLmwlE+1EQMkfAa52PAsJkXqBMHKRnBMKkCjtXAfkhaA+KxxoGg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.preload.sig": {
+    "sha512_b64": "Mh6Ij0UkTe70tkC1z2j4getIFA69XfdDhkLTJioWyAyUYVbp94Eh0ABwCLTeTZx+B3dTXbSPSn8Rvi3b6Y9mmw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/versoes.properties": {
+    "sha512_b64": "aGN9HJl4/rSW3piRpoTaiePIxljD9G2zhA+V9TLq5ry1F0ruCyM/fix9NYCuzja7lIfX/N51iRYv/HRzlFFFMA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/RHVoice/RHVoice.conf": {
+    "sha512_b64": "4cNwyMj+3zE5DXLXfAh3futBLKN5yxiTBfSWCPC57MX/ip4NsiL/+FnD7PT9XKuUbc552Vp2x1hnlbCf/CynZA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/RHVoice/avrhvoice.vst": {
+    "sha512_b64": "4C2+vWs1+p5K/HveGRrlVNTO5DX4KWBEOhOx+/EISRa7cQzhZI5Po0e4eKiuckl8LjzwU+WNY6u5SQr0ipBepA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/avlib.vst": {
+    "sha512_b64": "mLbJIseXmXgGuFg28YFSOLd6WLHnt0ttZffD/QXnK1kauqrn2ZO78zQNEGDGeXM1Rq1YuYpEXQ+S7MIsan8xCA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/ld-linux.so": {
+    "sha512_b64": "wswDpjFuSX+dwBNAEOUiffokPxYOXPtyYgQK0+jabP/2ar46SDoO6TL5dYHAsJQpAFxmKRKDSWAqQNrBRvTtIQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/ld-linux.so.2": {
+    "sha512_b64": "wswDpjFuSX+dwBNAEOUiffokPxYOXPtyYgQK0+jabP/2ar46SDoO6TL5dYHAsJQpAFxmKRKDSWAqQNrBRvTtIQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libQt6Core.so.6": {
+    "sha512_b64": "iRjMuUmHZ7J7K3J5bAC6qVuHwgzHSISe3z6HVWNxnHii9mHPpxYDO3ivy39HzdhpdOg4GM4XJowANzR2QpYSqA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libQt6Gui.so.6": {
+    "sha512_b64": "ZSvL+Nv7gmUQ/kT0riGKyZS+qGh5/pNnrKN2ODUU97mJjB+KLz4jMIzMEIF33jysKhrjKuoimlhgC6dHJHKbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libQt6Widgets.so.6": {
+    "sha512_b64": "kTwyWPptP+ZXOq8RXFXdIeNM6of+/fCStcI8m7qMCZedaJ+OvZP5shYpC74RJnpgs4NSI4MLynvSxAYImSmbiQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libRHVoice_core.so": {
+    "sha512_b64": "zURWjgOaSoo1XD9EHSUc3itqN78GRLcJoMRAYS3rJDnvQ/+SPaUU3LHyJDgVvANJcjx2UXl2l5BuDJoJcWXEaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libRHVoice_core.so.1": {
+    "sha512_b64": "zURWjgOaSoo1XD9EHSUc3itqN78GRLcJoMRAYS3rJDnvQ/+SPaUU3LHyJDgVvANJcjx2UXl2l5BuDJoJcWXEaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libRHVoice_core.so.1.14.0": {
+    "sha512_b64": "zURWjgOaSoo1XD9EHSUc3itqN78GRLcJoMRAYS3rJDnvQ/+SPaUU3LHyJDgVvANJcjx2UXl2l5BuDJoJcWXEaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libc.so": {
+    "sha512_b64": "Pgy1kPwlR2bq3iEu1jXC5oeNCegvdm7r81tPkLGMz2RwrYmWaHom44JpNG5u5+05a1GNSw0bz0BL8avUVTLuCg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libc.so.6": {
+    "sha512_b64": "Pgy1kPwlR2bq3iEu1jXC5oeNCegvdm7r81tPkLGMz2RwrYmWaHom44JpNG5u5+05a1GNSw0bz0BL8avUVTLuCg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libdl.so": {
+    "sha512_b64": "wlA/SaWGb/0rJIXCpCSVmpwowYgyuV4C8NyYrqPB5bAGnrhd0f2PgDpqzSW/ZJ2HgxJwaUQgMexqMn8vmKgNFg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libdl.so.2": {
+    "sha512_b64": "wlA/SaWGb/0rJIXCpCSVmpwowYgyuV4C8NyYrqPB5bAGnrhd0f2PgDpqzSW/ZJ2HgxJwaUQgMexqMn8vmKgNFg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libgcc_s.so": {
+    "sha512_b64": "Y/a9OLN8FF/uWjl07BrROe2uA7jy7PLsRte88Ue7pDbJ+uTsKF8LP/KrjBRB1oa4clfrIC8iWJ3Bc18b4jMM+Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libgcc_s.so.1": {
+    "sha512_b64": "Y/a9OLN8FF/uWjl07BrROe2uA7jy7PLsRte88Ue7pDbJ+uTsKF8LP/KrjBRB1oa4clfrIC8iWJ3Bc18b4jMM+Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libm.so": {
+    "sha512_b64": "QQAOc+lAHSD38mqNsxZs5BYhchc2FzGEQnXkoYChtCJhIogqq1Wxc3F55Hd2ypYfxukZl8rvg517T/8XQnKr3g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libm.so.6": {
+    "sha512_b64": "QQAOc+lAHSD38mqNsxZs5BYhchc2FzGEQnXkoYChtCJhIogqq1Wxc3F55Hd2ypYfxukZl8rvg517T/8XQnKr3g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libpthread.so": {
+    "sha512_b64": "yEl93dXoQLkxpyrwW7C8gAOSalHAhoZABs5W4DAkzUxZdY2HKV4u+VEZBqbsvAe8G6MjwZLI/BjpAWVZuxVE2g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libpthread.so.0": {
+    "sha512_b64": "yEl93dXoQLkxpyrwW7C8gAOSalHAhoZABs5W4DAkzUxZdY2HKV4u+VEZBqbsvAe8G6MjwZLI/BjpAWVZuxVE2g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/librt.so": {
+    "sha512_b64": "dfBwe5KsaC/Sk+hSnnNrX/TK3hLv4LVsDf0KtodGGthT2ZpjXiIf6CL1Qg7Cw4uTiUAXqAbxdAthIUf0dHbWbw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/librt.so.1": {
+    "sha512_b64": "dfBwe5KsaC/Sk+hSnnNrX/TK3hLv4LVsDf0KtodGGthT2ZpjXiIf6CL1Qg7Cw4uTiUAXqAbxdAthIUf0dHbWbw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libstdc++.so": {
+    "sha512_b64": "ZsQfzPB1zvSOgAYdz7rc9UXxec41gFkjz4HHQpNp4L+r/CG+DLgmnAW83Lxl/On7uk+dS8iUV4/8UHFdLOiFPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libstdc++.so.6": {
+    "sha512_b64": "ZsQfzPB1zvSOgAYdz7rc9UXxec41gFkjz4HHQpNp4L+r/CG+DLgmnAW83Lxl/On7uk+dS8iUV4/8UHFdLOiFPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libts.so.0": {
+    "sha512_b64": "XShx/fM0zgD0MXoEOYHWUuGGrwHJH67j3OelMxaEupfDtToNI1p0ZfShKugnym1GZiGGD7yut22R9cf2iNvIHw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/avmod.vst": {
+    "sha512_b64": "XBakPfmeGX2Uzz754/jpz5zjYebWmlTcVLd/fMg390LubXbPAMkqS+Ql7o2j9UgdTYiS3WRaX5R9rOQdHVfrEg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ehci-hcd.ko": {
+    "sha512_b64": "3R1MKZTVb3ajESmGYkHju5GhNCAr2DgxuxazoReMavHEwAf1NaxnxmAM41GITwb3O4i35czthmTd9b1REb0hng==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ehci-pci.ko": {
+    "sha512_b64": "Z45lsEr0TyrDbFtJ4JtcYHfVTFB5lKWH1XNx3zD/dpVdjyutuSJNavMhiUv6gggHuSmhVXBrKS2zfjeCtnoFFQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ueinfo.ko": {
+    "sha512_b64": "+3s+IhaO0mV/v0fJFcLXlQ6HNbSOJZrde++wdRCx/L7msEyWCKKnSl7z+diSQHr/mgsKU3LyQ4g+ChDMwCw1WA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/uhci-hcd.ko": {
+    "sha512_b64": "m0xpEwFN4UEC9W7JFKnPriFJmX+7v4RZYeY1i4sYjwwQ0x5h5xEql9WadqbF4jaS6SIHs5HzyE7IxLV5jVdCfw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2015/avmodue.vst": {
+    "sha512_b64": "vT5GdI7aGjQsYxIZf1f+JvYixLAn2E/LaIhsb7uYwWK1tqoGrBYvvax9HcXb5iTSiIwZADD29V7/PTmLJI4+iQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2015/gma500_gfx.ko": {
+    "sha512_b64": "m+Xxf8YnNwreii7yE7jQQggNBXWnAXtG6uLjOkrwBIxb2gXbVtcwJNKyh8IziYAcMzIYugFjHdOxMxa4ppEtrg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2015/hs_core.ko": {
+    "sha512_b64": "0M+Cy1cOs2I5f+LxX+jNvEOnfQLyMmi0Hxr1Yapfmqlhv7WyVfZGAzVHcf9OVfrJohQDm/Qw8WMZrNzbTlANaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2015/msd.ko": {
+    "sha512_b64": "nhRuQ6y1YQU3OChipPYMvGa4HwUy2me+ZX5QSSwH+uHWn7Oolv5QKT0duxHkBZZvO6IldAPxuMJWFNT4Lp7bbw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2015/sck.ko": {
+    "sha512_b64": "KLu14JsGxf6PQmaE5Mt1KiYjVEY+UKcavpNA9EPC9o3a1fUOiTqNKWetHMc/MuW8wxJkrWXDn2Pq/4kIwn/bTA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2015/smt.ko": {
+    "sha512_b64": "c/iVwherGdyBg8hOSJP2zB9P7JxazTFq7txJYN0PI3wvAqrb1IWkTP2HF2oHcatQ5BHJqoeUtkMM5fidAT51Hw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2015/ue_power_ctl.ko": {
+    "sha512_b64": "ePwAokIEh9KNmbwLeiB743bbWc7g289lDZ4ZsDNJTL0n7pYhHDeOo0VbCqyuGWkzGQa22LsXpeTQ+1mdZ7eKdQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2015/uebi.ko": {
+    "sha512_b64": "/LjhRGprrRtwrwOk/CUoyFbsikMrDIgRm6zsUQ6BuW+Zc9E/xATf0jqM8RoBIWwGdWQnveHbDvHrIIhYKefvhw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/LjhRGprrRtwrwOk/CUoyFbsikMrDIgRm6zsUQ6BuW+Zc9E/xATf0jqM8RoBIWwGdWQnveHbDvHrIIhYKefvhw==": {
+    "sha512_b64": "/lib/modules/ue2015/usbdpfp.ko",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2015/usbdpfp.ko": {
+    "sha512_b64": "B8ifg3eMqmbpKIfzynPk2VPc4KbWgDaAGxfHXXSat6tKNZ6oVCqsMncYC1jjE4JIyTKhgBWzqX7kuqwxwqAGBg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/generic/avlibqtgeneric.vst": {
+    "sha512_b64": "U5XRW9mjaWuXaNWTxD6RnBRmlo7zSouoG7c11dobzI+Ng+0Hr/BeFOT9aqjMICyBkAwb63DYb7nsshUmw7noHw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/generic/libqevdevtouchplugin.so": {
+    "sha512_b64": "Sn6JwqI+9sFr3/i9NTYAzD7HNVTUeWvzTX8L59AXIFa+EevSc9BXVE3MdVrTwBOPjgSl0vYkdxunWGmgdy2zgg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/generic/libqtuiotouchplugin.so": {
+    "sha512_b64": "jbCLZW11bqkDt7LhNm9h/rXfueH2o6bakm4OTI63Y3MAMyHz7s38DROzv0riL2dq3wUd3noas1BfcPwnaFncfQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/imageformats/avlibqtimageformats.vst": {
+    "sha512_b64": "S+OHgdNg34x+PB2cK3uKVIJNC22ticVsA45pAxp1CLtxPYW3/YFM46iduhevGNIs9uf/yvvJhLvU++TgUL7kEg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/imageformats/libqgif.so": {
+    "sha512_b64": "RbDBU/XmQjFqLtYzMrivy73WYv3ab+k+NbuNd0VoTnDmDi1dcGF6kCuJ/fPrLmU8/RKTkYUCXFYHPf9P4IOvfw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/imageformats/libqjpeg.so": {
+    "sha512_b64": "X8Q+mCtNZDjoFIGwJTDa/CsIGeeFEqyDjTzhdZ4u9dj2XgFJsKBPMGPwbIW0jdxPCSacV2n9wiXNmkR+rCcL1Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/platforms/avlibqtplatforms.vst": {
+    "sha512_b64": "YP7m3pA77vzeh1RMsuGk8AXswcl72l1edm2AT6Its0Act4JHOgB41bFbqDVK+HyAtXMlaQozudmjL+S9KIZKUw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/platforms/libqlinuxfb.so": {
+    "sha512_b64": "67dAKVDr2Ha8v4MNMdBU3J1StcBClYiWSW9ZBKrK95L3vbGaGmX1/lDrLRDrgvWPfAh+yPwXqveZpkFkj76nFA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/avsharerhvoicelang.vst": {
+    "sha512_b64": "Eu9BDdfim8wwKquIReZb1ZDeOzydr3hTGdIhuG1LBXN9exSTyB62VD51HPeP2UZ2MdkSQA/CA0LzhldYi4/LDg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/downcase.fst": {
+    "sha512_b64": "gwxcRsfK5P8O1lUmccdwQIyBnB7qmnJmpI8eT2/4oCXeK3OYwlhaVmduvSbWdSN3jomiUzVfh+9tv5rHdN20gA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/dur-mod.dt": {
+    "sha512_b64": "g3o1rBvn1HTFRVFTTmOUUobD/4R9yjqaQN4+lgv6xPUzc94hStWGi9Xhh/m8LtL74xmBRdNvhZBzRqf6u31OlQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/emoji.fst": {
+    "sha512_b64": "Q5LSn1KLnGWfeFsQtolW4hrQg7WhrMssMuGR2/c0tYRGblwuzhNmQ4WjAYFbSWccSWXgyAY1wsg2/vwuagEusA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/g2p.fst": {
+    "sha512_b64": "pAhxGuzcU8Q0/FI69owQlmkuIDQ2J/t3KUJouqJ7oHggE8Ee6ULv93doJdk5N1ARzZBABbAtKbPb3bNlXkDD2Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/gpos.fst": {
+    "sha512_b64": "FniPwGrQ6pKEt9Igf0pzIAf1TE7yrIwF/DV556iNg7rUREoqjdK2s0+PHulTt/aFPNQbe6nRqKWZi3f38b9O8g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/homographs.fst": {
+    "sha512_b64": "efLdCKIGC+Pt3oGIF5wrCSyMIzlJXwmi18nx4OsT9zv2WKllVtDILKRNIz3qTDOzHLsFJKKeR584j7gQ0J0ydg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/key.fst": {
+    "sha512_b64": "D03wQ1ZpQmfya0UywMlxhYF3gMUBI2HcD19Vpd/cGdyAFzX/M4sf9yzaF9K04BJjGFzhush9rvEgfFqz9WUK7A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/labelling.xml": {
+    "sha512_b64": "qDpRGjMp14vyVPN5//z6KyBTwE3/cyIPQ5vP+fwcClbsGDZ3cynqe7Yl1edEvPsy02tqZ+IlrssPHEKjtoh46g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/language.info": {
+    "sha512_b64": "b4T/KA88BOqOWgaBKBuIpRoAoxCjlHSo6HCBBq7WO9lxpdMXn/g0/mhTcRX1/OaJWKOXXUQKn1yHwgGQwUm2Wg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/lseq.fst": {
+    "sha512_b64": "eymuWnveJar5VlSlSPnz2SGZItm+ljZSbdYzWmskJmkTFsuyAP5vXozyZ5VYpDcagBwVwvMnTwz2PXUpM1SL7Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/msg.fst": {
+    "sha512_b64": "QRiZZOS7ZzQZ0jyddA9HwVdqRNKCthFhYFq3Ke+o8mvyylrsm9WhgY92+bK1c1nSFUVPOMyYrytG8L8Bgd950Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/numbers.fst": {
+    "sha512_b64": "KxMgkCV+T74Ii0V67Zs8yYaJeCzrBR2HCIvqSaJ4HLhTtzDw5bSybTpLz8nCk/ddPP7PlJFm7rc7zhWENwMvjA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/phonemes.xml": {
+    "sha512_b64": "Z4zqY6c9lDL9w0F77/WkacVE0w9Z/zbyNmDi1S+3e5H/bL1YRsS1I8kvxCOfIMlteH/3YtBcmrRMDGLBiI9HEw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/phrasing.dt": {
+    "sha512_b64": "Qfq0Hed6uRRMLwH6dFrl1UQ1fYmkbDO2rCEQNPyDHKbGWkO9/Xu05DWuLbtao6RU2uYwsgy3EPCfTta9VyJdlw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/pitch-mod.dt": {
+    "sha512_b64": "g+Ta8tw12NSQnHdwJUYUpTcI+ZawyLRxVRms3umOrU8El07XfxM1oQ5L6fAgozUrc78dAZTxiq2MJZb0CKLpGA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/qst.fst": {
+    "sha512_b64": "J06yhxpTX2Taqle25iTmfSRRqltS/N/llIGnYUtyW57IRLd7sF0ov8+iVbISVB3ty5CC8Y81UjRR23YwcizGyg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/spell.fst": {
+    "sha512_b64": "mtTPr0pI0s0PiudEN8kFmCozRFDoetCSQeEtjTNyAxBk1Fd+iNs+47owLuQVsQm69VDlgjwd/DYPQn2TI79mnA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/syl.fst": {
+    "sha512_b64": "3XW2eMrDVcrAwPxCibLQuyb/TDy92oBgcliWue9qPUr27xsvanZt1iQeC/eZu7jlfK4NHiMt2OYGoh29XMd46A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/tok.fst": {
+    "sha512_b64": "DhKzT1hlh7cBTswPIql3R/U5Z6m9YtkmjZ9JsbXhGyrYGNmja7U5Vkcx0vwXDdZWdt8XzxqPqncMcLXZsJDQjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/userdict/src/avsharerhvoicelangdict.vst": {
+    "sha512_b64": "HFJEgjvaphB6NdAsH5dqDywSJG2V20NwpUBd1FIfXuKax3gDn1/sNFiBfLZbG9qMf213Q+1YI6QTgTYY1Uh5tg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/userdict/src/dict.txt": {
+    "sha512_b64": "jIrnStMsx+ty07vQbORWRq0kKUo+9FB7d4y1up6+7kFuVVVlipUWDzN+u9Lxh+3G3Mof2IQvhxr0UKTQGnOE+g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/avsharerhvoiceleticia.vst": {
+    "sha512_b64": "usXGNp3fFY2YtjL9Ift1ZDSfKXvdaLgzTvW0UzYVAd4+HJeTsNegmaig+xIvIb+VBVX1+k4c1++JqIqbPX5juA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/voice.info": {
+    "sha512_b64": "n5PLAAvIk0tthlItiqY9SjWQ2dpriX+upmu54reWt452BWQPSBUIw0uNEdzLfCxSs6nlIAN9x1EAyUSpWCvOHQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/voice.params": {
+    "sha512_b64": "m0GjvdFyFAQ2zPLbUc0s8XxqgwzUJpDloAmEoaOdH0DZtnfzHHP8xHgXML9Uq0vkOi4a7tQtOD+tq8hPMvFTsg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/avsharerhvoice24khz.vst": {
+    "sha512_b64": "6vS08eyVk7fP0r8MwPpg8sxBGuHMF/bVVYHNrleua3188QngBzKsRWeRRitcpAM1SFYs3/IPayk3EHNh/9scOw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.pdf": {
+    "sha512_b64": "pveeM7SkiCxGDyONazs86kHeM+zF4XAfSrvpGG4ujImNS6NQNb/JeENWqHi1q3ZsMqQQsHrK12NrN480yC4f9g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.win1": {
+    "sha512_b64": "bnKDVgAqb8OoXTKrCtoA2fTkl9kWhTBd/8+m1Cnr7GECstILdsMBLH6H+vC1NMVmhL55pXl4TMbg5ob7Wn0XTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.win2": {
+    "sha512_b64": "lesfGWDaVpaz433oQ+MPidzc9Whv53bg213vTsxhN91vwBuBopguweD2U0Mch6vKME76r2Uhcm2e2wUDS6qTWA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.win3": {
+    "sha512_b64": "Ew1pSkgcMarAqBsvEIfOisZtkUi1M7IuWBy37gxNSKwN3yAU8g8eP6GrcWH77i/oDFlK5Cxsq5tQ5IHK+evbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bpf.txt": {
+    "sha512_b64": "zxRyUi8c/8dm99OZQNu9cCAoRwJoKQ0k/UakJMGHOTV9y2cfmg8x/c/U4ST7eihL7tds4qGgrUSKuoFKI4V/uA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/dur.pdf": {
+    "sha512_b64": "Qp0NMao3ZAZkrqOrEYm5ZwbibFXlqIBbBbloDc8J6q1e5qWC+aXQL8k42U0G3U/qnlAm2yUmLH2jBJ+X52Q26w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.pdf": {
+    "sha512_b64": "BcKVZ46/BCujAVH8JmpTtZsumj0YFEaG+Vs7Ue5xdXeUsNO7eukQSgSHhIHtx3oe3If5jIDeYZbEDE3fw9yhtQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.win1": {
+    "sha512_b64": "bnKDVgAqb8OoXTKrCtoA2fTkl9kWhTBd/8+m1Cnr7GECstILdsMBLH6H+vC1NMVmhL55pXl4TMbg5ob7Wn0XTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.win2": {
+    "sha512_b64": "lesfGWDaVpaz433oQ+MPidzc9Whv53bg213vTsxhN91vwBuBopguweD2U0Mch6vKME76r2Uhcm2e2wUDS6qTWA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.win3": {
+    "sha512_b64": "Ew1pSkgcMarAqBsvEIfOisZtkUi1M7IuWBy37gxNSKwN3yAU8g8eP6GrcWH77i/oDFlK5Cxsq5tQ5IHK+evbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.pdf": {
+    "sha512_b64": "Le+nk1IdnLwQFRFnO6fpJr78ZU7OAizToTMlw8BsSuoGQjj7E9SDGi0N7HhKk9WsmbNrVwqCZ/2+gEQsMrrrAg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.win1": {
+    "sha512_b64": "bnKDVgAqb8OoXTKrCtoA2fTkl9kWhTBd/8+m1Cnr7GECstILdsMBLH6H+vC1NMVmhL55pXl4TMbg5ob7Wn0XTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.win2": {
+    "sha512_b64": "lesfGWDaVpaz433oQ+MPidzc9Whv53bg213vTsxhN91vwBuBopguweD2U0Mch6vKME76r2Uhcm2e2wUDS6qTWA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.win3": {
+    "sha512_b64": "Ew1pSkgcMarAqBsvEIfOisZtkUi1M7IuWBy37gxNSKwN3yAU8g8eP6GrcWH77i/oDFlK5Cxsq5tQ5IHK+evbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-bap.inf": {
+    "sha512_b64": "r+SvpXON7Wd7PexpHZETZUbFxJeCPlCFa1OaCEHJOZHQDbmNM3l6ZkCUypaNanBVJmHJIX4yixNLvnC3enUFbg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-dur.inf": {
+    "sha512_b64": "jKmDsqJoWoJuwGjJPA+c17IcU+D9lueRIypJur+VbhDP+bsRt1h9gEzjSh8J+8o5ApQ2HVABdf0n9E6FxCI8LA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-lf0.inf": {
+    "sha512_b64": "RMpp8sL56/L63jHTaMw33iatUSl0jb9BXXa6qxzXPcUDjtmygf3p9jDh35lR9S9ZzPt2tuEY2kqZvMUq5RqR7g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-mgc.inf": {
+    "sha512_b64": "d+HHjLuqR67erhJFGSyn8wX/qiW38C5zrdpf/OCBugw555DcnAI97JJGGN3iyqNwR+cujLdqzEmMAMEZn1RJkw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/voice.data": {
+    "sha512_b64": "5aiRVH3yetpBSd+O6vPQOwTNresRRGnNHIpAgRVkMdt6U+bCKGwzJJD+H8yLHb0etj0IqJ3YP/uDrEfzsHVc2w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/adh": {
+    "sha512_b64": "91Rt9UJVKjFM/6XOE7S1yrtlItB0CJGSsTa4zY+VDdMPCyHVueFckGGU82g0NWUsnDJW9MRoPmkeBtYmaaf8OQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/atue": {
+    "sha512_b64": "wxp6w1DFZqzs1PL0ChsHXP+7A+Z6nv3/cnKbjktnjSkOuonGNiOiMMVSeFg5DNBkSYAjR4yBuFg0nSRHRHmzDg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart90.vst": {
+    "sha512_b64": "dLneVIHk5g63MUJvx+2Aft9xHCJp5aV00JsVUbgr0CWQfuQCcP2DlERV/TQDiDIQ7Pgh8/MGuBW0L2CFjG9bZw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart91.vst": {
+    "sha512_b64": "J42eOxceblFqdR1vrh49o9/9ANQXlX57LTCekLdR2L2H7APFq0O8Mt1kYaEQqQHKHEPqCj9655lLsSmcFh3Knw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart97.vst": {
+    "sha512_b64": "jM/qrljMWHiCptlk60jPppfeZ0Os01z6Ri69XRpX7XlpRffDxjQpM62C8jLjBIcLSdOMPWX5wVwOphD20jbGPw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart99.vst": {
+    "sha512_b64": "/o7iheMlbHr/0o5ULXtF0OD7N5Oq7xmxyNWZqe9QZJXXQG/8lPdR0DY44T4t5AWlM7XSHkVVhOSMCGjsknTlTQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/o7iheMlbHr/0o5ULXtF0OD7N5Oq7xmxyNWZqe9QZJXXQG/8lPdR0DY44T4t5AWlM7XSHkVVhOSMCGjsknTlTQ==": {
+    "sha512_b64": "/uenux/bin/avusrbin.vst",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avusrbin.vst": {
+    "sha512_b64": "ZmpRs80WMKMpBCxhhw8i6OmxK1V/2w0CprrrBxSpIq92rGLDpffGf4kiQXi1IxkvTYJDQqFn5Qc6v/FeGEa6sg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avusrbinof.vst": {
+    "sha512_b64": "de+hOP9SXz5LCyCQemflo1/BZCJW1EL8We2Kaeg79cvR8UdQqvpN2yyt6plk/Ey8Q9JsnZcN5VhIrKslolENlg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/gap": {
+    "sha512_b64": "vn6OBbNKLegdryJxailSUCpWf4mSq+Bg8zzHQpQ7x5L2mQ11aUQewNB9kzvgAYwDquGMcHWExDmIuBFsAjnDTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/logd": {
+    "sha512_b64": "AeyizZAWkP9GDClxfZGU76ItdhU/eUfw3lUFY2NcKS/dQblolfpwVd/ENhyOneg74D6Q8Wd2g7+vp64yCPdV1w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/red": {
+    "sha512_b64": "jB1bcavfph8sh5PFahwmnNiIRS0ZQhJHZNeDlut7rT2jpHbJQVlwqgEMjXpNE/KHg5qAKCPyIr9Fc3MWe4t15Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/sa.of": {
+    "sha512_b64": "gQmCNMnFefqHvZyB9c9GGld3jwr6YN5hOiN6MpXsm47hs6Wh1ZkTxRHMsHvZbPi5+7oRy2O/52Gu62ohjuoByw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/savd": {
+    "sha512_b64": "BqfBbW3xnsIWGfJvXrbpEV91JKcGTjMryjVTiGPgaLOdcNY66YMd+tPWhM6SGq2mR6YK6IhXrxXZIHScKFFy3w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/ste": {
+    "sha512_b64": "YNBj8Lt15UQgt760I3/Sd2b62HA92+RWETqteTOWoYu3e4i6Ni4jg7pHbL/dcvOSCMSEQotTtJ/0Ix2QXbydag==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/udevd": {
+    "sha512_b64": "gEDcgB8/5Pz6hXYKsSocBDfiDJA95GcFLAcBx+/884ejKw5DeAZK1E9yvm6jO83GnVfvIrVn9WLFW3ipK3rRSg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/vota.of": {
+    "sha512_b64": "fq1YwFejLXAoPTE2HNfRkKS/AV4/puiT2+X0+YZNzo3gS7GG42GrN/mpziRbcrBFvEaz+V+ekPr2z+KaDcDQ5A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/vpp": {
+    "sha512_b64": "gPBAhTCoKURLW2PD/KzaT5oOi4lbQABOAyqNym4dM6GWjLxirmkgF+2mejkYVja/iFdScSG/LN7F0ilVXEtKhA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/avusrlib.vst": {
+    "sha512_b64": "yybGLoomZd3HfNpTH7RkIVSiyKL6EVv2HPrcei14ykTOSYi648YScYkROxJ16OLoON+hBgGsNBh1hWtAhQeo5A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/avusrlibue.vst": {
+    "sha512_b64": "XQIkFMyYsCSnEui8yNmZhuhpLCvh+NY6J0ggEEAGZzMbDC4c8lwKE+qjgXvwEOx2DG8YIDhBLtDAKWz0Hw5keg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapigeneric.so": {
+    "sha512_b64": "4UtXp1pYuKsMS7zK0toPTYQe384xwEiD+S+o4Vx3/m2f0iZZloDnLo8a6S+XWgCr58M8cHJWHG7cdf4Ins5w6Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapihwil2015.so": {
+    "sha512_b64": "IveQwkSIQitiTHjnM/yoRDZuzmcNaU0PCpihSh3fCHaV2hQjOCKRYw1PtmaRS2jUmCVK+86vwtpIg9ukntEagw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapihwilmsd.so": {
+    "sha512_b64": "x6f2e0sc9yejgoYnLn5dYeAccDJXal27vkht4XVNbYwjPr77B2N6zc2E2UzZLunULpLt/yEsh98BPhNCgZw7WQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapihwilue.so": {
+    "sha512_b64": "IveQwkSIQitiTHjnM/yoRDZuzmcNaU0PCpihSh3fCHaV2hQjOCKRYw1PtmaRS2jUmCVK+86vwtpIg9ukntEagw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapiio_resources.so": {
+    "sha512_b64": "cFloSvTOUncVdOqq6b85S8zpVPf0GuwWqpblQ5g5bdLlWDpjla0V5ed7hY/0b5zro7uuJK0+H4I7OHeiwtRNKg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapisdk.so": {
+    "sha512_b64": "fzdEBQC7qN2zdF+EiKIvXvXKqqdLabx4Rs423loA6ltp1MhoLVzqrdJRxKWVd/iC087RShqOuCRaYwC6ERHJOA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapisdkurna.so": {
+    "sha512_b64": "fzdEBQC7qN2zdF+EiKIvXvXKqqdLabx4Rs423loA6ltp1MhoLVzqrdJRxKWVd/iC087RShqOuCRaYwC6ERHJOA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapiui.so": {
+    "sha512_b64": "35uAUwKniUMf0JmWT/8ClfQ2sTiQ4iRquhWuzj19t0Ly/IfYAQBmX2hb5iru18gHF8oqaJf4aifOMnah14oDqA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libecourna.so": {
+    "sha512_b64": "j+hZBxv7si81XJwCPSXC7pDnYAmhDGPz5qJLLmivXIoG8Um9Xhgl2BhV5ToS5M4mgyIzXYXKpcC7chEOHPyXFw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/xkHQZeMdsk/mwjufTunEhGEwQrKueEgKtynTP9pkqhizbvH1pS9dEPMO4F9hiq8VyRqvl/4c8hHCga/p/L28g==": {
+    "sha512_b64": "PB - /dsk/fi/estatico/chave/ue.ber.pri",
+    "secao": "ARQUIVOS BASE"
+   }
+  }
+ },
+ "UE2022": {
+  "titulo": "Urna 2022 - 02/09/2026",
+  "arquivos": 142,
+  "secoes": [
+   "ARQUIVOS BASE"
+  ],
+  "pacotes_vst": [
+   "/bin/avbin.vst",
+   "/boot/boot/avboot.vst",
+   "/etc/avetc.vst",
+   "/etc/RHVoice/avrhvoice.vst",
+   "/lib/avlib.vst",
+   "/lib/modules/avmod.vst",
+   "/lib/modules/ue2022/avmodue.vst",
+   "/lib/plugins/generic/avlibqtgeneric.vst",
+   "/lib/plugins/imageformats/avlibqtimageformats.vst",
+   "/lib/plugins/platforms/avlibqtplatforms.vst",
+   "/share/RHVoice/languages/Brazilian-Portuguese/avsharerhvoicelang.vst",
+   "/share/RHVoice/languages/Brazilian-Portuguese/userdict/src/avsharerhvoicelangdict.vst",
+   "/share/RHVoice/voices/Leticia-F123/avsharerhvoiceleticia.vst",
+   "/share/RHVoice/voices/Leticia-F123/16000/avsharerhvoice24khz.vst",
+   "/uenux/bin/avpart90.vst",
+   "/uenux/bin/avpart91.vst",
+   "/uenux/bin/avpart97.vst",
+   "/uenux/bin/avpart99.vst",
+   "/uenux/bin/avusrbin.vst",
+   "/uenux/bin/avusrbinof.vst",
+   "/uenux/lib/avusrlib.vst",
+   "/uenux/lib/avusrlibue.vst"
+  ],
+  "arquivos_hash": {
+   "/bin/avbin.vst": {
+    "sha512_b64": "1OBO/fue8Hh4PSLkzxEFEYTx/S+PqiLDxkq56B4Z/D94xSmpX4pBJQG9CC3M5ed84YXakgykj32031OH7F5gUQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/bin/initje": {
+    "sha512_b64": "cJT6ON6LoxwigRHGpbll73RyvEVBCvZucueziwwc/QxV9BYj9C+zeFVpUnQ26v3/LByUkmJZw67ekzkujPB/kw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/bin/syslogd": {
+    "sha512_b64": "yhrcZPBwGmzcyQ31uyWEAUMCHs1+nteOvMa+3zVxQ3WKVDVuD33Wtc4gkvnHEbcdrLexuvcBi6dw7Tsj8nkOHQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/appbootloader.efi": {
+    "sha512_b64": "v6jcLi5nLbqroQ2Xk6GoKhOzQhdx2k/MAa+516Augf8f2awDgnR9NwKiTCmFDR1Uvu6k9mw6gWvapJRcea6IPg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/avboot.vst": {
+    "sha512_b64": "IiAHu29HvLkFvnSnpXrMywhIjpGwNMOomfBmI2OBojbahPVo+raJFMvYozIahI4kBH+ZiPg++10/Z0uhC/y3wg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/config.ini": {
+    "sha512_b64": "DGeE57pHzRsHksxZYU83Bgcaa4QyxdBAPIlk/62B8W2F/BIPauQziNItI5fER3Rm3ujZ4BxMGtHSdx6ejSihPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/boot/boot/uenux": {
+    "sha512_b64": "RKOIF8iFtK3MRewHe6+1qV94XAnXetgOXtK2NIWkrMMscNEJ+V5biK+nDo+26lhyOADUTp6KUgPUV8l6Qj6TRg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/alsa.conf": {
+    "sha512_b64": "2lzYkFFlMtj92VxnRbyGqZOWulA0/N9HrNDVhdmEjAmCezfyrYXYlXdx8JoYkyIM1ARZU4bUsLlUkrHqAILBwg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/avetc.vst": {
+    "sha512_b64": "7ruXryqerNV1Pnf+tvRiejjHYSOcjxeszkO/GJUe3xGZgf4due36Tl8UwEeNPnnRgknswapnbhhNN8W99s0Ttw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/dependencias.properties": {
+    "sha512_b64": "BKTJ72c14pme3oSVhLGGN3Uv87Zfs2y0zIF5mFetohXJ+VVoYJ71rEtQpTrfsFvEiGYfLZw2yEODJy9A+JuBkw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.cache": {
+    "sha512_b64": "IpBHnZxazwUkpiuBKfu/xk1wLTZaVoVhhDV4mAFGx1djqdoSTjmLXo648gW6vHsONeC16vnLMG8pMiYvOCP/fg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.cache.sig": {
+    "sha512_b64": "wc18fy84BUXpGSjdliGf9u1Z+NqbuyKMA7uaqo6aXFdkGrEHuakUkwxxSMwc1DnUQFjf1qyN91/IKS7VLN9nkQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.preload": {
+    "sha512_b64": "GuM1JQOVguSZSaqZJk/YVyOs4U+FMwV16pbkLmwlE+1EQMkfAa52PAsJkXqBMHKRnBMKkCjtXAfkhaA+KxxoGg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/ld.so.preload.sig": {
+    "sha512_b64": "Mh6Ij0UkTe70tkC1z2j4getIFA69XfdDhkLTJioWyAyUYVbp94Eh0ABwCLTeTZx+B3dTXbSPSn8Rvi3b6Y9mmw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/versoes.properties": {
+    "sha512_b64": "aGN9HJl4/rSW3piRpoTaiePIxljD9G2zhA+V9TLq5ry1F0ruCyM/fix9NYCuzja7lIfX/N51iRYv/HRzlFFFMA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/RHVoice/RHVoice.conf": {
+    "sha512_b64": "4cNwyMj+3zE5DXLXfAh3futBLKN5yxiTBfSWCPC57MX/ip4NsiL/+FnD7PT9XKuUbc552Vp2x1hnlbCf/CynZA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/etc/RHVoice/avrhvoice.vst": {
+    "sha512_b64": "4C2+vWs1+p5K/HveGRrlVNTO5DX4KWBEOhOx+/EISRa7cQzhZI5Po0e4eKiuckl8LjzwU+WNY6u5SQr0ipBepA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/avlib.vst": {
+    "sha512_b64": "mLbJIseXmXgGuFg28YFSOLd6WLHnt0ttZffD/QXnK1kauqrn2ZO78zQNEGDGeXM1Rq1YuYpEXQ+S7MIsan8xCA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/ld-linux.so": {
+    "sha512_b64": "wswDpjFuSX+dwBNAEOUiffokPxYOXPtyYgQK0+jabP/2ar46SDoO6TL5dYHAsJQpAFxmKRKDSWAqQNrBRvTtIQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/ld-linux.so.2": {
+    "sha512_b64": "wswDpjFuSX+dwBNAEOUiffokPxYOXPtyYgQK0+jabP/2ar46SDoO6TL5dYHAsJQpAFxmKRKDSWAqQNrBRvTtIQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libQt6Core.so.6": {
+    "sha512_b64": "iRjMuUmHZ7J7K3J5bAC6qVuHwgzHSISe3z6HVWNxnHii9mHPpxYDO3ivy39HzdhpdOg4GM4XJowANzR2QpYSqA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libQt6Gui.so.6": {
+    "sha512_b64": "ZSvL+Nv7gmUQ/kT0riGKyZS+qGh5/pNnrKN2ODUU97mJjB+KLz4jMIzMEIF33jysKhrjKuoimlhgC6dHJHKbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libQt6Widgets.so.6": {
+    "sha512_b64": "kTwyWPptP+ZXOq8RXFXdIeNM6of+/fCStcI8m7qMCZedaJ+OvZP5shYpC74RJnpgs4NSI4MLynvSxAYImSmbiQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libRHVoice_core.so": {
+    "sha512_b64": "zURWjgOaSoo1XD9EHSUc3itqN78GRLcJoMRAYS3rJDnvQ/+SPaUU3LHyJDgVvANJcjx2UXl2l5BuDJoJcWXEaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libRHVoice_core.so.1": {
+    "sha512_b64": "zURWjgOaSoo1XD9EHSUc3itqN78GRLcJoMRAYS3rJDnvQ/+SPaUU3LHyJDgVvANJcjx2UXl2l5BuDJoJcWXEaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libRHVoice_core.so.1.14.0": {
+    "sha512_b64": "zURWjgOaSoo1XD9EHSUc3itqN78GRLcJoMRAYS3rJDnvQ/+SPaUU3LHyJDgVvANJcjx2UXl2l5BuDJoJcWXEaQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libc.so": {
+    "sha512_b64": "Pgy1kPwlR2bq3iEu1jXC5oeNCegvdm7r81tPkLGMz2RwrYmWaHom44JpNG5u5+05a1GNSw0bz0BL8avUVTLuCg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libc.so.6": {
+    "sha512_b64": "Pgy1kPwlR2bq3iEu1jXC5oeNCegvdm7r81tPkLGMz2RwrYmWaHom44JpNG5u5+05a1GNSw0bz0BL8avUVTLuCg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libdl.so": {
+    "sha512_b64": "wlA/SaWGb/0rJIXCpCSVmpwowYgyuV4C8NyYrqPB5bAGnrhd0f2PgDpqzSW/ZJ2HgxJwaUQgMexqMn8vmKgNFg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libdl.so.2": {
+    "sha512_b64": "wlA/SaWGb/0rJIXCpCSVmpwowYgyuV4C8NyYrqPB5bAGnrhd0f2PgDpqzSW/ZJ2HgxJwaUQgMexqMn8vmKgNFg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libgcc_s.so": {
+    "sha512_b64": "Y/a9OLN8FF/uWjl07BrROe2uA7jy7PLsRte88Ue7pDbJ+uTsKF8LP/KrjBRB1oa4clfrIC8iWJ3Bc18b4jMM+Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libgcc_s.so.1": {
+    "sha512_b64": "Y/a9OLN8FF/uWjl07BrROe2uA7jy7PLsRte88Ue7pDbJ+uTsKF8LP/KrjBRB1oa4clfrIC8iWJ3Bc18b4jMM+Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libm.so": {
+    "sha512_b64": "QQAOc+lAHSD38mqNsxZs5BYhchc2FzGEQnXkoYChtCJhIogqq1Wxc3F55Hd2ypYfxukZl8rvg517T/8XQnKr3g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libm.so.6": {
+    "sha512_b64": "QQAOc+lAHSD38mqNsxZs5BYhchc2FzGEQnXkoYChtCJhIogqq1Wxc3F55Hd2ypYfxukZl8rvg517T/8XQnKr3g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libpthread.so": {
+    "sha512_b64": "yEl93dXoQLkxpyrwW7C8gAOSalHAhoZABs5W4DAkzUxZdY2HKV4u+VEZBqbsvAe8G6MjwZLI/BjpAWVZuxVE2g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libpthread.so.0": {
+    "sha512_b64": "yEl93dXoQLkxpyrwW7C8gAOSalHAhoZABs5W4DAkzUxZdY2HKV4u+VEZBqbsvAe8G6MjwZLI/BjpAWVZuxVE2g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/librt.so": {
+    "sha512_b64": "dfBwe5KsaC/Sk+hSnnNrX/TK3hLv4LVsDf0KtodGGthT2ZpjXiIf6CL1Qg7Cw4uTiUAXqAbxdAthIUf0dHbWbw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/librt.so.1": {
+    "sha512_b64": "dfBwe5KsaC/Sk+hSnnNrX/TK3hLv4LVsDf0KtodGGthT2ZpjXiIf6CL1Qg7Cw4uTiUAXqAbxdAthIUf0dHbWbw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libstdc++.so": {
+    "sha512_b64": "ZsQfzPB1zvSOgAYdz7rc9UXxec41gFkjz4HHQpNp4L+r/CG+DLgmnAW83Lxl/On7uk+dS8iUV4/8UHFdLOiFPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libstdc++.so.6": {
+    "sha512_b64": "ZsQfzPB1zvSOgAYdz7rc9UXxec41gFkjz4HHQpNp4L+r/CG+DLgmnAW83Lxl/On7uk+dS8iUV4/8UHFdLOiFPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/libts.so.0": {
+    "sha512_b64": "XShx/fM0zgD0MXoEOYHWUuGGrwHJH67j3OelMxaEupfDtToNI1p0ZfShKugnym1GZiGGD7yut22R9cf2iNvIHw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/avmod.vst": {
+    "sha512_b64": "XBakPfmeGX2Uzz754/jpz5zjYebWmlTcVLd/fMg390LubXbPAMkqS+Ql7o2j9UgdTYiS3WRaX5R9rOQdHVfrEg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ehci-hcd.ko": {
+    "sha512_b64": "3R1MKZTVb3ajESmGYkHju5GhNCAr2DgxuxazoReMavHEwAf1NaxnxmAM41GITwb3O4i35czthmTd9b1REb0hng==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ehci-pci.ko": {
+    "sha512_b64": "Z45lsEr0TyrDbFtJ4JtcYHfVTFB5lKWH1XNx3zD/dpVdjyutuSJNavMhiUv6gggHuSmhVXBrKS2zfjeCtnoFFQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ueinfo.ko": {
+    "sha512_b64": "+3s+IhaO0mV/v0fJFcLXlQ6HNbSOJZrde++wdRCx/L7msEyWCKKnSl7z+diSQHr/mgsKU3LyQ4g+ChDMwCw1WA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/uhci-hcd.ko": {
+    "sha512_b64": "m0xpEwFN4UEC9W7JFKnPriFJmX+7v4RZYeY1i4sYjwwQ0x5h5xEql9WadqbF4jaS6SIHs5HzyE7IxLV5jVdCfw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/avmodue.vst": {
+    "sha512_b64": "G7bZNxmUb0k6DOWHgoOxoPAbDWNN9e++tPiB6UPeJVVu60uJLxAhsIDWiO612TygKcP9rAF3w70bnsEkIZYviQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/cdc-acm.ko": {
+    "sha512_b64": "9YXGq1nIRWFI6S76IFEsRfljo0m4kV0pN0HPp4x1Lhf0RdottuqLUJ2T0FqH+poB5DmcjHfsn14C9AmGT1KGRQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/drm_buddy.ko": {
+    "sha512_b64": "ecdrZNVcFHScIHTIla0iOYxG9gDlM6FW08mvgnnhot/cHLSAIgEtTViSqru5c5G9+H5J3s2UENNu3zalgVMxXw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/drm_display_helper.ko": {
+    "sha512_b64": "SSW9BJkfBt0cLsuPTzWgxC8AVz+kYq1eN4TgKaRgNmoT8YQC+b7heyoBMUzpEdC0qO2nxcQBHIaZHE8RLi1X+Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/filter_tty.ko": {
+    "sha512_b64": "TpYbJm5VmH9d/8Jc2tzjNyYVG4F1bLgVoN6Wu1RLXmzVXgv/WwhytMpxdAn1+Ls3yeMHw9NOLprU/bTGt935Uw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/hid-generic.ko": {
+    "sha512_b64": "0dUR8RP02SndbCnQB7dxxV8kV2X69YARa48RkPet7VeE76S5QN+HPxoK7SGIAWlgZnC2rcrZp/qVlsAMSZbYpw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/hid-multitouch.ko": {
+    "sha512_b64": "8FUf9r3UyaMHlOYLPDJeYAvvxRLjKrj+VCrGDhKe09Ldtwh1ZUgENp9Cu6e8Tjz2wl9JG7CC+kjyuETTUIwgDA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/i915.ko": {
+    "sha512_b64": "AkIfsSUpfarLzSEZ3T5ayQfvsJehQqEVUO/DW+gdMgqC90CcIZ+Uu2tMHsgTw/JY34aCXMxxTZZhTEjc4XZg1A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/intel-gtt.ko": {
+    "sha512_b64": "3Z6V5BjFlP6se6kUFmNiFIT8hfjx2GQyIIDwXbW7Tx8iae+sS95C0j3sm67aY5rSd/RRvV4r4HeaSiA80JMZLw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/pinctrl-broxton.ko": {
+    "sha512_b64": "SUlSe9Ie/JBFKWhQqREaIYqavL5jHbgF/jAcfPDbFEZAE+a+wmHfqj2C+R15g2ymq4GSxBoxuwesMPnyEyAWPQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/pinctrl-intel.ko": {
+    "sha512_b64": "6BKtIHGx8VaPhnq3/5SX1i9ea2KF+FQ+a/znw0sI0H6tBZ2UD+03tHc5mJTw3Uu4cZk90OxJP2YTyqxW7l9/uA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/modules/ue2022/ttm.ko": {
+    "sha512_b64": "pDp+GBR0XyaIXa88d5QANTfGd9j11wLz+x1Q81hrK5YuQBYS/vYwHqBzNzxoPaA9u8sxRlcygUGQu2inofOcaA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/generic/avlibqtgeneric.vst": {
+    "sha512_b64": "U5XRW9mjaWuXaNWTxD6RnBRmlo7zSouoG7c11dobzI+Ng+0Hr/BeFOT9aqjMICyBkAwb63DYb7nsshUmw7noHw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/generic/libqevdevtouchplugin.so": {
+    "sha512_b64": "Sn6JwqI+9sFr3/i9NTYAzD7HNVTUeWvzTX8L59AXIFa+EevSc9BXVE3MdVrTwBOPjgSl0vYkdxunWGmgdy2zgg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/generic/libqtuiotouchplugin.so": {
+    "sha512_b64": "jbCLZW11bqkDt7LhNm9h/rXfueH2o6bakm4OTI63Y3MAMyHz7s38DROzv0riL2dq3wUd3noas1BfcPwnaFncfQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/imageformats/avlibqtimageformats.vst": {
+    "sha512_b64": "S+OHgdNg34x+PB2cK3uKVIJNC22ticVsA45pAxp1CLtxPYW3/YFM46iduhevGNIs9uf/yvvJhLvU++TgUL7kEg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/imageformats/libqgif.so": {
+    "sha512_b64": "RbDBU/XmQjFqLtYzMrivy73WYv3ab+k+NbuNd0VoTnDmDi1dcGF6kCuJ/fPrLmU8/RKTkYUCXFYHPf9P4IOvfw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/imageformats/libqjpeg.so": {
+    "sha512_b64": "X8Q+mCtNZDjoFIGwJTDa/CsIGeeFEqyDjTzhdZ4u9dj2XgFJsKBPMGPwbIW0jdxPCSacV2n9wiXNmkR+rCcL1Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/platforms/avlibqtplatforms.vst": {
+    "sha512_b64": "YP7m3pA77vzeh1RMsuGk8AXswcl72l1edm2AT6Its0Act4JHOgB41bFbqDVK+HyAtXMlaQozudmjL+S9KIZKUw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/lib/plugins/platforms/libqlinuxfb.so": {
+    "sha512_b64": "67dAKVDr2Ha8v4MNMdBU3J1StcBClYiWSW9ZBKrK95L3vbGaGmX1/lDrLRDrgvWPfAh+yPwXqveZpkFkj76nFA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/avsharerhvoicelang.vst": {
+    "sha512_b64": "Eu9BDdfim8wwKquIReZb1ZDeOzydr3hTGdIhuG1LBXN9exSTyB62VD51HPeP2UZ2MdkSQA/CA0LzhldYi4/LDg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/downcase.fst": {
+    "sha512_b64": "gwxcRsfK5P8O1lUmccdwQIyBnB7qmnJmpI8eT2/4oCXeK3OYwlhaVmduvSbWdSN3jomiUzVfh+9tv5rHdN20gA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/dur-mod.dt": {
+    "sha512_b64": "g3o1rBvn1HTFRVFTTmOUUobD/4R9yjqaQN4+lgv6xPUzc94hStWGi9Xhh/m8LtL74xmBRdNvhZBzRqf6u31OlQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/emoji.fst": {
+    "sha512_b64": "Q5LSn1KLnGWfeFsQtolW4hrQg7WhrMssMuGR2/c0tYRGblwuzhNmQ4WjAYFbSWccSWXgyAY1wsg2/vwuagEusA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/g2p.fst": {
+    "sha512_b64": "pAhxGuzcU8Q0/FI69owQlmkuIDQ2J/t3KUJouqJ7oHggE8Ee6ULv93doJdk5N1ARzZBABbAtKbPb3bNlXkDD2Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/gpos.fst": {
+    "sha512_b64": "FniPwGrQ6pKEt9Igf0pzIAf1TE7yrIwF/DV556iNg7rUREoqjdK2s0+PHulTt/aFPNQbe6nRqKWZi3f38b9O8g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/homographs.fst": {
+    "sha512_b64": "efLdCKIGC+Pt3oGIF5wrCSyMIzlJXwmi18nx4OsT9zv2WKllVtDILKRNIz3qTDOzHLsFJKKeR584j7gQ0J0ydg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/key.fst": {
+    "sha512_b64": "D03wQ1ZpQmfya0UywMlxhYF3gMUBI2HcD19Vpd/cGdyAFzX/M4sf9yzaF9K04BJjGFzhush9rvEgfFqz9WUK7A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/labelling.xml": {
+    "sha512_b64": "qDpRGjMp14vyVPN5//z6KyBTwE3/cyIPQ5vP+fwcClbsGDZ3cynqe7Yl1edEvPsy02tqZ+IlrssPHEKjtoh46g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/language.info": {
+    "sha512_b64": "b4T/KA88BOqOWgaBKBuIpRoAoxCjlHSo6HCBBq7WO9lxpdMXn/g0/mhTcRX1/OaJWKOXXUQKn1yHwgGQwUm2Wg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/lseq.fst": {
+    "sha512_b64": "eymuWnveJar5VlSlSPnz2SGZItm+ljZSbdYzWmskJmkTFsuyAP5vXozyZ5VYpDcagBwVwvMnTwz2PXUpM1SL7Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/msg.fst": {
+    "sha512_b64": "QRiZZOS7ZzQZ0jyddA9HwVdqRNKCthFhYFq3Ke+o8mvyylrsm9WhgY92+bK1c1nSFUVPOMyYrytG8L8Bgd950Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/numbers.fst": {
+    "sha512_b64": "KxMgkCV+T74Ii0V67Zs8yYaJeCzrBR2HCIvqSaJ4HLhTtzDw5bSybTpLz8nCk/ddPP7PlJFm7rc7zhWENwMvjA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/phonemes.xml": {
+    "sha512_b64": "Z4zqY6c9lDL9w0F77/WkacVE0w9Z/zbyNmDi1S+3e5H/bL1YRsS1I8kvxCOfIMlteH/3YtBcmrRMDGLBiI9HEw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/phrasing.dt": {
+    "sha512_b64": "Qfq0Hed6uRRMLwH6dFrl1UQ1fYmkbDO2rCEQNPyDHKbGWkO9/Xu05DWuLbtao6RU2uYwsgy3EPCfTta9VyJdlw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/pitch-mod.dt": {
+    "sha512_b64": "g+Ta8tw12NSQnHdwJUYUpTcI+ZawyLRxVRms3umOrU8El07XfxM1oQ5L6fAgozUrc78dAZTxiq2MJZb0CKLpGA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/qst.fst": {
+    "sha512_b64": "J06yhxpTX2Taqle25iTmfSRRqltS/N/llIGnYUtyW57IRLd7sF0ov8+iVbISVB3ty5CC8Y81UjRR23YwcizGyg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/spell.fst": {
+    "sha512_b64": "mtTPr0pI0s0PiudEN8kFmCozRFDoetCSQeEtjTNyAxBk1Fd+iNs+47owLuQVsQm69VDlgjwd/DYPQn2TI79mnA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/syl.fst": {
+    "sha512_b64": "3XW2eMrDVcrAwPxCibLQuyb/TDy92oBgcliWue9qPUr27xsvanZt1iQeC/eZu7jlfK4NHiMt2OYGoh29XMd46A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/tok.fst": {
+    "sha512_b64": "DhKzT1hlh7cBTswPIql3R/U5Z6m9YtkmjZ9JsbXhGyrYGNmja7U5Vkcx0vwXDdZWdt8XzxqPqncMcLXZsJDQjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/userdict/src/avsharerhvoicelangdict.vst": {
+    "sha512_b64": "HFJEgjvaphB6NdAsH5dqDywSJG2V20NwpUBd1FIfXuKax3gDn1/sNFiBfLZbG9qMf213Q+1YI6QTgTYY1Uh5tg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/languages/Brazilian-Portuguese/userdict/src/dict.txt": {
+    "sha512_b64": "jIrnStMsx+ty07vQbORWRq0kKUo+9FB7d4y1up6+7kFuVVVlipUWDzN+u9Lxh+3G3Mof2IQvhxr0UKTQGnOE+g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/avsharerhvoiceleticia.vst": {
+    "sha512_b64": "usXGNp3fFY2YtjL9Ift1ZDSfKXvdaLgzTvW0UzYVAd4+HJeTsNegmaig+xIvIb+VBVX1+k4c1++JqIqbPX5juA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/voice.info": {
+    "sha512_b64": "n5PLAAvIk0tthlItiqY9SjWQ2dpriX+upmu54reWt452BWQPSBUIw0uNEdzLfCxSs6nlIAN9x1EAyUSpWCvOHQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/voice.params": {
+    "sha512_b64": "m0GjvdFyFAQ2zPLbUc0s8XxqgwzUJpDloAmEoaOdH0DZtnfzHHP8xHgXML9Uq0vkOi4a7tQtOD+tq8hPMvFTsg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/avsharerhvoice24khz.vst": {
+    "sha512_b64": "6vS08eyVk7fP0r8MwPpg8sxBGuHMF/bVVYHNrleua3188QngBzKsRWeRRitcpAM1SFYs3/IPayk3EHNh/9scOw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.pdf": {
+    "sha512_b64": "pveeM7SkiCxGDyONazs86kHeM+zF4XAfSrvpGG4ujImNS6NQNb/JeENWqHi1q3ZsMqQQsHrK12NrN480yC4f9g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.win1": {
+    "sha512_b64": "bnKDVgAqb8OoXTKrCtoA2fTkl9kWhTBd/8+m1Cnr7GECstILdsMBLH6H+vC1NMVmhL55pXl4TMbg5ob7Wn0XTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.win2": {
+    "sha512_b64": "lesfGWDaVpaz433oQ+MPidzc9Whv53bg213vTsxhN91vwBuBopguweD2U0Mch6vKME76r2Uhcm2e2wUDS6qTWA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bap.win3": {
+    "sha512_b64": "Ew1pSkgcMarAqBsvEIfOisZtkUi1M7IuWBy37gxNSKwN3yAU8g8eP6GrcWH77i/oDFlK5Cxsq5tQ5IHK+evbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/bpf.txt": {
+    "sha512_b64": "zxRyUi8c/8dm99OZQNu9cCAoRwJoKQ0k/UakJMGHOTV9y2cfmg8x/c/U4ST7eihL7tds4qGgrUSKuoFKI4V/uA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/dur.pdf": {
+    "sha512_b64": "Qp0NMao3ZAZkrqOrEYm5ZwbibFXlqIBbBbloDc8J6q1e5qWC+aXQL8k42U0G3U/qnlAm2yUmLH2jBJ+X52Q26w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.pdf": {
+    "sha512_b64": "BcKVZ46/BCujAVH8JmpTtZsumj0YFEaG+Vs7Ue5xdXeUsNO7eukQSgSHhIHtx3oe3If5jIDeYZbEDE3fw9yhtQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.win1": {
+    "sha512_b64": "bnKDVgAqb8OoXTKrCtoA2fTkl9kWhTBd/8+m1Cnr7GECstILdsMBLH6H+vC1NMVmhL55pXl4TMbg5ob7Wn0XTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.win2": {
+    "sha512_b64": "lesfGWDaVpaz433oQ+MPidzc9Whv53bg213vTsxhN91vwBuBopguweD2U0Mch6vKME76r2Uhcm2e2wUDS6qTWA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/lf0.win3": {
+    "sha512_b64": "Ew1pSkgcMarAqBsvEIfOisZtkUi1M7IuWBy37gxNSKwN3yAU8g8eP6GrcWH77i/oDFlK5Cxsq5tQ5IHK+evbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.pdf": {
+    "sha512_b64": "Le+nk1IdnLwQFRFnO6fpJr78ZU7OAizToTMlw8BsSuoGQjj7E9SDGi0N7HhKk9WsmbNrVwqCZ/2+gEQsMrrrAg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.win1": {
+    "sha512_b64": "bnKDVgAqb8OoXTKrCtoA2fTkl9kWhTBd/8+m1Cnr7GECstILdsMBLH6H+vC1NMVmhL55pXl4TMbg5ob7Wn0XTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.win2": {
+    "sha512_b64": "lesfGWDaVpaz433oQ+MPidzc9Whv53bg213vTsxhN91vwBuBopguweD2U0Mch6vKME76r2Uhcm2e2wUDS6qTWA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/mgc.win3": {
+    "sha512_b64": "Ew1pSkgcMarAqBsvEIfOisZtkUi1M7IuWBy37gxNSKwN3yAU8g8eP6GrcWH77i/oDFlK5Cxsq5tQ5IHK+evbjg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-bap.inf": {
+    "sha512_b64": "r+SvpXON7Wd7PexpHZETZUbFxJeCPlCFa1OaCEHJOZHQDbmNM3l6ZkCUypaNanBVJmHJIX4yixNLvnC3enUFbg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-dur.inf": {
+    "sha512_b64": "jKmDsqJoWoJuwGjJPA+c17IcU+D9lueRIypJur+VbhDP+bsRt1h9gEzjSh8J+8o5ApQ2HVABdf0n9E6FxCI8LA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-lf0.inf": {
+    "sha512_b64": "RMpp8sL56/L63jHTaMw33iatUSl0jb9BXXa6qxzXPcUDjtmygf3p9jDh35lR9S9ZzPt2tuEY2kqZvMUq5RqR7g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/tree-mgc.inf": {
+    "sha512_b64": "d+HHjLuqR67erhJFGSyn8wX/qiW38C5zrdpf/OCBugw555DcnAI97JJGGN3iyqNwR+cujLdqzEmMAMEZn1RJkw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/share/RHVoice/voices/Leticia-F123/16000/voice.data": {
+    "sha512_b64": "5aiRVH3yetpBSd+O6vPQOwTNresRRGnNHIpAgRVkMdt6U+bCKGwzJJD+H8yLHb0etj0IqJ3YP/uDrEfzsHVc2w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/adh": {
+    "sha512_b64": "91Rt9UJVKjFM/6XOE7S1yrtlItB0CJGSsTa4zY+VDdMPCyHVueFckGGU82g0NWUsnDJW9MRoPmkeBtYmaaf8OQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/atue": {
+    "sha512_b64": "wxp6w1DFZqzs1PL0ChsHXP+7A+Z6nv3/cnKbjktnjSkOuonGNiOiMMVSeFg5DNBkSYAjR4yBuFg0nSRHRHmzDg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart90.vst": {
+    "sha512_b64": "dLneVIHk5g63MUJvx+2Aft9xHCJp5aV00JsVUbgr0CWQfuQCcP2DlERV/TQDiDIQ7Pgh8/MGuBW0L2CFjG9bZw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart91.vst": {
+    "sha512_b64": "J42eOxceblFqdR1vrh49o9/9ANQXlX57LTCekLdR2L2H7APFq0O8Mt1kYaEQqQHKHEPqCj9655lLsSmcFh3Knw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart97.vst": {
+    "sha512_b64": "jM/qrljMWHiCptlk60jPppfeZ0Os01z6Ri69XRpX7XlpRffDxjQpM62C8jLjBIcLSdOMPWX5wVwOphD20jbGPw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avpart99.vst": {
+    "sha512_b64": "/o7iheMlbHr/0o5ULXtF0OD7N5Oq7xmxyNWZqe9QZJXXQG/8lPdR0DY44T4t5AWlM7XSHkVVhOSMCGjsknTlTQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/o7iheMlbHr/0o5ULXtF0OD7N5Oq7xmxyNWZqe9QZJXXQG/8lPdR0DY44T4t5AWlM7XSHkVVhOSMCGjsknTlTQ==": {
+    "sha512_b64": "/uenux/bin/avusrbin.vst",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avusrbin.vst": {
+    "sha512_b64": "ZmpRs80WMKMpBCxhhw8i6OmxK1V/2w0CprrrBxSpIq92rGLDpffGf4kiQXi1IxkvTYJDQqFn5Qc6v/FeGEa6sg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/avusrbinof.vst": {
+    "sha512_b64": "de+hOP9SXz5LCyCQemflo1/BZCJW1EL8We2Kaeg79cvR8UdQqvpN2yyt6plk/Ey8Q9JsnZcN5VhIrKslolENlg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/gap": {
+    "sha512_b64": "vn6OBbNKLegdryJxailSUCpWf4mSq+Bg8zzHQpQ7x5L2mQ11aUQewNB9kzvgAYwDquGMcHWExDmIuBFsAjnDTw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/logd": {
+    "sha512_b64": "AeyizZAWkP9GDClxfZGU76ItdhU/eUfw3lUFY2NcKS/dQblolfpwVd/ENhyOneg74D6Q8Wd2g7+vp64yCPdV1w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/red": {
+    "sha512_b64": "jB1bcavfph8sh5PFahwmnNiIRS0ZQhJHZNeDlut7rT2jpHbJQVlwqgEMjXpNE/KHg5qAKCPyIr9Fc3MWe4t15Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/sa.of": {
+    "sha512_b64": "gQmCNMnFefqHvZyB9c9GGld3jwr6YN5hOiN6MpXsm47hs6Wh1ZkTxRHMsHvZbPi5+7oRy2O/52Gu62ohjuoByw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/savd": {
+    "sha512_b64": "BqfBbW3xnsIWGfJvXrbpEV91JKcGTjMryjVTiGPgaLOdcNY66YMd+tPWhM6SGq2mR6YK6IhXrxXZIHScKFFy3w==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/ste": {
+    "sha512_b64": "YNBj8Lt15UQgt760I3/Sd2b62HA92+RWETqteTOWoYu3e4i6Ni4jg7pHbL/dcvOSCMSEQotTtJ/0Ix2QXbydag==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/udevd": {
+    "sha512_b64": "gEDcgB8/5Pz6hXYKsSocBDfiDJA95GcFLAcBx+/884ejKw5DeAZK1E9yvm6jO83GnVfvIrVn9WLFW3ipK3rRSg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/vota.of": {
+    "sha512_b64": "fq1YwFejLXAoPTE2HNfRkKS/AV4/puiT2+X0+YZNzo3gS7GG42GrN/mpziRbcrBFvEaz+V+ekPr2z+KaDcDQ5A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/bin/vpp": {
+    "sha512_b64": "gPBAhTCoKURLW2PD/KzaT5oOi4lbQABOAyqNym4dM6GWjLxirmkgF+2mejkYVja/iFdScSG/LN7F0ilVXEtKhA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/avusrlib.vst": {
+    "sha512_b64": "yybGLoomZd3HfNpTH7RkIVSiyKL6EVv2HPrcei14ykTOSYi648YScYkROxJ16OLoON+hBgGsNBh1hWtAhQeo5A==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/avusrlibue.vst": {
+    "sha512_b64": "LUuM0WiMK0nknGAUgTGP8l1g6ENQzxTfNJ8Q5BnWd7lfAKBe2pcN671KPvEZOF4F0HQpcT8G1VYD0saKJyYO2g==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapigeneric.so": {
+    "sha512_b64": "4UtXp1pYuKsMS7zK0toPTYQe384xwEiD+S+o4Vx3/m2f0iZZloDnLo8a6S+XWgCr58M8cHJWHG7cdf4Ins5w6Q==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapihwil2022.so": {
+    "sha512_b64": "c7MRWu6GedNDpsQtej7QMsKqzkt2wNSAiCK33pLQpxhyiKXd8WiVIYiZVG8BLi6D9XgzOUtLl/gGU0aDDC+ctQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapihwilue.so": {
+    "sha512_b64": "c7MRWu6GedNDpsQtej7QMsKqzkt2wNSAiCK33pLQpxhyiKXd8WiVIYiZVG8BLi6D9XgzOUtLl/gGU0aDDC+ctQ==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapiio_resources.so": {
+    "sha512_b64": "cFloSvTOUncVdOqq6b85S8zpVPf0GuwWqpblQ5g5bdLlWDpjla0V5ed7hY/0b5zro7uuJK0+H4I7OHeiwtRNKg==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapimtpos.so": {
+    "sha512_b64": "skNwxQG3bAzl1l/TPbouD9+hAV4/UG1MDawH4RnGlZxLHN+9FRfOkgpZSCWWkvV0Vg976BC0EggnyTvvZaiFzA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapimtss.so": {
+    "sha512_b64": "BoEZxfG9cyt8GMU9v5mRJwHcShiAhcThD/zIbYDiwH1sskgs2zqMGj/EqzconmeXuFyB6b8B6kvOfjeeGHP9kA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapisdk.so": {
+    "sha512_b64": "fzdEBQC7qN2zdF+EiKIvXvXKqqdLabx4Rs423loA6ltp1MhoLVzqrdJRxKWVd/iC087RShqOuCRaYwC6ERHJOA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapisdkurna.so": {
+    "sha512_b64": "fzdEBQC7qN2zdF+EiKIvXvXKqqdLabx4Rs423loA6ltp1MhoLVzqrdJRxKWVd/iC087RShqOuCRaYwC6ERHJOA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libapiui.so": {
+    "sha512_b64": "35uAUwKniUMf0JmWT/8ClfQ2sTiQ4iRquhWuzj19t0Ly/IfYAQBmX2hb5iru18gHF8oqaJf4aifOMnah14oDqA==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/uenux/lib/libecourna.so": {
+    "sha512_b64": "j+hZBxv7si81XJwCPSXC7pDnYAmhDGPz5qJLLmivXIoG8Um9Xhgl2BhV5ToS5M4mgyIzXYXKpcC7chEOHPyXFw==",
+    "secao": "ARQUIVOS BASE"
+   },
+   "/xkHQZeMdsk/mwjufTunEhGEwQrKueEgKtynTP9pkqhizbvH1pS9dEPMO4F9hiq8VyRqvl/4c8hHCga/p/L28g==": {
+    "sha512_b64": "PB - /dsk/fi/estatico/chave/ue.ber.pri",
+    "secao": "ARQUIVOS BASE"
+   }
+  }
+ }
+}

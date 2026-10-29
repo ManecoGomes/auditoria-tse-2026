@@ -412,6 +412,17 @@ capazes de influir no resultado. Isto não é um atestado de que fraude é impos
 por <em>este</em> método, não encontrou apoio — e de que qualquer pessoa pode refazer o caminho.</p>
 
 <h2>O que este trabalho não pode afirmar</h2>
+<blockquote><p><strong>Ressalva principal: o software das urnas não é auditável por quem está de fora.</strong> O código-fonte e os executáveis que rodaram
+nas urnas só podem ser inspecionados pelas entidades fiscalizadoras listadas na Resolução TSE 23.673/2021 (partidos, OAB, Ministério Público,
+Defensoria, Congresso, CGU, Polícia Federal, SBC, Confea, CNJ, CNMP, Forças Armadas e universidades credenciadas), em ambiente controlado no
+TSE, sem internet, sem cópia e sob termo de sigilo; o público recebe apenas os resumos digitais (hashes) gerados na cerimônia de lacração. Em tese,
+um programa pode conter instrução maliciosa — por exemplo, registrar um voto diferente do digitado — e isso <em>não deixa rastro em nenhum arquivo
+publicado</em>: boletim, log, RDV e contêiner assinado seriam todos produzidos pelo mesmo programa, e bateriam entre si. Com os dados públicos não há o
+que fazer a esse respeito. O que esta auditoria verifica é tudo o que acontece <em>depois</em> que o voto foi registrado pela urna: que nenhum arquivo foi
+alterado, que a soma é a proclamada, que nenhuma urna foi reaberta ou acelerada, que o ritmo e os horários são os de eleitores reais. A garantia sobre
+o programa em si depende da inspeção pelas entidades fiscalizadoras, do Teste Público de Segurança e do Teste de Autenticidade feito pelo TSE em urnas
+sorteadas no dia da eleição — procedimentos que esta auditoria não substitui. O único cotejo possível de fora, feito na página da forense, é que cada
+urna verificou ao carregar exatamente os pacotes lacrados para o seu modelo, com sucesso, e declarou a mesma versão de software.</p></blockquote>
 <ul>
 <li><strong>Em quem foi cada voto.</strong> O log registra o cargo, nunca o candidato; o RDV traz os votos embaralhados. É o sigilo do voto, e nenhuma análise de dado público o atravessa.</li>
 <li><strong>Quem votou.</strong> A habilitação no log não identifica o eleitor. A hipótese «o mesário votou pelo ausente» só é testável pelo ritmo e pela sequência dos votos, e foi.</li>
