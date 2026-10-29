@@ -257,6 +257,15 @@ def indice_resumo():
     p1, p2 = _pianista_resumo("1"), _pianista_resumo("2")
     rdv1, rdv2 = _lj(f"{P}/pipeline/rdv_1t.json"), _lj(f"{P}/pipeline/rdv_2t.json")
     kc = _lj(f"{P}/pipeline/concentracao_2t.json")
+    al2, al1 = _lj(f"{P}/pipeline/algoritmo_2t.json"), _lj(f"{P}/pipeline/algoritmo_1t.json")
+    def al_txt(a, t):
+        if not a or not a.get("k4"): return "em processamento"
+        k4, k5, k6, k7 = a["k4"], a["k5"], a.get("k6") or {}, a.get("k7") or {}
+        s = (f'margem no empate: razão {_d(k4["razao_a"],2)} com 22 à frente e {_d(k4["razao_b"],2)} com 13 à frente (curva lisa = 1); '
+             f'urnas com 22 à frente dentro do município: {N(k5["total_obs"])} observadas; ')
+        if k6: s += f'curva da totalização dentro da faixa da ordem de chegada por município em {k6["pontos_dentro_por_nivel"]["municipio"]} de {k6["pontos"]} pontos; '
+        if k7.get("ufs"): s += f'relógio: {N(k7["assinaturas_iniciais_repetidas"])} sequências de intervalos repetidas entre urnas, segundo uniforme (qui² {_d(k7["qui2_segundo_no_minuto"],0)} / 59 gl)' + (f' ({len(k7["ufs"])}/28 UFs)' if len(k7["ufs"]) < 28 else "")
+        return s
     def rdv_txt(r):
         if not r: return "em processamento"
         return (f'{N(r.get("comparadas",0))} seções comparadas, {N(r.get("iguais",0))} iguais voto a voto, {N(r.get("diferentes",0))} diferentes'
@@ -310,6 +319,7 @@ def indice_resumo():
       ["C4b · Reta final (17h em diante)", "Depois das 17h, a seção acelerou além do próprio ritmo do dia?", f'{N(fin1.get("discrepantes",0))} voto{"s" if fin1.get("discrepantes",0) != 1 else ""} discrepante{"s" if fin1.get("discrepantes",0) != 1 else ""} em {N(fin1.get("votos",0))} depois das 17h', f'{N(fin2.get("discrepantes",0))} voto{"s" if fin2.get("discrepantes",0) != 1 else ""} discrepante{"s" if fin2.get("discrepantes",0) != 1 else ""} em {N(fin2.get("votos",0))} depois das 17h', "reta-final.html"],
       ["C4 ampliado · «Pianista» (30 s, 40 s, corridas)", "Com limiares maiores e olhando sequências, aparece mesário votando em série?", pian(p1, "1"), pian(p2, "2"), "pianista.html"],
       ["K2 / K3 · Concentração por horário × resultado", "Houve horário em que os votos se concentraram num candidato? A seção que votou «em bloco» ou tarde deslocou o resultado contra o próprio 1º turno e contra as vizinhas?", "controles: a seção contra o próprio município e o perfil horário da mesma seção no 1º turno", kc_txt(), "concentracao.html"],
+      ["K4–K7 · Algoritmo de «queda linear»?", "O software poderia detectar 22 subindo e acionar uma queda programada? Marcas: assimetria no empate por urna, déficit de urnas com 22 à frente no município, curva da totalização inexplicada pela ordem de chegada, periodicidade e repetição no relógio.", al_txt(al1, "1"), al_txt(al2, "2"), "algoritmo.html"],
       ["E1 / E5 / E6 · A seção contra si mesma", "Cada seção e cada município se comportaram no 2º turno como no 1º?",
        "régua", f'{N(e1.get("secoes_comuns",0))} seções comuns; {N(e5.get("com_indicador_pior_no_2t",0))} de {N(e5.get("municipios_comuns",0))} municípios com algum indicador pior; {e6.get("secoes_2t_com_discrepantes_sem_ter_no_1t",0)} seções com discrepância nova após 17h', "comparativo.html"],
       ["E4 · Votos tardios e candidato", "As seções com mais votos depois das 17h mudaram de lado entre os turnos?", "controle: correlação da fila do 1º turno", f'correlação {e4.get("correlacao","—")} (nula); limites de Duncan-Davis e Goodman publicados', "votos-tardios.html"],
@@ -401,7 +411,10 @@ e nenhum deles em ritmo discrepante do dia normal da própria seção; {N(c4_2.g
 {_d(100*tard2/margem,1)}% da margem; e a comparação seção a seção entre os turnos (E4) mostra correlação nula entre votação tardia e deslocamento de voto.
 A pergunta «houve um horário em que os votos se concentraram num candidato?» foi respondida pelo que o dado permite: {kc_txt()}; as pequenas correlações
 que aparecem nas horas da manhã e do meio-dia no país inteiro caem a zero quando cada seção é comparada só com as vizinhas do próprio município — é
-geografia (as regiões que votam cedo são as que se deslocaram de forma diferente entre os turnos), não algo ocorrido dentro das urnas em 25/10.</p>
+geografia (as regiões que votam cedo são as que se deslocaram de forma diferente entre os turnos), não algo ocorrido dentro das urnas em 25/10.
+A hipótese de um algoritmo que penalizasse 22 «quando à frente», com queda programada, foi testada pelas marcas que deixaria: a margem por urna é lisa ao cruzar o
+empate nos dois turnos, as urnas com 22 à frente dentro de cada município são as que a régua do 1º turno prevê, a curva da totalização é a ordem de chegada dos
+municípios e termina na soma exata dos boletins, e o relógio das urnas não tem período, ressalto nem sequência repetida.</p>
 <p><strong>5. Os logs não têm rastro de edição.</strong> {N(f1["linhas"]+f2["linhas"])} linhas de log lidas nos dois turnos: gramática fixa, codificação,
 código único por linha, relógio, vocabulário fechado, serial da urna, selo final, versão do software e verificações de assinatura dos componentes,
 tudo dentro do que o software da urna produz. As exceções estão listadas uma a uma na página da forense, com a explicação encontrada ou a marca
@@ -448,7 +461,7 @@ OpenTimestamps que ancora a data na blockchain do Bitcoin; versões anteriores p
 <li><a href="comparativo.html"><strong>Comparativo 1º × 2º turno</strong></a> — cada seção e cada município contra si mesmos; a pergunta sobre o resultado.</li>
 <li><a href="reta-final.html"><strong>Reta final</strong></a> — a hipótese, o vídeo, o teste C4b e as seções apontadas.</li>
 <li><a href="estados/index.html"><strong>Estados</strong></a> — uma página por UF e uma por município, com o 2º turno ao lado do 1º.</li>
-<li><a href="forense.html"><strong>Forense dos logs</strong></a> · <a href="soma-oficial.html"><strong>Soma oficial</strong></a> · <a href="votos-tardios.html"><strong>Votos tardios</strong></a> · <a href="pianista.html"><strong>Pianista</strong></a> · <a href="concentracao.html"><strong>Horário × resultado e RDV</strong></a> — a emenda de 28/10.</li>
+<li><a href="forense.html"><strong>Forense dos logs</strong></a> · <a href="soma-oficial.html"><strong>Soma oficial</strong></a> · <a href="votos-tardios.html"><strong>Votos tardios</strong></a> · <a href="pianista.html"><strong>Pianista</strong></a> · <a href="concentracao.html"><strong>Horário × resultado e RDV</strong></a> · <a href="algoritmo.html"><strong>Queda linear?</strong></a> — a emenda de 28/10.</li>
 <li><a href="plano-2t.html">Plano pré-registrado</a> · <a href="verificar.html">Como verificar</a> · <a href="dados.html">Dados e hashes</a> · <a href="relatorio.html">Relatório técnico do 1º turno</a> · <a href="relatorio-2t.html">Relatório do 2º turno</a></li>
 </ul>
 '''

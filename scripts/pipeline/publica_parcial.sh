@@ -33,7 +33,7 @@ trap 'rm -rf "$LOCK"' EXIT
 EST=$( { ls -l "$DEMO"/*.json 2>/dev/null
          ls -l "$PL"/demonstracao_1t.json "$PL"/analises.json "$PL"/E5_municipios_1t_2t.csv 2>/dev/null
          ls -l "$PL"/{coleta.py,audita.py,compara.py,extrai_votos.py,analises.py,demonstra.py,gera_demo_html.py} 2>/dev/null
-         ls -l "$PL"/{forense.py,tardios.py,soma_oficial.py,gera_forense.py,remonta_2t.py,paginas_extra.py,pianista.py,gera_pianista.py,concentracao.py,rdv_bu.py,gera_concentracao.py,lacracao.py} 2>/dev/null
+         ls -l "$PL"/{forense.py,tardios.py,soma_oficial.py,gera_forense.py,remonta_2t.py,paginas_extra.py,pianista.py,gera_pianista.py,concentracao.py,rdv_bu.py,gera_concentracao.py,lacracao.py,extrai_bu_tempo.py,tempo.py,gera_algoritmo.py} 2>/dev/null
          ls -l /Volumes/SSD1TB/acervo-tse/auditoria/forense/*/*.json "$PL"/resultados/{a3_soma_oficial.json,tardios.json} 2>/dev/null
          ls -l "$PL"/{baixa_resiliente.sh,marca_integros.sh,enfileira_restantes.sh} 2>/dev/null
          ls -l "$PL"/{roda.sh,publica.sh,publica_parcial.sh} 2>/dev/null
@@ -81,6 +81,7 @@ rc=$?
 "$PY" -u "$PL/gera_forense.py" >> "$PL/parcial.log" 2>&1 || echo "$(date '+%F %T') gera_forense.py falhou — seguindo" >> "$PL/parcial.log"
 "$PY" -u "$PL/gera_pianista.py" >> "$PL/parcial.log" 2>&1 || echo "$(date '+%F %T') gera_pianista.py falhou — seguindo" >> "$PL/parcial.log"
 "$PY" -u "$PL/gera_concentracao.py" >> "$PL/parcial.log" 2>&1 || echo "$(date '+%F %T') gera_concentracao.py falhou — seguindo" >> "$PL/parcial.log"
+"$PY" -u "$PL/gera_algoritmo.py" >> "$PL/parcial.log" 2>&1 || echo "$(date '+%F %T') gera_algoritmo.py falhou — seguindo" >> "$PL/parcial.log"
 cp "$P/relatorio/EMENDA-2026-10-28.md" "$R/relatorio/" 2>/dev/null || true
 
 # 4. dados derivados para o repo
@@ -161,7 +162,7 @@ cp "$PL"/{baixa_resiliente.sh,marca_integros.sh,enfileira_restantes.sh} \
 cp "$PL"/{roda.sh,publica.sh,publica_parcial.sh} "$R/scripts/pipeline/" 2>/dev/null
 cp "$PL/sha512_backfill.sh" "$R/scripts/pipeline/" 2>/dev/null
 cp "$PL/repara_zip.py" "$R/scripts/pipeline/" 2>/dev/null
-cp "$PL"/{forense.py,tardios.py,soma_oficial.py,gera_forense.py,remonta_2t.py,paginas_extra.py,pianista.py,gera_pianista.py,concentracao.py,rdv_bu.py,gera_concentracao.py,lacracao.py} "$R/scripts/pipeline/" 2>/dev/null
+cp "$PL"/{forense.py,tardios.py,soma_oficial.py,gera_forense.py,remonta_2t.py,paginas_extra.py,pianista.py,gera_pianista.py,concentracao.py,rdv_bu.py,gera_concentracao.py,lacracao.py,extrai_bu_tempo.py,tempo.py,gera_algoritmo.py} "$R/scripts/pipeline/" 2>/dev/null
 cp "$P/diagnostico.sh" "$P/destrava.sh" "$R/scripts/" 2>/dev/null
 
 # 6. manifesto novo + carimbo no Bitcoin
